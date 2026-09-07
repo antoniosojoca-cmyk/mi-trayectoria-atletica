@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi trayectoria atlética</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #111;
+            color: #fff;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background:
+                linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.85)),
+                url("https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=2000&q=80")
+                center/cover no-repeat;
+        }
+
+        .portada {
+            max-width: 900px;
+        }
+
+        .portada h1 {
+            font-size: 64px;
+            letter-spacing: 5px;
+            margin: 0 0 20px;
+            text-transform: uppercase;
+        }
+
+        .portada h2 {
+            font-size: 28px;
+            font-weight: normal;
+            margin: 0 0 30px;
+        }
+
+        .portada p {
+            font-size: 20px;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.7);
+            padding: 12px 20px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background: white;
+            color: #111;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            .portada h1 {
+                font-size: 38px;
+                letter-spacing: 3px;
+            }
+
+            .portada h2 {
+                font-size: 22px;
+            }
+
+            .portada p {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="portada">
+
+        <h1>Mi trayectoria atlética</h1>
+
+        <h2>Una vida entre kilómetros, carreras y nuevos caminos</h2>
+
+        <p>
+            Más de quince años formando parte del atletismo.
+            Una historia de esfuerzo, carreras, aprendizajes,
+            dificultades y experiencias que continúan hoy
+            con una nueva etapa en la marcha atlética.
+        </p>
+
+        <nav class="menu">
+            <a href="#">Mi historia</a>
+            <a href="#">Mis carreras</a>
+            <a href="#">Entrenamiento</a>
+            <a href="#">La lesión</a>
+            <a href="#">Marcha atlética</a>
+            <a href="#">Galería</a>
+        </nav>
+
+    </div>
+
+</header>
+
+<footer>
+    Mi trayectoria atlética · 2026
+</footer>
+
+</body>
+</html>
