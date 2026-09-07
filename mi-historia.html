@@ -1,379 +1,586 @@
-```html
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mi historia | Mi trayectoria atlética</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<title>Mi historia | Mi trayectoria atlética</title>
 
-        body {
-            margin: 0;
-            background: #111;
-            color: #f5f5f5;
-            font-family: Georgia, "Times New Roman", serif;
-            line-height: 1.8;
-        }
+<style>
 
-        header {
-            padding: 70px 20px 50px;
-            text-align: center;
-            background:
-                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
-                url("https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=2000&q=80")
-                center/cover no-repeat;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 54px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        header p {
-            margin: 15px auto 0;
-            max-width: 750px;
-            font-size: 20px;
-            color: #ddd;
-        }
+body {
+    margin: 0;
+    background: #0b0b0b;
+    color: #f5f5f5;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.8;
+}
 
-        .contenedor {
-            max-width: 950px;
-            margin: 0 auto;
-            padding: 60px 25px 80px;
-        }
+header {
+    min-height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 25px;
 
-        .capitulo {
-            margin-bottom: 65px;
-            padding-bottom: 45px;
-            border-bottom: 1px solid #444;
-        }
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.68),
+            rgba(0,0,0,0.92)
+        ),
+        url("https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/IMG-20220905-WA0002.jpg")
+        center/cover no-repeat;
+}
 
-        .capitulo:last-child {
-            border-bottom: none;
-        }
+.cabecera-contenido {
+    max-width: 900px;
+}
 
-        .capitulo h2 {
-            font-size: 32px;
-            margin: 0 0 20px;
-            color: #fff;
-        }
+header h1 {
+    margin: 0;
+    font-size: 62px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
 
-        .capitulo h2 span {
-            color: #aaa;
-            font-size: 18px;
-            letter-spacing: 2px;
-            display: block;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
+header p {
+    margin: 20px auto 0;
+    max-width: 750px;
+    font-size: 21px;
+    color: #d8d8d8;
+}
 
-        .capitulo p {
-            font-size: 19px;
-            color: #ddd;
-        }
+.introduccion {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 70px 25px 30px;
+    text-align: center;
+}
 
-        .frase {
-            margin: 55px auto;
-            padding: 30px;
-            border-top: 1px solid #555;
-            border-bottom: 1px solid #555;
-            text-align: center;
-            font-size: 25px;
-            font-style: italic;
-            color: #eee;
-            max-width: 800px;
-        }
+.introduccion h2 {
+    font-size: 30px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
 
-        .volver {
-            text-align: center;
-            margin-top: 30px;
-        }
+.introduccion p {
+    font-size: 19px;
+    color: #ccc;
+}
 
-        .volver a {
-            display: inline-block;
-            color: #fff;
-            text-decoration: none;
-            border: 1px solid #777;
-            padding: 12px 24px;
-            transition: 0.3s;
-        }
+.contenedor {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 30px 25px 90px;
+}
 
-        .volver a:hover {
-            background: #fff;
-            color: #111;
-        }
+.pieza {
+    margin: 80px 0;
+    background: #111;
+    border: 1px solid #333;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+    overflow: hidden;
+}
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            border-top: 1px solid #333;
-            color: #888;
-            font-size: 14px;
-        }
+.imagen-pieza {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: #050505;
+}
 
-        @media (max-width: 700px) {
+.imagen-pieza img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+}
 
-            header h1 {
-                font-size: 36px;
-                letter-spacing: 2px;
-            }
+.pieza:hover .imagen-pieza img {
+    transform: scale(1.04);
+}
 
-            header p {
-                font-size: 17px;
-            }
+.contenido-pieza {
+    padding: 45px 55px 55px;
+}
 
-            .capitulo h2 {
-                font-size: 27px;
-            }
+.numero {
+    display: block;
+    margin-bottom: 8px;
+    color: #999;
+    font-size: 15px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
 
-            .capitulo p {
-                font-size: 17px;
-            }
+.contenido-pieza h2 {
+    margin: 0 0 25px;
+    font-size: 38px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
 
-            .frase {
-                font-size: 21px;
-            }
-        }
-    </style>
+.contenido-pieza p {
+    margin: 0 0 20px;
+    color: #d2d2d2;
+    font-size: 18px;
+}
+
+.frase {
+    max-width: 850px;
+    margin: 90px auto;
+    padding: 45px 30px;
+    text-align: center;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+    font-size: 26px;
+    font-style: italic;
+    color: #eee;
+}
+
+.pendiente {
+    text-align: center;
+    padding: 60px 25px;
+    color: #777;
+    font-style: italic;
+}
+
+.volver {
+    text-align: center;
+    margin: 70px 0 20px;
+}
+
+.volver a {
+    display: inline-block;
+    padding: 14px 28px;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #777;
+    transition: 0.3s;
+}
+
+.volver a:hover {
+    background: #fff;
+    color: #111;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #292929;
+    color: #777;
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+
+    header {
+        min-height: 50vh;
+        padding: 60px 20px;
+    }
+
+    header h1 {
+        font-size: 38px;
+        letter-spacing: 3px;
+    }
+
+    header p {
+        font-size: 17px;
+    }
+
+    .introduccion {
+        padding-top: 50px;
+    }
+
+    .introduccion h2 {
+        font-size: 25px;
+    }
+
+    .introduccion p {
+        font-size: 17px;
+    }
+
+    .pieza {
+        margin: 55px 0;
+    }
+
+    .imagen-pieza {
+        height: 300px;
+    }
+
+    .contenido-pieza {
+        padding: 30px 25px 35px;
+    }
+
+    .contenido-pieza h2 {
+        font-size: 29px;
+    }
+
+    .contenido-pieza p {
+        font-size: 17px;
+    }
+
+    .frase {
+        font-size: 21px;
+        margin: 60px auto;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
 <header>
 
-    <h1>Mi historia</h1>
+<div class="cabecera-contenido">
 
-    <p>
-        Una vida entre kilómetros, carreras, esfuerzo,
-        aprendizaje y nuevos caminos.
-    </p>
+<h1>Mi historia</h1>
+
+<p>
+Una vida entre kilómetros, carreras,
+esfuerzo, aprendizaje y nuevos caminos.
+</p>
+
+</div>
 
 </header>
 
 
+<section class="introduccion">
+
+<h2>VIII piezas de una trayectoria</h2>
+
+<p>
+El atletismo no ha sido solamente una sucesión de carreras.
+Ha sido un camino lleno de experiencias, personas,
+aprendizajes, dificultades y momentos que forman parte de mi vida.
+</p>
+
+<p>
+Estas ocho piezas representan algunos de los capítulos
+más importantes de ese camino.
+</p>
+
+</section>
+
+
 <main class="contenedor">
 
-    <section class="capitulo">
 
-        <h2>
-            <span>Capítulo I</span>
-            El comienzo
-        </h2>
+<!-- PIEZA I -->
 
-        <p>
-            Mi historia en el atletismo comenzó casi sin darme cuenta.
-            Durante mucho tiempo el deporte había formado parte de mi vida,
-            pero fue al descubrir el mundo del atletismo cuando encontré
-            una forma diferente de entender el deporte.
-        </p>
+<section class="pieza">
 
-        <p>
-            Ver las grandes competiciones y descubrir todo lo que había
-            detrás de cada carrera despertó en mí una pasión que con el
-            paso de los años se convertiría en una parte fundamental de
-            mi vida.
-        </p>
+<div class="imagen-pieza">
 
-    </section>
+<img
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/IMG-20220905-WA0002.jpg"
+alt="El comienzo de mi trayectoria atlética"
+>
 
+</div>
 
-    <section class="capitulo">
+<div class="contenido-pieza">
 
-        <h2>
-            <span>Capítulo II</span>
-            Mis primeras carreras
-        </h2>
+<span class="numero">Pieza I</span>
 
-        <p>
-            La primera carrera que recuerdo de una manera especial fue
-            una media maratón en Jerez de la Frontera. Allí comenzó
-            realmente mi relación con las carreras populares y con todo
-            lo que rodea al atletismo.
-        </p>
+<h2>El comienzo</h2>
 
-        <p>
-            Al principio cada carrera era un reto. No se trataba solamente
-            de correr una determinada distancia, sino de descubrir hasta
-            dónde podía llegar y aprender de cada experiencia.
-        </p>
+<p>
+Mi historia en el atletismo comenzó casi sin darme cuenta.
+Al principio era simplemente una forma de hacer deporte,
+pero poco a poco descubrí que correr podía convertirse
+en mucho más.
+</p>
 
-    </section>
+<p>
+Descubrir el mundo del atletismo despertó en mí una pasión
+que con el paso de los años acabaría formando parte de mi vida.
+</p>
+
+</div>
+
+</section>
 
 
-    <section class="capitulo">
+<!-- PIEZA II -->
 
-        <h2>
-            <span>Capítulo III</span>
-            Atletismo de Nueva Jarilla
-        </h2>
+<section class="pieza">
 
-        <p>
-            Con el tiempo llegó otro momento importante de mi trayectoria:
-            formar parte del equipo Atletismo de Nueva Jarilla.
-        </p>
+<div class="imagen-pieza">
 
-        <p>
-            Entrenar, competir y compartir kilómetros con otros corredores
-            hizo que el atletismo dejara de ser solamente una afición para
-            convertirse en una verdadera forma de vida.
-        </p>
+<img
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/20160910_192158.jpg"
+alt="Mis primeras carreras"
+>
 
-    </section>
+</div>
 
+<div class="contenido-pieza">
 
-    <section class="capitulo">
+<span class="numero">Pieza II</span>
 
-        <h2>
-            <span>Capítulo IV</span>
-            El primer podium
-        </h2>
+<h2>Mis primeras carreras</h2>
 
-        <p>
-            Uno de los recuerdos que guardo con especial cariño es mi
-            primer podium. Fue en el cross de Sanlúcar de Barrameda,
-            donde conseguí la primera posición.
-        </p>
+<p>
+Llegó el momento de pasar de los entrenamientos a la competición.
+La primera carrera que recuerdo de una manera especial fue
+una media maratón en Jerez de la Frontera.
+</p>
 
-        <p>
-            Aquella experiencia me enseñó que todo el esfuerzo de los
-            entrenamientos tenía una recompensa. Pero también aprendí
-            que un resultado solamente es una parte de la historia.
-            Lo verdaderamente importante era todo el camino recorrido
-            para llegar hasta allí.
-        </p>
+<p>
+Cada carrera se convirtió en una nueva experiencia y en una
+oportunidad para seguir aprendiendo.
+</p>
 
-    </section>
+</div>
+
+</section>
 
 
-    <div class="frase">
-        “Cada carrera termina cuando cruzas la meta,
-        pero la historia continúa al día siguiente.”
-    </div>
+<!-- PIEZA III -->
+
+<section class="pieza">
+
+<div class="imagen-pieza">
+
+<img
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/20190407_153139.jpg"
+alt="Atletismo de Nueva Jarilla"
+>
+
+</div>
+
+<div class="contenido-pieza">
+
+<span class="numero">Pieza III</span>
+
+<h2>Atletismo de Nueva Jarilla</h2>
+
+<p>
+Uno de los momentos importantes de mi trayectoria fue formar
+parte del equipo Atletismo de Nueva Jarilla.
+</p>
+
+<p>
+El atletismo dejó entonces de ser solamente una experiencia
+individual. Entrenar, competir y compartir kilómetros con
+otros compañeros hizo que este deporte adquiriera todavía
+más sentido.
+</p>
+
+</div>
+
+</section>
 
 
-    <section class="capitulo">
+<!-- PIEZA IV -->
 
-        <h2>
-            <span>Capítulo V</span>
-            Los años pasan
-        </h2>
+<section class="pieza">
 
-        <p>
-            Con los años el cuerpo cambia y también cambia la manera de
-            entender el entrenamiento. Lo que antes podía hacerse con
-            facilidad requiere ahora más atención, más descanso y una
-            mayor adaptación.
-        </p>
+<div class="imagen-pieza">
 
-        <p>
-            El atletismo me ha enseñado a escuchar al cuerpo, a aceptar
-            los momentos difíciles y a entender que cada etapa tiene
-            sus propios objetivos.
-        </p>
+<img
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/DSC_0922_resultado_resultado.jpg"
+alt="El primer pódium"
+>
 
-    </section>
+</div>
 
+<div class="contenido-pieza">
 
-    <section class="capitulo">
+<span class="numero">Pieza IV</span>
 
-        <h2>
-            <span>Capítulo VI</span>
-            Las dificultades también forman parte del camino
-        </h2>
+<h2>El primer pódium</h2>
 
-        <p>
-            Como cualquier corredor, también he tenido momentos difíciles.
-            Las lesiones forman parte de la vida deportiva y obligan a
-            detenerse, reflexionar y volver a empezar.
-        </p>
+<p>
+Hay momentos que permanecen para siempre en la memoria.
+Uno de ellos fue mi primer pódium.
+</p>
 
-        <p>
-            Una lesión puede hacer que durante un tiempo no podamos hacer
-            aquello que más nos gusta. Pero también puede enseñarnos a
-            tener paciencia y a valorar cada entrenamiento y cada carrera
-            cuando volvemos a estar preparados.
-        </p>
+<p>
+Fue en el cross de Sanlúcar de Barrameda, donde conseguí
+la primera posición.
+</p>
 
-    </section>
+<p>
+Aquella victoria tuvo un significado especial porque detrás
+de ella estaban todos los kilómetros, entrenamientos y esfuerzos
+realizados hasta llegar a ese momento.
+</p>
+
+</div>
+
+</section>
 
 
-    <section class="capitulo">
+<div class="frase">
 
-        <h2>
-            <span>Capítulo VII</span>
-            Una nueva etapa
-        </h2>
+“Cada carrera termina cuando cruzas la meta,
+pero la historia continúa al día siguiente.”
 
-        <p>
-            Hoy continúo ligado al deporte con una nueva perspectiva.
-            Ya no se trata solamente de correr más rápido o conseguir
-            mejores marcas.
-        </p>
-
-        <p>
-            Se trata de seguir disfrutando, de cuidarme, de adaptar el
-            entrenamiento a mi situación actual y de afrontar cada nuevo
-            reto con ilusión.
-        </p>
-
-        <p>
-            La marcha atlética representa ahora un nuevo camino dentro
-            de esta trayectoria deportiva.
-        </p>
-
-    </section>
+</div>
 
 
-    <section class="capitulo">
+<!-- PIEZA V -->
 
-        <h2>
-            <span>Capítulo VIII</span>
-            El camino continúa
-        </h2>
+<section class="pieza">
 
-        <p>
-            Después de tantos años, puedo decir que el atletismo ha sido
-            mucho más que correr. Ha sido conocer personas, compartir
-            experiencias, superar dificultades, disfrutar de los buenos
-            momentos y aprender de los malos.
-        </p>
+<div class="imagen-pieza">
 
-        <p>
-            Esta página no pretende ser solamente una recopilación de
-            resultados. Es el recuerdo de un camino y de una pasión que
-            todavía continúa.
-        </p>
+<img
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/IMG-20220905-WA0002.jpg"
+alt="Los años pasan"
+>
 
-        <p>
-            Porque mientras haya un camino por delante y ganas de
-            recorrerlo, siempre habrá una nueva meta.
-        </p>
+</div>
 
-    </section>
+<div class="contenido-pieza">
+
+<span class="numero">Pieza V</span>
+
+<h2>Los años pasan</h2>
+
+<p>
+Con el paso de los años cambia la manera de entender el deporte.
+También cambia la forma de entrenar, de competir y de afrontar
+cada nuevo reto.
+</p>
+
+<p>
+El objetivo ya no es solamente mejorar una marca.
+También es disfrutar del camino y seguir encontrando motivos
+para continuar.
+</p>
+
+</div>
+
+</section>
 
 
-    <div class="volver">
+<!-- PIEZA VI -->
 
-        <a href="index.html">
-            ← Volver a la portada
-        </a>
+<section class="pieza">
 
-    </div>
+<div class="imagen-pieza">
+
+<img
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/20190407_153139.jpg"
+alt="Las dificultades también forman parte del camino"
+>
+
+</div>
+
+<div class="contenido-pieza">
+
+<span class="numero">Pieza VI</span>
+
+<h2>Las dificultades también forman parte del camino</h2>
+
+<p>
+Ninguna trayectoria deportiva está formada solamente por
+buenos momentos.
+</p>
+
+<p>
+También existen dificultades, momentos en los que hay que
+detenerse y situaciones que obligan a cambiar los planes.
+</p>
+
+<p>
+A veces avanzar significa precisamente saber parar,
+recuperarse y volver a empezar.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PIEZA VII -->
+
+<section class="pieza">
+
+<div class="pendiente">
+
+<span class="numero">Pieza VII</span>
+
+<h2>Una nueva etapa</h2>
+
+<p>
+IMAGEN PENDIENTE
+</p>
+
+<p>
+Aquí colocaremos la imagen simbólica de la nueva etapa.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PIEZA VIII -->
+
+<section class="pieza">
+
+<div class="pendiente">
+
+<span class="numero">Pieza VIII</span>
+
+<h2>El camino continúa</h2>
+
+<p>
+IMAGEN PENDIENTE
+</p>
+
+<p>
+Aquí colocaremos la imagen final de la exposición.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="volver">
+
+<a href="index.html">
+← Volver a la portada
+</a>
+
+</div>
+
 
 </main>
 
 
 <footer>
-    Mi trayectoria atlética · 2026
+
+Mi trayectoria atlética · 2026
+
 </footer>
 
+
 </body>
+
 </html>
-```
