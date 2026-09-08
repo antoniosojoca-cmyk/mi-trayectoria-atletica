@@ -28,41 +28,84 @@ body {
 
 /* CABECERA */
 
-header {
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    header {
+    position: relative;
+    width: 100%;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
     text-align: center;
-    padding: 80px 25px;
+    background: #050505;
+}
+
+header::before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 56%;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
 
     background:
         linear-gradient(
-            rgba(0,0,0,0.60),
-            rgba(0,0,0,0.90)
-        ),
-        url("https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/DSC_0922_resultado_resultado.jpg?raw=true")
-        center/cover no-repeat;
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.65)
+        );
 }
 
-.cabecera-contenido {
-    max-width: 900px;
-}
 
+    <header>
+
+<img
+    src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/DSC_0922_resultado_resultado.jpg?raw=true"
+    alt="Mi trayectoria atlética"
+    style="
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        object-fit:contain;
+        display:block;
+    "
+>
+
+<div class="cabecera-contenido">
+
+<h1>Mi historia</h1>
+
+<p>
+Una vida entre kilómetros, carreras,
+esfuerzo, aprendizaje y nuevos caminos.
+</p>
+
+</div>
+
+</header>
 header h1 {
     margin: 0;
+
     font-size: 62px;
+
     letter-spacing: 6px;
+
     text-transform: uppercase;
 }
 
 header p {
     margin: 20px auto 0;
+
     max-width: 750px;
+
     font-size: 21px;
+
     color: #d8d8d8;
 }
-
 /* INTRODUCCIÓN */
 
 .introduccion {
@@ -108,29 +151,19 @@ header p {
    entre en el espacio sin cortar cabezas.
 */
 
-.imagen-pieza {
+
+    .imagen-pieza {
     width: 100%;
-    height: 500px;
     overflow: hidden;
     background: #050505;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    line-height: 0;
 }
 
 .imagen-pieza img {
     width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-    object-position: center;
-
+    height: auto;
     display: block;
-
-    transition: transform 0.7s ease;
 }
-
 .pieza:hover .imagen-pieza img {
     transform: scale(1.02);
 }
