@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -26,13 +27,14 @@ body {
     line-height: 1.8;
 }
 
-/* =========================
+
+/* ==================================================
    CABECERA
-========================= */
+================================================== */
 
 header {
 
-    min-height: 55vh;
+    min-height: 60vh;
 
     display: flex;
     align-items: center;
@@ -44,10 +46,10 @@ header {
 
     background:
         linear-gradient(
-            rgba(0,0,0,0.68),
-            rgba(0,0,0,0.92)
+            rgba(0,0,0,0.60),
+            rgba(0,0,0,0.90)
         ),
-        url("https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/IMG-20220905-WA0002.jpg")
+        url("https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/DSC_0922_resultado_resultado.jpg?raw=true")
         center/cover no-repeat;
 }
 
@@ -78,9 +80,9 @@ header p {
 }
 
 
-/* =========================
+/* ==================================================
    INTRODUCCIÓN
-========================= */
+================================================== */
 
 .introduccion {
 
@@ -112,9 +114,9 @@ header p {
 }
 
 
-/* =========================
+/* ==================================================
    CONTENEDOR
-========================= */
+================================================== */
 
 .contenedor {
 
@@ -126,9 +128,9 @@ header p {
 }
 
 
-/* =========================
+/* ==================================================
    PIEZAS
-========================= */
+================================================== */
 
 .pieza {
 
@@ -162,6 +164,8 @@ header p {
 
     object-fit: cover;
 
+    object-position: center;
+
     display: block;
 
     transition: transform 0.7s ease;
@@ -173,9 +177,9 @@ header p {
 }
 
 
-/* =========================
+/* ==================================================
    CONTENIDO
-========================= */
+================================================== */
 
 .contenido-pieza {
 
@@ -218,9 +222,9 @@ header p {
 }
 
 
-/* =========================
+/* ==================================================
    FRASE CENTRAL
-========================= */
+================================================== */
 
 .frase {
 
@@ -246,7 +250,6 @@ header p {
 
 /* ==================================================
    MONTAJE PIEZA VII
-   UNA NUEVA ETAPA
 ================================================== */
 
 .montaje-vii {
@@ -274,7 +277,7 @@ header p {
 
     display: block;
 
-    filter: grayscale(25%) contrast(1.05);
+    filter: grayscale(15%) contrast(1.05);
 
     transform: scale(1.02);
 }
@@ -338,7 +341,6 @@ header p {
 
 /* ==================================================
    MONTAJE PIEZA VIII
-   EL CAMINO CONTINÚA
 ================================================== */
 
 .montaje-viii {
@@ -366,9 +368,9 @@ header p {
 
     display: block;
 
-    filter: grayscale(55%) contrast(1.12);
+    filter: grayscale(20%) contrast(1.08);
 
-    transform: scale(1.08);
+    transform: scale(1.04);
 }
 
 .montaje-viii::after {
@@ -444,9 +446,9 @@ header p {
 }
 
 
-/* =========================
+/* ==================================================
    BOTÓN VOLVER
-========================= */
+================================================== */
 
 .volver {
 
@@ -478,9 +480,9 @@ header p {
 }
 
 
-/* =========================
+/* ==================================================
    PIE
-========================= */
+================================================== */
 
 footer {
 
@@ -496,9 +498,9 @@ footer {
 }
 
 
-/* =========================
+/* ==================================================
    MÓVIL
-========================= */
+================================================== */
 
 @media (max-width: 700px) {
 
@@ -543,7 +545,7 @@ footer {
 
     .imagen-pieza {
 
-        height: 300px;
+        height: 330px;
     }
 
     .contenido-pieza {
@@ -571,7 +573,7 @@ footer {
     .montaje-vii,
     .montaje-viii {
 
-        height: 330px;
+        height: 350px;
     }
 
     .texto-montaje-vii {
@@ -653,6 +655,7 @@ más importantes de ese camino.
 
 <!-- ==================================================
      PIEZA I
+     EL COMIENZO
 ================================================== -->
 
 <section class="pieza">
@@ -660,7 +663,7 @@ más importantes de ese camino.
 <div class="imagen-pieza">
 
 <img
-src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/IMG-20220905-WA0002.jpg"
+src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/IMG-20220905-WA0002.jpg?raw=true"
 alt="El comienzo de mi trayectoria atlética"
 >
 
@@ -692,6 +695,7 @@ que con el paso de los años acabaría formando parte de mi vida.
 
 <!-- ==================================================
      PIEZA II
+     MIS PRIMERAS CARRERAS
 ================================================== -->
 
 <section class="pieza">
@@ -699,7 +703,7 @@ que con el paso de los años acabaría formando parte de mi vida.
 <div class="imagen-pieza">
 
 <img
-src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/20160910_192158.jpg"
+src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/20160910_192158.jpg?raw=true"
 alt="Mis primeras carreras"
 >
 
@@ -713,14 +717,19 @@ alt="Mis primeras carreras"
 <h2>Mis primeras carreras</h2>
 
 <p>
-Llegó el momento de pasar de los entrenamientos a la competición.
-La primera carrera que recuerdo de una manera especial fue
-una media maratón en Jerez de la Frontera.
+Llegó el momento de pasar de los entrenamientos
+a la competición.
 </p>
 
 <p>
-Cada carrera se convirtió en una nueva experiencia y en una
-oportunidad para seguir aprendiendo.
+Las primeras carreras fueron descubriendo poco a poco
+lo que significaba ponerse un dorsal, enfrentarse al
+recorrido y cruzar la línea de meta.
+</p>
+
+<p>
+Cada carrera se convirtió en una nueva experiencia
+y en una oportunidad para seguir aprendiendo.
 </p>
 
 </div>
@@ -730,6 +739,7 @@ oportunidad para seguir aprendiendo.
 
 <!-- ==================================================
      PIEZA III
+     ATLETISMO DE NUEVA JARILLA
 ================================================== -->
 
 <section class="pieza">
@@ -737,7 +747,7 @@ oportunidad para seguir aprendiendo.
 <div class="imagen-pieza">
 
 <img
-src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/20190407_153139.jpg"
+src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/20161218_110620.jpg?raw=true"
 alt="Atletismo de Nueva Jarilla"
 >
 
@@ -751,15 +761,18 @@ alt="Atletismo de Nueva Jarilla"
 <h2>Atletismo de Nueva Jarilla</h2>
 
 <p>
-Uno de los momentos importantes de mi trayectoria fue formar
-parte del equipo Atletismo de Nueva Jarilla.
+Uno de los momentos importantes de mi trayectoria fue
+formar parte del equipo Atletismo de Nueva Jarilla.
 </p>
 
 <p>
 El atletismo dejó entonces de ser solamente una experiencia
-individual. Entrenar, competir y compartir kilómetros con
-otros compañeros hizo que este deporte adquiriera todavía
-más sentido.
+individual.
+</p>
+
+<p>
+Entrenar, competir y compartir kilómetros con otros compañeros
+hizo que este deporte adquiriera todavía más sentido.
 </p>
 
 </div>
@@ -769,6 +782,7 @@ más sentido.
 
 <!-- ==================================================
      PIEZA IV
+     EL PRIMER PÓDIUM
 ================================================== -->
 
 <section class="pieza">
@@ -776,7 +790,7 @@ más sentido.
 <div class="imagen-pieza">
 
 <img
-src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/DSC_0922_resultado_resultado.jpg"
+src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/20190407_153139.jpg?raw=true"
 alt="El primer pódium"
 >
 
@@ -791,12 +805,15 @@ alt="El primer pódium"
 
 <p>
 Hay momentos que permanecen para siempre en la memoria.
+</p>
+
+<p>
 Uno de ellos fue mi primer pódium.
 </p>
 
 <p>
-Fue en el cross de Sanlúcar de Barrameda, donde conseguí
-la primera posición.
+Fue en el cross de Sanlúcar de Barrameda,
+donde conseguí la primera posición.
 </p>
 
 <p>
@@ -824,6 +841,7 @@ pero la historia continúa al día siguiente.”
 
 <!-- ==================================================
      PIEZA V
+     LOS AÑOS PASAN
 ================================================== -->
 
 <section class="pieza">
@@ -831,7 +849,7 @@ pero la historia continúa al día siguiente.”
 <div class="imagen-pieza">
 
 <img
-src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/IMG-20220905-WA0002.jpg"
+src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/IMG_20251229_174240.jpg?raw=true"
 alt="Los años pasan"
 >
 
@@ -845,15 +863,19 @@ alt="Los años pasan"
 <h2>Los años pasan</h2>
 
 <p>
-Con el paso de los años cambia la manera de entender el deporte.
-También cambia la forma de entrenar, de competir y de afrontar
-cada nuevo reto.
+Con el paso de los años cambia la manera de entender
+el deporte.
+</p>
+
+<p>
+También cambia la forma de entrenar, de competir
+y de afrontar cada nuevo reto.
 </p>
 
 <p>
 El objetivo ya no es solamente mejorar una marca.
-También es disfrutar del camino y seguir encontrando motivos
-para continuar.
+También es disfrutar del camino y seguir encontrando
+motivos para continuar.
 </p>
 
 </div>
@@ -863,6 +885,7 @@ para continuar.
 
 <!-- ==================================================
      PIEZA VI
+     LAS DIFICULTADES
 ================================================== -->
 
 <section class="pieza">
@@ -870,7 +893,7 @@ para continuar.
 <div class="imagen-pieza">
 
 <img
-src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/20190407_153139.jpg"
+src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/DSC_0922_resultado_resultado.jpg?raw=true"
 alt="Las dificultades también forman parte del camino"
 >
 
@@ -884,13 +907,14 @@ alt="Las dificultades también forman parte del camino"
 <h2>Las dificultades también forman parte del camino</h2>
 
 <p>
-Ninguna trayectoria deportiva está formada solamente por
-buenos momentos.
+Ninguna trayectoria deportiva está formada solamente
+por buenos momentos.
 </p>
 
 <p>
-También existen dificultades, momentos en los que hay que
-detenerse y situaciones que obligan a cambiar los planes.
+También existen dificultades, lesiones, momentos en los
+que hay que detenerse y situaciones que obligan a cambiar
+los planes.
 </p>
 
 <p>
@@ -905,6 +929,7 @@ recuperarse y volver a empezar.
 
 <!-- ==================================================
      PIEZA VII
+     UNA NUEVA ETAPA
 ================================================== -->
 
 <section class="pieza">
@@ -913,7 +938,7 @@ recuperarse y volver a empezar.
 <div class="montaje-vii">
 
 <img
-src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/IMG-20220905-WA0002.jpg"
+src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/IMG_20260321_093209.jpg?raw=true"
 alt="Una nueva etapa"
 >
 
@@ -945,10 +970,10 @@ permanecen.
 </p>
 
 <p>
-Hoy comienza una nueva etapa. Una etapa diferente,
-en la que el objetivo no es demostrar nada a nadie,
-sino continuar disfrutando del camino, adaptándome
-a cada momento y buscando nuevos retos.
+Hoy comienza una nueva etapa.
+Una etapa diferente, en la que el objetivo no es demostrar
+nada a nadie, sino continuar disfrutando del camino,
+adaptándome a cada momento y buscando nuevos retos.
 </p>
 
 <p>
@@ -963,6 +988,7 @@ dejar de avanzar.
 
 <!-- ==================================================
      PIEZA VIII
+     EL CAMINO CONTINÚA
 ================================================== -->
 
 <section class="pieza">
@@ -971,7 +997,7 @@ dejar de avanzar.
 <div class="montaje-viii">
 
 <img
-src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/IMG-20220905-WA0002.jpg"
+src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/IMG-20220122-WA0000.jpg?raw=true"
 alt="El camino continúa"
 >
 
@@ -1007,14 +1033,18 @@ Esta historia no termina aquí.
 
 <p>
 Después de tantos años, el atletismo sigue formando
-parte de mi vida. Quizás cambien las distancias,
-los objetivos o la manera de entrenar, pero permanece
-lo más importante: las ganas de seguir adelante.
+parte de mi vida.
 </p>
 
 <p>
-Mientras haya un camino por delante, habrá una razón
-para recorrerlo.
+Quizás cambien las distancias, los objetivos o la manera
+de entrenar, pero permanece lo más importante:
+las ganas de seguir adelante.
+</p>
+
+<p>
+Mientras haya un camino por delante,
+habrá una razón para recorrerlo.
 </p>
 
 </div>
@@ -1052,4 +1082,6 @@ Mi trayectoria atlética · 2026
 </body>
 
 </html>
+
+
 
