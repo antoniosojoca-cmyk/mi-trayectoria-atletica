@@ -29,21 +29,23 @@ body {
 /* CABECERA */
 
 
-    header {
+    /* =========================================
+   CABECERA — MI HISTORIA
+========================================= */
+
+header {
     position: relative;
     width: 100%;
-    min-height: 0;
-    padding: 0;
     overflow: hidden;
-    text-align: center;
     background: #050505;
+    text-align: center;
+    line-height: 0;
 }
 
-header::before {
-    content: "";
-    display: block;
+header img {
     width: 100%;
-    padding-top: 56%;
+    height: auto;
+    display: block;
 }
 
 header::after {
@@ -53,26 +55,63 @@ header::after {
 
     background:
         linear-gradient(
-            rgba(0,0,0,0.35),
-            rgba(0,0,0,0.65)
+            rgba(0,0,0,0.25),
+            rgba(0,0,0,0.60)
         );
+}
+
+.cabecera-contenido {
+    position: absolute;
+
+    z-index: 2;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 900px;
+
+    line-height: 1.5;
+}
+
+header h1 {
+    margin: 0;
+
+    font-size: 62px;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 3px 12px rgba(0,0,0,0.9);
+}
+
+header p {
+    margin: 20px auto 0;
+
+    max-width: 750px;
+
+    font-size: 21px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,0.9);
 }
 
 
     <header>
 
+<header>
+
 <img
-    src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/DSC_0922_resultado_resultado.jpg?raw=true"
-    alt="Mi trayectoria atlética"
-    style="
-        position:absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        object-fit:contain;
-        display:block;
-    "
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/DSC_0922_resultado_resultado.jpg"
+alt="Mi trayectoria atlética"
 >
 
 <div class="cabecera-contenido">
@@ -87,6 +126,7 @@ esfuerzo, aprendizaje y nuevos caminos.
 </div>
 
 </header>
+    
 header h1 {
     margin: 0;
 
@@ -210,28 +250,30 @@ header p {
     color: #eee;
 }
 
-/* PIEZA VII */
+
+    /* =========================================
+   PIEZA VII
+========================================= */
 
 .montaje-vii {
     position: relative;
+
     width: 100%;
-    height: 500px;
+
     overflow: hidden;
+
     background: #050505;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    line-height: 0;
 }
 
 .montaje-vii img {
     width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-    object-position: center;
+    height: auto;
 
     display: block;
+
+    object-fit: contain;
 
     filter: grayscale(15%) contrast(1.05);
 }
@@ -274,28 +316,30 @@ header p {
     letter-spacing: 2px;
 }
 
-/* PIEZA VIII */
+
+    /* =========================================
+   PIEZA VIII
+========================================= */
 
 .montaje-viii {
     position: relative;
+
     width: 100%;
-    height: 500px;
+
     overflow: hidden;
+
     background: #050505;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    line-height: 0;
 }
 
 .montaje-viii img {
     width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-    object-position: center;
+    height: auto;
 
     display: block;
+
+    object-fit: contain;
 
     filter: grayscale(20%) contrast(1.08);
 }
