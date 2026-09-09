@@ -1055,7 +1055,62 @@ Mi trayectoria atlética · 2026
 
 </footer>
 
+<!-- Música de Mi historia -->
+<div id="musicButton" onclick="toggleMusic()">🔊</div>
 
+<div id="youtubePlayer">
+    <iframe
+        id="musicFrame"
+        src="https://www.youtube.com/embed/EuzOJ0wT99U?autoplay=1&loop=1&playlist=EuzOJ0wT99U&start=2&mute=0"
+        allow="autoplay"
+        frameborder="0">
+    </iframe>
+</div>
+
+<style>
+#musicButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.75);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 9999;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+#youtubePlayer {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    left: -10px;
+    bottom: -10px;
+    overflow: hidden;
+}
+
+#youtubePlayer iframe {
+    width: 1px;
+    height: 1px;
+}
+</style>
+
+<script>
+function toggleMusic() {
+    const frame = document.getElementById("musicFrame");
+    frame.contentWindow.postMessage(
+        '{"event":"command","func":"unMute","args":""}',
+        "*"
+    );
+    document.getElementById("musicButton").innerHTML = "🔊";
+}
+</script>
 </body>
 
 </html>
