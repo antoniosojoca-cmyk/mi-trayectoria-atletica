@@ -1,14 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Mi historia | Mi trayectoria atlética</title>
 
 <style>
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
 
 * {
     box-sizing: border-box;
@@ -26,10 +30,8 @@ body {
     line-height: 1.8;
 }
 
-/* CABECERA */
 
-
-    /* =========================================
+/* =========================================
    CABECERA — MI HISTORIA
 ========================================= */
 
@@ -42,7 +44,7 @@ header {
     line-height: 0;
 }
 
-header img {
+header > img {
     width: 100%;
     height: auto;
     display: block;
@@ -56,13 +58,12 @@ header::after {
     background:
         linear-gradient(
             rgba(0,0,0,0.25),
-            rgba(0,0,0,0.60)
+            rgba(0,0,0,0.65)
         );
 }
 
 .cabecera-contenido {
     position: absolute;
-
     z-index: 2;
 
     top: 50%;
@@ -71,7 +72,7 @@ header::after {
     transform: translate(-50%, -50%);
 
     width: 90%;
-    max-width: 900px;
+    max-width: 1000px;
 
     line-height: 1.5;
 }
@@ -79,7 +80,7 @@ header::after {
 header h1 {
     margin: 0;
 
-    font-size: 62px;
+    font-size: 64px;
 
     letter-spacing: 6px;
 
@@ -88,127 +89,113 @@ header h1 {
     color: #ffffff;
 
     text-shadow:
-        0 3px 12px rgba(0,0,0,0.9);
+        0 3px 12px rgba(0,0,0,0.95);
 }
 
 header p {
     margin: 20px auto 0;
 
-    max-width: 750px;
+    max-width: 800px;
 
     font-size: 21px;
 
     color: #ffffff;
 
     text-shadow:
-        0 2px 8px rgba(0,0,0,0.9);
+        0 2px 8px rgba(0,0,0,0.95);
 }
 
 
-    <header>
-
-<header>
-
-<img
-src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/DSC_0922_resultado_resultado.jpg"
-alt="Mi trayectoria atlética"
->
-
-<div class="cabecera-contenido">
-
-<h1>Mi historia</h1>
-
-<p>
-Una vida entre kilómetros, carreras,
-esfuerzo, aprendizaje y nuevos caminos.
-</p>
-
-</div>
-
-</header>
-    
-header h1 {
-    margin: 0;
-
-    font-size: 62px;
-
-    letter-spacing: 6px;
-
-    text-transform: uppercase;
-}
-
-header p {
-    margin: 20px auto 0;
-
-    max-width: 750px;
-
-    font-size: 21px;
-
-    color: #d8d8d8;
-}
-/* INTRODUCCIÓN */
+/* =========================================
+   INTRODUCCIÓN
+========================================= */
 
 .introduccion {
     max-width: 900px;
+
     margin: 0 auto;
+
     padding: 70px 25px 30px;
+
     text-align: center;
 }
 
 .introduccion h2 {
     font-size: 30px;
+
     font-weight: normal;
+
     letter-spacing: 2px;
+
     margin-bottom: 25px;
 }
 
 .introduccion p {
     font-size: 19px;
-    color: #ccc;
+
+    color: #cccccc;
 }
 
-/* CONTENEDOR */
+
+/* =========================================
+   CONTENEDOR
+========================================= */
 
 .contenedor {
-    max-width: 1050px;
+    max-width: 1100px;
+
     margin: 0 auto;
+
     padding: 30px 25px 90px;
 }
 
-/* PIEZAS */
+
+/* =========================================
+   PIEZAS
+========================================= */
 
 .pieza {
     margin: 80px 0;
-    background: #111;
-    border: 1px solid #333;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+
+    background: #111111;
+
+    border: 1px solid #333333;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.45);
+
     overflow: hidden;
 }
 
-/*
-   IMPORTANTE:
-   contain hace que la fotografía COMPLETA
-   entre en el espacio sin cortar cabezas.
-*/
 
+/* =========================================
+   IMÁGENES DE LAS PIEZAS
+   LA FOTO COMPLETA
+   SIN RECORTAR
+========================================= */
 
-    .imagen-pieza {
+.imagen-pieza {
     width: 100%;
+
     overflow: hidden;
+
     background: #050505;
+
     line-height: 0;
 }
 
 .imagen-pieza img {
     width: 100%;
+
     height: auto;
+
     display: block;
 }
-.pieza:hover .imagen-pieza img {
-    transform: scale(1.02);
-}
 
-/* CONTENIDO */
+
+/* =========================================
+   CONTENIDO DE LAS PIEZAS
+========================================= */
 
 .contenido-pieza {
     padding: 45px 55px 55px;
@@ -216,42 +203,63 @@ header p {
 
 .numero {
     display: block;
+
     margin-bottom: 8px;
-    color: #999;
+
+    color: #999999;
+
     font-size: 15px;
+
     letter-spacing: 4px;
+
     text-transform: uppercase;
 }
 
 .contenido-pieza h2 {
     margin: 0 0 25px;
+
     font-size: 38px;
+
     font-weight: normal;
+
     letter-spacing: 1px;
 }
 
 .contenido-pieza p {
     margin: 0 0 20px;
+
     color: #d2d2d2;
+
     font-size: 18px;
 }
 
-/* FRASE */
+
+/* =========================================
+   FRASE CENTRAL
+========================================= */
 
 .frase {
     max-width: 850px;
+
     margin: 90px auto;
+
     padding: 45px 30px;
+
     text-align: center;
-    border-top: 1px solid #444;
-    border-bottom: 1px solid #444;
+
+    border-top: 1px solid #444444;
+
+    border-bottom: 1px solid #444444;
+
     font-size: 26px;
+
     font-style: italic;
-    color: #eee;
+
+    color: #eeeeee;
 }
 
 
-    /* =========================================
+/* =========================================
    PIEZA VII
 ========================================= */
 
@@ -269,55 +277,77 @@ header p {
 
 .montaje-vii img {
     width: 100%;
+
     height: auto;
 
     display: block;
 
-    object-fit: contain;
-
-    filter: grayscale(15%) contrast(1.05);
+    filter:
+        grayscale(15%)
+        contrast(1.05);
 }
 
 .montaje-vii::after {
     content: "";
+
     position: absolute;
+
     inset: 0;
 
     background:
         linear-gradient(
             to right,
-            rgba(0,0,0,0.65),
-            rgba(0,0,0,0.10),
+            rgba(0,0,0,0.60),
+            rgba(0,0,0,0.08),
             rgba(0,0,0,0.60)
         );
 }
 
 .texto-montaje-vii {
     position: absolute;
+
     z-index: 2;
+
     left: 55px;
+
     bottom: 45px;
+
     max-width: 650px;
+
+    line-height: 1.4;
 }
 
 .texto-montaje-vii .pequeno {
     display: block;
-    color: #ccc;
+
+    color: #dddddd;
+
     font-size: 14px;
+
     letter-spacing: 5px;
+
     text-transform: uppercase;
+
     margin-bottom: 12px;
 }
 
 .texto-montaje-vii h2 {
     margin: 0;
+
     font-size: 46px;
+
     font-weight: normal;
+
     letter-spacing: 2px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 3px 10px rgba(0,0,0,0.9);
 }
 
 
-    /* =========================================
+/* =========================================
    PIEZA VIII
 ========================================= */
 
@@ -335,107 +365,147 @@ header p {
 
 .montaje-viii img {
     width: 100%;
+
     height: auto;
 
     display: block;
 
-    object-fit: contain;
-
-    filter: grayscale(20%) contrast(1.08);
+    filter:
+        grayscale(20%)
+        contrast(1.08);
 }
 
 .montaje-viii::after {
     content: "";
+
     position: absolute;
+
     inset: 0;
 
     background:
-        radial-gradient(
-            circle at center,
-            rgba(0,0,0,0.05),
-            rgba(0,0,0,0.82)
+        linear-gradient(
+            rgba(0,0,0,0.20),
+            rgba(0,0,0,0.65)
         );
 }
 
 .texto-montaje-viii {
     position: absolute;
+
     z-index: 2;
 
     left: 0;
+
     right: 0;
+
     top: 50%;
 
     transform: translateY(-50%);
 
     text-align: center;
+
     padding: 25px;
+
+    line-height: 1.5;
 }
 
 .texto-montaje-viii .pequeno {
     display: block;
-    color: #ccc;
+
+    color: #dddddd;
+
     font-size: 14px;
+
     letter-spacing: 5px;
+
     text-transform: uppercase;
+
     margin-bottom: 15px;
 }
 
 .texto-montaje-viii h2 {
     margin: 0;
+
     font-size: 48px;
+
     font-weight: normal;
+
     letter-spacing: 3px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 3px 12px rgba(0,0,0,0.9);
 }
 
 .texto-montaje-viii p {
     max-width: 650px;
+
     margin: 20px auto 0;
-    color: #ddd;
+
+    color: #eeeeee;
+
     font-size: 18px;
 }
 
-/* VOLVER */
+
+/* =========================================
+   BOTÓN VOLVER
+========================================= */
 
 .volver {
     text-align: center;
+
     margin: 70px 0 20px;
 }
 
 .volver a {
     display: inline-block;
+
     padding: 14px 28px;
-    color: #fff;
+
+    color: #ffffff;
+
     text-decoration: none;
-    border: 1px solid #777;
+
+    border: 1px solid #777777;
+
     transition: 0.3s;
 }
 
 .volver a:hover {
-    background: #fff;
-    color: #111;
+    background: #ffffff;
+
+    color: #111111;
 }
 
-/* PIE */
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
 
 footer {
     text-align: center;
+
     padding: 30px 20px;
+
     border-top: 1px solid #292929;
-    color: #777;
+
+    color: #777777;
+
     font-size: 14px;
 }
 
-/* MÓVIL */
+
+/* =========================================
+   MÓVIL
+========================================= */
 
 @media (max-width: 700px) {
 
-    header {
-        min-height: 50vh;
-        padding: 60px 20px;
-    }
-
     header h1 {
         font-size: 38px;
+
         letter-spacing: 3px;
     }
 
@@ -459,10 +529,6 @@ footer {
         margin: 55px 0;
     }
 
-    .imagen-pieza {
-        height: 330px;
-    }
-
     .contenido-pieza {
         padding: 30px 25px 35px;
     }
@@ -477,16 +543,13 @@ footer {
 
     .frase {
         font-size: 21px;
-        margin: 60px auto;
-    }
 
-    .montaje-vii,
-    .montaje-viii {
-        height: 350px;
+        margin: 60px auto;
     }
 
     .texto-montaje-vii {
         left: 25px;
+
         bottom: 30px;
     }
 
@@ -508,11 +571,20 @@ footer {
 
 </head>
 
+
 <body>
 
-<!-- CABECERA -->
+
+<!-- =========================================
+     CABECERA
+========================================= -->
 
 <header>
+
+<img
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/IMG_20251229_174240.jpg"
+alt="Mi trayectoria atlética"
+>
 
 <div class="cabecera-contenido">
 
@@ -528,7 +600,9 @@ esfuerzo, aprendizaje y nuevos caminos.
 </header>
 
 
-<!-- INTRODUCCIÓN -->
+<!-- =========================================
+     INTRODUCCIÓN
+========================================= -->
 
 <section class="introduccion">
 
@@ -551,14 +625,16 @@ más importantes de ese camino.
 <main class="contenedor">
 
 
-<!-- PIEZA I -->
+<!-- =========================================
+     PIEZA I
+========================================= -->
 
 <section class="pieza">
 
 <div class="imagen-pieza">
 
 <img
-src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/IMG-20220905-WA0002.jpg?raw=true"
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/IMG-20220905-WA0002.jpg"
 alt="El comienzo de mi trayectoria atlética"
 >
 
@@ -566,9 +642,13 @@ alt="El comienzo de mi trayectoria atlética"
 
 <div class="contenido-pieza">
 
-<span class="numero">Pieza I</span>
+<span class="numero">
+Pieza I
+</span>
 
-<h2>El comienzo</h2>
+<h2>
+El comienzo
+</h2>
 
 <p>
 Mi historia en el atletismo comenzó casi sin darme cuenta.
@@ -587,14 +667,16 @@ que con el paso de los años acabaría formando parte de mi vida.
 </section>
 
 
-<!-- PIEZA II -->
+<!-- =========================================
+     PIEZA II
+========================================= -->
 
 <section class="pieza">
 
 <div class="imagen-pieza">
 
 <img
-src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/20160910_192158.jpg?raw=true"
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/20160910_192158.jpg"
 alt="Mis primeras carreras"
 >
 
@@ -602,9 +684,13 @@ alt="Mis primeras carreras"
 
 <div class="contenido-pieza">
 
-<span class="numero">Pieza II</span>
+<span class="numero">
+Pieza II
+</span>
 
-<h2>Mis primeras carreras</h2>
+<h2>
+Mis primeras carreras
+</h2>
 
 <p>
 Llegó el momento de pasar de los entrenamientos
@@ -627,14 +713,16 @@ y en una oportunidad para seguir aprendiendo.
 </section>
 
 
-<!-- PIEZA III -->
+<!-- =========================================
+     PIEZA III
+========================================= -->
 
 <section class="pieza">
 
 <div class="imagen-pieza">
 
 <img
-src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/20161218_110620.jpg?raw=true"
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/20161218_110620.jpg"
 alt="Atletismo de Nueva Jarilla"
 >
 
@@ -642,9 +730,13 @@ alt="Atletismo de Nueva Jarilla"
 
 <div class="contenido-pieza">
 
-<span class="numero">Pieza III</span>
+<span class="numero">
+Pieza III
+</span>
 
-<h2>Atletismo de Nueva Jarilla</h2>
+<h2>
+Atletismo de Nueva Jarilla
+</h2>
 
 <p>
 Uno de los momentos importantes de mi trayectoria fue
@@ -666,14 +758,16 @@ hizo que este deporte adquiriera todavía más sentido.
 </section>
 
 
-<!-- PIEZA IV -->
+<!-- =========================================
+     PIEZA IV
+========================================= -->
 
 <section class="pieza">
 
 <div class="imagen-pieza">
 
 <img
-src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/20190407_153139.jpg?raw=true"
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/20190407_153139.jpg"
 alt="El primer pódium"
 >
 
@@ -681,9 +775,13 @@ alt="El primer pódium"
 
 <div class="contenido-pieza">
 
-<span class="numero">Pieza IV</span>
+<span class="numero">
+Pieza IV
+</span>
 
-<h2>El primer pódium</h2>
+<h2>
+El primer pódium
+</h2>
 
 <p>
 Hay momentos que permanecen para siempre en la memoria.
@@ -709,7 +807,9 @@ realizados hasta llegar a ese momento.
 </section>
 
 
-<!-- FRASE -->
+<!-- =========================================
+     FRASE
+========================================= -->
 
 <div class="frase">
 
@@ -719,14 +819,16 @@ pero la historia continúa al día siguiente.”
 </div>
 
 
-<!-- PIEZA V -->
+<!-- =========================================
+     PIEZA V
+========================================= -->
 
 <section class="pieza">
 
 <div class="imagen-pieza">
 
 <img
-src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/IMG_20251229_174240.jpg?raw=true"
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/IMG_20251229_174240.jpg"
 alt="Los años pasan"
 >
 
@@ -734,9 +836,13 @@ alt="Los años pasan"
 
 <div class="contenido-pieza">
 
-<span class="numero">Pieza V</span>
+<span class="numero">
+Pieza V
+</span>
 
-<h2>Los años pasan</h2>
+<h2>
+Los años pasan
+</h2>
 
 <p>
 Con el paso de los años cambia la manera de entender
@@ -759,14 +865,16 @@ motivos para continuar.
 </section>
 
 
-<!-- PIEZA VI -->
+<!-- =========================================
+     PIEZA VI
+========================================= -->
 
 <section class="pieza">
 
 <div class="imagen-pieza">
 
 <img
-src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/DSC_0922_resultado_resultado.jpg?raw=true"
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/DSC_0922_resultado_resultado.jpg"
 alt="Las dificultades también forman parte del camino"
 >
 
@@ -774,9 +882,13 @@ alt="Las dificultades también forman parte del camino"
 
 <div class="contenido-pieza">
 
-<span class="numero">Pieza VI</span>
+<span class="numero">
+Pieza VI
+</span>
 
-<h2>Las dificultades también forman parte del camino</h2>
+<h2>
+Las dificultades también forman parte del camino
+</h2>
 
 <p>
 Ninguna trayectoria deportiva está formada solamente
@@ -799,14 +911,16 @@ recuperarse y volver a empezar.
 </section>
 
 
-<!-- PIEZA VII -->
+<!-- =========================================
+     PIEZA VII
+========================================= -->
 
 <section class="pieza">
 
 <div class="montaje-vii">
 
 <img
-src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/IMG_20260321_093209.jpg?raw=true"
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/IMG_20260321_093209.jpg"
 alt="Una nueva etapa"
 >
 
@@ -826,9 +940,13 @@ Una nueva etapa
 
 <div class="contenido-pieza">
 
-<span class="numero">Pieza VII</span>
+<span class="numero">
+Pieza VII
+</span>
 
-<h2>Una nueva etapa</h2>
+<h2>
+Una nueva etapa
+</h2>
 
 <p>
 El tiempo pasa, pero las ganas de seguir haciendo deporte
@@ -852,14 +970,16 @@ dejar de avanzar.
 </section>
 
 
-<!-- PIEZA VIII -->
+<!-- =========================================
+     PIEZA VIII
+========================================= -->
 
 <section class="pieza">
 
 <div class="montaje-viii">
 
 <img
-src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/IMG-20220122-WA0000.jpg?raw=true"
+src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/main/IMG-20220122-WA0000.jpg"
 alt="El camino continúa"
 >
 
@@ -883,9 +1003,13 @@ Todavía quedan kilómetros por recorrer.
 
 <div class="contenido-pieza">
 
-<span class="numero">Pieza VIII</span>
+<span class="numero">
+Pieza VIII
+</span>
 
-<h2>El camino continúa</h2>
+<h2>
+El camino continúa
+</h2>
 
 <p>
 Esta historia no termina aquí.
@@ -912,7 +1036,9 @@ habrá una razón para recorrerlo.
 </section>
 
 
-<!-- VOLVER -->
+<!-- =========================================
+     VOLVER
+========================================= -->
 
 <div class="volver">
 
@@ -926,15 +1052,21 @@ habrá una razón para recorrerlo.
 </main>
 
 
+<!-- =========================================
+     PIE
+========================================= -->
+
 <footer>
 
 Mi trayectoria atlética · 2026
 
 </footer>
 
+
 </body>
 
 </html>
+
 
 
 
