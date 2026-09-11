@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +9,7 @@
     <title>Mi trayectoria atlética</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -18,158 +21,211 @@
             font-family: Georgia, "Times New Roman", serif;
         }
 
+        header {
+            min-height: 100vh;
 
-        
-  
-        
-       
-        
-       
-        <header>
+            background:
+                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+                url("20180909_094909.jpg")
+                center center / cover no-repeat;
 
-    <div class="portada">
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-        <h1 style="font-size: 48px; letter-spacing: 3px; margin: 0 0 15px;">
-            Mi trayectoria atlética
-        </h1>
+            text-align: center;
+            padding: 40px 20px;
+        }
 
-        <h2 style="font-size: 22px; font-weight: normal; margin: 0 0 20px;">
-            Una vida entre kilómetros, carreras y nuevos caminos
-        </h2>
+        .portada {
+            max-width: 900px;
+            width: 100%;
+        }
 
-        <p style="font-size: 17px; line-height: 1.5; max-width: 650px; margin: 0 auto 25px;">
-            Más de quince años formando parte del atletismo.
-            Una historia de esfuerzo, carreras, aprendizajes,
-            dificultades y experiencias que continúan hoy
-            con una nueva etapa en la marcha atlética.
-        </p>
+        .portada h1 {
+            margin: 0 0 14px;
+            font-size: 44px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
 
-        <nav class="menu" style="gap: 8px;">
+        .portada h2 {
+            margin: 0 0 22px;
+            font-size: 21px;
+            font-weight: normal;
+        }
 
-            <a href="mi-historia.html"
-               style="padding: 9px 15px; font-size: 16px;">
-                Mi historia
-            </a>
+        .portada p {
+            max-width: 680px;
+            margin: 0 auto 28px;
+            font-size: 17px;
+            line-height: 1.5;
+        }
 
-            <a href="mis-carreras.html"
-               style="padding: 9px 15px; font-size: 16px;">
-                Mis carreras
-            </a>
+        .menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
 
-            <a href="#"
-               style="padding: 9px 15px; font-size: 16px;">
-                Entrenamiento
-            </a>
+        .menu a {
+            display: inline-block;
+            padding: 9px 14px;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.7);
+            font-size: 16px;
+            transition: 0.3s;
+        }
 
-            <a href="#"
-               style="padding: 9px 15px; font-size: 16px;">
-                La lesión
-            </a>
+        .menu a:hover {
+            background: rgba(255,255,255,0.15);
+        }
 
-            <a href="#"
-               style="padding: 9px 15px; font-size: 16px;">
-                Marcha atlética
-            </a>
+        footer {
+            position: fixed;
+            bottom: 18px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #ddd;
+            font-size: 14px;
+            z-index: 10;
+        }
 
-            <a href="#"
-               style="padding: 9px 15px; font-size: 16px;">
-                Galería
-            </a>
+        #musicButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
 
-        </nav>
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            background: rgba(0,0,0,0.75);
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 20px;
+            cursor: pointer;
+
+            z-index: 9999;
+
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        #youtubePlayer {
+            position: fixed;
+            width: 1px;
+            height: 1px;
+            left: -10px;
+            bottom: -10px;
+            overflow: hidden;
+        }
+
+        #youtubePlayer iframe {
+            width: 1px;
+            height: 1px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="portada">
+
+            <h1>
+                Mi trayectoria atlética
+            </h1>
+
+            <h2>
+                Una vida entre kilómetros, carreras y nuevos caminos
+            </h2>
+
+            <p>
+                Más de quince años formando parte del atletismo.
+                Una historia de esfuerzo, carreras, aprendizajes,
+                dificultades y experiencias que continúan hoy
+                con una nueva etapa en la marcha atlética.
+            </p>
+
+            <nav class="menu">
+
+                <a href="mi-historia.html">
+                    Mi historia
+                </a>
+
+                <a href="mis-carreras.html">
+                    Mis carreras
+                </a>
+
+                <a href="#">
+                    Entrenamiento
+                </a>
+
+                <a href="#">
+                    La lesión
+                </a>
+
+                <a href="#">
+                    Marcha atlética
+                </a>
+
+                <a href="#">
+                    Galería
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <footer>
+        Mi trayectoria atlética · 2026
+    </footer>
+
+    <!-- Música -->
+
+    <div id="musicButton" onclick="toggleMusic()">
+        🔊
+    </div>
+
+    <div id="youtubePlayer">
+
+        <iframe
+            id="musicFrame"
+            src="https://www.youtube.com/embed/RSpBVK-siHw?autoplay=1&loop=1&playlist=RSpBVK-siHw&start=18&mute=0"
+            allow="autoplay"
+            frameborder="0">
+        </iframe>
 
     </div>
 
-</header>
- 
-            
+    <script>
 
-    <div class="portada">
+        function toggleMusic() {
 
-        <h1>Mi trayectoria atlética</h1>
+            const frame = document.getElementById("musicFrame");
 
-        <h2>Una vida entre kilómetros, carreras y nuevos caminos</h2>
+            frame.contentWindow.postMessage(
+                '{"event":"command","func":"unMute","args":""}',
+                "*"
+            );
 
-        <p>
-            Más de quince años formando parte del atletismo.
-            Una historia de esfuerzo, carreras, aprendizajes,
-            dificultades y experiencias que continúan hoy
-            con una nueva etapa en la marcha atlética.
-        </p>
+            document.getElementById("musicButton").innerHTML = "🔊";
+        }
 
-        <nav class="menu">
-            
-            <a href="mi-historia.html">Mi historia</a>
-           <a href="mis-carreras.html">Mis carreras</a>
-            <a href="#">Entrenamiento</a>
-            <a href="#">La lesión</a>
-            <a href="#">Marcha atlética</a>
-            <a href="#">Galería</a>
-        </nav>
+    </script>
 
-    </div>
-
-</header>
-
-<footer>
-    Mi trayectoria atlética · 2026
-</footer>
-<!-- Música de la portada -->
-<div id="musicButton" onclick="toggleMusic()">🔊</div>
-
-<div id="youtubePlayer">
-    <iframe
-        id="musicFrame"
-        src="https://www.youtube.com/embed/RSpBVK-siHw?autoplay=1&loop=1&playlist=RSpBVK-siHw&start=18&mute=0"
-        allow="autoplay"
-        frameborder="0">
-    </iframe>
-</div>
-
-<style>
-#musicButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: rgba(0,0,0,0.75);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 9999;
-    border: 1px solid rgba(255,255,255,0.5);
-}
-
-#youtubePlayer {
-    position: fixed;
-    width: 1px;
-    height: 1px;
-    left: -10px;
-    bottom: -10px;
-    overflow: hidden;
-}
-
-#youtubePlayer iframe {
-    width: 1px;
-    height: 1px;
-}
-</style>
-
-<script>
-function toggleMusic() {
-    const frame = document.getElementById("musicFrame");
-    frame.contentWindow.postMessage(
-        '{"event":"command","func":"unMute","args":""}',
-        "*"
-    );
-    document.getElementById("musicButton").innerHTML = "🔊";
-}
-</script>
 </body>
+
 </html>
-<!-- GitHub Pages -->
