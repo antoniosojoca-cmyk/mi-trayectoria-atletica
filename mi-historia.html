@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -26,7 +27,6 @@ body{
     line-height:1.7;
 }
 
-
 /* =========================================================
    PORTADA
    ========================================================= */
@@ -46,7 +46,7 @@ body{
 }
 
 .titulo-portada{
-    padding:25px 20px 38px;
+    padding:25px 20px 30px;
     border-bottom:1px solid #c9a35b;
 }
 
@@ -67,9 +67,28 @@ body{
 }
 
 .titulo-portada p{
-    margin:8px 0 0;
+    margin:8px 0 15px;
     color:#ddd;
     font-size:18px;
+}
+
+/* BOTÓN VOLVER */
+
+.volver{
+    display:inline-block;
+    margin-top:8px;
+    padding:8px 18px;
+    border:1px solid #c9a35b;
+    color:#c9a35b;
+    text-decoration:none;
+    font-size:14px;
+    letter-spacing:1px;
+    transition:background .3s ease,color .3s ease;
+}
+
+.volver:hover{
+    background:#c9a35b;
+    color:#080808;
 }
 
 
@@ -279,7 +298,7 @@ body{
 }
 
 .final p{
-    margin:0;
+    margin:0 0 15px;
     color:#ccc;
     font-size:18px;
 }
@@ -393,15 +412,18 @@ body{
         font-size:34px;
     }
 
+    .volver{
+        font-size:13px;
+        padding:7px 15px;
+    }
+
 }
 
 </style>
 
 </head>
 
-
 <body>
-
 
 <!-- =========================================================
      PORTADA
@@ -409,29 +431,34 @@ body{
 
 <header class="portada">
 
-    <img
-        src="IMG-20180909-WA0003.jpg"
-        alt="Mi trayectoria atlética"
-    >
 
-    <div class="titulo-portada">
+<img
+    src="IMG-20180909-WA0003.jpg"
+    alt="Mi trayectoria atlética"
+>
 
-        <div class="pequeno">
-            Mi trayectoria atlética
-        </div>
+<div class="titulo-portada">
 
-        <h1>
-            Mi historia
-        </h1>
-
-        <p>
-            Una vida entre kilómetros, carreras y nuevos caminos
-        </p>
-
+    <div class="pequeno">
+        Mi trayectoria atlética
     </div>
 
-</header>
+    <h1>
+        Mi historia
+    </h1>
 
+    <p>
+        Una vida entre kilómetros, carreras y nuevos caminos
+    </p>
+
+    <a href="index.html" class="volver">
+        ← Volver al inicio
+    </a>
+
+</div>
+
+
+</header>
 
 <!-- =========================================================
      INTRODUCCIÓN
@@ -439,217 +466,219 @@ body{
 
 <section class="introduccion">
 
-    <div class="etiqueta">
-        El comienzo
-    </div>
+```
+<div class="etiqueta">
+    El comienzo
+</div>
 
-    <h2>
-        Una historia que empezó corriendo
-    </h2>
+<h2>
+    Una historia que empezó corriendo
+</h2>
 
-    <p>
-        Detrás de cada carrera hay mucho más que kilómetros.
-        Hay ilusión, esfuerzo, personas, momentos difíciles,
-        victorias y también momentos en los que toca volver a empezar.
-    </p>
+<p>
+    Detrás de cada carrera hay mucho más que kilómetros.
+    Hay ilusión, esfuerzo, personas, momentos difíciles,
+    victorias y también momentos en los que toca volver a empezar.
+</p>
+
 
 </section>
-
 
 <main class="historia">
 
-
 <!-- =========================================================
-     CAPÍTULO I — LOS PRIMEROS AÑOS
+     CAPÍTULO I
      ========================================================= -->
 
 <section class="capitulo">
 
-    <div class="foto-horizontal">
+```
+<div class="foto-horizontal">
 
-        <img
-            src="IMG_2083.jpg"
-            alt="Los primeros años"
-        >
+    <img
+        src="IMG_2083.jpg"
+        alt="Los primeros años"
+    >
 
+</div>
+
+<div class="texto-horizontal">
+
+    <div class="numero">
+        Capítulo I
     </div>
 
-    <div class="texto-horizontal">
+    <h2>
+        Los primeros años
+    </h2>
 
-        <div class="numero">
-            Capítulo I
-        </div>
+    <div class="linea"></div>
 
-        <h2>
-            Los primeros años
-        </h2>
+    <p>
+        Todo comenzó con las ganas de hacer deporte y descubrir
+        hasta dónde podía llegar corriendo.
+    </p>
 
-        <div class="linea"></div>
+    <p>
+        Al principio todo era aprendizaje. Había que conocer
+        el cuerpo, acostumbrarse al entrenamiento y entender
+        que mejorar no ocurre de un día para otro.
+    </p>
 
-        <p>
-            Todo comenzó con las ganas de hacer deporte y descubrir
-            hasta dónde podía llegar corriendo.
-        </p>
+    <p>
+        Poco a poco correr empezó a convertirse en una parte
+        importante de mi vida.
+    </p>
 
-        <p>
-            Al principio todo era aprendizaje. Había que conocer
-            el cuerpo, acostumbrarse al entrenamiento y entender
-            que mejorar no ocurre de un día para otro.
-        </p>
+</div>
 
-        <p>
-            Poco a poco correr empezó a convertirse en una parte
-            importante de mi vida.
-        </p>
-
-    </div>
 
 </section>
 
-
 <!-- =========================================================
-     CAPÍTULO II — NUEVA JARILLA
+     CAPÍTULO II
      ========================================================= -->
 
 <section class="capitulo">
 
-    <div class="foto-horizontal">
+```
+<div class="foto-horizontal">
 
-        <img
-            src="20161218_110620.jpg"
-            alt="Atletismo de Nueva Jarilla"
-        >
+    <img
+        src="20161218_110620.jpg"
+        alt="Atletismo de Nueva Jarilla"
+    >
 
+</div>
+
+<div class="texto-horizontal">
+
+    <div class="numero">
+        Capítulo II
     </div>
 
-    <div class="texto-horizontal">
+    <h2>
+        Atletismo de Nueva Jarilla
+    </h2>
 
-        <div class="numero">
-            Capítulo II
-        </div>
+    <div class="linea"></div>
 
-        <h2>
-            Atletismo de Nueva Jarilla
-        </h2>
+    <p>
+        Con el tiempo llegaron nuevas experiencias y nuevas
+        personas que fueron formando parte de este camino.
+    </p>
 
-        <div class="linea"></div>
+    <p>
+        Atletismo de Nueva Jarilla significó una etapa importante
+        dentro de mi trayectoria. Entrenar, competir y compartir
+        kilómetros hizo que el atletismo fuera todavía más especial.
+    </p>
 
-        <p>
-            Con el tiempo llegaron nuevas experiencias y nuevas
-            personas que fueron formando parte de este camino.
-        </p>
+    <p>
+        Porque este deporte también se construye junto a los demás.
+    </p>
 
-        <p>
-            Atletismo de Nueva Jarilla significó una etapa importante
-            dentro de mi trayectoria. Entrenar, competir y compartir
-            kilómetros hizo que el atletismo fuera todavía más especial.
-        </p>
+</div>
 
-        <p>
-            Porque este deporte también se construye junto a los demás.
-        </p>
-
-    </div>
 
 </section>
 
-
 <!-- =========================================================
-     CAPÍTULO III — LA COMPETICIÓN
+     CAPÍTULO III
      ========================================================= -->
 
 <section class="capitulo">
 
-    <div class="foto-horizontal">
+<div class="foto-horizontal">
 
-        <img
-            src="IMG-20250228-WA0016.jpg"
-            alt="La competición"
-        >
+    <img
+        src="IMG-20250228-WA0016.jpg"
+        alt="La competición"
+    >
 
+</div>
+
+<div class="texto-horizontal">
+
+    <div class="numero">
+        Capítulo III
     </div>
 
-    <div class="texto-horizontal">
+    <h2>
+        La competición
+    </h2>
 
-        <div class="numero">
-            Capítulo III
-        </div>
+    <div class="linea"></div>
 
-        <h2>
-            La competición
-        </h2>
+    <p>
+        Llegó el momento de ponerse un dorsal y comprobar
+        en las carreras todo aquello que se había trabajado
+        durante los entrenamientos.
+    </p>
 
-        <div class="linea"></div>
+    <p>
+        Competir siempre ha tenido algo especial:
+        los nervios, la salida, el esfuerzo y esa sensación
+        de cruzar la meta.
+    </p>
 
-        <p>
-            Llegó el momento de ponerse un dorsal y comprobar
-            en las carreras todo aquello que se había trabajado
-            durante los entrenamientos.
-        </p>
+    <p>
+        Cada carrera enseñaba algo diferente y cada experiencia
+        servía para seguir aprendiendo.
+    </p>
 
-        <p>
-            Competir siempre ha tenido algo especial:
-            los nervios, la salida, el esfuerzo y esa sensación
-            de cruzar la meta.
-        </p>
+</div>
 
-        <p>
-            Cada carrera enseñaba algo diferente y cada experiencia
-            servía para seguir aprendiendo.
-        </p>
-
-    </div>
 
 </section>
 
-
 <!-- =========================================================
-     CAPÍTULO IV — EL PÓDIUM
+     CAPÍTULO IV
      ========================================================= -->
 
 <section class="capitulo-vertical">
 
-    <div class="foto-vertical">
 
-        <img
-            src="20190407_153139.jpg"
-            alt="El primer pódium"
-        >
+<div class="foto-vertical">
 
+    <img
+        src="20190407_153139.jpg"
+        alt="El primer pódium"
+    >
+
+</div>
+
+<div class="texto-vertical">
+
+    <div class="numero">
+        Capítulo IV
     </div>
 
-    <div class="texto-vertical">
+    <h2>
+        El primer pódium
+    </h2>
 
-        <div class="numero">
-            Capítulo IV
-        </div>
+    <div class="linea"></div>
 
-        <h2>
-            El primer pódium
-        </h2>
+    <p>
+        Hay momentos que permanecen en la memoria para siempre.
+        Uno de ellos fue subir al pódium.
+    </p>
 
-        <div class="linea"></div>
+    <p>
+        Después de tantos entrenamientos y tantas horas de esfuerzo,
+        recibir el reconocimiento de una carrera tiene un significado
+        especial.
+    </p>
 
-        <p>
-            Hay momentos que permanecen en la memoria para siempre.
-            Uno de ellos fue subir al pódium.
-        </p>
+    <p>
+        No era solamente el resultado. Era la confirmación de que
+        todo aquel trabajo había merecido la pena.
+    </p>
 
-        <p>
-            Después de tantos entrenamientos y tantas horas de esfuerzo,
-            recibir el reconocimiento de una carrera tiene un significado
-            especial.
-        </p>
-
-        <p>
-            No era solamente el resultado. Era la confirmación de que
-            todo aquel trabajo había merecido la pena.
-        </p>
-
-    </div>
+</div>
 
 </section>
-
 
 <!-- =========================================================
      FRASE
@@ -657,219 +686,220 @@ body{
 
 <section class="frase">
 
-    <p>
-        “Cada carrera deja algo detrás:
-        una experiencia, una enseñanza y un recuerdo.”
-    </p>
+```
+<p>
+    “Cada carrera deja algo detrás:
+    una experiencia, una enseñanza y un recuerdo.”
+</p>
 
-    <span>
-        EL CAMINO CONTINÚA
-    </span>
+<span>
+    EL CAMINO CONTINÚA
+</span>
+
 
 </section>
 
-
 <!-- =========================================================
-     CAPÍTULO V — 25 AÑOS CORRIENDO
+     CAPÍTULO V
      ========================================================= -->
 
 <section class="capitulo-vertical inverso">
 
-    <div class="texto-vertical">
+```
+<div class="texto-vertical">
 
-        <div class="numero">
-            Capítulo V
-        </div>
-
-        <h2>
-            25 años corriendo
-        </h2>
-
-        <div class="linea"></div>
-
-        <p>
-            Los años fueron pasando y correr dejó de ser simplemente
-            una actividad deportiva para convertirse en una forma de vida.
-        </p>
-
-        <p>
-            Mirar hacia atrás permite comprobar todo lo que ha cambiado:
-            el cuerpo, los entrenamientos, las carreras y también la forma
-            de entender el deporte.
-        </p>
-
-        <p>
-            Pero hay algo que permanece:
-            las ganas de seguir avanzando.
-        </p>
-
+    <div class="numero">
+        Capítulo V
     </div>
 
-    <div class="foto-vertical">
+    <h2>
+        25 años corriendo
+    </h2>
 
-        <img
-            src="IMG-20251101-WA0016.jpg"
-            alt="25 años corriendo"
-        >
+    <div class="linea"></div>
 
-    </div>
+    <p>
+        Los años fueron pasando y correr dejó de ser simplemente
+        una actividad deportiva para convertirse en una forma de vida.
+    </p>
+
+    <p>
+        Mirar hacia atrás permite comprobar todo lo que ha cambiado:
+        el cuerpo, los entrenamientos, las carreras y también la forma
+        de entender el deporte.
+    </p>
+
+    <p>
+        Pero hay algo que permanece:
+        las ganas de seguir avanzando.
+    </p>
+
+</div>
+
+<div class="foto-vertical">
+
+    <img
+        src="IMG-20251101-WA0016.jpg"
+        alt="25 años corriendo"
+    >
+
+</div>
+
 
 </section>
 
-
 <!-- =========================================================
-     CAPÍTULO VI — LAS DIFICULTADES
+     CAPÍTULO VI
      ========================================================= -->
 
 <section class="capitulo-vertical">
 
-    <div class="foto-vertical">
+<div class="foto-vertical">
 
-        <img
-            src="IMG_20251229_174240.jpg"
-            alt="Las dificultades"
-        >
+    <img
+        src="IMG_20251229_174240.jpg"
+        alt="Las dificultades"
+    >
 
+</div>
+
+<div class="texto-vertical">
+
+    <div class="numero">
+        Capítulo VI
     </div>
 
-    <div class="texto-vertical">
+    <h2>
+        Las dificultades
+    </h2>
 
-        <div class="numero">
-            Capítulo VI
-        </div>
+    <div class="linea"></div>
 
-        <h2>
-            Las dificultades
-        </h2>
+    <p>
+        No todo ha sido fácil. También han llegado las lesiones,
+        los momentos en los que el cuerpo obliga a parar y las dudas
+        sobre cuándo volver.
+    </p>
 
-        <div class="linea"></div>
+    <p>
+        Una lesión cambia muchas cosas. Obliga a tener paciencia,
+        escuchar al cuerpo y entender que descansar también forma
+        parte del entrenamiento.
+    </p>
 
-        <p>
-            No todo ha sido fácil. También han llegado las lesiones,
-            los momentos en los que el cuerpo obliga a parar y las dudas
-            sobre cuándo volver.
-        </p>
+    <p>
+        Pero las dificultades también forman parte de la historia.
+        Y cada vez que se vuelve a empezar, el camino continúa.
+    </p>
 
-        <p>
-            Una lesión cambia muchas cosas. Obliga a tener paciencia,
-            escuchar al cuerpo y entender que descansar también forma
-            parte del entrenamiento.
-        </p>
+</div>
 
-        <p>
-            Pero las dificultades también forman parte de la historia.
-            Y cada vez que se vuelve a empezar, el camino continúa.
-        </p>
-
-    </div>
 
 </section>
 
-
 <!-- =========================================================
-     CAPÍTULO VII — UNA NUEVA ETAPA
+     CAPÍTULO VII
      ========================================================= -->
 
 <section class="capitulo">
 
-    <div class="foto-horizontal">
 
-        <img
-            src="DSC_0812_resultado_resultado.jpg"
-            alt="Una nueva etapa"
-        >
+<div class="foto-horizontal">
 
+    <img
+        src="DSC_0812_resultado_resultado.jpg"
+        alt="Una nueva etapa"
+    >
+
+</div>
+
+<div class="texto-horizontal">
+
+    <div class="numero">
+        Capítulo VII
     </div>
 
-    <div class="texto-horizontal">
+    <h2>
+        Una nueva etapa
+    </h2>
 
-        <div class="numero">
-            Capítulo VII
-        </div>
+    <div class="linea"></div>
 
-        <h2>
-            Una nueva etapa
-        </h2>
+    <p>
+        Después de tantos años corriendo, llega un momento en el que
+        hay que aceptar los cambios y buscar una nueva manera de seguir
+        disfrutando del deporte.
+    </p>
 
-        <div class="linea"></div>
+    <p>
+        Ahora comienza una etapa diferente. La marcha atlética aparece
+        como un nuevo camino para continuar ligado al atletismo y seguir
+        disfrutando de la competición.
+    </p>
 
-        <p>
-            Después de tantos años corriendo, llega un momento en el que
-            hay que aceptar los cambios y buscar una nueva manera de seguir
-            disfrutando del deporte.
-        </p>
+    <p>
+        Todavía estoy aprendiendo, descubriendo una técnica diferente
+        y acostumbrándome a una nueva forma de moverme.
+    </p>
 
-        <p>
-            Ahora comienza una etapa diferente. La marcha atlética aparece
-            como un nuevo camino para continuar ligado al atletismo y seguir
-            disfrutando de la competición.
-        </p>
+</div>
 
-        <p>
-            Todavía estoy aprendiendo, descubriendo una técnica diferente
-            y acostumbrándome a una nueva forma de moverme.
-        </p>
-
-    </div>
 
 </section>
 
-
 <!-- =========================================================
-     CAPÍTULO VIII — MI NUEVA ETAPA: LA MARCHA
+     CAPÍTULO VIII
      ========================================================= -->
 
 <section class="capitulo">
 
-    <div class="foto-horizontal">
+<div class="foto-horizontal">
 
-        <img
-            src="IMG_20260321_093209.jpg"
-            alt="Mi nueva etapa en la marcha atlética"
-        >
+    <img
+        src="IMG_20260321_093209.jpg"
+        alt="Mi nueva etapa: la marcha"
+    >
 
+</div>
+
+<div class="texto-horizontal">
+
+    <div class="numero">
+        Capítulo VIII
     </div>
 
-    <div class="texto-horizontal">
+    <h2>
+        Mi nueva etapa: la marcha
+    </h2>
 
-        <div class="numero">
-            Capítulo VIII
-        </div>
+    <div class="linea"></div>
 
-        <h2>
-            Mi nueva etapa: la marcha
-        </h2>
+    <p>
+        El camino cambia, pero las ganas de seguir haciendo deporte
+        permanecen.
+    </p>
 
-        <div class="linea"></div>
+    <p>
+        Comenzar con la marcha atlética significa aprender de nuevo:
+        conocer la técnica, escuchar el cuerpo y avanzar poco a poco.
+    </p>
 
-        <p>
-            El camino cambia, pero las ganas de seguir haciendo deporte
-            permanecen.
-        </p>
+    <p>
+        No sé todavía hasta dónde me llevará esta nueva etapa,
+        pero sí sé que quiero disfrutarla y seguir sintiéndome
+        parte del atletismo.
+    </p>
 
-        <p>
-            Comenzar con la marcha atlética significa aprender de nuevo:
-            conocer la técnica, escuchar el cuerpo y avanzar poco a poco.
-        </p>
+    <p>
+        Después de tantos kilómetros corriendo, comienza ahora
+        una nueva forma de seguir caminando hacia delante.
+    </p>
 
-        <p>
-            No sé todavía hasta dónde me llevará esta nueva etapa,
-            pero sí sé que quiero disfrutarla y seguir sintiéndome
-            parte del atletismo.
-        </p>
-
-        <p>
-            Después de tantos kilómetros corriendo, comienza ahora
-            una nueva forma de seguir caminando hacia delante.
-        </p>
-
-    </div>
+</div>
 
 </section>
-
 
 </main>
-
 
 <!-- =========================================================
      FINAL
@@ -877,23 +907,24 @@ body{
 
 <section class="final">
 
-    <h2>
-        Sigamos adelante
-    </h2>
+```
+<h2>
+    Sigamos adelante
+</h2>
 
-    <p>
-        La historia no termina cuando cambia la forma de competir.
-        Simplemente comienza un nuevo capítulo.
-    </p>
+<p>
+    La historia no termina cuando cambia la forma de competir.
+    Simplemente comienza un nuevo capítulo.
+</p>
 
-    <p>
-        Después de tantos años corriendo,
-        ahora toca seguir disfrutando del atletismo
-        desde un nuevo camino.
-    </p>
+<p>
+    Después de tantos años corriendo,
+    ahora toca seguir disfrutando del atletismo
+    desde un nuevo camino.
+</p>
+
 
 </section>
-
 
 <!-- =========================================================
      MÚSICA
@@ -914,7 +945,6 @@ body{
     allow="autoplay">
 </iframe>
 
-
 <script>
 
 function activarMusica(){
@@ -933,6 +963,8 @@ function activarMusica(){
 </body>
 
 </html>
+
+
 
 
 
