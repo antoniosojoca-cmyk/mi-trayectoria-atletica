@@ -1,3 +1,5 @@
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -20,546 +22,626 @@ html {
 
 body {
     margin: 0;
-    background: #0b0b0b;
-    color: #f5f5f5;
+    background: #090909;
+    color: #f2f2f2;
     font-family: Georgia, "Times New Roman", serif;
-    line-height: 1.8;
+    line-height: 1.75;
 }
 
 
-/* =========================================
+/* ==================================================
    CABECERA
-========================================= */
+================================================== */
 
 header {
     position: relative;
-    width: 100%;
+    min-height: 58vh;
     overflow: hidden;
+
     background: #050505;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     text-align: center;
-    line-height: 0;
 }
 
 header > img {
+    position: absolute;
+
     width: 100%;
-    height: auto;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
     display: block;
+
+    opacity: 0.72;
 }
 
 header::after {
     content: "";
+
     position: absolute;
     inset: 0;
 
     background:
         linear-gradient(
+            to bottom,
             rgba(0,0,0,0.25),
-            rgba(0,0,0,0.65)
+            rgba(0,0,0,0.80)
         );
 }
 
 .cabecera-contenido {
-    position: absolute;
+    position: relative;
+
     z-index: 2;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
 
     width: 90%;
     max-width: 900px;
 
-    line-height: 1.5;
+    padding: 30px;
 }
 
 header h1 {
+
     margin: 0;
 
-    font-size: 62px;
+    color: #d8b06a;
+
+    font-size: 58px;
+
+    font-weight: normal;
 
     letter-spacing: 6px;
 
     text-transform: uppercase;
 
-    color: #ffffff;
-
     text-shadow:
-        0 3px 12px rgba(0,0,0,0.9);
+        0 3px 15px rgba(0,0,0,0.9);
 }
 
 header p {
-    margin: 20px auto 0;
 
-    max-width: 750px;
+    margin: 18px auto 0;
 
-    font-size: 21px;
+    max-width: 700px;
 
-    color: #ffffff;
+    font-size: 20px;
+
+    color: #eeeeee;
 
     text-shadow:
         0 2px 8px rgba(0,0,0,0.9);
 }
 
 
-/* =========================================
+/* ==================================================
    INTRODUCCIÓN
-========================================= */
+================================================== */
 
 .introduccion {
-    max-width: 900px;
+
+    max-width: 850px;
 
     margin: 0 auto;
 
-    padding: 70px 25px 30px;
+    padding: 75px 25px 45px;
 
     text-align: center;
 }
 
+.introduccion .pequeno {
+
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: #d8b06a;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+}
+
 .introduccion h2 {
-    font-size: 30px;
+
+    margin: 0 0 28px;
+
+    font-size: 34px;
 
     font-weight: normal;
 
     letter-spacing: 2px;
-
-    margin-bottom: 25px;
 }
 
 .introduccion p {
-    font-size: 19px;
 
-    color: #cccccc;
+    margin: 0 auto 18px;
+
+    color: #cfcfcf;
+
+    font-size: 18px;
 }
 
 
-/* =========================================
-   CONTENEDOR
-========================================= */
+/* ==================================================
+   CONTENEDOR PRINCIPAL
+================================================== */
 
 .contenedor {
+
+    width: 100%;
+
     max-width: 1050px;
 
     margin: 0 auto;
 
-    padding: 30px 25px 90px;
+    padding: 30px 25px 100px;
 }
 
 
-/* =========================================
-   PIEZAS
-========================================= */
+/* ==================================================
+   CAPÍTULOS
+================================================== */
 
-.pieza {
-    margin: 80px 0;
+.capitulo {
 
-    background: #111111;
+    display: grid;
 
-    border: 1px solid #333333;
+    grid-template-columns: 42% 58%;
 
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.45);
+    align-items: center;
 
-    overflow: hidden;
+    margin: 75px 0;
+
+    min-height: 380px;
+
+    border-top: 1px solid #292929;
+
+    border-bottom: 1px solid #292929;
 }
 
 
-/* =========================================
-   IMÁGENES
-   ANCHO COMPLETO
-   SIN RECORTAR
-========================================= */
+/* IMAGEN */
 
-.imagen-pieza {
+.capitulo .imagen {
+
+    padding: 35px;
+}
+
+.capitulo .imagen img {
+
     width: 100%;
 
-    overflow: hidden;
+    max-height: 390px;
+
+    object-fit: contain;
+
+    display: block;
 
     background: #050505;
 
-    line-height: 0;
+    border: 1px solid #333;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.55);
+
+    transition: transform 0.4s ease;
 }
 
-.imagen-pieza img {
-    width: 100%;
+.capitulo .imagen img:hover {
 
-    height: auto;
-
-    display: block;
+    transform: scale(1.015);
 }
 
 
-/* =========================================
-   CONTENIDO
-========================================= */
+/* TEXTO */
 
-.contenido-pieza {
-    padding: 45px 55px 55px;
+.capitulo .texto {
+
+    padding: 45px 45px 45px 25px;
 }
+
+.capitulo:nth-child(even) {
+
+    grid-template-columns: 58% 42%;
+}
+
+.capitulo:nth-child(even) .imagen {
+
+    order: 2;
+}
+
+.capitulo:nth-child(even) .texto {
+
+    order: 1;
+
+    padding:
+        45px
+        25px
+        45px
+        45px;
+}
+
+
+/* NÚMERO */
 
 .numero {
+
     display: block;
 
     margin-bottom: 8px;
 
-    color: #999999;
+    color: #d8b06a;
 
-    font-size: 15px;
+    font-size: 13px;
 
     letter-spacing: 4px;
 
     text-transform: uppercase;
 }
 
-.contenido-pieza h2 {
-    margin: 0 0 25px;
 
-    font-size: 38px;
+/* TÍTULO */
+
+.capitulo h2 {
+
+    margin: 0 0 22px;
+
+    font-size: 35px;
 
     font-weight: normal;
+
+    color: #ffffff;
 
     letter-spacing: 1px;
 }
 
-.contenido-pieza p {
-    margin: 0 0 20px;
 
-    color: #d2d2d2;
+/* TEXTO */
 
-    font-size: 18px;
+.capitulo p {
+
+    margin: 0 0 18px;
+
+    color: #cfcfcf;
+
+    font-size: 17px;
 }
 
 
-/* =========================================
-   FRASE CENTRAL
-========================================= */
+/* ==================================================
+   FRASES ENTRE CAPÍTULOS
+================================================== */
 
 .frase {
-    max-width: 850px;
 
-    margin: 90px auto;
+    max-width: 800px;
 
-    padding: 45px 30px;
+    margin: 100px auto;
+
+    padding: 35px 30px;
 
     text-align: center;
 
-    border-top: 1px solid #444444;
+    border-top: 1px solid #444;
 
-    border-bottom: 1px solid #444444;
-
-    font-size: 26px;
-
-    font-style: italic;
+    border-bottom: 1px solid #444;
 
     color: #eeeeee;
+
+    font-size: 25px;
+
+    font-style: italic;
 }
 
-
-/* =========================================
-   PIEZA VII
-========================================= */
-
-.montaje-vii {
-    position: relative;
-
-    width: 100%;
-
-    overflow: hidden;
-
-    background: #050505;
-
-    line-height: 0;
-}
-
-.montaje-vii img {
-    width: 100%;
-
-    height: auto;
+.frase span {
 
     display: block;
 
-    filter:
-        grayscale(15%)
-        contrast(1.05);
-}
+    margin-top: 15px;
 
-.montaje-vii::after {
-    content: "";
+    color: #d8b06a;
 
-    position: absolute;
+    font-size: 12px;
 
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to right,
-            rgba(0,0,0,0.65),
-            rgba(0,0,0,0.10),
-            rgba(0,0,0,0.60)
-        );
-}
-
-.texto-montaje-vii {
-    position: absolute;
-
-    z-index: 2;
-
-    left: 55px;
-
-    bottom: 45px;
-
-    max-width: 650px;
-
-    line-height: 1.5;
-}
-
-.texto-montaje-vii .pequeno {
-    display: block;
-
-    color: #dddddd;
-
-    font-size: 14px;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 12px;
-}
-
-.texto-montaje-vii h2 {
-    margin: 0;
-
-    font-size: 46px;
-
-    font-weight: normal;
-
-    letter-spacing: 2px;
-
-    color: #ffffff;
-
-    text-shadow:
-        0 3px 10px rgba(0,0,0,0.9);
-}
-
-
-/* =========================================
-   PIEZA VIII
-========================================= */
-
-.montaje-viii {
-    position: relative;
-
-    width: 100%;
-
-    overflow: hidden;
-
-    background: #050505;
-
-    line-height: 0;
-}
-
-.montaje-viii img {
-    width: 100%;
-
-    height: auto;
-
-    display: block;
-
-    filter:
-        grayscale(20%)
-        contrast(1.08);
-}
-
-.montaje-viii::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(0,0,0,0.05),
-            rgba(0,0,0,0.82)
-        );
-}
-
-.texto-montaje-viii {
-    position: absolute;
-
-    z-index: 2;
-
-    left: 0;
-
-    right: 0;
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    text-align: center;
-
-    padding: 25px;
-
-    line-height: 1.5;
-}
-
-.texto-montaje-viii .pequeno {
-    display: block;
-
-    color: #dddddd;
-
-    font-size: 14px;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 15px;
-}
-
-.texto-montaje-viii h2 {
-    margin: 0;
-
-    font-size: 48px;
-
-    font-weight: normal;
+    font-style: normal;
 
     letter-spacing: 3px;
 
-    color: #ffffff;
-
-    text-shadow:
-        0 3px 12px rgba(0,0,0,0.9);
+    text-transform: uppercase;
 }
 
-.texto-montaje-viii p {
-    max-width: 650px;
 
-    margin: 20px auto 0;
+/* ==================================================
+   CAPÍTULO ESPECIAL
+================================================== */
 
-    color: #eeeeee;
+.final {
+
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: 120px auto 80px;
+
+    padding: 60px 30px;
+
+    border-top: 1px solid #333;
+
+    border-bottom: 1px solid #333;
+}
+
+.final .pequeno {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #d8b06a;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+}
+
+.final h2 {
+
+    margin: 0 0 25px;
+
+    font-size: 40px;
+
+    font-weight: normal;
+}
+
+.final p {
+
+    max-width: 700px;
+
+    margin: 0 auto 18px;
+
+    color: #d0d0d0;
 
     font-size: 18px;
 }
 
 
-/* =========================================
+/* ==================================================
    VOLVER
-========================================= */
+================================================== */
 
 .volver {
+
     text-align: center;
 
-    margin: 70px 0 20px;
+    margin: 80px 0 20px;
 }
 
 .volver a {
+
     display: inline-block;
 
-    padding: 14px 28px;
+    padding: 11px 24px;
 
-    color: #ffffff;
+    color: #d8b06a;
 
     text-decoration: none;
 
-    border: 1px solid #777777;
+    border: 1px solid #8d7040;
 
-    transition: 0.3s;
+    font-size: 15px;
+
+    transition: 0.3s ease;
 }
 
 .volver a:hover {
-    background: #ffffff;
 
-    color: #111111;
+    background: #d8b06a;
+
+    color: #111;
 }
 
 
-/* =========================================
+/* ==================================================
    PIE
-========================================= */
+================================================== */
 
 footer {
+
     text-align: center;
 
     padding: 30px 20px;
 
     border-top: 1px solid #292929;
 
-    color: #777777;
+    color: #777;
 
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
-/* =========================================
+/* ==================================================
+   MÚSICA
+================================================== */
+
+#musicButton {
+
+    position: fixed;
+
+    bottom: 18px;
+
+    right: 20px;
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.90);
+
+    color: #d8b06a;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    border: 1px solid #d8b06a;
+
+    box-shadow:
+        0 0 10px rgba(0,0,0,0.8);
+}
+
+#musicButton:hover {
+
+    background: rgba(216,176,106,0.15);
+}
+
+#youtubePlayer {
+
+    position: fixed;
+
+    width: 1px;
+
+    height: 1px;
+
+    left: -10px;
+
+    bottom: -10px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+#youtubePlayer iframe {
+
+    width: 1px;
+
+    height: 1px;
+
+    border: 0;
+}
+
+
+/* ==================================================
    MÓVIL
-========================================= */
+================================================== */
 
 @media (max-width: 700px) {
 
+    header {
+
+        min-height: 48vh;
+    }
+
     header h1 {
-        font-size: 38px;
+
+        font-size: 36px;
 
         letter-spacing: 3px;
     }
 
     header p {
-        font-size: 17px;
+
+        font-size: 16px;
     }
 
     .introduccion {
-        padding-top: 50px;
+
+        padding-top: 55px;
     }
 
     .introduccion h2 {
-        font-size: 25px;
+
+        font-size: 27px;
     }
 
     .introduccion p {
-        font-size: 17px;
+
+        font-size: 16px;
     }
 
-    .pieza {
-        margin: 55px 0;
+    .capitulo,
+    .capitulo:nth-child(even) {
+
+        display: flex;
+
+        flex-direction: column;
+
+        margin: 65px 0;
+
     }
 
-    .contenido-pieza {
+    .capitulo .imagen,
+    .capitulo:nth-child(even) .imagen {
+
+        order: 1;
+
+        width: 100%;
+
+        padding: 25px;
+    }
+
+    .capitulo .texto,
+    .capitulo:nth-child(even) .texto {
+
+        order: 2;
+
+        width: 100%;
+
         padding: 30px 25px 35px;
     }
 
-    .contenido-pieza h2 {
+    .capitulo .imagen img {
+
+        max-height: 320px;
+    }
+
+    .capitulo h2 {
+
         font-size: 29px;
     }
 
-    .contenido-pieza p {
-        font-size: 17px;
+    .capitulo p {
+
+        font-size: 16px;
     }
 
     .frase {
+
+        margin: 70px auto;
+
         font-size: 21px;
-
-        margin: 60px auto;
     }
 
-    .texto-montaje-vii {
-        left: 25px;
+    .final {
 
-        bottom: 30px;
+        margin: 90px auto 60px;
     }
 
-    .texto-montaje-vii h2 {
-        font-size: 34px;
-    }
+    .final h2 {
 
-    .texto-montaje-viii h2 {
-        font-size: 34px;
-    }
-
-    .texto-montaje-viii p {
-        font-size: 16px;
+        font-size: 31px;
     }
 
 }
@@ -572,9 +654,9 @@ footer {
 <body>
 
 
-<!-- =========================================
+<!-- ==================================================
      CABECERA
-========================================= -->
+================================================== -->
 
 <header>
 
@@ -585,7 +667,9 @@ alt="Mi trayectoria atlética"
 
 <div class="cabecera-contenido">
 
-<h1>Mi historia</h1>
+<h1>
+Mi historia
+</h1>
 
 <p>
 Una vida entre kilómetros, carreras,
@@ -597,23 +681,33 @@ esfuerzo, aprendizaje y nuevos caminos.
 </header>
 
 
-<!-- =========================================
+<!-- ==================================================
      INTRODUCCIÓN
-========================================= -->
+================================================== -->
 
 <section class="introduccion">
 
-<h2>VIII piezas de una trayectoria</h2>
+<span class="pequeno">
+Mi trayectoria
+</span>
+
+<h2>
+Una historia que comenzó corriendo
+</h2>
 
 <p>
 El atletismo no ha sido solamente una sucesión de carreras.
-Ha sido un camino lleno de experiencias, personas,
-aprendizajes, dificultades y momentos que forman parte de mi vida.
+Ha sido una parte importante de mi vida.
 </p>
 
 <p>
-Estas ocho piezas representan algunos de los capítulos
-más importantes de ese camino.
+Durante todos estos años he conocido el esfuerzo,
+la ilusión de competir, la satisfacción de mejorar,
+los buenos momentos y también las dificultades.
+</p>
+
+<p>
+Esta es la historia de ese camino.
 </p>
 
 </section>
@@ -622,41 +716,51 @@ más importantes de ese camino.
 <main class="contenedor">
 
 
-<!-- =========================================
-     PIEZA I
-========================================= -->
+<!-- ==================================================
+     CAPÍTULO I
+================================================== -->
 
-<section class="pieza">
+<section class="capitulo">
 
-<div class="imagen-pieza">
+<div class="imagen">
 
 <img
 src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/IMG-20220905-WA0002.jpg?raw=true"
-alt="El comienzo de mi trayectoria atlética"
+alt="El comienzo"
 >
 
 </div>
 
-<div class="contenido-pieza">
+<div class="texto">
 
 <span class="numero">
-Pieza I
+Capítulo I
 </span>
 
 <h2>
-El comienzo
+Cómo empezó todo
 </h2>
 
 <p>
-Mi historia en el atletismo comenzó casi sin darme cuenta.
-Al principio era simplemente una forma de hacer deporte,
-pero poco a poco descubrí que correr podía convertirse
-en mucho más.
+Todo comenzó casi por casualidad.
 </p>
 
 <p>
-Descubrir el mundo del atletismo despertó en mí una pasión
-que con el paso de los años acabaría formando parte de mi vida.
+Recuerdo ver en televisión un campeonato del mundo de
+atletismo. Siempre me había gustado el deporte y también
+el fútbol, pero nunca sentí que tuviera las cualidades
+necesarias para destacar en él.
+</p>
+
+<p>
+Sin embargo, el atletismo me transmitía algo diferente:
+esfuerzo, sacrificio, constancia y la posibilidad de
+competir contra uno mismo.
+</p>
+
+<p>
+Poco a poco descubrí que correr podía convertirse
+en mi deporte.
 </p>
 
 </div>
@@ -664,45 +768,63 @@ que con el paso de los años acabaría formando parte de mi vida.
 </section>
 
 
-<!-- =========================================
-     PIEZA II
-========================================= -->
+<!-- ==================================================
+     FRASE
+================================================== -->
 
-<section class="pieza">
+<div class="frase">
 
-<div class="imagen-pieza">
+“Correr no era solamente avanzar.
+Era descubrir hasta dónde podía llegar.”
+
+<span>
+El comienzo
+</span>
+
+</div>
+
+
+<!-- ==================================================
+     CAPÍTULO II
+================================================== -->
+
+<section class="capitulo">
+
+<div class="imagen">
 
 <img
 src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/20160910_192158.jpg?raw=true"
-alt="Mis primeras carreras"
+alt="Mis primeros años"
 >
 
 </div>
 
-<div class="contenido-pieza">
+<div class="texto">
 
 <span class="numero">
-Pieza II
+Capítulo II
 </span>
 
 <h2>
-Mis primeras carreras
+Los primeros años
 </h2>
 
 <p>
-Llegó el momento de pasar de los entrenamientos
-a la competición.
+Llegaron los entrenamientos, las primeras carreras
+y la necesidad de aprender poco a poco.
 </p>
 
 <p>
-Las primeras carreras fueron descubriendo poco a poco
-lo que significaba ponerse un dorsal, enfrentarse al
-recorrido y cruzar la línea de meta.
+Correr comenzó a convertirse también en una manera
+de desconectar de los problemas del día a día.
+Después de entrenar quedaba esa sensación de haber
+hecho algo por uno mismo.
 </p>
 
 <p>
-Cada carrera se convirtió en una nueva experiencia
-y en una oportunidad para seguir aprendiendo.
+Cada carrera enseñaba algo nuevo.
+Unas veces salían las cosas bien y otras no tanto,
+pero siempre había una razón para volver a entrenar.
 </p>
 
 </div>
@@ -710,44 +832,107 @@ y en una oportunidad para seguir aprendiendo.
 </section>
 
 
-<!-- =========================================
-     PIEZA III
-========================================= -->
+<!-- ==================================================
+     CAPÍTULO III
+================================================== -->
 
-<section class="pieza">
+<section class="capitulo">
 
-<div class="imagen-pieza">
+<div class="imagen">
 
 <img
 src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/20161218_110620.jpg?raw=true"
+alt="La competición"
+>
+
+</div>
+
+<div class="texto">
+
+<span class="numero">
+Capítulo III
+</span>
+
+<h2>
+Descubrir la competición
+</h2>
+
+<p>
+Con el tiempo llegó algo que hizo crecer todavía más
+la motivación: competir.
+</p>
+
+<p>
+Ponerse un dorsal, colocarse en una línea de salida,
+recorrer los kilómetros y luchar hasta la meta.
+</p>
+
+<p>
+Los resultados importaban, pero también importaba
+sentir que cada entrenamiento servía para intentar
+ser un poco mejor que antes.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     FRASE
+================================================== -->
+
+<div class="frase">
+
+“Cada entrenamiento dejaba algo.
+Cada carrera enseñaba algo.”
+
+<span>
+Aprender para seguir creciendo
+</span>
+
+</div>
+
+
+<!-- ==================================================
+     CAPÍTULO IV
+================================================== -->
+
+<section class="capitulo">
+
+<div class="imagen">
+
+<img
+src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/20190407_153139.jpg?raw=true"
 alt="Atletismo de Nueva Jarilla"
 >
 
 </div>
 
-<div class="contenido-pieza">
+<div class="texto">
 
 <span class="numero">
-Pieza III
+Capítulo IV
 </span>
 
 <h2>
-Atletismo de Nueva Jarilla
+Un equipo, unos compañeros
 </h2>
 
 <p>
-Uno de los momentos importantes de mi trayectoria fue
-formar parte del equipo Atletismo de Nueva Jarilla.
+En mi trayectoria hubo un momento especialmente
+importante: formar parte de Atletismo de Nueva Jarilla.
 </p>
 
 <p>
-El atletismo dejó entonces de ser solamente una experiencia
-individual.
+Compartir entrenamientos y carreras hizo que el atletismo
+dejara de ser solamente una experiencia individual.
 </p>
 
 <p>
-Entrenar, competir y compartir kilómetros con otros compañeros
-hizo que este deporte adquiriera todavía más sentido.
+Los compañeros, las conversaciones, los kilómetros
+compartidos y el ambiente de las carreras forman parte
+de los recuerdos que permanecen.
 </p>
 
 </div>
@@ -755,48 +940,46 @@ hizo que este deporte adquiriera todavía más sentido.
 </section>
 
 
-<!-- =========================================
-     PIEZA IV
-========================================= -->
+<!-- ==================================================
+     CAPÍTULO V
+================================================== -->
 
-<section class="pieza">
+<section class="capitulo">
 
-<div class="imagen-pieza">
+<div class="imagen">
 
 <img
-src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/20190407_153139.jpg?raw=true"
+src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/IMG_20251229_174240.jpg?raw=true"
 alt="El primer pódium"
 >
 
 </div>
 
-<div class="contenido-pieza">
+<div class="texto">
 
 <span class="numero">
-Pieza IV
+Capítulo V
 </span>
 
 <h2>
-El primer pódium
+El primer gran recuerdo
 </h2>
 
 <p>
-Hay momentos que permanecen para siempre en la memoria.
+Hay carreras que se olvidan y otras que permanecen
+para siempre.
 </p>
 
 <p>
-Uno de ellos fue mi primer pódium.
-</p>
-
-<p>
-Fue en el cross de Sanlúcar de Barrameda,
+Una de ellas fue el Cross de Sanlúcar de Barrameda,
 donde conseguí la primera posición.
 </p>
 
 <p>
-Aquella victoria tuvo un significado especial porque detrás
-de ella estaban todos los kilómetros, entrenamientos y esfuerzos
-realizados hasta llegar a ese momento.
+Aquel pódium representó mucho más que un resultado.
+Detrás estaban los entrenamientos, los kilómetros,
+el esfuerzo y todas las veces que había salido a correr
+sin saber exactamente hasta dónde podía llegar.
 </p>
 
 </div>
@@ -804,57 +987,62 @@ realizados hasta llegar a ese momento.
 </section>
 
 
-<!-- =========================================
+<!-- ==================================================
      FRASE
-========================================= -->
+================================================== -->
 
 <div class="frase">
 
-“Cada carrera termina cuando cruzas la meta,
-pero la historia continúa al día siguiente.”
+“Detrás de una medalla siempre hay muchos kilómetros
+que nadie ve.”
+
+<span>
+El valor del esfuerzo
+</span>
 
 </div>
 
 
-<!-- =========================================
-     PIEZA V
-========================================= -->
+<!-- ==================================================
+     CAPÍTULO VI
+================================================== -->
 
-<section class="pieza">
+<section class="capitulo">
 
-<div class="imagen-pieza">
+<div class="imagen">
 
 <img
-src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/IMG_20251229_174240.jpg?raw=true"
-alt="Los años pasan"
+src="IMG-20251101-WA0016.jpg"
+alt="El paso de los años"
 >
 
 </div>
 
-<div class="contenido-pieza">
+<div class="texto">
 
 <span class="numero">
-Pieza V
+Capítulo VI
 </span>
 
 <h2>
-Los años pasan
+Más de 25 años corriendo
 </h2>
 
 <p>
-Con el paso de los años cambia la manera de entender
-el deporte.
+Los años fueron pasando y el atletismo siguió formando
+parte de mi vida.
 </p>
 
 <p>
-También cambia la forma de entrenar, de competir
-y de afrontar cada nuevo reto.
+El cuerpo cambia, las circunstancias cambian y también
+cambia la manera de entrenar.
 </p>
 
 <p>
-El objetivo ya no es solamente mejorar una marca.
-También es disfrutar del camino y seguir encontrando
-motivos para continuar.
+Con el tiempo aprendí que no todo consiste en correr
+más rápido. También hay que saber escuchar al cuerpo,
+descansar y valorar todo lo que el deporte aporta
+fuera de las marcas.
 </p>
 
 </div>
@@ -862,25 +1050,25 @@ motivos para continuar.
 </section>
 
 
-<!-- =========================================
-     PIEZA VI
-========================================= -->
+<!-- ==================================================
+     CAPÍTULO VII
+================================================== -->
 
-<section class="pieza">
+<section class="capitulo">
 
-<div class="imagen-pieza">
+<div class="imagen">
 
 <img
-src="IMG-20251101-WA0016.jpg"
-alt="Las dificultades también forman parte del camino"
+src="ChatGPT Image 2 feb 2026, 15_00_10.png"
+alt="Las dificultades"
 >
 
 </div>
 
-<div class="contenido-pieza">
+<div class="texto">
 
 <span class="numero">
-Pieza VI
+Capítulo VII
 </span>
 
 <h2>
@@ -893,14 +1081,20 @@ por buenos momentos.
 </p>
 
 <p>
-También existen dificultades, lesiones, momentos en los
-que hay que detenerse y situaciones que obligan a cambiar
-los planes.
+También llegaron las lesiones y los momentos en los que
+fue necesario parar.
 </p>
 
 <p>
-A veces avanzar significa precisamente saber parar,
-recuperarse y volver a empezar.
+Hubo que aprender que descansar también forma parte
+del entrenamiento y que recuperarse es otra manera
+de seguir avanzando.
+</p>
+
+<p>
+Las dificultades cambiaron algunas cosas, pero no
+consiguieron borrar las ganas de continuar vinculado
+al deporte.
 </p>
 
 </div>
@@ -908,124 +1102,49 @@ recuperarse y volver a empezar.
 </section>
 
 
-<!-- =========================================
-     PIEZA VII
-========================================= -->
+<!-- ==================================================
+     CAPÍTULO VIII
+================================================== -->
 
-<section class="pieza">
+<section class="capitulo">
 
-<div class="montaje-vii">
-
-<img
-src="ChatGPT Image 2 feb 2026, 15_00_10.png"
-alt="Una nueva etapa"
->
-
-<div class="texto-montaje-vii">
-
-<span class="pequeno">
-Pieza VII · El presente
-</span>
-
-<h2>
-Una nueva etapa
-</h2>
-
-</div>
-
-</div>
-
-<div class="contenido-pieza">
-
-<span class="numero">
-Pieza VII
-</span>
-
-<h2>
-Una nueva etapa
-</h2>
-
-<p>
-El tiempo pasa, pero las ganas de seguir haciendo deporte
-permanecen.
-</p>
-
-<p>
-Hoy comienza una nueva etapa.
-Una etapa diferente, en la que el objetivo no es demostrar
-nada a nadie, sino continuar disfrutando del camino,
-adaptándome a cada momento y buscando nuevos retos.
-</p>
-
-<p>
-Porque cambiar la manera de avanzar no significa
-dejar de avanzar.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- =========================================
-     PIEZA VIII
-========================================= -->
-
-<section class="pieza">
-
-<div class="montaje-viii">
+<div class="imagen">
 
 <img
 src="https://raw.githubusercontent.com/antoniosojoca-cmyk/mi-trayectoria-atletica/refs/heads/main/images.jfif"
-alt="El camino continúa"
+alt="Una nueva etapa"
 >
 
-<div class="texto-montaje-viii">
-
-<span class="pequeno">
-Pieza VIII · El futuro
-</span>
-
-<h2>
-El camino continúa
-</h2>
-
-<p>
-Todavía quedan kilómetros por recorrer.
-</p>
-
 </div>
 
-</div>
-
-<div class="contenido-pieza">
+<div class="texto">
 
 <span class="numero">
-Pieza VIII
+Capítulo VIII
 </span>
 
 <h2>
-El camino continúa
+Una nueva etapa
 </h2>
 
 <p>
-Esta historia no termina aquí.
+Hoy comienza una etapa diferente.
 </p>
 
 <p>
-Después de tantos años, el atletismo sigue formando
-parte de mi vida.
+Después de tantos años corriendo, toca adaptarse
+a una nueva manera de entender el atletismo.
 </p>
 
 <p>
-Quizás cambien las distancias, los objetivos o la manera
-de entrenar, pero permanece lo más importante:
-las ganas de seguir adelante.
+La marcha atlética aparece ahora como un nuevo camino,
+con nuevos aprendizajes, nuevos objetivos y nuevas
+experiencias por descubrir.
 </p>
 
 <p>
-Mientras haya un camino por delante,
-habrá una razón para recorrerlo.
+Quizás cambie la forma de avanzar, pero permanece
+la ilusión de seguir haciendo deporte.
 </p>
 
 </div>
@@ -1033,9 +1152,42 @@ habrá una razón para recorrerlo.
 </section>
 
 
-<!-- =========================================
+<!-- ==================================================
+     FINAL
+================================================== -->
+
+<section class="final">
+
+<span class="pequeno">
+El camino continúa
+</span>
+
+<h2>
+No termina aquí
+</h2>
+
+<p>
+Esta historia no termina con una lesión,
+ni con el final de una etapa.
+</p>
+
+<p>
+Después de tantos kilómetros todavía quedan caminos
+por recorrer y cosas nuevas por aprender.
+</p>
+
+<p>
+Porque una vida ligada al deporte no se mide solamente
+por las marcas conseguidas, sino también por todo lo
+que hemos vivido mientras intentábamos alcanzarlas.
+</p>
+
+</section>
+
+
+<!-- ==================================================
      VOLVER
-========================================= -->
+================================================== -->
 
 <div class="volver">
 
@@ -1055,65 +1207,82 @@ Mi trayectoria atlética · 2026
 
 </footer>
 
-<!-- Música de Mi historia -->
-<div id="musicButton" onclick="toggleMusic()">🔊</div>
 
-<div id="youtubePlayer">
-    <iframe
-        id="musicFrame"
-        src="https://www.youtube.com/embed/EuzOJ0wT99U?autoplay=1&loop=1&playlist=EuzOJ0wT99U&start=2&mute=0"
-        allow="autoplay"
-        frameborder="0">
-    </iframe>
+<!-- ==================================================
+     MÚSICA
+================================================== -->
+
+<div
+id="musicButton"
+onclick="toggleMusic()"
+title="Reproducir / pausar música">
+
+♪
+
 </div>
 
-<style>
-#musicButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: rgba(0,0,0,0.75);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 9999;
-    border: 1px solid rgba(255,255,255,0.5);
-}
 
-#youtubePlayer {
-    position: fixed;
-    width: 1px;
-    height: 1px;
-    left: -10px;
-    bottom: -10px;
-    overflow: hidden;
-}
+<div id="youtubePlayer">
 
-#youtubePlayer iframe {
-    width: 1px;
-    height: 1px;
-}
-</style>
+<iframe
+id="musicFrame"
+src="https://www.youtube.com/embed/EuzOJ0wT99U?autoplay=1&loop=1&playlist=EuzOJ0wT99U&enablejsapi=1&playsinline=1"
+allow="autoplay"
+frameborder="0">
+</iframe>
+
+</div>
+
 
 <script>
+
+let musicPlaying = false;
+
+
 function toggleMusic() {
-    const frame = document.getElementById("musicFrame");
-    frame.contentWindow.postMessage(
-        '{"event":"command","func":"unMute","args":""}',
-        "*"
-    );
-    document.getElementById("musicButton").innerHTML = "🔊";
+
+    const frame =
+        document.getElementById("musicFrame");
+
+
+    if (!musicPlaying) {
+
+        frame.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
+
+        frame.contentWindow.postMessage(
+            '{"event":"command","func":"unMute","args":""}',
+            "*"
+        );
+
+        document.getElementById("musicButton").innerHTML = "🔊";
+
+        musicPlaying = true;
+
+    } else {
+
+        frame.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+        );
+
+        document.getElementById("musicButton").innerHTML = "♪";
+
+        musicPlaying = false;
+
+    }
+
 }
+
 </script>
+
+
 </body>
 
 </html>
+```
 
 
 
