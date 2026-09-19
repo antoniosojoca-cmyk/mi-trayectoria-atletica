@@ -1,4 +1,5 @@
-```html
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,14 +16,18 @@
             box-sizing: border-box;
         }
 
+        html,
         body {
             margin: 0;
+            padding: 0;
             background: #111;
             color: #fff;
             font-family: Georgia, "Times New Roman", serif;
         }
 
-        /* PORTADA */
+        /* =========================
+           PORTADA
+        ========================= */
 
         header {
 
@@ -30,43 +35,50 @@
 
             background:
                 linear-gradient(
-                    rgba(0,0,0,0.25),
-                    rgba(0,0,0,0.35)
+                    rgba(0,0,0,0.05),
+                    rgba(0,0,0,0.15)
                 ),
                 url("20180909_094909.jpg")
                 center center / contain no-repeat;
 
             display: flex;
 
-            align-items: center;
+            align-items: flex-end;
 
             justify-content: center;
 
             text-align: center;
 
-            padding: 40px 20px;
+            padding: 20px 20px 75px;
 
         }
 
-        .portada {
+        /* =========================
+           BLOQUE DE TEXTO
+           SEPARADO DE LA FOTO
+        ========================= */
 
-            max-width: 900px;
+        .portada {
 
             width: 100%;
 
-            padding: 25px;
+            max-width: 1050px;
 
-            background: rgba(0,0,0,0.25);
+            padding: 18px 25px 20px;
 
-            border-radius: 4px;
+            background: rgba(0,0,0,0.78);
+
+            border-top: 1px solid rgba(216,176,106,0.65);
+
+            border-bottom: 1px solid rgba(216,176,106,0.35);
 
         }
 
         .portada h1 {
 
-            margin: 0 0 14px;
+            margin: 0 0 7px;
 
-            font-size: 44px;
+            font-size: 40px;
 
             letter-spacing: 3px;
 
@@ -81,27 +93,33 @@
 
         .portada h2 {
 
-            margin: 0 0 22px;
+            margin: 0 0 12px;
 
-            font-size: 21px;
+            font-size: 20px;
 
             font-weight: normal;
+
+            color: #fff;
 
         }
 
         .portada p {
 
-            max-width: 680px;
+            max-width: 720px;
 
-            margin: 0 auto 28px;
+            margin: 0 auto 17px;
 
-            font-size: 17px;
+            font-size: 16px;
 
-            line-height: 1.5;
+            line-height: 1.4;
+
+            color: #e6e6e6;
 
         }
 
-        /* MENÚ */
+        /* =========================
+           MENÚ
+        ========================= */
 
         .menu {
 
@@ -111,7 +129,7 @@
 
             flex-wrap: wrap;
 
-            gap: 8px;
+            gap: 7px;
 
         }
 
@@ -119,39 +137,41 @@
 
             display: inline-block;
 
-            padding: 9px 14px;
+            padding: 8px 13px;
 
             color: #fff;
 
             text-decoration: none;
 
-            border: 1px solid rgba(255,255,255,0.75);
+            border: 1px solid rgba(216,176,106,0.7);
 
-            background: rgba(0,0,0,0.35);
+            background: rgba(0,0,0,0.45);
 
-            font-size: 16px;
+            font-size: 15px;
 
-            transition: 0.3s;
+            transition:
+                background 0.3s ease,
+                color 0.3s ease;
 
         }
 
         .menu a:hover {
 
-            background: rgba(216,176,106,0.20);
-
-            border-color: #d8b06a;
+            background: rgba(216,176,106,0.18);
 
             color: #d8b06a;
 
         }
 
-        /* PIE */
+        /* =========================
+           PIE
+        ========================= */
 
         footer {
 
             position: fixed;
 
-            bottom: 18px;
+            bottom: 14px;
 
             left: 0;
 
@@ -159,21 +179,23 @@
 
             text-align: center;
 
-            color: #ddd;
+            color: #aaa;
 
-            font-size: 14px;
+            font-size: 13px;
 
-            z-index: 10;
+            z-index: 100;
 
         }
 
-        /* BOTÓN DE MÚSICA */
+        /* =========================
+           BOTÓN MÚSICA
+        ========================= */
 
         #musicButton {
 
             position: fixed;
 
-            bottom: 20px;
+            bottom: 18px;
 
             right: 20px;
 
@@ -183,7 +205,7 @@
 
             border-radius: 50%;
 
-            background: rgba(0,0,0,0.85);
+            background: rgba(0,0,0,0.9);
 
             color: #d8b06a;
 
@@ -212,7 +234,9 @@
 
         }
 
-        /* YOUTUBE OCULTO */
+        /* =========================
+           YOUTUBE OCULTO
+        ========================= */
 
         #youtubePlayer {
 
@@ -230,6 +254,8 @@
 
             opacity: 0;
 
+            pointer-events: none;
+
         }
 
         #youtubePlayer iframe {
@@ -242,39 +268,51 @@
 
         }
 
-        /* MÓVIL */
+        /* =========================
+           MÓVIL
+        ========================= */
 
         @media (max-width: 700px) {
 
+            header {
+
+                padding: 15px 10px 70px;
+
+            }
+
             .portada {
 
-                padding: 15px;
+                padding: 14px 12px 16px;
 
             }
 
             .portada h1 {
 
-                font-size: 30px;
+                font-size: 28px;
+
+                letter-spacing: 2px;
 
             }
 
             .portada h2 {
 
-                font-size: 18px;
+                font-size: 17px;
 
             }
 
             .portada p {
 
-                font-size: 15px;
+                font-size: 14px;
+
+                line-height: 1.4;
 
             }
 
             .menu a {
 
-                font-size: 14px;
+                font-size: 13px;
 
-                padding: 8px 11px;
+                padding: 7px 10px;
 
             }
 
@@ -373,7 +411,7 @@
     </div>
 
 
-    <!-- MÚSICA DE YOUTUBE OCULTA -->
+    <!-- MÚSICA OCULTA -->
 
     <div id="youtubePlayer">
 
@@ -405,15 +443,12 @@
                     "*"
                 );
 
-
                 frame.contentWindow.postMessage(
                     '{"event":"command","func":"unMute","args":""}',
                     "*"
                 );
 
-
                 document.getElementById("musicButton").innerHTML = "🔊";
-
 
                 musicPlaying = true;
 
@@ -424,9 +459,7 @@
                     "*"
                 );
 
-
                 document.getElementById("musicButton").innerHTML = "♪";
-
 
                 musicPlaying = false;
 
@@ -440,7 +473,9 @@
 </body>
 
 </html>
-```
+
+
+
 
 
 
