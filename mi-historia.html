@@ -10,6 +10,10 @@
 
 <style>
 
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+   ========================================================= */
+
 *{
     box-sizing:border-box;
 }
@@ -20,66 +24,69 @@ html{
 
 body{
     margin:0;
-    background:#070707;
-    color:#f4f4f4;
+    background:#080808;
+    color:#f2f2f2;
     font-family:Georgia,"Times New Roman",serif;
     line-height:1.7;
 }
 
-/* =====================================================
-   PORTADA
-   ===================================================== */
 
-.hero{
+/* =========================================================
+   PORTADA
+   LA FOTOGRAFÍA ES LA PROTAGONISTA
+   ========================================================= */
+
+.portada{
     width:100%;
     background:#050505;
-    border-bottom:1px solid #c9a35b;
+    text-align:center;
 }
 
-.hero img{
+.portada img{
     display:block;
     width:100%;
     height:auto;
-    max-height:720px;
-    object-fit:contain;
+    max-width:1600px;
     margin:0 auto;
 }
 
-.hero-text{
-    text-align:center;
-    padding:24px 20px 32px;
+.titulo-portada{
+    padding:25px 20px 38px;
+    border-bottom:1px solid #c9a35b;
 }
 
-.hero-text .pequeno{
+.titulo-portada .pequeno{
     color:#c9a35b;
     font-size:13px;
-    letter-spacing:4px;
+    letter-spacing:5px;
     text-transform:uppercase;
     margin-bottom:8px;
 }
 
-.hero-text h1{
+.titulo-portada h1{
     margin:0;
     color:#c9a35b;
-    font-size:48px;
+    font-size:50px;
     font-weight:normal;
     letter-spacing:2px;
 }
 
-.hero-text p{
+.titulo-portada p{
     margin:8px 0 0;
     color:#ddd;
     font-size:18px;
 }
 
-/* =====================================================
+
+/* =========================================================
    INTRODUCCIÓN
-   ===================================================== */
+   ========================================================= */
 
 .introduccion{
-    max-width:1050px;
+    width:90%;
+    max-width:1100px;
     margin:0 auto;
-    padding:65px 35px 55px;
+    padding:65px 0 50px;
 }
 
 .introduccion .etiqueta{
@@ -90,8 +97,8 @@ body{
 }
 
 .introduccion h2{
-    margin:12px 0 20px;
-    font-size:36px;
+    margin:10px 0 18px;
+    font-size:38px;
     font-weight:normal;
     color:#fff;
 }
@@ -99,72 +106,55 @@ body{
 .introduccion p{
     max-width:850px;
     margin:0;
-    font-size:18px;
     color:#ccc;
+    font-size:18px;
 }
 
-/* =====================================================
-   HISTORIA
-   ===================================================== */
+
+/* =========================================================
+   CAPÍTULOS
+   ========================================================= */
 
 .historia{
     width:100%;
 }
 
-/* =====================================================
-   CADA CAPÍTULO
-   ===================================================== */
-
 .capitulo{
     width:92%;
     max-width:1450px;
     margin:0 auto;
-    padding:65px 0;
-    display:grid;
-    grid-template-columns:minmax(0,1.35fr) minmax(320px,.8fr);
-    gap:55px;
-    align-items:center;
+    padding:55px 0 75px;
     border-top:1px solid rgba(201,163,91,.35);
 }
 
-/* Capítulos pares al contrario */
 
-.capitulo.inverso{
-    grid-template-columns:minmax(320px,.8fr) minmax(0,1.35fr);
-}
+/* =========================================================
+   FOTOGRAFÍA HORIZONTAL
+   ========================================================= */
 
-/* =====================================================
-   FOTOGRAFÍAS
-   ===================================================== */
-
-.foto{
+.foto-horizontal{
     width:100%;
     text-align:center;
+    margin-bottom:35px;
 }
 
-.foto img{
+.foto-horizontal img{
     display:block;
     width:100%;
+    max-width:1350px;
     height:auto;
-    max-height:620px;
-    object-fit:contain;
     margin:0 auto;
 }
 
-/* Para fotos verticales no ponemos ningún fondo,
-   marco ni caja alrededor */
 
-.foto.vertical img{
-    width:auto;
-    max-width:100%;
-}
+/* =========================================================
+   CAPÍTULO HORIZONTAL
+   TEXTO DEBAJO DE LA FOTO
+   ========================================================= */
 
-/* =====================================================
-   TEXTO
-   ===================================================== */
-
-.texto{
-    padding:10px 15px;
+.texto-horizontal{
+    max-width:1050px;
+    margin:0 auto;
 }
 
 .numero{
@@ -174,44 +164,96 @@ body{
     text-transform:uppercase;
 }
 
-.texto h2{
-    margin:9px 0 23px;
+.texto-horizontal h2{
+    margin:8px 0 18px;
     color:#fff;
     font-size:36px;
-    line-height:1.2;
     font-weight:normal;
 }
 
 .linea{
-    width:65px;
+    width:70px;
     height:1px;
     background:#c9a35b;
-    margin:0 0 25px;
+    margin-bottom:22px;
 }
 
-.texto p{
-    margin:0 0 17px;
-    color:#d0d0d0;
+.texto-horizontal p{
+    margin:0 0 14px;
+    color:#ccc;
     font-size:17px;
 }
 
-/* =====================================================
-   FRASE ENTRE CAPÍTULOS
-   ===================================================== */
+
+/* =========================================================
+   CAPÍTULO CON FOTO VERTICAL
+   FOTO GRANDE + TEXTO
+   ========================================================= */
+
+.capitulo-vertical{
+    width:92%;
+    max-width:1250px;
+    margin:0 auto;
+    padding:65px 0 80px;
+    display:grid;
+    grid-template-columns:minmax(420px,.95fr) minmax(350px,.75fr);
+    gap:65px;
+    align-items:center;
+    border-top:1px solid rgba(201,163,91,.35);
+}
+
+.capitulo-vertical.inverso{
+    grid-template-columns:minmax(350px,.75fr) minmax(420px,.95fr);
+}
+
+.foto-vertical{
+    text-align:center;
+}
+
+.foto-vertical img{
+    display:block;
+    width:auto;
+    max-width:100%;
+    max-height:720px;
+    height:auto;
+    margin:0 auto;
+}
+
+.texto-vertical{
+    padding:10px;
+}
+
+.texto-vertical h2{
+    margin:8px 0 18px;
+    color:#fff;
+    font-size:36px;
+    font-weight:normal;
+}
+
+.texto-vertical p{
+    color:#ccc;
+    font-size:17px;
+    margin:0 0 16px;
+}
+
+
+/* =========================================================
+   FRASE
+   ========================================================= */
 
 .frase{
     width:90%;
-    max-width:1000px;
-    margin:15px auto;
-    padding:55px 30px;
+    max-width:1050px;
+    margin:20px auto 30px;
+    padding:55px 25px;
     text-align:center;
-    border-top:1px solid rgba(201,163,91,.6);
-    border-bottom:1px solid rgba(201,163,91,.6);
+    border-top:1px solid #c9a35b;
+    border-bottom:1px solid #c9a35b;
 }
 
 .frase p{
     margin:0;
-    color:#e5e5e5;
+    color:#e6e6e6;
     font-size:25px;
     font-style:italic;
 }
@@ -222,24 +264,24 @@ body{
     color:#c9a35b;
     font-size:12px;
     letter-spacing:4px;
-    font-style:normal;
 }
 
-/* =====================================================
+
+/* =========================================================
    FINAL
-   ===================================================== */
+   ========================================================= */
 
 .final{
     max-width:900px;
     margin:0 auto;
-    padding:80px 30px 130px;
+    padding:75px 25px 120px;
     text-align:center;
 }
 
 .final h2{
     margin:0 0 20px;
     color:#c9a35b;
-    font-size:40px;
+    font-size:42px;
     font-weight:normal;
 }
 
@@ -249,9 +291,10 @@ body{
     font-size:18px;
 }
 
-/* =====================================================
-   BOTÓN DE MÚSICA
-   ===================================================== */
+
+/* =========================================================
+   MÚSICA
+   ========================================================= */
 
 .musica{
     position:fixed;
@@ -269,7 +312,6 @@ body{
     font-size:22px;
     cursor:pointer;
     z-index:9999;
-    box-shadow:0 0 12px rgba(0,0,0,.7);
 }
 
 .youtube{
@@ -280,66 +322,73 @@ body{
     pointer-events:none;
 }
 
-/* =====================================================
+
+/* =========================================================
    MÓVIL
-   ===================================================== */
+   ========================================================= */
 
 @media(max-width:850px){
 
-    .hero img{
-        max-height:none;
-    }
-
-    .hero-text h1{
+    .titulo-portada h1{
         font-size:36px;
     }
 
-    .hero-text p{
+    .titulo-portada p{
         font-size:16px;
     }
 
     .introduccion{
-        padding:45px 25px;
+        padding:45px 0;
     }
 
     .introduccion h2{
-        font-size:29px;
+        font-size:30px;
     }
 
     .introduccion p{
         font-size:16px;
     }
 
-    .capitulo,
-    .capitulo.inverso{
+    .capitulo{
+        width:92%;
+        padding:45px 0 60px;
+    }
+
+    .foto-horizontal{
+        margin-bottom:28px;
+    }
+
+    .texto-horizontal h2{
+        font-size:30px;
+    }
+
+    .texto-horizontal p{
+        font-size:16px;
+    }
+
+    .capitulo-vertical,
+    .capitulo-vertical.inverso{
         width:92%;
         display:flex;
         flex-direction:column;
         gap:30px;
-        padding:50px 0;
+        padding:50px 0 65px;
     }
 
-    .foto{
-        width:100%;
-    }
-
-    .foto img,
-    .foto.vertical img{
-        width:100%;
-        max-width:100%;
+    .foto-vertical img{
         max-height:none;
+        max-width:100%;
     }
 
-    .texto{
-        width:100%;
+    .texto-vertical{
         padding:0;
     }
 
-    .texto h2{
+    .texto-vertical h2{
         font-size:30px;
     }
 
-    .texto p{
+    .texto-vertical p{
         font-size:16px;
     }
 
@@ -348,7 +397,7 @@ body{
     }
 
     .final h2{
-        font-size:32px;
+        font-size:34px;
     }
 
 }
@@ -361,24 +410,26 @@ body{
 <body>
 
 
-<!-- =====================================================
+<!-- =========================================================
      PORTADA
-     ===================================================== -->
+     ========================================================= -->
 
-<header class="hero">
+<header class="portada">
 
     <img
         src="IMG-20180909-WA0003.jpg"
         alt="Mi trayectoria atlética"
     >
 
-    <div class="hero-text">
+    <div class="titulo-portada">
 
         <div class="pequeno">
             Mi trayectoria atlética
         </div>
 
-        <h1>Mi historia</h1>
+        <h1>
+            Mi historia
+        </h1>
 
         <p>
             Una vida entre kilómetros, carreras y nuevos caminos
@@ -389,14 +440,14 @@ body{
 </header>
 
 
-<!-- =====================================================
+<!-- =========================================================
      INTRODUCCIÓN
-     ===================================================== -->
+     ========================================================= -->
 
 <section class="introduccion">
 
     <div class="etiqueta">
-        Mi trayectoria
+        El comienzo
     </div>
 
     <h2>
@@ -412,20 +463,16 @@ body{
 </section>
 
 
-<!-- =====================================================
-     HISTORIA
-     ===================================================== -->
-
 <main class="historia">
 
 
-<!-- =====================================================
+<!-- =========================================================
      CAPÍTULO I — LOS PRIMEROS AÑOS
-     ===================================================== -->
+     ========================================================= -->
 
 <section class="capitulo">
 
-    <div class="foto">
+    <div class="foto-horizontal">
 
         <img
             src="IMG_2083.jpg"
@@ -434,7 +481,7 @@ body{
 
     </div>
 
-    <div class="texto">
+    <div class="texto-horizontal">
 
         <div class="numero">
             Capítulo I
@@ -467,13 +514,22 @@ body{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      CAPÍTULO II — NUEVA JARILLA
-     ===================================================== -->
+     ========================================================= -->
 
-<section class="capitulo inverso">
+<section class="capitulo">
 
-    <div class="texto">
+    <div class="foto-horizontal">
+
+        <img
+            src="20161218_110620.jpg"
+            alt="Atletismo de Nueva Jarilla"
+        >
+
+    </div>
+
+    <div class="texto-horizontal">
 
         <div class="numero">
             Capítulo II
@@ -502,25 +558,16 @@ body{
 
     </div>
 
-    <div class="foto">
-
-        <img
-            src="20161218_110620.jpg"
-            alt="Atletismo de Nueva Jarilla"
-        >
-
-    </div>
-
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      CAPÍTULO III — LA COMPETICIÓN
-     ===================================================== -->
+     ========================================================= -->
 
 <section class="capitulo">
 
-    <div class="foto">
+    <div class="foto-horizontal">
 
         <img
             src="IMG-20250228-WA0016.jpg"
@@ -529,7 +576,7 @@ body{
 
     </div>
 
-    <div class="texto">
+    <div class="texto-horizontal">
 
         <div class="numero">
             Capítulo III
@@ -548,8 +595,9 @@ body{
         </p>
 
         <p>
-            Competir siempre ha tenido algo especial: los nervios,
-            la salida, el esfuerzo y esa sensación de cruzar la meta.
+            Competir siempre ha tenido algo especial:
+            los nervios, la salida, el esfuerzo y esa sensación
+            de cruzar la meta.
         </p>
 
         <p>
@@ -562,13 +610,22 @@ body{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      CAPÍTULO IV — EL PÓDIUM
-     ===================================================== -->
+     ========================================================= -->
 
-<section class="capitulo inverso">
+<section class="capitulo-vertical">
 
-    <div class="texto">
+    <div class="foto-vertical">
+
+        <img
+            src="20190407_153139.jpg"
+            alt="El primer pódium"
+        >
+
+    </div>
+
+    <div class="texto-vertical">
 
         <div class="numero">
             Capítulo IV
@@ -598,21 +655,12 @@ body{
 
     </div>
 
-    <div class="foto">
-
-        <img
-            src="20190407_153139.jpg"
-            alt="El primer pódium"
-        >
-
-    </div>
-
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      FRASE
-     ===================================================== -->
+     ========================================================= -->
 
 <section class="frase">
 
@@ -628,22 +676,13 @@ body{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      CAPÍTULO V — 25 AÑOS CORRIENDO
-     ===================================================== -->
+     ========================================================= -->
 
-<section class="capitulo">
+<section class="capitulo-vertical inverso">
 
-    <div class="foto">
-
-        <img
-            src="IMG-20251101-WA0016.jpg"
-            alt="25 años corriendo"
-        >
-
-    </div>
-
-    <div class="texto">
+    <div class="texto-vertical">
 
         <div class="numero">
             Capítulo V
@@ -673,16 +712,34 @@ body{
 
     </div>
 
+    <div class="foto-vertical">
+
+        <img
+            src="IMG-20251101-WA0016.jpg"
+            alt="25 años corriendo"
+        >
+
+    </div>
+
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      CAPÍTULO VI — LAS DIFICULTADES
-     ===================================================== -->
+     ========================================================= -->
 
-<section class="capitulo inverso">
+<section class="capitulo-vertical">
 
-    <div class="texto">
+    <div class="foto-vertical">
+
+        <img
+            src="IMG_20251229_174240.jpg"
+            alt="Las dificultades"
+        >
+
+    </div>
+
+    <div class="texto-vertical">
 
         <div class="numero">
             Capítulo VI
@@ -713,25 +770,16 @@ body{
 
     </div>
 
-    <div class="foto">
-
-        <img
-            src="IMG_20251229_174240.jpg"
-            alt="Las dificultades"
-        >
-
-    </div>
-
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      CAPÍTULO VII — UNA NUEVA ETAPA
-     ===================================================== -->
+     ========================================================= -->
 
 <section class="capitulo">
 
-    <div class="foto">
+    <div class="foto-horizontal">
 
         <img
             src="ChatGPT Image 2 feb 2026, 15_00_10.png"
@@ -740,7 +788,7 @@ body{
 
     </div>
 
-    <div class="texto">
+    <div class="texto-horizontal">
 
         <div class="numero">
             Capítulo VII
@@ -769,13 +817,22 @@ body{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      CAPÍTULO VIII — EL CAMINO CONTINÚA
-     ===================================================== -->
+     ========================================================= -->
 
-<section class="capitulo inverso">
+<section class="capitulo">
 
-    <div class="texto">
+    <div class="foto-horizontal">
+
+        <img
+            src="images.jfif"
+            alt="El camino continúa"
+        >
+
+    </div>
+
+    <div class="texto-horizontal">
 
         <div class="numero">
             Capítulo VIII
@@ -804,24 +861,15 @@ body{
 
     </div>
 
-    <div class="foto">
-
-        <img
-            src="images.jfif"
-            alt="El camino continúa"
-        >
-
-    </div>
-
 </section>
 
 
 </main>
 
 
-<!-- =====================================================
+<!-- =========================================================
      FINAL
-     ===================================================== -->
+     ========================================================= -->
 
 <section class="final">
 
@@ -838,9 +886,9 @@ body{
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      MÚSICA
-     ===================================================== -->
+     ========================================================= -->
 
 <div
     class="musica"
@@ -873,10 +921,10 @@ function activarMusica(){
 
 </script>
 
-
 </body>
 
 </html>
+
 
 
 
