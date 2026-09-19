@@ -1,4 +1,7 @@
 
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,93 +17,148 @@
             box-sizing: border-box;
         }
 
+        html,
         body {
             margin: 0;
+            width: 100%;
+            min-height: 100%;
             background: #111;
             color: #fff;
             font-family: Georgia, "Times New Roman", serif;
         }
 
+        /* PORTADA */
+
         header {
             min-height: 100vh;
 
             background:
-                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+                linear-gradient(
+                    rgba(0,0,0,0.15),
+                    rgba(0,0,0,0.35)
+                ),
                 url("20180909_094909.jpg")
-                center center / cover no-repeat;
+                center center / contain no-repeat;
+
+            background-color: #111;
 
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: center;
 
             text-align: center;
-            padding: 40px 20px;
+
+            padding: 40px 20px 95px;
         }
 
         .portada {
-            max-width: 900px;
             width: 100%;
+            max-width: 1100px;
+
+            padding: 0;
         }
 
-        
+        /* TITULO */
+
         .portada h1 {
-    margin: 0 0 14px;
-    font-size: 44px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #d8b06a;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.65);
-}
+            margin: 0 0 8px;
+
+            font-size: 42px;
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color: #d8b06a;
+
+            text-shadow:
+                2px 2px 5px rgba(0,0,0,0.9);
+        }
+
+        /* SUBTITULO */
 
         .portada h2 {
             margin: 0 0 22px;
-            font-size: 21px;
+
+            font-size: 20px;
+
             font-weight: normal;
+
+            color: #fff;
+
+            text-shadow:
+                2px 2px 5px rgba(0,0,0,0.9);
         }
 
+        /* QUITAMOS EL TEXTO LARGO DE LA PORTADA */
+
         .portada p {
-            max-width: 680px;
-            margin: 0 auto 28px;
-            font-size: 17px;
-            line-height: 1.5;
+            display: none;
         }
+
+        /* MENU */
 
         .menu {
             display: flex;
+
             justify-content: center;
+
+            align-items: center;
+
             flex-wrap: wrap;
+
             gap: 8px;
         }
 
         .menu a {
             display: inline-block;
-            padding: 9px 14px;
+
+            padding: 8px 14px;
+
             color: #fff;
+
             text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.7);
-            font-size: 16px;
+
+            background: rgba(0,0,0,0.55);
+
+            border: 1px solid rgba(216,176,106,0.75);
+
+            font-size: 15px;
+
             transition: 0.3s;
         }
 
         .menu a:hover {
-            background: rgba(255,255,255,0.15);
+            background: rgba(216,176,106,0.20);
+
+            color: #d8b06a;
         }
+
+        /* PIE */
 
         footer {
             position: fixed;
-            bottom: 18px;
+
+            bottom: 12px;
+
             left: 0;
             right: 0;
+
             text-align: center;
+
             color: #ddd;
-            font-size: 14px;
+
+            font-size: 13px;
+
             z-index: 10;
         }
 
+        /* BOTON MUSICA */
+
         #musicButton {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+
+            bottom: 18px;
+            right: 18px;
 
             width: 42px;
             height: 42px;
@@ -108,32 +166,66 @@
             border-radius: 50%;
 
             background: rgba(0,0,0,0.75);
+
             color: white;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
-            font-size: 20px;
+            font-size: 19px;
+
             cursor: pointer;
 
             z-index: 9999;
 
-            border: 1px solid rgba(255,255,255,0.5);
+            border: 1px solid rgba(216,176,106,0.7);
         }
+
+        /* YOUTUBE OCULTO */
 
         #youtubePlayer {
             position: fixed;
+
             width: 1px;
             height: 1px;
+
             left: -10px;
             bottom: -10px;
+
             overflow: hidden;
         }
 
         #youtubePlayer iframe {
             width: 1px;
             height: 1px;
+        }
+
+        /* MOVIL */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding:
+                    25px 12px 90px;
+
+                background-position: center center;
+            }
+
+            .portada h1 {
+                font-size: 29px;
+                letter-spacing: 2px;
+            }
+
+            .portada h2 {
+                font-size: 17px;
+            }
+
+            .menu a {
+                font-size: 14px;
+                padding: 7px 11px;
+            }
         }
 
     </style>
@@ -196,7 +288,8 @@
         Mi trayectoria atlética · 2026
     </footer>
 
-    <!-- Música -->
+
+    <!-- MUSICA -->
 
     <div id="musicButton" onclick="toggleMusic()">
         🔊
@@ -206,8 +299,6 @@
 
         <iframe
             id="musicFrame"
-         
-          
             src="https://www.youtube.com/embed/60ItHLz5WEA?autoplay=1&loop=1&playlist=60ItHLz5WEA&mute=0"
             allow="autoplay"
             frameborder="0">
@@ -215,18 +306,22 @@
 
     </div>
 
+
     <script>
 
         function toggleMusic() {
 
-            const frame = document.getElementById("musicFrame");
+            const frame =
+                document.getElementById("musicFrame");
 
             frame.contentWindow.postMessage(
                 '{"event":"command","func":"unMute","args":""}',
                 "*"
             );
 
-            document.getElementById("musicButton").innerHTML = "🔊";
+            document.getElementById(
+                "musicButton"
+            ).innerHTML = "🔊";
         }
 
     </script>
@@ -234,3 +329,5 @@
 </body>
 
 </html>
+
+
