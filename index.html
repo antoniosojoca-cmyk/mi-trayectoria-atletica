@@ -1,5 +1,4 @@
-
-
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,10 +15,8 @@
             box-sizing: border-box;
         }
 
-        html,
         body {
             margin: 0;
-            padding: 0;
             background: #111;
             color: #fff;
             font-family: Georgia, "Times New Roman", serif;
@@ -28,61 +25,48 @@
         /* PORTADA */
 
         header {
+
             min-height: 100vh;
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            padding: 30px 20px 90px;
-
-            background: #111;
-        }
-
-        /* FOTOGRAFÍA */
-
-        .foto-portada {
-            width: 100%;
-            max-width: 1050px;
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.25),
+                    rgba(0,0,0,0.35)
+                ),
+                url("20180909_094909.jpg")
+                center center / contain no-repeat;
 
             display: flex;
-            justify-content: center;
+
             align-items: center;
 
-            margin: 0 auto 28px;
-        }
-
-        .foto-portada img {
-            display: block;
-
-            width: auto;
-            max-width: 100%;
-            height: auto;
-
-            max-height: 68vh;
-
-            object-fit: contain;
-
-            border: 1px solid rgba(216, 176, 106, 0.45);
-
-            box-shadow:
-                0 0 25px rgba(0,0,0,0.8);
-        }
-
-        /* TEXTO */
-
-        .portada {
-            width: 100%;
-            max-width: 1000px;
+            justify-content: center;
 
             text-align: center;
+
+            padding: 40px 20px;
+
+        }
+
+        .portada {
+
+            max-width: 900px;
+
+            width: 100%;
+
+            padding: 25px;
+
+            background: rgba(0,0,0,0.25);
+
+            border-radius: 4px;
+
         }
 
         .portada h1 {
-            margin: 0 0 10px;
 
-            font-size: 42px;
+            margin: 0 0 14px;
+
+            font-size: 44px;
 
             letter-spacing: 3px;
 
@@ -91,46 +75,48 @@
             color: #d8b06a;
 
             text-shadow:
-                2px 2px 4px rgba(0,0,0,0.7);
+                2px 2px 4px rgba(0,0,0,0.8);
+
         }
 
         .portada h2 {
-            margin: 0 0 20px;
+
+            margin: 0 0 22px;
 
             font-size: 21px;
 
             font-weight: normal;
 
-            color: #fff;
         }
 
         .portada p {
-            max-width: 720px;
 
-            margin: 0 auto 25px;
+            max-width: 680px;
+
+            margin: 0 auto 28px;
 
             font-size: 17px;
 
             line-height: 1.5;
 
-            color: #e6e6e6;
         }
 
         /* MENÚ */
 
         .menu {
+
             display: flex;
 
             justify-content: center;
 
-            align-items: center;
-
             flex-wrap: wrap;
 
             gap: 8px;
+
         }
 
         .menu a {
+
             display: inline-block;
 
             padding: 9px 14px;
@@ -139,37 +125,324 @@
 
             text-decoration: none;
 
-            border: 1px solid rgba(216,176,106,0.65);
+            border: 1px solid rgba(255,255,255,0.75);
+
+            background: rgba(0,0,0,0.35);
 
             font-size: 16px;
 
-            background: rgba(0,0,0,0.25);
+            transition: 0.3s;
 
-            transition: background 0.3s ease,
-                        color 0.3s ease,
-                        border-color 0.3s ease;
         }
 
         .menu a:hover {
-            background: rgba(216,176,106,0.15);
+
+            background: rgba(216,176,106,0.20);
+
+            border-color: #d8b06a;
 
             color: #d8b06a;
 
-            border-color: #d8b06a;
         }
 
         /* PIE */
 
         footer {
+
             position: fixed;
 
-            bottom: 14px;
+            bottom: 18px;
 
             left: 0;
 
             right: 0;
 
-            text-align:
+            text-align: center;
+
+            color: #ddd;
+
+            font-size: 14px;
+
+            z-index: 10;
+
+        }
+
+        /* BOTÓN DE MÚSICA */
+
+        #musicButton {
+
+            position: fixed;
+
+            bottom: 20px;
+
+            right: 20px;
+
+            width: 46px;
+
+            height: 46px;
+
+            border-radius: 50%;
+
+            background: rgba(0,0,0,0.85);
+
+            color: #d8b06a;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            z-index: 99999;
+
+            border: 1px solid #d8b06a;
+
+            box-shadow:
+                0 0 10px rgba(0,0,0,0.8);
+
+        }
+
+        #musicButton:hover {
+
+            background: rgba(216,176,106,0.15);
+
+        }
+
+        /* YOUTUBE OCULTO */
+
+        #youtubePlayer {
+
+            position: fixed;
+
+            width: 1px;
+
+            height: 1px;
+
+            left: -10px;
+
+            bottom: -10px;
+
+            overflow: hidden;
+
+            opacity: 0;
+
+        }
+
+        #youtubePlayer iframe {
+
+            width: 1px;
+
+            height: 1px;
+
+            border: 0;
+
+        }
+
+        /* MÓVIL */
+
+        @media (max-width: 700px) {
+
+            .portada {
+
+                padding: 15px;
+
+            }
+
+            .portada h1 {
+
+                font-size: 30px;
+
+            }
+
+            .portada h2 {
+
+                font-size: 18px;
+
+            }
+
+            .portada p {
+
+                font-size: 15px;
+
+            }
+
+            .menu a {
+
+                font-size: 14px;
+
+                padding: 8px 11px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+
+        <div class="portada">
+
+
+            <h1>
+                Mi trayectoria atlética
+            </h1>
+
+
+            <h2>
+                Una vida entre kilómetros, carreras y nuevos caminos
+            </h2>
+
+
+            <p>
+                Más de quince años formando parte del atletismo.
+                Una historia de esfuerzo, carreras, aprendizajes,
+                dificultades y experiencias que continúan hoy
+                con una nueva etapa en la marcha atlética.
+            </p>
+
+
+            <nav class="menu">
+
+
+                <a href="mi-historia.html">
+                    Mi historia
+                </a>
+
+
+                <a href="mis-carreras.html">
+                    Mis carreras
+                </a>
+
+
+                <a href="#">
+                    Entrenamiento
+                </a>
+
+
+                <a href="#">
+                    La lesión
+                </a>
+
+
+                <a href="#">
+                    Marcha atlética
+                </a>
+
+
+                <a href="#">
+                    Galería
+                </a>
+
+
+            </nav>
+
+
+        </div>
+
+
+    </header>
+
+
+    <footer>
+
+        Mi trayectoria atlética · 2026
+
+    </footer>
+
+
+    <!-- BOTÓN DE MÚSICA -->
+
+    <div
+        id="musicButton"
+        onclick="toggleMusic()"
+        title="Reproducir / pausar música">
+
+        ♪
+
+    </div>
+
+
+    <!-- MÚSICA DE YOUTUBE OCULTA -->
+
+    <div id="youtubePlayer">
+
+        <iframe
+            id="musicFrame"
+            src="https://www.youtube.com/embed/60ItHLz5WEA?autoplay=1&loop=1&playlist=60ItHLz5WEA&enablejsapi=1"
+            allow="autoplay"
+            frameborder="0">
+        </iframe>
+
+    </div>
+
+
+    <script>
+
+        let musicPlaying = false;
+
+
+        function toggleMusic() {
+
+            const frame =
+                document.getElementById("musicFrame");
+
+
+            if (!musicPlaying) {
+
+                frame.contentWindow.postMessage(
+                    '{"event":"command","func":"playVideo","args":""}',
+                    "*"
+                );
+
+
+                frame.contentWindow.postMessage(
+                    '{"event":"command","func":"unMute","args":""}',
+                    "*"
+                );
+
+
+                document.getElementById("musicButton").innerHTML = "🔊";
+
+
+                musicPlaying = true;
+
+            } else {
+
+                frame.contentWindow.postMessage(
+                    '{"event":"command","func":"pauseVideo","args":""}',
+                    "*"
+                );
+
+
+                document.getElementById("musicButton").innerHTML = "♪";
+
+
+                musicPlaying = false;
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
+```
+
+
 
 
 
