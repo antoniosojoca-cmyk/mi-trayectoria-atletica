@@ -1,7 +1,5 @@
 
 
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -27,33 +25,92 @@
             font-family: Georgia, "Times New Roman", serif;
         }
 
+        /* FONDO GENERAL */
+
+        body {
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* FOTOGRAFÍA AMPLIADA PARA RELLENAR LOS LATERALES */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            top: -40px;
+            left: -40px;
+
+            width: calc(100% + 80px);
+            height: calc(100% + 80px);
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.35),
+                    rgba(0,0,0,0.45)
+                ),
+                url("20180909_094909.jpg")
+                center center / cover no-repeat;
+
+            filter: blur(18px);
+
+            transform: scale(1.08);
+
+            z-index: -2;
+        }
+
+        /* OSCURECEMOS LIGERAMENTE EL FONDO */
+
+        body::after {
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0,0,0,0.20);
+
+            z-index: -1;
+        }
+
         /* PORTADA */
 
         header {
             min-height: 100vh;
 
-            background:
-                linear-gradient(
-                    rgba(0,0,0,0.15),
-                    rgba(0,0,0,0.35)
-                ),
-            
-                url("20180909_094909.jpg")
-center center / 92% auto no-repeat;
-
-            background-color: #111;
-
             display: flex;
+
             align-items: flex-end;
+
             justify-content: center;
 
             text-align: center;
 
-            padding: 40px 20px 95px;
+            padding:
+                35px
+                20px
+                95px;
+        }
+
+        /* FOTOGRAFÍA PRINCIPAL */
+
+        header {
+            background-image:
+                url("20180909_094909.jpg");
+
+            background-repeat: no-repeat;
+
+            background-position:
+                center center;
+
+            background-size:
+                contain;
         }
 
         .portada {
             width: 100%;
+
             max-width: 1100px;
 
             padding: 0;
@@ -65,6 +122,7 @@ center center / 92% auto no-repeat;
             margin: 0 0 8px;
 
             font-size: 42px;
+
             letter-spacing: 4px;
 
             text-transform: uppercase;
@@ -72,13 +130,13 @@ center center / 92% auto no-repeat;
             color: #d8b06a;
 
             text-shadow:
-                2px 2px 5px rgba(0,0,0,0.9);
+                2px 2px 6px rgba(0,0,0,0.95);
         }
 
         /* SUBTITULO */
 
         .portada h2 {
-            margin: 0 0 22px;
+            margin: 0 0 20px;
 
             font-size: 20px;
 
@@ -87,10 +145,10 @@ center center / 92% auto no-repeat;
             color: #fff;
 
             text-shadow:
-                2px 2px 5px rgba(0,0,0,0.9);
+                2px 2px 6px rgba(0,0,0,0.95);
         }
 
-        /* QUITAMOS EL TEXTO LARGO DE LA PORTADA */
+        /* EL TEXTO LARGO NO APARECE EN PORTADA */
 
         .portada p {
             display: none;
@@ -119,17 +177,23 @@ center center / 92% auto no-repeat;
 
             text-decoration: none;
 
-            background: rgba(0,0,0,0.55);
+            background:
+                rgba(0,0,0,0.62);
 
-            border: 1px solid rgba(216,176,106,0.75);
+            border:
+                1px solid
+                rgba(216,176,106,0.80);
 
             font-size: 15px;
 
-            transition: 0.3s;
+            transition:
+                background 0.3s,
+                color 0.3s;
         }
 
         .menu a:hover {
-            background: rgba(216,176,106,0.20);
+            background:
+                rgba(216,176,106,0.20);
 
             color: #d8b06a;
         }
@@ -166,13 +230,15 @@ center center / 92% auto no-repeat;
 
             border-radius: 50%;
 
-            background: rgba(0,0,0,0.75);
+            background:
+                rgba(0,0,0,0.75);
 
             color: white;
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
             font-size: 19px;
@@ -181,7 +247,9 @@ center center / 92% auto no-repeat;
 
             z-index: 9999;
 
-            border: 1px solid rgba(216,176,106,0.7);
+            border:
+                1px solid
+                rgba(216,176,106,0.75);
         }
 
         /* YOUTUBE OCULTO */
@@ -198,137 +266,8 @@ center center / 92% auto no-repeat;
             overflow: hidden;
         }
 
-        #youtubePlayer iframe {
-            width: 1px;
-            height: 1px;
-        }
-
-        /* MOVIL */
-
-        @media (max-width: 700px) {
-
-            header {
-                padding:
-                    25px 12px 90px;
-
-                background-position: center center;
-            }
-
-            .portada h1 {
-                font-size: 29px;
-                letter-spacing: 2px;
-            }
-
-            .portada h2 {
-                font-size: 17px;
-            }
-
-            .menu a {
-                font-size: 14px;
-                padding: 7px 11px;
-            }
-        }
-
-    </style>
-</head>
-
-<body>
-
-    <header>
-
-        <div class="portada">
-
-            <h1>
-                Mi trayectoria atlética
-            </h1>
-
-            <h2>
-                Una vida entre kilómetros, carreras y nuevos caminos
-            </h2>
-
-            <p>
-                Más de quince años formando parte del atletismo.
-                Una historia de esfuerzo, carreras, aprendizajes,
-                dificultades y experiencias que continúan hoy
-                con una nueva etapa en la marcha atlética.
-            </p>
-
-            <nav class="menu">
-
-                <a href="mi-historia.html">
-                    Mi historia
-                </a>
-
-                <a href="mis-carreras.html">
-                    Mis carreras
-                </a>
-
-                <a href="#">
-                    Entrenamiento
-                </a>
-
-                <a href="#">
-                    La lesión
-                </a>
-
-                <a href="#">
-                    Marcha atlética
-                </a>
-
-                <a href="#">
-                    Galería
-                </a>
-
-            </nav>
-
-        </div>
-
-    </header>
-
-    <footer>
-        Mi trayectoria atlética · 2026
-    </footer>
+        #youtubePlaye
 
 
-    <!-- MUSICA -->
-
-    <div id="musicButton" onclick="toggleMusic()">
-        🔊
-    </div>
-
-    <div id="youtubePlayer">
-
-        <iframe
-            id="musicFrame"
-            src="https://www.youtube.com/embed/60ItHLz5WEA?autoplay=1&loop=1&playlist=60ItHLz5WEA&mute=0"
-            allow="autoplay"
-            frameborder="0">
-        </iframe>
-
-    </div>
-
-
-    <script>
-
-        function toggleMusic() {
-
-            const frame =
-                document.getElementById("musicFrame");
-
-            frame.contentWindow.postMessage(
-                '{"event":"command","func":"unMute","args":""}',
-                "*"
-            );
-
-            document.getElementById(
-                "musicButton"
-            ).innerHTML = "🔊";
-        }
-
-    </script>
-
-</body>
-
-</html>
 
 
