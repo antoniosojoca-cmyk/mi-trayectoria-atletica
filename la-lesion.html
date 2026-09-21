@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>La lesión — Mi trayectoria atlética</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #080808;
+      color: #f2f2f2;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .contenedor {
+      width: 94%;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 35px 0 80px;
+    }
+
+    /* =========================
+       VOLVER
+    ========================= */
+
+    .volver {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 10px 18px;
+
+      border: 1px solid #c9a35b;
+      color: #c9a35b;
+
+      text-decoration: none;
+
+      font-size: 16px;
+      letter-spacing: 0.5px;
+
+      transition: 0.25s ease;
+    }
+
+    .volver:hover {
+      background: #c9a35b;
+      color: #080808;
+    }
+
+    /* =========================
+       CABECERA
+    ========================= */
+
+    .cabecera {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .cabecera-imagen {
+      width: 100%;
+      max-height: 650px;
+
+      display: block;
+      margin: 0 auto 30px;
+
+      object-fit: contain;
+
+      background: #050505;
+
+      border: 1px solid rgba(201, 163, 91, 0.75);
+    }
+
+    h1 {
+      margin: 0;
+
+      color: #c9a35b;
+
+      font-size: clamp(38px, 6vw, 70px);
+
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .subtitulo {
+      margin-top: 12px;
+
+      color: #d6d6d6;
+
+      font-size: 21px;
+      letter-spacing: 1px;
+    }
+
+    .linea {
+      width: 120px;
+      height: 1px;
+
+      background: #c9a35b;
+
+      margin: 25px auto 0;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      max-width: 950px;
+      margin: 0 auto 70px;
+
+      text-align: center;
+
+      color: #d3d3d3;
+
+      font-size: 19px;
+      line-height: 1.9;
+    }
+
+    /* =========================
+       FRASE DESTACADA
+    ========================= */
+
+    .frase {
+      max-width: 950px;
+      margin: 0 auto 75px;
+
+      padding: 35px 30px;
+
+      text-align: center;
+
+      border-top: 1px solid rgba(201, 163, 91, 0.55);
+      border-bottom: 1px solid rgba(201, 163, 91, 0.55);
+    }
+
+    .frase p {
+      margin: 0;
+
+      color: #c9a35b;
+
+      font-size: 26px;
+      line-height: 1.6;
+
+      font-style: italic;
+    }
+
+    /* =========================
+       BLOQUES DE TEXTO
+    ========================= */
+
+    .bloque {
+      max-width: 1100px;
+
+      margin: 0 auto 65px;
+
+      padding: 35px;
+
+      background: #0d0d0d;
+
+      border: 1px solid rgba(201, 163, 91, 0.55);
+    }
+
+    .numero {
+      color: #c9a35b;
+
+      font-size: 16px;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 10px;
+    }
+
+    .bloque h2 {
+      margin: 0 0 22px;
+
+      color: #c9a35b;
+
+      font-size: 31px;
+
+      font-weight: normal;
+    }
+
+    .bloque p {
+      margin: 0 0 18px;
+
+      color: #d0d0d0;
+
+      font-size: 18px;
+
+      line-height: 1.9;
+    }
+
+    .bloque p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       FOTOGRAFÍA INTERMEDIA
+    ========================= */
+
+    .foto-intermedia {
+      max-width: 1100px;
+      margin: 20px auto 75px;
+      padding: 12px;
+
+      background: #050505;
+
+      border: 1px solid rgba(201, 163, 91, 0.7);
+    }
+
+    .foto-intermedia img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+      max-height: 700px;
+
+      object-fit: contain;
+    }
+
+    .foto-pie {
+      padding: 14px 10px 4px;
+
+      text-align: center;
+
+      color: #aFAFAF;
+
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       CAMBIO DE ETAPA
+    ========================= */
+
+    .cambio {
+      max-width: 1000px;
+
+      margin: 80px auto;
+
+      padding: 40px 35px;
+
+      text-align: center;
+
+      border: 1px solid rgba(201, 163, 91, 0.7);
+
+      background: #0b0b0b;
+    }
+
+    .cambio h2 {
+      margin: 0 0 22px;
+
+      color: #c9a35b;
+
+      font-size: 32px;
+
+      font-weight: normal;
+    }
+
+    .cambio p {
+      margin: 0;
+
+      color: #d2d2d2;
+
+      font-size: 19px;
+
+      line-height: 1.9;
+    }
+
+    /* =========================
+       FRASE FINAL
+    ========================= */
+
+    .frase-final {
+      max-width: 900px;
+
+      margin: 80px auto 0;
+
+      padding-top: 35px;
+
+      text-align: center;
+
+      border-top: 1px solid rgba(201, 163, 91, 0.4);
+    }
+
+    .frase-final p {
+      margin: 0;
+
+      color: #c9a35b;
+
+      font-size: 26px;
+
+      line-height: 1.7;
+
+      font-style: italic;
+    }
+
+    /* =========================
+       MÓVIL
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .contenedor {
+        width: 92%;
+        padding-top: 25px;
+      }
+
+      .cabecera-imagen {
+        max-height: none;
+      }
+
+      .subtitulo {
+        font-size: 18px;
+      }
+
+      .intro {
+        font-size: 17px;
+      }
+
+      .frase {
+        padding: 25px 20px;
+      }
+
+      .frase p {
+        font-size: 22px;
+      }
+
+      .bloque {
+        padding: 25px 20px;
+      }
+
+      .bloque h2 {
+        font-size: 26px;
+      }
+
+      .bloque p {
+        font-size: 17px;
+      }
+
+      .foto-intermedia {
+        padding: 8px;
+      }
+
+      .foto-pie {
+        font-size: 14px;
+      }
+
+      .cambio {
+        padding: 30px 20px;
+      }
+
+      .cambio h2 {
+        font-size: 27px;
+      }
+
+      .cambio p {
+        font-size: 17px;
+      }
+
+      .frase-final p {
+        font-size: 22px;
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <main class="contenedor">
+
+
+    <!-- =========================
+         VOLVER AL INICIO
+    ========================= -->
+
+    <a class="volver" href="index.html">
+      ← Volver al inicio
+    </a>
+
+
+    <!-- =========================
+         CABECERA
+    ========================= -->
+
+    <header class="cabecera">
+
+      <img
+        class="cabecera-imagen"
+        src="IMG_20260321_093209.jpg"
+        alt="Mi nueva etapa">
+
+      <h1>
+        La lesión
+      </h1>
+
+      <div class="subtitulo">
+        Cuando tuve que cambiar la forma de seguir
+      </div>
+
+      <div class="linea"></div>
+
+    </header>
+
+
+    <!-- =========================
+         INTRODUCCIÓN
+    ========================= -->
+
+    <section class="intro">
+
+      <p>
+        Mi lesión no apareció de repente. Fue algo que empezó poco a poco,
+        con una molestia a la que al principio no di la importancia que
+        debía.
+      </p>
+
+      <p>
+        Con el tiempo aquella molestia fue aumentando hasta convertirse
+        en algo que terminó cambiando mi manera de entender el deporte.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         FRASE
+    ========================= -->
+
+    <section class="frase">
+
+      <p>
+        “A veces el camino cambia, pero las ganas de seguir permanecen.”
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         BLOQUE I
+    ========================= -->
+
+    <section class="bloque">
+
+      <div class="numero">
+        El comienzo
+      </div>
+
+      <h2>
+        Una molestia a la que no di importancia
+      </h2>
+
+      <p>
+        Prácticamente todo comenzó hace un año. Al principio era solamente
+        una molestia y no le di la importancia que debía. Viéndolo ahora,
+        sé que aquel fue un error por mi parte.
+      </p>
+
+      <p>
+        Poco a poco la molestia fue a más. Intentaba continuar, pero el
+        problema seguía ahí y cada vez resultaba más difícil hacer como
+        si no pasara nada.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         BLOQUE II
+    ========================= -->
+
+    <section class="bloque">
+
+      <div class="numero">
+        Las recaídas
+      </div>
+
+      <h2>
+        Mejoraba... y volvía a recaer
+      </h2>
+
+      <p>
+        Finalmente decidí ponerme en manos médicas. En algunos momentos
+        la situación mejoraba y parecía que el problema estaba controlado.
+      </p>
+
+      <p>
+        Pero después de un tiempo volvía a recaer. Así estuve durante
+        una etapa en la que las molestias iban y venían, hasta que llegó
+        un momento en el que ya no podía continuar de la misma manera.
+      </p>
+
+      <p>
+        Los dolores eran cada vez más fuertes y aquello que al principio
+        parecía una simple molestia terminó convirtiéndose en un problema
+        que necesitaba ser estudiado a fondo.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         BLOQUE III
+    ========================= -->
+
+    <section class="bloque">
+
+      <div class="numero">
+        El diagnóstico
+      </div>
+
+      <h2>
+        La noticia que cambió mis planes
+      </h2>
+
+      <p>
+        Después de realizarme distintas pruebas, me explicaron que había
+        perdido el cartílago de la rodilla y que tenía dañado el menisco
+        medial. También me indicaron que esto estaba produciendo un
+        derrame leve.
+      </p>
+
+      <p>
+        En ese momento tuve que asumir que continuar corriendo como hasta
+        entonces ya no era una opción adecuada para mí.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         FOTOGRAFÍA 2
+    ========================= -->
+
+    <div class="foto-intermedia">
+
+      <img
+        src="IMG-20251101-WA0016.jpg"
+        alt="Una etapa importante de mi trayectoria">
+
+      <div class="foto-pie">
+        Un momento más de mi trayectoria como corredor.
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         BLOQUE IV
+    ========================= -->
+
+    <section class="bloque">
+
+      <div class="numero">
+        Un nuevo camino
+      </div>
+
+      <h2>
+        Dejar de correr no significaba dejar el deporte
+      </h2>
+
+      <p>
+        El consejo que recibí fue dejar la carrera por el impacto que
+        produce y buscar actividades que no generaran ese mismo impacto.
+      </p>
+
+      <p>
+        Entre las posibilidades estaban la bicicleta, la elíptica y
+        caminar. Es decir, seguir haciendo deporte, pero de una manera
+        diferente.
+      </p>
+
+      <p>
+        Para mí no era fácil aceptar que tenía que dejar de correr.
+        Habían sido muchos años, muchas carreras y muchos kilómetros.
+        Correr formaba parte de mi vida.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         CAMBIO DE ETAPA
+    ========================= -->
+
+    <section class="cambio">
+
+      <h2>
+        La marcha atlética
+      </h2>
+
+      <p>
+        Por eso decidí seguir vinculado al atletismo a través de la
+        marcha atlética. Es una nueva etapa y también una nueva manera
+        de seguir disfrutando de un deporte que ha acompañado gran parte
+        de mi vida.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         FRASE FINAL
+    ========================= -->
+
+    <section class="frase-final">
+
+      <p>
+        “No he dejado de avanzar.<br>
+        Simplemente he aprendido a hacerlo de otra manera.”
+      </p>
+
+    </section>
+
+
+  </main>
+
+</body>
+
+</html>
