@@ -1,918 +1,577 @@
 
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis carreras — Mi trayectoria atlética</title>
 
-<title>Mis carreras — Mi trayectoria atlética</title>
-
-<style>
-
-*{
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    margin:0;
-    background:#080808;
-    color:#f2f2f2;
-    font-family:Georgia,"Times New Roman",serif;
-    line-height:1.7;
-}
-
-
-/* =========================================================
-   PORTADA
-   ========================================================= */
-
-.portada{
-    width:100%;
-    background:#050505;
-    text-align:center;
-}
-
-.portada img{
-    display:block;
-    width:100%;
-    max-width:1600px;
-    height:auto;
-    margin:0 auto;
-}
-
-.titulo-portada{
-    padding:25px 20px 35px;
-    border-bottom:1px solid #c9a35b;
-}
-
-.titulo-portada .pequeno{
-    color:#c9a35b;
-    font-size:13px;
-    letter-spacing:5px;
-    text-transform:uppercase;
-    margin-bottom:8px;
-}
-
-.titulo-portada h1{
-    margin:0;
-    color:#c9a35b;
-    font-size:50px;
-    font-weight:normal;
-    letter-spacing:2px;
-}
-
-.titulo-portada p{
-    margin:8px 0 18px;
-    color:#ddd;
-    font-size:19px;
-}
-
-
-/* =========================================================
-   VOLVER
-   ========================================================= */
-
-.volver{
-    display:inline-block;
-    padding:8px 18px;
-    border:1px solid #c9a35b;
-    color:#c9a35b;
-    text-decoration:none;
-    font-size:14px;
-    letter-spacing:1px;
-    transition:.3s;
-}
-
-.volver:hover{
-    background:#c9a35b;
-    color:#080808;
-}
-
-
-/* =========================================================
-   INTRODUCCIÓN
-   ========================================================= */
-
-.introduccion{
-    width:90%;
-    max-width:1050px;
-    margin:0 auto;
-    padding:65px 0 55px;
-    text-align:center;
-}
-
-.introduccion .etiqueta{
-    color:#c9a35b;
-    font-size:13px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-}
-
-.introduccion h2{
-    margin:10px 0 18px;
-    color:#fff;
-    font-size:38px;
-    font-weight:normal;
-}
-
-.introduccion p{
-    max-width:850px;
-    margin:0 auto;
-    color:#ccc;
-    font-size:18px;
-}
-
-
-/* =========================================================
-   BLOQUES DE CADA PARTE
-   ========================================================= */
-
-.parte{
-    width:92%;
-    max-width:1450px;
-    margin:0 auto;
-    padding:65px 0 85px;
-    border-top:1px solid rgba(201,163,91,.4);
-}
-
-.titulo-parte{
-    max-width:1050px;
-    margin:0 auto 45px;
-    text-align:center;
-}
-
-.numero-parte{
-    color:#c9a35b;
-    font-size:13px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-}
-
-.titulo-parte h2{
-    margin:8px 0 15px;
-    color:#fff;
-    font-size:38px;
-    font-weight:normal;
-}
-
-.titulo-parte .linea{
-    width:70px;
-    height:1px;
-    background:#c9a35b;
-    margin:0 auto 22px;
-}
-
-.titulo-parte p{
-    max-width:850px;
-    margin:0 auto;
-    color:#bbb;
-    font-size:17px;
-}
-
-
-/* =========================================================
-   GALERÍA
-   ========================================================= */
-
-.galeria{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:35px;
-}
-
-
-/* =========================================================
-   FOTOGRAFÍA
-   ========================================================= */
-
-.foto{
-    background:#050505;
-    border:1px solid rgba(201,163,91,.35);
-    padding:12px;
-    transition:border-color .3s ease;
-}
-
-.foto:hover{
-    border-color:#c9a35b;
-}
-
-.foto img{
-    display:block;
-    width:100%;
-    height:auto;
-    max-height:700px;
-    object-fit:contain;
-    margin:0 auto;
-}
-
-
-/* =========================================================
-   TEXTO DE CADA FOTO
-   ========================================================= */
-
-.pie{
-    padding:18px 12px 10px;
-    text-align:center;
-}
-
-.pie h3{
-    margin:0 0 6px;
-    color:#c9a35b;
-    font-size:22px;
-    font-weight:normal;
-}
-
-.pie p{
-    margin:0;
-    color:#bbb;
-    font-size:15px;
-}
-
-
-/* =========================================================
-   FRASE ENTRE PARTES
-   ========================================================= */
-
-.frase{
-    width:90%;
-    max-width:1000px;
-    margin:0 auto;
-    padding:45px 20px;
-    text-align:center;
-}
-
-.frase p{
-    margin:0;
-    color:#ddd;
-    font-size:23px;
-    font-style:italic;
-}
-
-.frase span{
-    display:block;
-    margin-top:12px;
-    color:#c9a35b;
-    font-size:12px;
-    letter-spacing:4px;
-}
-
-
-/* =========================================================
-   FINAL
-   ========================================================= */
-
-.final{
-    width:90%;
-    max-width:900px;
-    margin:0 auto;
-    padding:70px 20px 110px;
-    text-align:center;
-    border-top:1px solid rgba(201,163,91,.4);
-}
-
-.final h2{
-    margin:0 0 18px;
-    color:#c9a35b;
-    font-size:40px;
-    font-weight:normal;
-}
-
-.final p{
-    margin:0;
-    color:#ccc;
-    font-size:18px;
-}
-
-
-/* =========================================================
-   PIE
-   ========================================================= */
-
-footer{
-    padding:35px 20px;
-    text-align:center;
-    border-top:1px solid #222;
-    color:#777;
-    font-size:14px;
-}
-
-
-/* =========================================================
-   MÓVIL
-   ========================================================= */
-
-@media(max-width:850px){
-
-    .titulo-portada h1{
-        font-size:36px;
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-    .titulo-portada p{
-        font-size:16px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .introduccion{
-        padding:50px 0;
+    body {
+      margin: 0;
+      background: #080808;
+      color: #f2f2f2;
+      font-family: Georgia, "Times New Roman", serif;
     }
 
-    .introduccion h2{
-        font-size:30px;
+    .contenedor {
+      width: 94%;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 35px 0 70px;
     }
 
-    .introduccion p{
-        font-size:16px;
+    /* VOLVER */
+    .volver {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 10px 18px;
+      border: 1px solid #c9a35b;
+      color: #c9a35b;
+      text-decoration: none;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      transition: 0.25s ease;
     }
 
-    .parte{
-        width:92%;
-        padding:50px 0 65px;
+    .volver:hover {
+      background: #c9a35b;
+      color: #080808;
     }
 
-    .titulo-parte h2{
-        font-size:30px;
+    /* CABECERA */
+    .cabecera {
+      text-align: center;
+      margin-bottom: 45px;
     }
 
-    .titulo-parte p{
-        font-size:16px;
+    .cabecera-imagen {
+      width: 100%;
+      max-height: 650px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 30px;
+      background: #050505;
+      border: 1px solid rgba(201, 163, 91, 0.75);
     }
 
-    .galeria{
-        grid-template-columns:1fr;
-        gap:28px;
+    h1 {
+      margin: 0;
+      color: #c9a35b;
+      font-size: clamp(38px, 6vw, 70px);
+      letter-spacing: 4px;
+      text-transform: uppercase;
     }
 
-    .foto img{
-        max-height:none;
+    .subtitulo {
+      margin-top: 12px;
+      color: #d6d6d6;
+      font-size: 21px;
+      letter-spacing: 1px;
     }
 
-    .frase p{
-        font-size:20px;
+    .linea {
+      width: 120px;
+      height: 1px;
+      background: #c9a35b;
+      margin: 25px auto 0;
     }
 
-    .final h2{
-        font-size:34px;
+    /* INTRODUCCIÓN */
+    .intro {
+      max-width: 950px;
+      margin: 0 auto 65px;
+      text-align: center;
+      color: #d3d3d3;
+      font-size: 19px;
+      line-height: 1.8;
     }
 
-}
+    /* SECCIONES */
+    .seccion {
+      margin-top: 75px;
+    }
 
-</style>
+    .seccion-titulo {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #c9a35b;
+      font-size: 32px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
+    .seccion-texto {
+      max-width: 850px;
+      margin: 0 auto 35px;
+      text-align: center;
+      color: #bdbdbd;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* GALERÍA */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 34px;
+    }
+
+    .tarjeta {
+      background: #0d0d0d;
+      border: 1px solid rgba(201, 163, 91, 0.65);
+      padding: 12px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-4px);
+      border-color: #c9a35b;
+    }
+
+    .tarjeta img {
+      display: block;
+      width: 100%;
+      height: 520px;
+      object-fit: contain;
+      background: #050505;
+    }
+
+    .pie-foto {
+      padding: 18px 12px 10px;
+      text-align: center;
+    }
+
+    .pie-foto h3 {
+      margin: 0 0 8px;
+      color: #c9a35b;
+      font-size: 21px;
+      font-weight: normal;
+      letter-spacing: 0.5px;
+    }
+
+    .pie-foto p {
+      margin: 0;
+      color: #bdbdbd;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* SEPARADOR */
+    .separador {
+      width: 100%;
+      height: 1px;
+      background: rgba(201, 163, 91, 0.35);
+      margin: 75px 0 0;
+    }
+
+    /* FINAL */
+    .final {
+      text-align: center;
+      margin-top: 80px;
+      padding-top: 35px;
+      border-top: 1px solid rgba(201, 163, 91, 0.35);
+    }
+
+    .final h2 {
+      margin: 0 0 15px;
+      color: #c9a35b;
+      font-size: 30px;
+      font-weight: normal;
+    }
+
+    .final p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #bdbdbd;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    /* MÓVIL */
+    @media (max-width: 800px) {
+
+      .contenedor {
+        width: 92%;
+        padding-top: 25px;
+      }
+
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+
+      .tarjeta img {
+        height: auto;
+        max-height: none;
+      }
+
+      .cabecera-imagen {
+        max-height: none;
+      }
+
+      .subtitulo {
+        font-size: 18px;
+      }
+
+      .seccion-titulo {
+        font-size: 26px;
+      }
+
+      .intro {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- =========================================================
-     IMAGEN PRINCIPAL
-     ========================================================= -->
+  <main class="contenedor">
 
-<header class="portada">
+    <!-- VOLVER AL INICIO -->
+    <a class="volver" href="index.html">← Volver al inicio</a>
 
-```
-<img
-    src="IMG-20250228-WA0016.jpg"
-    alt="Mis carreras"
->
 
-<div class="titulo-portada">
+    <!-- CABECERA -->
+    <header class="cabecera">
 
-    <div class="pequeno">
-        Mi trayectoria atlética
-    </div>
+      <img
+        class="cabecera-imagen"
+        src="IMG-20250228-WA0016.jpg"
+        alt="Mi trayectoria atlética">
 
-    <h1>
-        Mis carreras
-    </h1>
+      <h1>Mis carreras</h1>
 
-    <p>
+      <div class="subtitulo">
         Una vida recorriendo kilómetros
-    </p>
+      </div>
 
-    <a
-        class="volver"
-        href="index.html"
-    >
-        ← Volver al inicio
-    </a>
+      <div class="linea"></div>
 
-</div>
-```
-
-</header>
-
-<!-- =========================================================
-     INTRODUCCIÓN
-     ========================================================= -->
-
-<section class="introduccion">
-
-```
-<div class="etiqueta">
-    Mis recuerdos
-</div>
-
-<h2>
-    Mi historia a través de las carreras
-</h2>
-
-<p>
-    Cada carrera forma parte de mi trayectoria.
-    Algunas las recuerdo por lo que sentí al correrlas,
-    otras por el momento vivido y otras porque dejaron
-    una emoción que permanece en la memoria.
-</p>
-
-<p>
-    Esta galería reúne algunos de esos momentos.
-</p>
-```
-
-</section>
-
-<!-- =========================================================
-     PARTE I
-     ========================================================= -->
-
-<section class="parte">
-
-```
-<div class="titulo-parte">
-
-    <div class="numero-parte">
-        Parte I
-    </div>
-
-    <h2>
-        Las carreras que más recuerdo
-    </h2>
-
-    <div class="linea"></div>
-
-    <p>
-        Carreras que recuerdo especialmente por el momento
-        que viví, por las sensaciones que tuve y por todo
-        lo que significaron para mí.
-    </p>
-
-</div>
+    </header>
 
 
-<div class="galeria">
+    <!-- INTRODUCCIÓN -->
+    <section class="intro">
+
+      <p>
+        Cada carrera forma parte de mi historia. Algunas quedaron grabadas
+        por el esfuerzo, otras por la emoción, por las personas que estuvieron
+        conmigo o simplemente por la sensación de haber llegado hasta el final.
+      </p>
+
+      <p>
+        En esta galería reúno algunos de esos momentos que, con el paso del
+        tiempo, siguen teniendo un significado especial para mí.
+      </p>
+
+    </section>
 
 
-    <!-- FOTO 1 -->
+    <!-- ===================================================== -->
+    <!-- PARTE I -->
+    <!-- ===================================================== -->
 
-    <article class="foto">
+    <section class="seccion">
 
-        <img
-            src="AQUI-FOTO-1.jpg"
-            alt="Carrera que más recuerdo"
-        >
+      <h2 class="seccion-titulo">
+        Parte I — Las carreras que más recuerdo
+      </h2>
 
-        <div class="pie">
+      <p class="seccion-texto">
+        Cuatro momentos que guardo especialmente en mi memoria después de
+        tantos años entre carreras, kilómetros y experiencias compartidas.
+      </p>
 
-            <h3>
-                Mi recuerdo
-            </h3>
 
+      <div class="galeria">
+
+        <!-- FOTO 1 -->
+        <article class="tarjeta">
+
+          <img
+            src="20180909_104841.jpg"
+            alt="Las carreras que más recuerdo">
+
+          <div class="pie-foto">
+            <h3>Un recuerdo especial</h3>
             <p>
-                Aquí podremos escribir después
-                el nombre de la carrera y tu recuerdo.
+              Uno de esos días de competición que siguen formando parte
+              de mi historia.
             </p>
+          </div>
 
-        </div>
-
-    </article>
+        </article>
 
 
-    <!-- FOTO 2 -->
+        <!-- FOTO 2 -->
+        <article class="tarjeta">
 
-    <article class="foto">
+          <img
+            src="IMG_5793.jpg"
+            alt="Las carreras que más recuerdo">
 
-        <img
-            src="AQUI-FOTO-2.jpg"
-            alt="Carrera que más recuerdo"
-        >
-
-        <div class="pie">
-
-            <h3>
-                Un momento especial
-            </h3>
-
+          <div class="pie-foto">
+            <h3>Un día para recordar</h3>
             <p>
-                Aquí podremos contar qué sentiste
-                en esta carrera.
+              Otra imagen que conserva un momento importante de mi trayectoria.
             </p>
+          </div>
 
-        </div>
-
-    </article>
+        </article>
 
 
-    <!-- FOTO 3 -->
+        <!-- FOTO 3 -->
+        <article class="tarjeta">
 
-    <article class="foto">
+          <img
+            src="20171119_132104.jpg"
+            alt="Las carreras que más recuerdo">
 
-        <img
-            src="AQUI-FOTO-3.jpg"
-            alt="Carrera que más recuerdo"
-        >
-
-        <div class="pie">
-
-            <h3>
-                Un día para recordar
-            </h3>
-
+          <div class="pie-foto">
+            <h3>Entre kilómetros</h3>
             <p>
-                Aquí podremos añadir el recuerdo
-                de esta carrera.
+              Una fotografía que forma parte de todos esos años dedicados
+              al atletismo.
             </p>
+          </div>
 
-        </div>
-
-    </article>
+        </article>
 
 
-    <!-- FOTO 4 -->
+        <!-- FOTO 4 -->
+        <article class="tarjeta">
 
-    <article class="foto">
+          <img
+            src="20190317_145213.jpg"
+            alt="Las carreras que más recuerdo">
 
-        <img
-            src="AQUI-FOTO-4.jpg"
-            alt="Carrera que más recuerdo"
-        >
-
-        <div class="pie">
-
-            <h3>
-                Otro recuerdo
-            </h3>
-
+          <div class="pie-foto">
+            <h3>Otro recuerdo imborrable</h3>
             <p>
-                Aquí podremos escribir la historia
-                de esta carrera.
+              Una más de las carreras que quedaron para siempre en mi memoria.
             </p>
+          </div>
 
-        </div>
+        </article>
 
-    </article>
+      </div>
 
-
-</div>
-```
-
-</section>
-
-<!-- =========================================================
-     FRASE
-     ========================================================= -->
-
-<section class="frase">
-
-```
-<p>
-    “Hay carreras que terminan en la meta
-    y otras que permanecen para siempre.”
-</p>
-
-<span>
-    RECUERDOS
-</span>
-```
-
-</section>
-
-<!-- =========================================================
-     PARTE II
-     ========================================================= -->
-
-<section class="parte">
-
-```
-<div class="titulo-parte">
-
-    <div class="numero-parte">
-        Parte II
-    </div>
-
-    <h2>
-        Mis pódiums
-    </h2>
-
-    <div class="linea"></div>
-
-    <p>
-        Los momentos en los que el esfuerzo tuvo su recompensa.
-        Dentro de ellos habrá uno especialmente importante:
-        el pódium que más recuerdo.
-    </p>
-
-</div>
+    </section>
 
 
-<div class="galeria">
+    <div class="separador"></div>
 
 
-    <!-- PODIUM 1 -->
+    <!-- ===================================================== -->
+    <!-- PARTE II -->
+    <!-- ===================================================== -->
 
-    <article class="foto">
+    <section class="seccion">
 
-        <img
-            src="AQUI-PODIUM-1.jpg"
-            alt="Mi pódium"
-        >
+      <h2 class="seccion-titulo">
+        Parte II — Mis pódiums
+      </h2>
 
-        <div class="pie">
+      <p class="seccion-texto">
+        Los pódiums representan una pequeña parte de todas las horas de
+        entrenamiento, sacrificio y constancia que hay detrás de una carrera.
+      </p>
 
-            <h3>
-                Mi pódium
-            </h3>
 
+      <div class="galeria">
+
+        <!-- FOTO 1 -->
+        <article class="tarjeta">
+
+          <img
+            src="20161208_124805.jpg"
+            alt="Mis pódiums">
+
+          <div class="pie-foto">
+            <h3>Un pódium más</h3>
             <p>
-                Aquí podremos poner el nombre de la carrera,
-                año y resultado.
+              Un momento de reconocimiento después del esfuerzo.
             </p>
+          </div>
 
-        </div>
-
-    </article>
+        </article>
 
 
-    <!-- PODIUM 2 -->
+        <!-- FOTO 2 -->
+        <article class="tarjeta">
 
-    <article class="foto">
+          <img
+            src="20170108_132249.jpg"
+            alt="Mis pódiums">
 
-        <img
-            src="AQUI-PODIUM-2.jpg"
-            alt="Mi pódium"
-        >
-
-        <div class="pie">
-
-            <h3>
-                Un recuerdo especial
-            </h3>
-
+          <div class="pie-foto">
+            <h3>La recompensa</h3>
             <p>
-                Aquí podremos escribir la historia
-                de este momento.
+              Una imagen que guarda uno de esos momentos especiales
+              de competición.
             </p>
+          </div>
 
-        </div>
-
-    </article>
+        </article>
 
 
-    <!-- PODIUM 3 -->
+        <!-- FOTO 3 -->
+        <article class="tarjeta">
 
-    <article class="foto">
+          <img
+            src="20180414_124755 (1).jpg"
+            alt="Mis pódiums">
 
-        <img
-            src="AQUI-PODIUM-3.jpg"
-            alt="Mi pódium"
-        >
-
-        <div class="pie">
-
-            <h3>
-                Otro pódium
-            </h3>
-
+          <div class="pie-foto">
+            <h3>Un recuerdo especial</h3>
             <p>
-                Aquí podremos añadir los datos
-                y el recuerdo personal.
+              Otro instante que forma parte de mis recuerdos deportivos.
             </p>
+          </div>
 
-        </div>
-
-    </article>
+        </article>
 
 
-    <!-- PODIUM 4 -->
+        <!-- FOTO 4 -->
+        <article class="tarjeta">
 
-    <article class="foto">
+          <img
+            src="20171210_123911.jpg"
+            alt="Mis pódiums">
 
-        <img
-            src="AQUI-PODIUM-4.jpg"
-            alt="Mi pódium"
-        >
-
-        <div class="pie">
-
-            <h3>
-                El que más recuerdo
-            </h3>
-
+          <div class="pie-foto">
+            <h3>Un día inolvidable</h3>
             <p>
-                Aquí podremos contar por qué
-                este pódium fue tan importante.
+              Un momento que permanece unido a mi trayectoria como corredor.
             </p>
+          </div>
 
-        </div>
+        </article>
 
-    </article>
+      </div>
 
-
-</div>
-```
-
-</section>
-
-<!-- =========================================================
-     FRASE
-     ========================================================= -->
-
-<section class="frase">
-
-```
-<p>
-    “Subir al pódium es un instante.
-    Recordarlo durante años es otra historia.”
-</p>
-
-<span>
-    EL ESFUERZO
-</span>
-```
-
-</section>
-
-<!-- =========================================================
-     PARTE III
-     ========================================================= -->
-
-<section class="parte">
-
-```
-<div class="titulo-parte">
-
-    <div class="numero-parte">
-        Parte III
-    </div>
-
-    <h2>
-        Las carreras más emotivas
-    </h2>
-
-    <div class="linea"></div>
-
-    <p>
-        Carreras que quizá no fueron las de mejor resultado,
-        pero que tuvieron algo diferente y dejaron una huella
-        especial.
-    </p>
-
-</div>
+    </section>
 
 
-<div class="galeria">
+    <div class="separador"></div>
 
 
-    <!-- EMOTIVA 1 -->
+    <!-- ===================================================== -->
+    <!-- PARTE III -->
+    <!-- ===================================================== -->
 
-    <article class="foto">
+    <section class="seccion">
 
-        <img
-            src="AQUI-EMOTIVA-1.jpg"
-            alt="Carrera emotiva"
-        >
+      <h2 class="seccion-titulo">
+        Parte III — Las carreras más emotivas
+      </h2>
 
-        <div class="pie">
+      <p class="seccion-texto">
+        Hay carreras que se recuerdan no solo por el resultado, sino por
+        lo que se sintió aquel día y por todo lo que significaron.
+      </p>
 
-            <h3>
-                Un día especial
-            </h3>
 
+      <div class="galeria">
+
+        <!-- FOTO 1 -->
+        <article class="tarjeta">
+
+          <img
+            src="IMG-20190428-WA0002.jpg"
+            alt="Las carreras más emotivas">
+
+          <div class="pie-foto">
+            <h3>Una carrera especial</h3>
             <p>
-                Aquí podremos contar qué hizo
-                especial esta carrera.
+              Uno de esos momentos que siguen vivos en el recuerdo.
             </p>
+          </div>
 
-        </div>
-
-    </article>
+        </article>
 
 
-    <!-- EMOTIVA 2 -->
+        <!-- FOTO 2 -->
+        <article class="tarjeta">
 
-    <article class="foto">
+          <img
+            src="20171029_094651.jpg"
+            alt="Las carreras más emotivas">
 
-        <img
-            src="AQUI-EMOTIVA-2.jpg"
-            alt="Carrera emotiva"
-        >
-
-        <div class="pie">
-
-            <h3>
-                Un recuerdo que permanece
-            </h3>
-
+          <div class="pie-foto">
+            <h3>La emoción de competir</h3>
             <p>
-                Aquí podremos escribir tu recuerdo
-                personal.
+              Porque cada carrera tiene también una historia detrás.
             </p>
+          </div>
 
-        </div>
-
-    </article>
+        </article>
 
 
-    <!-- EMOTIVA 3 -->
+        <!-- FOTO 3 -->
+        <article class="tarjeta">
 
-    <article class="foto">
+          <img
+            src="IMG_2782.JPG"
+            alt="Las carreras más emotivas">
 
-        <img
-            src="AQUI-EMOTIVA-3.jpg"
-            alt="Carrera emotiva"
-        >
-
-        <div class="pie">
-
-            <h3>
-                Una carrera diferente
-            </h3>
-
+          <div class="pie-foto">
+            <h3>Un recuerdo que permanece</h3>
             <p>
-                Aquí podremos explicar
-                lo que significó para ti.
+              Una imagen ligada a una etapa muy importante de mi trayectoria.
             </p>
+          </div>
 
-        </div>
-
-    </article>
+        </article>
 
 
-    <!-- EMOTIVA 4 -->
+        <!-- FOTO 4 -->
+        <article class="tarjeta">
 
-    <article class="foto">
+          <img
+            src="DSC_0787.JPG"
+            alt="Las carreras más emotivas">
 
-        <img
-            src="AQUI-EMOTIVA-4.jpg"
-            alt="Carrera emotiva"
-        >
-
-        <div class="pie">
-
-            <h3>
-                Para no olvidar
-            </h3>
-
+          <div class="pie-foto">
+            <h3>Hasta la meta</h3>
             <p>
-                Aquí podremos escribir
-                la historia de este momento.
+              El esfuerzo, la emoción y la satisfacción de seguir corriendo.
             </p>
+          </div>
 
-        </div>
+        </article>
 
-    </article>
+      </div>
+
+    </section>
 
 
-</div>
-```
+    <!-- FINAL -->
 
-</section>
+    <section class="final">
 
-<!-- =========================================================
-     FINAL
-     ========================================================= -->
+      <h2>Cada carrera cuenta</h2>
 
-<section class="final">
+      <p>
+        Mirando estas fotografías recuerdo que una trayectoria no está formada
+        únicamente por resultados. Está hecha de kilómetros, entrenamientos,
+        compañeros, dificultades, alegrías y, sobre todo, de las ganas de
+        seguir adelante.
+      </p>
 
-```
-<h2>
-    Cada carrera cuenta
-</h2>
+    </section>
 
-<p>
-    Algunas carreras se recuerdan por el resultado.
-    Otras por lo que sentimos al vivirlas.
-</p>
-
-<p>
-    Todas forman parte de mi historia.
-</p>
-```
-
-</section>
-
-<footer>
-
-```
-Mi trayectoria atlética · Mis carreras
-```
-
-</footer>
+  </main>
 
 </body>
-
 </html>
-
