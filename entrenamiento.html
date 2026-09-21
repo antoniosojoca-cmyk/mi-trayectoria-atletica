@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Entrenamiento — Mi trayectoria atlética</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #080808;
+      color: #f2f2f2;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .contenedor {
+      width: 94%;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 35px 0 80px;
+    }
+
+    /* =========================
+       VOLVER
+    ========================= */
+
+    .volver {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 10px 18px;
+
+      border: 1px solid #c9a35b;
+      color: #c9a35b;
+
+      text-decoration: none;
+
+      font-size: 16px;
+      letter-spacing: 0.5px;
+
+      transition: 0.25s ease;
+    }
+
+    .volver:hover {
+      background: #c9a35b;
+      color: #080808;
+    }
+
+    /* =========================
+       CABECERA
+    ========================= */
+
+    .cabecera {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .cabecera-imagen {
+      width: 100%;
+      max-height: 650px;
+
+      display: block;
+      margin: 0 auto 30px;
+
+      object-fit: contain;
+
+      background: #050505;
+
+      border: 1px solid rgba(201, 163, 91, 0.75);
+    }
+
+    h1 {
+      margin: 0;
+
+      color: #c9a35b;
+
+      font-size: clamp(38px, 6vw, 70px);
+
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .subtitulo {
+      margin-top: 12px;
+
+      color: #d6d6d6;
+
+      font-size: 21px;
+      letter-spacing: 1px;
+    }
+
+    .linea {
+      width: 120px;
+      height: 1px;
+
+      background: #c9a35b;
+
+      margin: 25px auto 0;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      max-width: 950px;
+      margin: 0 auto 75px;
+
+      text-align: center;
+
+      color: #d3d3d3;
+
+      font-size: 19px;
+      line-height: 1.9;
+    }
+
+    /* =========================
+       FRASE DESTACADA
+    ========================= */
+
+    .frase {
+      max-width: 900px;
+      margin: 0 auto 80px;
+
+      padding: 35px 30px;
+
+      text-align: center;
+
+      border-top: 1px solid rgba(201, 163, 91, 0.55);
+      border-bottom: 1px solid rgba(201, 163, 91, 0.55);
+    }
+
+    .frase p {
+      margin: 0;
+
+      color: #c9a35b;
+
+      font-size: 26px;
+      line-height: 1.6;
+
+      font-style: italic;
+    }
+
+    /* =========================
+       BLOQUES
+    ========================= */
+
+    .bloque {
+      max-width: 1100px;
+
+      margin: 0 auto 70px;
+
+      padding: 35px;
+
+      background: #0d0d0d;
+
+      border: 1px solid rgba(201, 163, 91, 0.55);
+    }
+
+    .numero {
+      color: #c9a35b;
+
+      font-size: 16px;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 10px;
+    }
+
+    .bloque h2 {
+      margin: 0 0 20px;
+
+      color: #c9a35b;
+
+      font-size: 31px;
+
+      font-weight: normal;
+    }
+
+    .bloque p {
+      margin: 0 0 18px;
+
+      color: #d0d0d0;
+
+      font-size: 18px;
+
+      line-height: 1.9;
+    }
+
+    .bloque p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================
+       FRASES PEQUEÑAS
+    ========================= */
+
+    .frase-pequena {
+      max-width: 850px;
+
+      margin: 75px auto;
+
+      text-align: center;
+    }
+
+    .frase-pequena p {
+      margin: 0;
+
+      color: #c9a35b;
+
+      font-size: 22px;
+
+      line-height: 1.7;
+
+      font-style: italic;
+    }
+
+    /* =========================
+       FINAL
+    ========================= */
+
+    .final {
+      max-width: 1050px;
+
+      margin: 90px auto 0;
+
+      padding-top: 40px;
+
+      text-align: center;
+
+      border-top: 1px solid rgba(201, 163, 91, 0.4);
+    }
+
+    .final h2 {
+      margin: 0 0 20px;
+
+      color: #c9a35b;
+
+      font-size: 32px;
+
+      font-weight: normal;
+
+      letter-spacing: 1px;
+    }
+
+    .final p {
+      margin: 0 auto 22px;
+
+      color: #d0d0d0;
+
+      font-size: 19px;
+
+      line-height: 1.9;
+    }
+
+    .final-destacada {
+      margin-top: 35px;
+
+      color: #c9a35b !important;
+
+      font-size: 25px !important;
+
+      font-style: italic;
+    }
+
+    /* =========================
+       MÓVIL
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .contenedor {
+        width: 92%;
+        padding-top: 25px;
+      }
+
+      .cabecera-imagen {
+        max-height: none;
+      }
+
+      .subtitulo {
+        font-size: 18px;
+      }
+
+      .intro {
+        font-size: 17px;
+      }
+
+      .frase {
+        padding: 25px 20px;
+      }
+
+      .frase p {
+        font-size: 22px;
+      }
+
+      .bloque {
+        padding: 25px 20px;
+      }
+
+      .bloque h2 {
+        font-size: 26px;
+      }
+
+      .bloque p {
+        font-size: 17px;
+      }
+
+      .frase-pequena p {
+        font-size: 20px;
+      }
+
+      .final h2 {
+        font-size: 27px;
+      }
+
+      .final p {
+        font-size: 17px;
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <main class="contenedor">
+
+
+    <!-- =========================
+         VOLVER
+    ========================= -->
+
+    <a class="volver" href="index.html">
+      ← Volver al inicio
+    </a>
+
+
+    <!-- =========================
+         CABECERA
+    ========================= -->
+
+    <header class="cabecera">
+
+      <img
+        class="cabecera-imagen"
+        src="20160910_192158.jpg"
+        alt="Mi trayectoria atlética">
+
+      <h1>
+        Entrenamiento
+      </h1>
+
+      <div class="subtitulo">
+        La constancia detrás de cada carrera
+      </div>
+
+      <div class="linea"></div>
+
+    </header>
+
+
+    <!-- =========================
+         INTRODUCCIÓN
+    ========================= -->
+
+    <section class="intro">
+
+      <p>
+        Detrás de cada carrera hay muchas horas que no aparecen en una
+        fotografía. Entrenamientos, madrugones, cansancio, días buenos,
+        días difíciles y, sobre todo, constancia.
+      </p>
+
+      <p>
+        Durante todos estos años he aprendido que entrenar no significa
+        solamente correr. También significa saber escuchar al cuerpo,
+        tener paciencia y aceptar que cada etapa de la vida necesita
+        una manera diferente de prepararse.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         FRASE
+    ========================= -->
+
+    <section class="frase">
+
+      <p>
+        “Cada carrera empieza mucho antes de la línea de salida.”
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         BLOQUE I
+    ========================= -->
+
+    <section class="bloque">
+
+      <div class="numero">
+        Etapa I
+      </div>
+
+      <h2>
+        Los comienzos
+      </h2>
+
+      <p>
+        Cuando empecé a correr, entrenar formaba parte de descubrir
+        algo nuevo. Poco a poco fui entendiendo que para mejorar había
+        que ser constante y que los resultados no aparecían de un día
+        para otro.
+      </p>
+
+      <p>
+        Cada entrenamiento servía para aprender algo. Había días en los
+        que todo salía bien y otros en los que costaba mucho más. Pero
+        precisamente ahí empecé a descubrir el valor de la constancia.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         FRASE
+    ========================= -->
+
+    <div class="frase-pequena">
+
+      <p>
+        “La constancia fue construyendo mi camino.”
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         BLOQUE II
+    ========================= -->
+
+    <section class="bloque">
+
+      <div class="numero">
+        Etapa II
+      </div>
+
+      <h2>
+        La constancia
+      </h2>
+
+      <p>
+        Durante muchos años el entrenamiento se convirtió en una parte
+        habitual de mi vida. Intentaba mantener una rutina y entrenar
+        alrededor de tres o cuatro días por semana, buscando la manera
+        de seguir mejorando sin dejar de disfrutar.
+      </p>
+
+      <p>
+        Con el tiempo comprendí que una carrera no se prepara solamente
+        el día de la competición. Cada entrenamiento, cada esfuerzo y
+        cada pequeño avance forman parte de ella.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         BLOQUE III
+    ========================= -->
+
+    <section class="bloque">
+
+      <div class="numero">
+        Etapa III
+      </div>
+
+      <h2>
+        Entrenar también es descansar
+      </h2>
+
+      <p>
+        Los años y las lesiones también me enseñaron a cambiar mi
+        manera de entender el entrenamiento. Hubo momentos en los que
+        tuve que parar y recuperar antes de volver a competir.
+      </p>
+
+      <p>
+        Aprendí que descansar no significa abandonar. Significa darle
+        al cuerpo el tiempo que necesita para poder continuar. El trabajo
+        físico, la recuperación y escuchar las señales del cuerpo también
+        forman parte de la preparación.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         FRASE
+    ========================= -->
+
+    <div class="frase-pequena">
+
+      <p>
+        “Con los años aprendí que descansar también es entrenar.”
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         BLOQUE IV
+    ========================= -->
+
+    <section class="bloque">
+
+      <div class="numero">
+        Etapa IV
+      </div>
+
+      <h2>
+        Entrenar para seguir disfrutando
+      </h2>
+
+      <p>
+        Hoy mi manera de entender el entrenamiento es diferente. Ya no
+        se trata únicamente de buscar más intensidad o de correr más
+        rápido.
+      </p>
+
+      <p>
+        Ahora el objetivo principal es poder seguir participando,
+        terminar las competiciones sintiéndome bien y mantener la
+        ilusión por este deporte.
+      </p>
+
+      <p>
+        La experiencia me ha enseñado que la calidad importa más que
+        acumular esfuerzos sin sentido, y que escuchar al cuerpo es
+        una parte fundamental de seguir adelante.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL
+    ========================= -->
+
+    <section class="final">
+
+      <h2>
+        Seguir entrenando, seguir avanzando
+      </h2>
+
+      <p>
+        Después de tantos años, el entrenamiento continúa siendo una
+        parte importante de mi vida. Ha cambiado la forma de hacerlo,
+        han cambiado los objetivos y también han cambiado las
+        circunstancias.
+      </p>
+
+      <p>
+        Pero hay algo que permanece: las ganas de seguir avanzando.
+      </p>
+
+      <p class="final-destacada">
+        “Hoy sigo entrenando con el mismo objetivo:
+        seguir disfrutando del camino.”
+      </p>
+
+    </section>
+
+
+  </main>
+
+</body>
+
+</html>
