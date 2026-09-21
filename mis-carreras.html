@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,6 +22,54 @@
       font-family: Georgia, "Times New Roman", serif;
     }
 
+    /* =========================
+       BOTÓN DE MÚSICA
+    ========================= */
+
+    #botonMusica {
+      position: fixed;
+      top: 22px;
+      right: 22px;
+      z-index: 9999;
+
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+
+      border: 1px solid #c9a35b;
+      background: rgba(8, 8, 8, 0.92);
+
+      color: #c9a35b;
+      font-size: 22px;
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition: 0.25s ease;
+    }
+
+    #botonMusica:hover {
+      background: #c9a35b;
+      color: #080808;
+    }
+
+    /* Reproductor oculto */
+    #reproductor {
+      position: fixed;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+      left: -100px;
+      top: -100px;
+    }
+
+    /* =========================
+       CONTENEDOR
+    ========================= */
+
     .contenedor {
       width: 94%;
       max-width: 1500px;
@@ -30,16 +77,22 @@
       padding: 35px 0 70px;
     }
 
-    /* VOLVER */
+    /* =========================
+       VOLVER
+    ========================= */
+
     .volver {
       display: inline-block;
       margin-bottom: 30px;
       padding: 10px 18px;
+
       border: 1px solid #c9a35b;
       color: #c9a35b;
+
       text-decoration: none;
       font-size: 16px;
       letter-spacing: 0.5px;
+
       transition: 0.25s ease;
     }
 
@@ -48,7 +101,10 @@
       color: #080808;
     }
 
-    /* CABECERA */
+    /* =========================
+       CABECERA
+    ========================= */
+
     .cabecera {
       text-align: center;
       margin-bottom: 45px;
@@ -57,24 +113,32 @@
     .cabecera-imagen {
       width: 100%;
       max-height: 650px;
+
       object-fit: contain;
       display: block;
+
       margin: 0 auto 30px;
+
       background: #050505;
       border: 1px solid rgba(201, 163, 91, 0.75);
     }
 
     h1 {
       margin: 0;
+
       color: #c9a35b;
+
       font-size: clamp(38px, 6vw, 70px);
+
       letter-spacing: 4px;
       text-transform: uppercase;
     }
 
     .subtitulo {
       margin-top: 12px;
+
       color: #d6d6d6;
+
       font-size: 21px;
       letter-spacing: 1px;
     }
@@ -82,122 +146,184 @@
     .linea {
       width: 120px;
       height: 1px;
+
       background: #c9a35b;
+
       margin: 25px auto 0;
     }
 
-    /* INTRODUCCIÓN */
+    /* =========================
+       INTRODUCCIÓN
+    ========================= */
+
     .intro {
       max-width: 950px;
       margin: 0 auto 65px;
+
       text-align: center;
+
       color: #d3d3d3;
+
       font-size: 19px;
       line-height: 1.8;
     }
 
-    /* SECCIONES */
+    /* =========================
+       SECCIONES
+    ========================= */
+
     .seccion {
       margin-top: 75px;
     }
 
     .seccion-titulo {
       text-align: center;
+
       margin-bottom: 15px;
+
       color: #c9a35b;
+
       font-size: 32px;
       letter-spacing: 2px;
+
       text-transform: uppercase;
     }
 
     .seccion-texto {
       max-width: 850px;
+
       margin: 0 auto 35px;
+
       text-align: center;
+
       color: #bdbdbd;
+
       font-size: 17px;
       line-height: 1.7;
     }
 
-    /* GALERÍA */
+    /* =========================
+       GALERÍA
+    ========================= */
+
     .galeria {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 34px;
     }
 
     .tarjeta {
       background: #0d0d0d;
+
       border: 1px solid rgba(201, 163, 91, 0.65);
+
       padding: 12px;
-      transition: transform 0.25s ease, border-color 0.25s ease;
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
     }
 
     .tarjeta:hover {
       transform: translateY(-4px);
+
       border-color: #c9a35b;
     }
 
     .tarjeta img {
       display: block;
+
       width: 100%;
       height: 520px;
+
       object-fit: contain;
+
       background: #050505;
     }
 
     .pie-foto {
       padding: 18px 12px 10px;
+
       text-align: center;
     }
 
     .pie-foto h3 {
       margin: 0 0 8px;
+
       color: #c9a35b;
+
       font-size: 21px;
+
       font-weight: normal;
+
       letter-spacing: 0.5px;
     }
 
     .pie-foto p {
       margin: 0;
+
       color: #bdbdbd;
+
       font-size: 16px;
+
       line-height: 1.6;
     }
 
-    /* SEPARADOR */
+    /* =========================
+       SEPARADORES
+    ========================= */
+
     .separador {
       width: 100%;
       height: 1px;
+
       background: rgba(201, 163, 91, 0.35);
+
       margin: 75px 0 0;
     }
 
-    /* FINAL */
+    /* =========================
+       FINAL
+    ========================= */
+
     .final {
       text-align: center;
+
       margin-top: 80px;
+
       padding-top: 35px;
+
       border-top: 1px solid rgba(201, 163, 91, 0.35);
     }
 
     .final h2 {
       margin: 0 0 15px;
+
       color: #c9a35b;
+
       font-size: 30px;
+
       font-weight: normal;
     }
 
     .final p {
       max-width: 800px;
+
       margin: 0 auto;
+
       color: #bdbdbd;
+
       font-size: 18px;
+
       line-height: 1.8;
     }
 
-    /* MÓVIL */
+    /* =========================
+       MÓVIL
+    ========================= */
+
     @media (max-width: 800px) {
 
       .contenedor {
@@ -229,19 +355,51 @@
       .intro {
         font-size: 17px;
       }
+
+      #botonMusica {
+        top: 15px;
+        right: 15px;
+      }
     }
   </style>
 </head>
 
+
 <body>
+
+  <!-- =========================
+       BOTÓN DE MÚSICA
+  ========================= -->
+
+  <button id="botonMusica" aria-label="Controlar música">
+    ♪
+  </button>
+
+
+  <!-- =========================
+       REPRODUCTOR YOUTUBE
+       Vangelis — Chariots of Fire
+  ========================= -->
+
+  <div id="reproductor"></div>
+
 
   <main class="contenedor">
 
-    <!-- VOLVER AL INICIO -->
-    <a class="volver" href="index.html">← Volver al inicio</a>
+
+    <!-- =========================
+         VOLVER AL INICIO
+    ========================= -->
+
+    <a class="volver" href="index.html">
+      ← Volver al inicio
+    </a>
 
 
-    <!-- CABECERA -->
+    <!-- =========================
+         CABECERA
+    ========================= -->
+
     <header class="cabecera">
 
       <img
@@ -249,7 +407,9 @@
         src="IMG-20250228-WA0016.jpg"
         alt="Mi trayectoria atlética">
 
-      <h1>Mis carreras</h1>
+      <h1>
+        Mis carreras
+      </h1>
 
       <div class="subtitulo">
         Una vida recorriendo kilómetros
@@ -260,7 +420,10 @@
     </header>
 
 
-    <!-- INTRODUCCIÓN -->
+    <!-- =========================
+         INTRODUCCIÓN
+    ========================= -->
+
     <section class="intro">
 
       <p>
@@ -277,9 +440,9 @@
     </section>
 
 
-    <!-- ===================================================== -->
-    <!-- PARTE I -->
-    <!-- ===================================================== -->
+    <!-- =====================================================
+         PARTE I
+    ===================================================== -->
 
     <section class="seccion">
 
@@ -295,7 +458,7 @@
 
       <div class="galeria">
 
-        <!-- FOTO 1 -->
+
         <article class="tarjeta">
 
           <img
@@ -303,17 +466,20 @@
             alt="Las carreras que más recuerdo">
 
           <div class="pie-foto">
-            <h3>Un recuerdo especial</h3>
+
+            <h3>
+              Un recuerdo especial
+            </h3>
+
             <p>
-              Uno de esos días de competición que siguen formando parte
-              de mi historia.
+              Uno de esos días de competición que siguen formando parte de mi historia.
             </p>
+
           </div>
 
         </article>
 
 
-        <!-- FOTO 2 -->
         <article class="tarjeta">
 
           <img
@@ -321,16 +487,20 @@
             alt="Las carreras que más recuerdo">
 
           <div class="pie-foto">
-            <h3>Un día para recordar</h3>
+
+            <h3>
+              Un día para recordar
+            </h3>
+
             <p>
               Otra imagen que conserva un momento importante de mi trayectoria.
             </p>
+
           </div>
 
         </article>
 
 
-        <!-- FOTO 3 -->
         <article class="tarjeta">
 
           <img
@@ -338,17 +508,20 @@
             alt="Las carreras que más recuerdo">
 
           <div class="pie-foto">
-            <h3>Entre kilómetros</h3>
+
+            <h3>
+              Entre kilómetros
+            </h3>
+
             <p>
-              Una fotografía que forma parte de todos esos años dedicados
-              al atletismo.
+              Una fotografía que forma parte de todos esos años dedicados al atletismo.
             </p>
+
           </div>
 
         </article>
 
 
-        <!-- FOTO 4 -->
         <article class="tarjeta">
 
           <img
@@ -356,13 +529,19 @@
             alt="Las carreras que más recuerdo">
 
           <div class="pie-foto">
-            <h3>Otro recuerdo imborrable</h3>
+
+            <h3>
+              Otro recuerdo imborrable
+            </h3>
+
             <p>
               Una más de las carreras que quedaron para siempre en mi memoria.
             </p>
+
           </div>
 
         </article>
+
 
       </div>
 
@@ -372,9 +551,9 @@
     <div class="separador"></div>
 
 
-    <!-- ===================================================== -->
-    <!-- PARTE II -->
-    <!-- ===================================================== -->
+    <!-- =====================================================
+         PARTE II
+    ===================================================== -->
 
     <section class="seccion">
 
@@ -390,7 +569,7 @@
 
       <div class="galeria">
 
-        <!-- FOTO 1 -->
+
         <article class="tarjeta">
 
           <img
@@ -398,16 +577,20 @@
             alt="Mis pódiums">
 
           <div class="pie-foto">
-            <h3>Un pódium más</h3>
+
+            <h3>
+              Un pódium más
+            </h3>
+
             <p>
               Un momento de reconocimiento después del esfuerzo.
             </p>
+
           </div>
 
         </article>
 
 
-        <!-- FOTO 2 -->
         <article class="tarjeta">
 
           <img
@@ -415,17 +598,20 @@
             alt="Mis pódiums">
 
           <div class="pie-foto">
-            <h3>La recompensa</h3>
+
+            <h3>
+              La recompensa
+            </h3>
+
             <p>
-              Una imagen que guarda uno de esos momentos especiales
-              de competición.
+              Una imagen que guarda uno de esos momentos especiales de competición.
             </p>
+
           </div>
 
         </article>
 
 
-        <!-- FOTO 3 -->
         <article class="tarjeta">
 
           <img
@@ -433,16 +619,20 @@
             alt="Mis pódiums">
 
           <div class="pie-foto">
-            <h3>Un recuerdo especial</h3>
+
+            <h3>
+              Un recuerdo especial
+            </h3>
+
             <p>
               Otro instante que forma parte de mis recuerdos deportivos.
             </p>
+
           </div>
 
         </article>
 
 
-        <!-- FOTO 4 -->
         <article class="tarjeta">
 
           <img
@@ -450,13 +640,19 @@
             alt="Mis pódiums">
 
           <div class="pie-foto">
-            <h3>Un día inolvidable</h3>
+
+            <h3>
+              Un día inolvidable
+            </h3>
+
             <p>
               Un momento que permanece unido a mi trayectoria como corredor.
             </p>
+
           </div>
 
         </article>
+
 
       </div>
 
@@ -466,9 +662,9 @@
     <div class="separador"></div>
 
 
-    <!-- ===================================================== -->
-    <!-- PARTE III -->
-    <!-- ===================================================== -->
+    <!-- =====================================================
+         PARTE III
+    ===================================================== -->
 
     <section class="seccion">
 
@@ -484,7 +680,7 @@
 
       <div class="galeria">
 
-        <!-- FOTO 1 -->
+
         <article class="tarjeta">
 
           <img
@@ -492,16 +688,20 @@
             alt="Las carreras más emotivas">
 
           <div class="pie-foto">
-            <h3>Una carrera especial</h3>
+
+            <h3>
+              Una carrera especial
+            </h3>
+
             <p>
               Uno de esos momentos que siguen vivos en el recuerdo.
             </p>
+
           </div>
 
         </article>
 
 
-        <!-- FOTO 2 -->
         <article class="tarjeta">
 
           <img
@@ -509,16 +709,20 @@
             alt="Las carreras más emotivas">
 
           <div class="pie-foto">
-            <h3>La emoción de competir</h3>
+
+            <h3>
+              La emoción de competir
+            </h3>
+
             <p>
               Porque cada carrera tiene también una historia detrás.
             </p>
+
           </div>
 
         </article>
 
 
-        <!-- FOTO 3 -->
         <article class="tarjeta">
 
           <img
@@ -526,16 +730,20 @@
             alt="Las carreras más emotivas">
 
           <div class="pie-foto">
-            <h3>Un recuerdo que permanece</h3>
+
+            <h3>
+              Un recuerdo que permanece
+            </h3>
+
             <p>
               Una imagen ligada a una etapa muy importante de mi trayectoria.
             </p>
+
           </div>
 
         </article>
 
 
-        <!-- FOTO 4 -->
         <article class="tarjeta">
 
           <img
@@ -543,24 +751,34 @@
             alt="Las carreras más emotivas">
 
           <div class="pie-foto">
-            <h3>Hasta la meta</h3>
+
+            <h3>
+              Hasta la meta
+            </h3>
+
             <p>
               El esfuerzo, la emoción y la satisfacción de seguir corriendo.
             </p>
+
           </div>
 
         </article>
+
 
       </div>
 
     </section>
 
 
-    <!-- FINAL -->
+    <!-- =========================
+         FINAL
+    ========================= -->
 
     <section class="final">
 
-      <h2>Cada carrera cuenta</h2>
+      <h2>
+        Cada carrera cuenta
+      </h2>
 
       <p>
         Mirando estas fotografías recuerdo que una trayectoria no está formada
@@ -571,7 +789,93 @@
 
     </section>
 
+
   </main>
+
+
+  <!-- =====================================================
+       YOUTUBE API
+  ===================================================== -->
+
+  <script>
+    let reproductor;
+    let reproduciendo = false;
+
+    function onYouTubeIframeAPIReady() {
+
+      reproductor = new YT.Player('reproductor', {
+
+        height: '1',
+        width: '1',
+
+        videoId: '8a-HfNE3EIo',
+
+        playerVars: {
+          autoplay: 1,
+          loop: 1,
+          playlist: '8a-HfNE3EIo',
+          controls: 0,
+          modestbranding: 1,
+          rel: 0
+        },
+
+        events: {
+
+          onReady: function(event) {
+
+            event.target.playVideo();
+
+          },
+
+          onStateChange: function(event) {
+
+            if (event.data === YT.PlayerState.PLAYING) {
+
+              reproduciendo = true;
+
+              document.getElementById('botonMusica').textContent = '❚❚';
+
+            }
+
+            if (event.data === YT.PlayerState.PAUSED) {
+
+              reproduciendo = false;
+
+              document.getElementById('botonMusica').textContent = '♪';
+
+            }
+
+          }
+
+        }
+
+      });
+
+    }
+
+
+    document.getElementById('botonMusica').addEventListener('click', function() {
+
+      if (!reproductor) {
+        return;
+      }
+
+      if (reproduciendo) {
+
+        reproductor.pauseVideo();
+
+      } else {
+
+        reproductor.playVideo();
+
+      }
+
+    });
+  </script>
+
+
+  <script src="https://www.youtube.com/iframe_api"></script>
 
 </body>
 </html>
+
