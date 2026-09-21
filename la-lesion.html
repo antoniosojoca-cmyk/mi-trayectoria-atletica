@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,6 +31,61 @@
       max-width: 1500px;
       margin: 0 auto;
       padding: 35px 0 80px;
+    }
+
+    /* =========================
+       BOTÓN DE MÚSICA
+    ========================= */
+
+    #botonMusica {
+      position: fixed;
+      top: 22px;
+      right: 22px;
+      z-index: 9999;
+
+      width: 46px;
+      height: 46px;
+
+      border-radius: 50%;
+
+      border: 1px solid #c9a35b;
+
+      background: rgba(8, 8, 8, 0.94);
+
+      color: #c9a35b;
+
+      font-size: 22px;
+
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition: 0.25s ease;
+    }
+
+    #botonMusica:hover {
+      background: #c9a35b;
+      color: #080808;
+    }
+
+    /* =========================
+       YOUTUBE OCULTO
+    ========================= */
+
+    #reproductor {
+      position: fixed;
+
+      width: 1px;
+      height: 1px;
+
+      left: -100px;
+      top: -100px;
+
+      opacity: 0;
+
+      pointer-events: none;
     }
 
     /* =========================
@@ -71,6 +127,7 @@
       max-height: 650px;
 
       display: block;
+
       margin: 0 auto 30px;
 
       object-fit: contain;
@@ -88,6 +145,7 @@
       font-size: clamp(38px, 6vw, 70px);
 
       letter-spacing: 4px;
+
       text-transform: uppercase;
     }
 
@@ -97,6 +155,7 @@
       color: #d6d6d6;
 
       font-size: 21px;
+
       letter-spacing: 1px;
     }
 
@@ -115,6 +174,7 @@
 
     .intro {
       max-width: 950px;
+
       margin: 0 auto 70px;
 
       text-align: center;
@@ -122,6 +182,7 @@
       color: #d3d3d3;
 
       font-size: 19px;
+
       line-height: 1.9;
     }
 
@@ -131,6 +192,7 @@
 
     .frase {
       max-width: 950px;
+
       margin: 0 auto 75px;
 
       padding: 35px 30px;
@@ -147,6 +209,7 @@
       color: #c9a35b;
 
       font-size: 26px;
+
       line-height: 1.6;
 
       font-style: italic;
@@ -210,7 +273,9 @@
 
     .foto-intermedia {
       max-width: 1100px;
+
       margin: 20px auto 75px;
+
       padding: 12px;
 
       background: #050505;
@@ -222,7 +287,9 @@
       display: block;
 
       width: 100%;
+
       height: auto;
+
       max-height: 700px;
 
       object-fit: contain;
@@ -233,9 +300,10 @@
 
       text-align: center;
 
-      color: #aFAFAF;
+      color: #afafaf;
 
       font-size: 15px;
+
       line-height: 1.5;
     }
 
@@ -313,6 +381,7 @@
 
       .contenedor {
         width: 92%;
+
         padding-top: 25px;
       }
 
@@ -371,6 +440,12 @@
       .frase-final p {
         font-size: 22px;
       }
+
+      #botonMusica {
+        top: 15px;
+        right: 15px;
+      }
+
     }
 
   </style>
@@ -380,15 +455,41 @@
 
 <body>
 
+
+  <!-- =========================
+       BOTÓN DE MÚSICA
+  ========================= -->
+
+  <button
+    id="botonMusica"
+    aria-label="Controlar música">
+
+    ♪
+
+  </button>
+
+
+  <!-- =========================
+       REPRODUCTOR YOUTUBE OCULTO
+       Ludovico Einaudi — Experience
+  ========================= -->
+
+  <div id="reproductor"></div>
+
+
   <main class="contenedor">
 
 
     <!-- =========================
-         VOLVER AL INICIO
+         VOLVER
     ========================= -->
 
-    <a class="volver" href="index.html">
+    <a
+      class="volver"
+      href="index.html">
+
       ← Volver al inicio
+
     </a>
 
 
@@ -398,20 +499,27 @@
 
     <header class="cabecera">
 
+
       <img
         class="cabecera-imagen"
         src="IMG_20260321_093209.jpg"
         alt="Mi nueva etapa">
 
+
       <h1>
         La lesión
       </h1>
 
+
       <div class="subtitulo">
+
         Cuando tuve que cambiar la forma de seguir
+
       </div>
 
+
       <div class="linea"></div>
+
 
     </header>
 
@@ -423,14 +531,19 @@
     <section class="intro">
 
       <p>
+
         Mi lesión no apareció de repente. Fue algo que empezó poco a poco,
         con una molestia a la que al principio no di la importancia que
         debía.
+
       </p>
 
+
       <p>
+
         Con el tiempo aquella molestia fue aumentando hasta convertirse
         en algo que terminó cambiando mi manera de entender el deporte.
+
       </p>
 
     </section>
@@ -443,7 +556,9 @@
     <section class="frase">
 
       <p>
+
         “A veces el camino cambia, pero las ganas de seguir permanecen.”
+
       </p>
 
     </section>
@@ -459,20 +574,27 @@
         El comienzo
       </div>
 
+
       <h2>
         Una molestia a la que no di importancia
       </h2>
 
+
       <p>
+
         Prácticamente todo comenzó hace un año. Al principio era solamente
         una molestia y no le di la importancia que debía. Viéndolo ahora,
         sé que aquel fue un error por mi parte.
+
       </p>
 
+
       <p>
+
         Poco a poco la molestia fue a más. Intentaba continuar, pero el
         problema seguía ahí y cada vez resultaba más difícil hacer como
         si no pasara nada.
+
       </p>
 
     </section>
@@ -488,25 +610,35 @@
         Las recaídas
       </div>
 
+
       <h2>
         Mejoraba... y volvía a recaer
       </h2>
 
-      <p>
-        Finalmente decidí ponerme en manos médicas. En algunos momentos
-        la situación mejoraba y parecía que el problema estaba controlado.
-      </p>
 
       <p>
+
+        Finalmente decidí ponerme en manos médicas. En algunos momentos
+        la situación mejoraba y parecía que el problema estaba controlado.
+
+      </p>
+
+
+      <p>
+
         Pero después de un tiempo volvía a recaer. Así estuve durante
         una etapa en la que las molestias iban y venían, hasta que llegó
         un momento en el que ya no podía continuar de la misma manera.
+
       </p>
 
+
       <p>
+
         Los dolores eran cada vez más fuertes y aquello que al principio
         parecía una simple molestia terminó convirtiéndose en un problema
         que necesitaba ser estudiado a fondo.
+
       </p>
 
     </section>
@@ -522,38 +654,50 @@
         El diagnóstico
       </div>
 
+
       <h2>
         La noticia que cambió mis planes
       </h2>
 
+
       <p>
+
         Después de realizarme distintas pruebas, me explicaron que había
         perdido el cartílago de la rodilla y que tenía dañado el menisco
         medial. También me indicaron que esto estaba produciendo un
         derrame leve.
+
       </p>
 
+
       <p>
+
         En ese momento tuve que asumir que continuar corriendo como hasta
         entonces ya no era una opción adecuada para mí.
+
       </p>
 
     </section>
 
 
     <!-- =========================
-         FOTOGRAFÍA 2
+         FOTOGRAFÍA INTERMEDIA
     ========================= -->
 
     <div class="foto-intermedia">
+
 
       <img
         src="IMG-20251101-WA0016.jpg"
         alt="Una etapa importante de mi trayectoria">
 
+
       <div class="foto-pie">
+
         Un momento más de mi trayectoria como corredor.
+
       </div>
+
 
     </div>
 
@@ -568,25 +712,35 @@
         Un nuevo camino
       </div>
 
+
       <h2>
         Dejar de correr no significaba dejar el deporte
       </h2>
 
-      <p>
-        El consejo que recibí fue dejar la carrera por el impacto que
-        produce y buscar actividades que no generaran ese mismo impacto.
-      </p>
 
       <p>
+
+        El consejo que recibí fue dejar la carrera por el impacto que
+        produce y buscar actividades que no generaran ese mismo impacto.
+
+      </p>
+
+
+      <p>
+
         Entre las posibilidades estaban la bicicleta, la elíptica y
         caminar. Es decir, seguir haciendo deporte, pero de una manera
         diferente.
+
       </p>
 
+
       <p>
+
         Para mí no era fácil aceptar que tenía que dejar de correr.
         Habían sido muchos años, muchas carreras y muchos kilómetros.
         Correr formaba parte de mi vida.
+
       </p>
 
     </section>
@@ -598,16 +752,21 @@
 
     <section class="cambio">
 
+
       <h2>
         La marcha atlética
       </h2>
 
+
       <p>
+
         Por eso decidí seguir vinculado al atletismo a través de la
         marcha atlética. Es una nueva etapa y también una nueva manera
         de seguir disfrutando de un deporte que ha acompañado gran parte
         de mi vida.
+
       </p>
+
 
     </section>
 
@@ -618,15 +777,153 @@
 
     <section class="frase-final">
 
+
       <p>
+
         “No he dejado de avanzar.<br>
         Simplemente he aprendido a hacerlo de otra manera.”
+
       </p>
+
 
     </section>
 
 
   </main>
+
+
+  <!-- =========================
+       YOUTUBE IFRAME API
+  ========================= -->
+
+  <script>
+
+    let reproductor;
+
+    let reproduciendo = false;
+
+
+    function onYouTubeIframeAPIReady() {
+
+
+      reproductor = new YT.Player(
+        'reproductor',
+        {
+
+          height: '1',
+          width: '1',
+
+          videoId: 'O9wjmEhMKFw',
+
+          playerVars: {
+
+            autoplay: 1,
+            loop: 1,
+
+            playlist: 'O9wjmEhMKFw',
+
+            controls: 0,
+            modestbranding: 1,
+
+            rel: 0
+
+          },
+
+
+          events: {
+
+            onReady: function(event) {
+
+              /*
+                Intentamos comenzar automáticamente.
+                Algunos navegadores pueden bloquear el sonido
+                automático; en ese caso se utiliza el botón ♪.
+              */
+
+              event.target.playVideo();
+
+            },
+
+
+            onStateChange: function(event) {
+
+
+              if (
+                event.data === YT.PlayerState.PLAYING
+              ) {
+
+                reproduciendo = true;
+
+                document
+                  .getElementById('botonMusica')
+                  .textContent = '❚❚';
+
+              }
+
+
+              if (
+                event.data === YT.PlayerState.PAUSED
+              ) {
+
+                reproduciendo = false;
+
+                document
+                  .getElementById('botonMusica')
+                  .textContent = '♪';
+
+              }
+
+
+              if (
+                event.data === YT.PlayerState.ENDED
+              ) {
+
+                event.target.playVideo();
+
+              }
+
+            }
+
+          }
+
+        }
+      );
+
+    }
+
+
+    document
+      .getElementById('botonMusica')
+      .addEventListener(
+        'click',
+        function() {
+
+
+          if (!reproductor) {
+            return;
+          }
+
+
+          if (reproduciendo) {
+
+            reproductor.pauseVideo();
+
+          } else {
+
+            reproductor.playVideo();
+
+          }
+
+        }
+      );
+
+  </script>
+
+
+  <script
+    src="https://www.youtube.com/iframe_api">
+  </script>
+
 
 </body>
 
