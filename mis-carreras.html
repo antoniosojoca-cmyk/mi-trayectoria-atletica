@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -63,6 +64,11 @@
       color: #080808;
     }
 
+
+    /* =====================================================
+       YOUTUBE OCULTO
+    ===================================================== */
+
     #reproductor {
       position: fixed;
 
@@ -77,8 +83,9 @@
       pointer-events: none;
     }
 
+
     /* =====================================================
-       CONTENEDOR GENERAL
+       CONTENEDOR
     ===================================================== */
 
     .contenedor {
@@ -89,6 +96,7 @@
 
       padding: 30px 0 80px;
     }
+
 
     /* =====================================================
        VOLVER
@@ -117,6 +125,7 @@
       color: #080808;
     }
 
+
     /* =====================================================
        CABECERA
     ===================================================== */
@@ -124,7 +133,7 @@
     .cabecera {
       text-align: center;
 
-      margin-bottom: 55px;
+      margin-bottom: 45px;
     }
 
     .cabecera h1 {
@@ -163,7 +172,7 @@
     .intro {
       max-width: 850px;
 
-      margin: 0 auto 70px;
+      margin: 0 auto 65px;
 
       text-align: center;
 
@@ -174,12 +183,13 @@
       line-height: 1.8;
     }
 
+
     /* =====================================================
-       BLOQUE DE CADA PARTE
+       CADA PARTE
     ===================================================== */
 
     .parte {
-      margin-top: 80px;
+      margin-top: 70px;
     }
 
     .parte-titulo {
@@ -212,8 +222,9 @@
       line-height: 1.7;
     }
 
+
     /* =====================================================
-       CARRUSEL
+       CARRUSEL AUTOMÁTICO
     ===================================================== */
 
     .carrusel {
@@ -221,35 +232,43 @@
 
       width: 100%;
 
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      overflow: hidden;
+
       background: #050505;
 
       border-top: 1px solid rgba(201, 163, 91, 0.55);
       border-bottom: 1px solid rgba(201, 163, 91, 0.55);
 
-      overflow: hidden;
+      padding: 12px;
     }
 
-    .pista {
-      display: flex;
 
-      width: 100%;
-
-      transition: transform 0.55s ease;
-    }
+    /* =====================================================
+       CADA FOTOGRAFÍA
+    ===================================================== */
 
     .slide {
-      min-width: 100%;
+      width: 100%;
 
-      flex: 0 0 100%;
-
-      padding: 12px 12px 0;
-
-      display: flex;
+      display: none;
 
       justify-content: center;
 
-      align-items: flex-start;
+      align-items: center;
+
+      animation: aparecer 1.2s ease;
     }
+
+    .slide.activa {
+      display: flex;
+    }
+
 
     .slide img {
       display: block;
@@ -260,60 +279,34 @@
 
       max-width: 100%;
 
+      max-height: 78vh;
+
       object-fit: contain;
+
+      object-position: center;
 
       background: #050505;
 
       border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
+
     /* =====================================================
-       FLECHAS
+       FUNDIDO
     ===================================================== */
 
-    .flecha {
-      position: absolute;
+    @keyframes aparecer {
 
-      top: 50%;
+      from {
+        opacity: 0;
+      }
 
-      transform: translateY(-50%);
+      to {
+        opacity: 1;
+      }
 
-      z-index: 10;
-
-      width: 50px;
-      height: 70px;
-
-      border: 1px solid rgba(201, 163, 91, 0.75);
-
-      background: rgba(8, 8, 8, 0.80);
-
-      color: #c9a35b;
-
-      font-size: 38px;
-
-      font-family: Georgia, "Times New Roman", serif;
-
-      cursor: pointer;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      transition: 0.25s ease;
     }
 
-    .flecha:hover {
-      background: #c9a35b;
-      color: #080808;
-    }
-
-    .flecha-izquierda {
-      left: 15px;
-    }
-
-    .flecha-derecha {
-      right: 15px;
-    }
 
     /* =====================================================
        INDICADOR
@@ -322,7 +315,7 @@
     .indicador {
       text-align: center;
 
-      margin-top: 18px;
+      margin-top: 17px;
 
       color: #c9a35b;
 
@@ -331,14 +324,19 @@
       letter-spacing: 2px;
     }
 
+
     /* =====================================================
-       FRASE DE CADA FOTO
+       FRASE
     ===================================================== */
 
     .leyenda {
-      text-align: center;
+      max-width: 900px;
 
-      padding: 18px 20px 8px;
+      margin: 0 auto;
+
+      padding: 17px 20px 5px;
+
+      text-align: center;
 
       color: #d0d0d0;
 
@@ -349,8 +347,9 @@
       line-height: 1.6;
     }
 
+
     /* =====================================================
-       SEPARADOR
+       SEPARADORES
     ===================================================== */
 
     .separador {
@@ -360,8 +359,9 @@
 
       background: rgba(201, 163, 91, 0.35);
 
-      margin: 85px 0 0;
+      margin: 80px 0 0;
     }
+
 
     /* =====================================================
        FINAL
@@ -399,6 +399,7 @@
       line-height: 1.8;
     }
 
+
     /* =====================================================
        MÓVIL
     ===================================================== */
@@ -429,23 +430,12 @@
         font-size: 16px;
       }
 
-      .slide {
-        padding: 8px 8px 0;
+      .carrusel {
+        padding: 7px;
       }
 
-      .flecha {
-        width: 42px;
-        height: 58px;
-
-        font-size: 30px;
-      }
-
-      .flecha-izquierda {
-        left: 8px;
-      }
-
-      .flecha-derecha {
-        right: 8px;
+      .slide img {
+        max-height: 72vh;
       }
 
       .leyenda {
@@ -484,8 +474,7 @@
 
 
   <!-- =====================================================
-       YOUTUBE OCULTO
-       Vangelis — Chariots of Fire
+       REPRODUCTOR
   ===================================================== -->
 
   <div id="reproductor"></div>
@@ -551,123 +540,64 @@
       </h2>
 
       <p class="parte-texto">
-        Cuatro recuerdos que permanecen especialmente vivos después
-        de tantos años entre carreras y kilómetros.
+        Cuatro recuerdos que permanecen especialmente vivos
+        después de tantos años entre carreras y kilómetros.
       </p>
 
 
-      <div
-        class="carrusel"
-        data-carrusel="1">
+      <div class="carrusel">
 
 
-        <div class="pista">
+        <div class="slide activa">
 
-
-          <!-- FOTO 1 -->
-
-          <div class="slide">
-
-            <div>
-
-              <img
-                src="20180909_104841.jpg"
-                alt="Las carreras que más recuerdo">
-
-              <div class="leyenda">
-                Un recuerdo especial.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- FOTO 2 -->
-
-          <div class="slide">
-
-            <div>
-
-              <img
-                src="IMG_5793.jpg"
-                alt="Las carreras que más recuerdo">
-
-              <div class="leyenda">
-                Un día para recordar.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- FOTO 3 -->
-
-          <div class="slide">
-
-            <div>
-
-              <img
-                src="20171119_132104.jpg"
-                alt="Las carreras que más recuerdo">
-
-              <div class="leyenda">
-                Entre kilómetros.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- FOTO 4 -->
-
-          <div class="slide">
-
-            <div>
-
-              <img
-                src="20190317_145213.jpg"
-                alt="Las carreras que más recuerdo">
-
-              <div class="leyenda">
-                Otro recuerdo imborrable.
-              </div>
-
-            </div>
-
-          </div>
-
+          <img
+            src="20180909_104841.jpg"
+            alt="Las carreras que más recuerdo">
 
         </div>
 
 
-        <button
-          class="flecha flecha-izquierda"
-          type="button"
-          aria-label="Fotografía anterior">
+        <div class="slide">
 
-          ‹
+          <img
+            src="IMG_5793.jpg"
+            alt="Las carreras que más recuerdo">
 
-        </button>
+        </div>
 
 
-        <button
-          class="flecha flecha-derecha"
-          type="button"
-          aria-label="Fotografía siguiente">
+        <div class="slide">
 
-          ›
+          <img
+            src="20171119_132104.jpg"
+            alt="Las carreras que más recuerdo">
 
-        </button>
+        </div>
+
+
+        <div class="slide">
+
+          <img
+            src="20190317_145213.jpg"
+            alt="Las carreras que más recuerdo">
+
+        </div>
 
 
       </div>
 
 
       <div class="indicador">
+
         <span class="actual">1</span> / 4
+
+      </div>
+
+
+      <div class="leyenda">
+
+        Un recuerdo especial.
+
       </div>
 
 
@@ -693,118 +623,59 @@
       </p>
 
 
-      <div
-        class="carrusel"
-        data-carrusel="2">
+      <div class="carrusel">
 
 
-        <div class="pista">
+        <div class="slide activa">
 
-
-          <!-- FOTO 1 -->
-
-          <div class="slide">
-
-            <div>
-
-              <img
-                src="20161208_124805.jpg"
-                alt="Mis pódiums">
-
-              <div class="leyenda">
-                Un momento de reconocimiento.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- FOTO 2 -->
-
-          <div class="slide">
-
-            <div>
-
-              <img
-                src="20170108_132249.jpg"
-                alt="Mis pódiums">
-
-              <div class="leyenda">
-                La recompensa al esfuerzo.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- FOTO 3 -->
-
-          <div class="slide">
-
-            <div>
-
-              <img
-                src="20180414_124755 (1).jpg"
-                alt="Mis pódiums">
-
-              <div class="leyenda">
-                Un recuerdo especial.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- FOTO 4 -->
-
-          <div class="slide">
-
-            <div>
-
-              <img
-                src="20171210_123911.jpg"
-                alt="Mis pódiums">
-
-              <div class="leyenda">
-                Un día inolvidable.
-              </div>
-
-            </div>
-
-          </div>
-
+          <img
+            src="20161208_124805.jpg"
+            alt="Mis pódiums">
 
         </div>
 
 
-        <button
-          class="flecha flecha-izquierda"
-          type="button"
-          aria-label="Fotografía anterior">
+        <div class="slide">
 
-          ‹
+          <img
+            src="20170108_132249.jpg"
+            alt="Mis pódiums">
 
-        </button>
+        </div>
 
 
-        <button
-          class="flecha flecha-derecha"
-          type="button"
-          aria-label="Fotografía siguiente">
+        <div class="slide">
 
-          ›
+          <img
+            src="20180414_124755 (1).jpg"
+            alt="Mis pódiums">
 
-        </button>
+        </div>
+
+
+        <div class="slide">
+
+          <img
+            src="20171210_123911.jpg"
+            alt="Mis pódiums">
+
+        </div>
 
 
       </div>
 
 
       <div class="indicador">
+
         <span class="actual">1</span> / 4
+
+      </div>
+
+
+      <div class="leyenda">
+
+        Un momento de reconocimiento.
+
       </div>
 
 
@@ -830,118 +701,59 @@
       </p>
 
 
-      <div
-        class="carrusel"
-        data-carrusel="3">
+      <div class="carrusel">
 
 
-        <div class="pista">
+        <div class="slide activa">
 
-
-          <!-- FOTO 1 -->
-
-          <div class="slide">
-
-            <div>
-
-              <img
-                src="IMG-20190428-WA0002.jpg"
-                alt="Las carreras más emotivas">
-
-              <div class="leyenda">
-                Una carrera especial.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- FOTO 2 -->
-
-          <div class="slide">
-
-            <div>
-
-              <img
-                src="20171029_094651.jpg"
-                alt="Las carreras más emotivas">
-
-              <div class="leyenda">
-                La emoción de competir.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- FOTO 3 -->
-
-          <div class="slide">
-
-            <div>
-
-              <img
-                src="IMG_2782.JPG"
-                alt="Las carreras más emotivas">
-
-              <div class="leyenda">
-                Un recuerdo que permanece.
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- FOTO 4 -->
-
-          <div class="slide">
-
-            <div>
-
-              <img
-                src="DSC_0787.JPG"
-                alt="Las carreras más emotivas">
-
-              <div class="leyenda">
-                Hasta la meta.
-              </div>
-
-            </div>
-
-          </div>
-
+          <img
+            src="IMG-20190428-WA0002.jpg"
+            alt="Las carreras más emotivas">
 
         </div>
 
 
-        <button
-          class="flecha flecha-izquierda"
-          type="button"
-          aria-label="Fotografía anterior">
+        <div class="slide">
 
-          ‹
+          <img
+            src="20171029_094651.jpg"
+            alt="Las carreras más emotivas">
 
-        </button>
+        </div>
 
 
-        <button
-          class="flecha flecha-derecha"
-          type="button"
-          aria-label="Fotografía siguiente">
+        <div class="slide">
 
-          ›
+          <img
+            src="IMG_2782.JPG"
+            alt="Las carreras más emotivas">
 
-        </button>
+        </div>
+
+
+        <div class="slide">
+
+          <img
+            src="DSC_0787.JPG"
+            alt="Las carreras más emotivas">
+
+        </div>
 
 
       </div>
 
 
       <div class="indicador">
+
         <span class="actual">1</span> / 4
+
+      </div>
+
+
+      <div class="leyenda">
+
+        Una carrera especial.
+
       </div>
 
 
@@ -970,91 +782,145 @@
 
 
   <!-- =====================================================
-       JAVASCRIPT DE LOS TRES CARRUSELES
+       JAVASCRIPT
   ===================================================== -->
 
   <script>
 
-    const carruseles = document.querySelectorAll(".carrusel");
+    /*
+       =====================================================
+       CARRUSELES AUTOMÁTICOS
+       =====================================================
+    */
+
+    const carruseles =
+      document.querySelectorAll(".carrusel");
 
 
     carruseles.forEach(function(carrusel) {
 
-      const pista =
-        carrusel.querySelector(".pista");
 
       const slides =
         carrusel.querySelectorAll(".slide");
 
-      const anterior =
-        carrusel.querySelector(".flecha-izquierda");
-
-      const siguiente =
-        carrusel.querySelector(".flecha-derecha");
 
       const indicador =
-        carrusel.nextElementSibling.querySelector(".actual");
+        carrusel.nextElementSibling
+        .querySelector(".actual");
+
+
+      const leyenda =
+        carrusel
+        .nextElementSibling
+        .nextElementSibling;
 
 
       let posicion = 0;
 
 
-      function actualizarCarrusel() {
+      /*
+         Frases de cada fotografía
+      */
 
-        pista.style.transform =
-          "translateX(-" + (posicion * 100) + "%)";
+      const frases = [];
 
-        indicador.textContent =
-          posicion + 1;
+
+      if (
+        carrusel === carruseles[0]
+      ) {
+
+        frases.push(
+          "Un recuerdo especial.",
+          "Un día para recordar.",
+          "Entre kilómetros.",
+          "Otro recuerdo imborrable."
+        );
 
       }
 
 
-      siguiente.addEventListener(
-        "click",
-        function() {
+      if (
+        carrusel === carruseles[1]
+      ) {
 
-          posicion++;
+        frases.push(
+          "Un momento de reconocimiento.",
+          "La recompensa al esfuerzo.",
+          "Un recuerdo especial.",
+          "Un día inolvidable."
+        );
 
-          if (posicion >= slides.length) {
+      }
 
-            posicion = 0;
 
-          }
+      if (
+        carrusel === carruseles[2]
+      ) {
 
-          actualizarCarrusel();
+        frases.push(
+          "Una carrera especial.",
+          "La emoción de competir.",
+          "Un recuerdo que permanece.",
+          "Hasta la meta."
+        );
+
+      }
+
+
+      function mostrarSiguiente() {
+
+
+        slides[posicion]
+          .classList
+          .remove("activa");
+
+
+        posicion++;
+
+
+        if (
+          posicion >= slides.length
+        ) {
+
+          posicion = 0;
 
         }
+
+
+        slides[posicion]
+          .classList
+          .add("activa");
+
+
+        indicador.textContent =
+          posicion + 1;
+
+
+        leyenda.textContent =
+          frases[posicion];
+
+      }
+
+
+      /*
+         Cambia automáticamente
+         cada 5 segundos
+      */
+
+      setInterval(
+        mostrarSiguiente,
+        5000
       );
 
-
-      anterior.addEventListener(
-        "click",
-        function() {
-
-          posicion--;
-
-          if (posicion < 0) {
-
-            posicion =
-              slides.length - 1;
-
-          }
-
-          actualizarCarrusel();
-
-        }
-      );
-
-
-      actualizarCarrusel();
 
     });
 
 
-    /* =====================================================
+    /*
+       =====================================================
        MÚSICA
-    ===================================================== */
+       =====================================================
+    */
 
     let reproductor = null;
 
@@ -1063,105 +929,130 @@
 
     function onYouTubeIframeAPIReady() {
 
-      reproductor = new YT.Player(
-        "reproductor",
-        {
 
-          height: "1",
-          width: "1",
+      reproductor =
+        new YT.Player(
+          "reproductor",
+          {
 
-          videoId: "8a-HfNE3EIo",
+            height: "1",
 
-          playerVars: {
+            width: "1",
 
-            autoplay: 1,
+            videoId: "8a-HfNE3EIo",
 
-            loop: 1,
+            playerVars: {
 
-            playlist: "8a-HfNE3EIo",
+              autoplay: 1,
 
-            controls: 0,
+              loop: 1,
 
-            modestbranding: 1,
+              playlist:
+                "8a-HfNE3EIo",
 
-            rel: 0
+              controls: 0,
 
-          },
+              modestbranding: 1,
 
-          events: {
-
-            onReady: function(event) {
-
-              event.target.playVideo();
+              rel: 0
 
             },
 
-            onStateChange: function(event) {
+            events: {
 
-              if (
-                event.data === YT.PlayerState.PLAYING
-              ) {
+              onReady:
+                function(event) {
 
-                reproduciendo = true;
+                  event.target
+                    .playVideo();
 
-                document
-                  .getElementById("botonMusica")
-                  .textContent = "❚❚";
-
-              }
+                },
 
 
-              if (
-                event.data === YT.PlayerState.PAUSED
-              ) {
-
-                reproduciendo = false;
-
-                document
-                  .getElementById("botonMusica")
-                  .textContent = "♪";
-
-              }
+              onStateChange:
+                function(event) {
 
 
-              if (
-                event.data === YT.PlayerState.ENDED
-              ) {
+                  if (
+                    event.data ===
+                    YT.PlayerState.PLAYING
+                  ) {
 
-                event.target.playVideo();
+                    reproduciendo = true;
 
-              }
+                    document
+                      .getElementById(
+                        "botonMusica"
+                      )
+                      .textContent = "❚❚";
+
+                  }
+
+
+                  if (
+                    event.data ===
+                    YT.PlayerState.PAUSED
+                  ) {
+
+                    reproduciendo = false;
+
+                    document
+                      .getElementById(
+                        "botonMusica"
+                      )
+                      .textContent = "♪";
+
+                  }
+
+
+                  if (
+                    event.data ===
+                    YT.PlayerState.ENDED
+                  ) {
+
+                    event.target
+                      .playVideo();
+
+                  }
+
+                }
 
             }
 
           }
-
-        }
-      );
+        );
 
     }
 
 
     document
-      .getElementById("botonMusica")
+      .getElementById(
+        "botonMusica"
+      )
       .addEventListener(
         "click",
         function() {
 
+
           if (!reproductor) {
+
             return;
+
           }
 
 
           if (reproduciendo) {
 
-            reproductor.pauseVideo();
+            reproductor
+              .pauseVideo();
 
           } else {
 
-            reproductor.playVideo();
+            reproductor
+              .playVideo();
 
           }
+
 
         }
       );
@@ -1177,4 +1068,6 @@
 </body>
 
 </html>
+
+
 
