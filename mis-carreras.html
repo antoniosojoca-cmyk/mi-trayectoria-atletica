@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -64,22 +63,13 @@
       color: #080808;
     }
 
-
-    /* =====================================================
-       YOUTUBE OCULTO
-    ===================================================== */
-
     #reproductor {
       position: fixed;
-
       width: 1px;
       height: 1px;
-
       left: -100px;
       top: -100px;
-
       opacity: 0;
-
       pointer-events: none;
     }
 
@@ -91,9 +81,7 @@
     .contenedor {
       width: 96%;
       max-width: 1500px;
-
       margin: 0 auto;
-
       padding: 30px 0 80px;
     }
 
@@ -132,7 +120,6 @@
 
     .cabecera {
       text-align: center;
-
       margin-bottom: 45px;
     }
 
@@ -250,7 +237,7 @@
 
 
     /* =====================================================
-       CADA FOTOGRAFÍA
+       FOTOGRAFÍAS
     ===================================================== */
 
     .slide {
@@ -268,7 +255,6 @@
     .slide.activa {
       display: flex;
     }
-
 
     .slide img {
       display: block;
@@ -408,13 +394,11 @@
 
       .contenedor {
         width: 94%;
-
         padding-top: 22px;
       }
 
       .cabecera h1 {
         font-size: 34px;
-
         letter-spacing: 2px;
       }
 
@@ -473,19 +457,13 @@
   </button>
 
 
-  <!-- =====================================================
-       REPRODUCTOR
-  ===================================================== -->
-
   <div id="reproductor"></div>
 
 
   <main class="contenedor">
 
 
-    <!-- ===================================================
-         VOLVER
-    =================================================== -->
+    <!-- VOLVER -->
 
     <a
       class="volver"
@@ -496,9 +474,7 @@
     </a>
 
 
-    <!-- ===================================================
-         CABECERA
-    =================================================== -->
+    <!-- CABECERA -->
 
     <header class="cabecera">
 
@@ -515,9 +491,7 @@
     </header>
 
 
-    <!-- ===================================================
-         INTRO
-    =================================================== -->
+    <!-- INTRO -->
 
     <section class="intro">
 
@@ -530,7 +504,7 @@
 
 
     <!-- ===================================================
-         PARTE I
+         LAS CARRERAS QUE MÁS RECUERDO
     =================================================== -->
 
     <section class="parte">
@@ -548,14 +522,18 @@
       <div class="carrusel">
 
 
+        <!-- FOTO 1 — NUEVA -->
+
         <div class="slide activa">
 
           <img
-            src="20180909_104841.jpg"
+            src="IMG-20190505-WA0001.jpg"
             alt="Las carreras que más recuerdo">
 
         </div>
 
+
+        <!-- FOTO 2 -->
 
         <div class="slide">
 
@@ -566,6 +544,8 @@
         </div>
 
 
+        <!-- FOTO 3 -->
+
         <div class="slide">
 
           <img
@@ -575,10 +555,12 @@
         </div>
 
 
+        <!-- FOTO 4 — NUEVA -->
+
         <div class="slide">
 
           <img
-            src="20190317_145213.jpg"
+            src="IMG-20220905-WA0002.jpg"
             alt="Las carreras que más recuerdo">
 
         </div>
@@ -595,9 +577,7 @@
 
 
       <div class="leyenda">
-
         Un recuerdo especial.
-
       </div>
 
 
@@ -608,7 +588,7 @@
 
 
     <!-- ===================================================
-         PARTE II
+         MIS PÓDIUMS
     =================================================== -->
 
     <section class="parte">
@@ -626,23 +606,29 @@
       <div class="carrusel">
 
 
+        <!-- FOTO 1 — NUEVA -->
+
         <div class="slide activa">
 
           <img
-            src="20161208_124805.jpg"
+            src="IMG-20190929-WA0019.jpg"
             alt="Mis pódiums">
 
         </div>
 
+
+        <!-- FOTO 2 — NUEVA -->
 
         <div class="slide">
 
           <img
-            src="20170108_132249.jpg"
+            src="IMG-20241112-WA0007.jpg"
             alt="Mis pódiums">
 
         </div>
 
+
+        <!-- FOTO 3 -->
 
         <div class="slide">
 
@@ -652,6 +638,8 @@
 
         </div>
 
+
+        <!-- FOTO 4 -->
 
         <div class="slide">
 
@@ -673,9 +661,7 @@
 
 
       <div class="leyenda">
-
         Un momento de reconocimiento.
-
       </div>
 
 
@@ -686,7 +672,7 @@
 
 
     <!-- ===================================================
-         PARTE III
+         LAS CARRERAS MÁS EMOTIVAS
     =================================================== -->
 
     <section class="parte">
@@ -704,6 +690,8 @@
       <div class="carrusel">
 
 
+        <!-- FOTO 1 -->
+
         <div class="slide activa">
 
           <img
@@ -713,14 +701,18 @@
         </div>
 
 
+        <!-- FOTO 2 — NUEVA -->
+
         <div class="slide">
 
           <img
-            src="20171029_094651.jpg"
+            src="IMG-20181216-WA0007.jpg"
             alt="Las carreras más emotivas">
 
         </div>
 
+
+        <!-- FOTO 3 -->
 
         <div class="slide">
 
@@ -731,10 +723,12 @@
         </div>
 
 
+        <!-- FOTO 4 — NUEVA -->
+
         <div class="slide">
 
           <img
-            src="DSC_0787.JPG"
+            src="IMG-20190211-WA0014.jpg"
             alt="Las carreras más emotivas">
 
         </div>
@@ -751,9 +745,7 @@
 
 
       <div class="leyenda">
-
         Una carrera especial.
-
       </div>
 
 
@@ -788,9 +780,7 @@
   <script>
 
     /*
-       =====================================================
        CARRUSELES AUTOMÁTICOS
-       =====================================================
     */
 
     const carruseles =
@@ -805,7 +795,8 @@
 
 
       const indicador =
-        carrusel.nextElementSibling
+        carrusel
+        .nextElementSibling
         .querySelector(".actual");
 
 
@@ -818,51 +809,41 @@
       let posicion = 0;
 
 
-      /*
-         Frases de cada fotografía
-      */
-
-      const frases = [];
+      let frases = [];
 
 
-      if (
-        carrusel === carruseles[0]
-      ) {
+      if (carrusel === carruseles[0]) {
 
-        frases.push(
+        frases = [
           "Un recuerdo especial.",
           "Un día para recordar.",
           "Entre kilómetros.",
           "Otro recuerdo imborrable."
-        );
+        ];
 
       }
 
 
-      if (
-        carrusel === carruseles[1]
-      ) {
+      if (carrusel === carruseles[1]) {
 
-        frases.push(
+        frases = [
           "Un momento de reconocimiento.",
           "La recompensa al esfuerzo.",
           "Un recuerdo especial.",
           "Un día inolvidable."
-        );
+        ];
 
       }
 
 
-      if (
-        carrusel === carruseles[2]
-      ) {
+      if (carrusel === carruseles[2]) {
 
-        frases.push(
+        frases = [
           "Una carrera especial.",
           "La emoción de competir.",
           "Un recuerdo que permanece.",
           "Hasta la meta."
-        );
+        ];
 
       }
 
@@ -903,8 +884,8 @@
 
 
       /*
-         Cambia automáticamente
-         cada 5 segundos
+         CAMBIO AUTOMÁTICO
+         CADA 5 SEGUNDOS
       */
 
       setInterval(
@@ -1035,9 +1016,7 @@
 
 
           if (!reproductor) {
-
             return;
-
           }
 
 
@@ -1068,6 +1047,8 @@
 </body>
 
 </html>
+
+
 
 
 
