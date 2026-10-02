@@ -1,6 +1,5 @@
-
-
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -36,10 +35,6 @@
       background: #080808;
     }
 
-    /* =========================
-       DIAPOSITIVAS
-       ========================= */
-
     .slide {
       position: absolute;
       inset: 0;
@@ -67,105 +62,65 @@
       content: "";
       position: absolute;
       inset: 0;
-
       background:
         linear-gradient(
           to bottom,
           rgba(0,0,0,0.08) 30%,
-          rgba(0,0,0,0.28) 55%,
+          rgba(0,0,0,0.25) 55%,
           rgba(0,0,0,0.88) 100%
         );
-
       pointer-events: none;
     }
-
-    /* =========================
-       TEXTO
-       ========================= */
 
     .texto {
       position: absolute;
       z-index: 5;
-
       left: 8%;
       right: 8%;
       bottom: 12%;
-
       text-align: center;
-
-      text-shadow:
-        0 3px 12px rgba(0,0,0,0.95);
+      text-shadow: 0 3px 12px rgba(0,0,0,0.95);
     }
 
     .texto h1 {
       margin: 0 0 16px;
-
       color: #d4af37;
-
       font-size: clamp(30px, 4vw, 54px);
-
       letter-spacing: 4px;
-
       text-transform: uppercase;
     }
 
     .texto p {
       max-width: 900px;
-
       margin: 0 auto;
-
       font-size: clamp(17px, 2vw, 24px);
-
       line-height: 1.6;
     }
 
-    /* =========================
-       FLECHAS
-       ========================= */
-
     .flecha {
       position: absolute;
-
       z-index: 20;
-
       top: 50%;
-
       transform: translateY(-50%);
-
       width: 56px;
       height: 56px;
-
       border: 1px solid rgba(255,255,255,0.5);
-
       border-radius: 50%;
-
       background: rgba(0,0,0,0.35);
-
       color: #ffffff;
-
       font-size: 34px;
-
       line-height: 48px;
-
       text-align: center;
-
       cursor: pointer;
-
       transition: all 0.3s ease;
-
       user-select: none;
     }
 
     .flecha:hover {
       background: rgba(0,0,0,0.78);
-
       border-color: #d4af37;
-
       color: #d4af37;
-
-      transform:
-        translateY(-50%)
-        scale(1.08);
+      transform: translateY(-50%) scale(1.08);
     }
 
     .izquierda {
@@ -176,36 +131,22 @@
       right: 25px;
     }
 
-    /* =========================
-       PUNTOS
-       ========================= */
-
     .puntos {
       position: absolute;
-
       z-index: 20;
-
       left: 50%;
-
       bottom: 32px;
-
       transform: translateX(-50%);
-
       display: flex;
-
       gap: 11px;
     }
 
     .punto {
       width: 10px;
       height: 10px;
-
       border-radius: 50%;
-
       background: rgba(255,255,255,0.45);
-
       cursor: pointer;
-
       transition: all 0.3s ease;
     }
 
@@ -215,127 +156,79 @@
 
     .punto.activo {
       background: #d4af37;
-
       transform: scale(1.35);
     }
 
-    /* =========================
-       VOLVER
-       ========================= */
-
     .volver {
       position: absolute;
-
       z-index: 25;
-
       top: 25px;
       left: 30px;
-
       padding: 10px 18px;
-
-      border:
-        1px solid rgba(212,175,55,0.7);
-
+      border: 1px solid rgba(212,175,55,0.7);
       color: #ffffff;
-
       background: rgba(0,0,0,0.45);
-
       text-decoration: none;
-
       font-size: 15px;
-
       letter-spacing: 1px;
-
       transition: all 0.3s ease;
     }
 
     .volver:hover {
       background: #d4af37;
-
       color: #080808;
     }
 
-    /* =========================
-       CONTADOR
-       ========================= */
-
     .contador {
       position: absolute;
-
       z-index: 20;
-
       top: 28px;
       right: 30px;
-
       color: rgba(255,255,255,0.85);
-
       font-size: 14px;
-
       letter-spacing: 2px;
     }
 
-    /* =========================
-       BOTÓN MÚSICA
-       ========================= */
-
     #musicButton {
       position: absolute;
-
       z-index: 30;
-
       right: 25px;
       bottom: 65px;
-
       padding: 11px 18px;
-
-      border:
-        1px solid rgba(212,175,55,0.75);
-
+      border: 1px solid rgba(212,175,55,0.75);
       background: rgba(0,0,0,0.55);
-
       color: #ffffff;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 14px;
-
       letter-spacing: 1px;
-
       cursor: pointer;
-
       transition: all 0.3s ease;
     }
 
     #musicButton:hover {
       background: #d4af37;
-
       color: #080808;
     }
 
-    /* =========================
-       YOUTUBE OCULTO
-       ========================= */
-
     #musicFrame {
       position: absolute;
-
       width: 1px;
       height: 1px;
-
       left: -100px;
       top: -100px;
-
       opacity: 0;
-
       pointer-events: none;
     }
 
-    /* =========================
-       MÓVIL
-       ========================= */
+    .credito {
+      position: absolute;
+      z-index: 15;
+      bottom: 8px;
+      right: 12px;
+      color: rgba(255,255,255,0.45);
+      font-size: 9px;
+      opacity: 0.6;
+    }
 
     @media (max-width: 700px) {
 
@@ -358,9 +251,7 @@
       .flecha {
         width: 45px;
         height: 45px;
-
         line-height: 38px;
-
         font-size: 28px;
       }
 
@@ -375,9 +266,7 @@
       .volver {
         top: 15px;
         left: 15px;
-
         font-size: 13px;
-
         padding: 8px 12px;
       }
 
@@ -389,9 +278,7 @@
       #musicButton {
         right: 15px;
         bottom: 58px;
-
         padding: 9px 13px;
-
         font-size: 12px;
       }
 
@@ -401,231 +288,192 @@
 
 </head>
 
-
 <body>
-
 
   <div class="carrusel">
 
+```
+<!-- DIAPOSITIVA 1 -->
 
-    <!-- ==================================================
-         DIAPOSITIVA 1
-         ================================================== -->
+<section class="slide activo">
 
-    <section class="slide activo">
+  <img
+    src="IMG-20251101-WA0003.jpg"
+    alt="La lesión">
 
-      <img
-        src="IMG-20251101-WA0003.jpg"
-        alt="La lesión">
+  <div class="texto">
 
-      <div class="texto">
+    <h1>Cuando el camino cambia</h1>
 
-        <h1>Cuando el camino cambia</h1>
-
-        <p>
-          Después de tantos años corriendo,
-          llegó un momento en el que el cuerpo
-          empezó a pedir que escuchara sus señales.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         DIAPOSITIVA 2
-         ================================================== -->
-
-    <section class="slide">
-
-      <img
-        src="DSC_9999%20(426)_resultado_resultado.jpg"
-        alt="Una etapa difícil">
-
-      <div class="texto">
-
-        <h1>Una etapa difícil</h1>
-
-        <p>
-          No siempre es fácil aceptar que aquello
-          que durante tantos años formó parte de tu vida
-          tiene que detenerse.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         DIAPOSITIVA 3
-         ================================================== -->
-
-    <section class="slide">
-
-      <img
-        src="IMG_20251229_174230.jpg"
-        alt="El final de una etapa">
-
-      <div class="texto">
-
-        <h1>Decir adiós a correr</h1>
-
-        <p>
-          Dejar las carreras no significa borrar
-          todo lo vivido. Cada kilómetro recorrido,
-          cada carrera y cada esfuerzo siguen formando
-          parte de mi historia.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         DIAPOSITIVA 4
-         ================================================== -->
-
-    <section class="slide">
-
-      <img
-        src="ChatGPT%20Image%203%20feb%202026%2C%2018_04_44.png"
-        alt="Un nuevo camino">
-
-      <div class="texto">
-
-        <h1>Un nuevo camino</h1>
-
-        <p>
-          A veces la vida obliga a cambiar de dirección.
-          La carrera se detiene, pero el camino continúa.
-          Ahora comienza una nueva etapa.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         FLECHA IZQUIERDA
-         ================================================== -->
-
-    <button
-      class="flecha izquierda"
-      onclick="cambiarSlide(-1)"
-      aria-label="Diapositiva anterior">
-
-      &#10094;
-
-    </button>
-
-
-    <!-- ==================================================
-         FLECHA DERECHA
-         ================================================== -->
-
-    <button
-      class="flecha derecha"
-      onclick="cambiarSlide(1)"
-      aria-label="Diapositiva siguiente">
-
-      &#10095;
-
-    </button>
-
-
-    <!-- ==================================================
-         CONTADOR
-         ================================================== -->
-
-    <div
-      class="contador"
-      id="contador">
-
-      1 / 4
-
-    </div>
-
-
-    <!-- ==================================================
-         PUNTOS
-         ================================================== -->
-
-    <div class="puntos">
-
-      <span
-        class="punto activo"
-        onclick="irSlide(0)">
-      </span>
-
-      <span
-        class="punto"
-        onclick="irSlide(1)">
-      </span>
-
-      <span
-        class="punto"
-        onclick="irSlide(2)">
-      </span>
-
-      <span
-        class="punto"
-        onclick="irSlide(3)">
-      </span>
-
-    </div>
-
-
-    <!-- ==================================================
-         VOLVER
-         ================================================== -->
-
-    <a
-      href="index.html"
-      class="volver">
-
-      ← Volver
-
-    </a>
-
-
-    <!-- ==================================================
-         BOTÓN MÚSICA
-         ================================================== -->
-
-    <button
-      id="musicButton"
-      onclick="controlarMusica()">
-
-      ♫ Música: OFF
-
-    </button>
-
-
-    <!-- ==================================================
-         MÚSICA TRANQUILA
-         Nature — MaxKoMusic
-         ================================================== -->
-
-    <iframe
-      id="musicFrame"
-      src="https://www.youtube.com/embed/bg2r31KV-cU?enablejsapi=1&loop=1&playlist=bg2r31KV-cU"
-      allow="autoplay">
-    </iframe>
-
+    <p>
+      Después de tantos años corriendo,
+      llegó un momento en el que el cuerpo
+      empezó a pedir que escuchara sus señales.
+    </p>
 
   </div>
 
+</section>
+
+
+<!-- DIAPOSITIVA 2 -->
+
+<section class="slide">
+
+  <img
+    src="DSC_9999%20%28426%29_resultado_resultado.jpg"
+    alt="Una etapa difícil">
+
+  <div class="texto">
+
+    <h1>Una etapa difícil</h1>
+
+    <p>
+      No siempre es fácil aceptar que aquello
+      que durante tantos años formó parte de tu vida
+      tiene que detenerse.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- DIAPOSITIVA 3 -->
+
+<section class="slide">
+
+  <img
+    src="IMG_20251229_174230.jpg"
+    alt="Dejar las carreras">
+
+  <div class="texto">
+
+    <h1>Decir adiós a correr</h1>
+
+    <p>
+      Dejar las carreras no significa borrar
+      todo lo vivido. Cada kilómetro recorrido,
+      cada carrera y cada esfuerzo siguen formando
+      parte de mi historia.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- DIAPOSITIVA 4 -->
+
+<section class="slide">
+
+  <img
+    src="ChatGPT%20Image%203%20feb%202026%2C%2018_04_44.png"
+    alt="Un nuevo camino">
+
+  <div class="texto">
+
+    <h1>Un nuevo camino</h1>
+
+    <p>
+      A veces la vida obliga a cambiar de dirección.
+      La carrera se detiene, pero el camino continúa.
+      Ahora comienza una nueva etapa.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- FLECHA IZQUIERDA -->
+
+<button
+  class="flecha izquierda"
+  onclick="cambiarSlide(-1)"
+  aria-label="Diapositiva anterior">
+
+  &#10094;
+
+</button>
+
+
+<!-- FLECHA DERECHA -->
+
+<button
+  class="flecha derecha"
+  onclick="cambiarSlide(1)"
+  aria-label="Diapositiva siguiente">
+
+  &#10095;
+
+</button>
+
+
+<!-- CONTADOR -->
+
+<div
+  class="contador"
+  id="contador">
+
+  1 / 4
+
+</div>
+
+
+<!-- PUNTOS -->
+
+<div class="puntos">
+
+  <span class="punto activo" onclick="irSlide(0)"></span>
+  <span class="punto" onclick="irSlide(1)"></span>
+  <span class="punto" onclick="irSlide(2)"></span>
+  <span class="punto" onclick="irSlide(3)"></span>
+
+</div>
+
+
+<!-- VOLVER -->
+
+<a
+  href="index.html"
+  class="volver">
+
+  ← Volver
+
+</a>
+
+
+<!-- BOTÓN MÚSICA -->
+
+<button
+  id="musicButton"
+  onclick="controlarMusica()">
+
+  ♫ Música: OFF
+
+</button>
+
+
+<!-- MISMA MÚSICA QUE ENTRENAMIENTO -->
+
+<iframe
+  id="musicFrame"
+  src="https://www.youtube.com/embed/bg2r31KV-cU?enablejsapi=1&loop=1&playlist=bg2r31KV-cU"
+  allow="autoplay">
+</iframe>
+
+
+<!-- CRÉDITO -->
+
+<div class="credito">
+  Mi trayectoria atlética · La lesión
+</div>
+```
+
+  </div>
 
   <script>
-
-
-    /* ==================================================
-       VARIABLES
-       ================================================== */
 
     let slideActual = 0;
 
@@ -649,25 +497,15 @@
     let intervalo;
 
 
-    /* ==================================================
-       MOSTRAR DIAPOSITIVA
-       ================================================== */
-
     function mostrarSlide(numero) {
 
       if (numero >= slides.length) {
-
         slideActual = 0;
-
       }
 
       if (numero < 0) {
-
-        slideActual =
-          slides.length - 1;
-
+        slideActual = slides.length - 1;
       }
-
 
       slides.forEach(
         (slide, indice) => {
@@ -680,7 +518,6 @@
         }
       );
 
-
       puntos.forEach(
         (punto, indice) => {
 
@@ -692,7 +529,6 @@
         }
       );
 
-
       contador.textContent =
         (slideActual + 1) +
         " / " +
@@ -700,10 +536,6 @@
 
     }
 
-
-    /* ==================================================
-       CAMBIAR DIAPOSITIVA
-       ================================================== */
 
     function cambiarSlide(direccion) {
 
@@ -716,10 +548,6 @@
     }
 
 
-    /* ==================================================
-       IR A DIAPOSITIVA
-       ================================================== */
-
     function irSlide(numero) {
 
       slideActual = numero;
@@ -730,10 +558,6 @@
 
     }
 
-
-    /* ==================================================
-       CAMBIO AUTOMÁTICO
-       ================================================== */
 
     function iniciarAutomatico() {
 
@@ -752,10 +576,6 @@
     }
 
 
-    /* ==================================================
-       REINICIAR AUTOMÁTICO
-       ================================================== */
-
     function reiniciarAutomatico() {
 
       clearInterval(intervalo);
@@ -765,33 +585,21 @@
     }
 
 
-    /* ==================================================
-       TECLADO
-       ================================================== */
-
     document.addEventListener(
       "keydown",
       function(event) {
 
         if (event.key === "ArrowRight") {
-
           cambiarSlide(1);
-
         }
 
         if (event.key === "ArrowLeft") {
-
           cambiarSlide(-1);
-
         }
 
       }
     );
 
-
-    /* ==================================================
-       DESLIZAMIENTO EN MÓVIL
-       ================================================== */
 
     let inicioX = 0;
 
@@ -821,13 +629,9 @@
         if (Math.abs(diferencia) > 50) {
 
           if (diferencia > 0) {
-
             cambiarSlide(1);
-
           } else {
-
             cambiarSlide(-1);
-
           }
 
         }
@@ -836,14 +640,50 @@
     );
 
 
-    /* ==================================================
-       CONTROL DE MÚSICA
-       ================================================== */
+    /* MÚSICA */
 
     function controlarMusica() {
 
       if (!musicaActiva) {
 
         musicFrame.contentWindow.postMessage(
-          '{"event":"command","func":"playVideo","args":""
+          '{"event":"command","func":"playVideo","args":""}',
+          "*"
+        );
+
+        musicaActiva = true;
+
+        musicButton.textContent =
+          "♫ Música: ON";
+
+      } else {
+
+        musicFrame.contentWindow.postMessage(
+          '{"event":"command","func":"pauseVideo","args":""}',
+          "*"
+        );
+
+        musicaActiva = false;
+
+        musicButton.textContent =
+          "♫ Música: OFF";
+
+      }
+
+    }
+
+
+    mostrarSlide(0);
+
+    iniciarAutomatico();
+
+  </script>
+
+</body>
+
+</html>
+
+
+
+
 
