@@ -36,53 +36,32 @@ body {
    ========================= */
 
 header {
-
   background: #050505;
-
   text-align: center;
-
   padding: 5px 20px 14px;
-
   border-bottom: 1px solid #9d7b32;
-
   position: relative;
-
   z-index: 10;
 }
 
-
 h1 {
-
   margin: 0;
-
   color: #c9a24d;
-
   font-size: 46px;
-
   font-weight: normal;
-
   letter-spacing: 1px;
 }
 
-
 .subtitulo {
-
   margin-top: 2px;
-
   color: #fff;
-
   font-size: 18px;
 }
 
-
 .linea {
-
   width: 78px;
-
   height: 2px;
-
   background: #c9a24d;
-
   margin: 9px auto 9px;
 }
 
@@ -92,35 +71,22 @@ h1 {
    ========================= */
 
 nav {
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   gap: 27px;
-
   flex-wrap: wrap;
 }
 
-
 nav a {
-
   color: #fff;
-
   text-decoration: none;
-
   font-size: 16px;
-
   font-weight: bold;
-
   transition: 0.3s;
 }
 
-
 nav a:hover {
-
   color: #c9a24d;
 }
 
@@ -134,11 +100,9 @@ nav a:hover {
   position: absolute;
 
   right: 25px;
-
   top: 18px;
 
   width: 40px;
-
   height: 40px;
 
   border-radius: 50%;
@@ -154,9 +118,7 @@ nav a:hover {
   cursor: pointer;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   transition: 0.3s;
@@ -164,11 +126,8 @@ nav a:hover {
   z-index: 20;
 }
 
-
 #musicButton:hover {
-
   background: #c9a24d;
-
   color: #000;
 }
 
@@ -207,7 +166,9 @@ nav a:hover {
 }
 
 
-/* OSCURECER LOS LATERALES */
+/* =========================
+   OSCURECER LATERALES
+   ========================= */
 
 .portada::before {
 
@@ -216,9 +177,7 @@ nav a:hover {
   position: absolute;
 
   left: 0;
-
   top: 0;
-
   bottom: 0;
 
   width: 30%;
@@ -229,7 +188,7 @@ nav a:hover {
       to right,
       #000 0%,
       #000 25%,
-      rgba(0,0,0,0.95) 55%,
+      rgba(0,0,0,0.96) 55%,
       rgba(0,0,0,0) 100%
     );
 
@@ -246,9 +205,7 @@ nav a:hover {
   position: absolute;
 
   right: 0;
-
   top: 0;
-
   bottom: 0;
 
   width: 30%;
@@ -259,7 +216,7 @@ nav a:hover {
       to left,
       #000 0%,
       #000 25%,
-      rgba(0,0,0,0.95) 55%,
+      rgba(0,0,0,0.96) 55%,
       rgba(0,0,0,0) 100%
     );
 
@@ -270,7 +227,7 @@ nav a:hover {
 
 
 /* =========================
-   MARCO DE LA FOTO
+   MARCO
    ========================= */
 
 .marco {
@@ -293,7 +250,9 @@ nav a:hover {
 }
 
 
-/* FOTO ORIGINAL */
+/* =========================
+   FOTO DE PORTADA
+   ========================= */
 
 .marco img {
 
@@ -356,7 +315,7 @@ nav a:hover {
 
 
 /* =========================
-   YOUTUBE OCULTO
+   YOUTUBE
    ========================= */
 
 #youtubePlayer {
@@ -364,11 +323,9 @@ nav a:hover {
   position: fixed;
 
   width: 1px;
-
   height: 1px;
 
   left: -20px;
-
   bottom: -20px;
 
   border: 0;
@@ -386,38 +343,31 @@ nav a:hover {
 @media (max-width: 800px) {
 
   h1 {
-
     font-size: 31px;
   }
 
   .subtitulo {
-
     font-size: 15px;
   }
 
   nav {
-
     gap: 14px;
   }
 
   nav a {
-
     font-size: 14px;
   }
 
   #musicButton {
 
     right: 12px;
-
     top: 12px;
 
     width: 36px;
-
     height: 36px;
   }
 
   .portada {
-
     min-height: calc(100vh - 145px);
   }
 
@@ -431,7 +381,6 @@ nav a:hover {
   .marco img {
 
     max-width: 96%;
-
     max-height: 96%;
   }
 
@@ -479,17 +428,29 @@ Una vida entre kilómetros, carreras y nuevos caminos
 
 <nav>
 
-<a href="mi-historia.html">Mi historia</a>
+<a href="mi-historia.html">
+Mi historia
+</a>
 
-<a href="mis-carreras.html">Mis carreras</a>
+<a href="mis-carreras.html">
+Mis carreras
+</a>
 
-<a href="entrenamiento.html">Entrenamiento</a>
+<a href="entrenamiento.html">
+Entrenamiento
+</a>
 
-<a href="lesion.html">La lesión</a>
+<a href="la-lesion.html">
+La lesión
+</a>
 
-<a href="marcha.html">Marcha atlética</a>
+<a href="marcha.html">
+Marcha atlética
+</a>
 
-<a href="galeria.html">Galería</a>
+<a href="galeria.html">
+Galería
+</a>
 
 </nav>
 
@@ -497,8 +458,7 @@ Una vida entre kilómetros, carreras y nuevos caminos
 <button
 id="musicButton"
 onclick="toggleMusic()"
-title="Reproducir / detener música"
->
+title="Reproducir / detener música">
 ♫
 </button>
 
@@ -516,7 +476,7 @@ title="Reproducir / detener música"
 
 
 <img
-src="IMG-20220905-WA0002.jpg"
+src="IMG_5793.jpg"
 alt="Mi trayectoria atlética"
 >
 
@@ -535,37 +495,35 @@ Una vida entre kilómetros, carreras y nuevos caminos
 
 
 <!-- =========================
-     MUSICA YOUTUBE
+     MUSICA
      ========================= -->
 
 <iframe
 
 id="youtubePlayer"
 
-src="https://www.youtube.com/embed/60ItHLz5WEA?enablejsapi=1&autoplay=1&mute=0&loop=1&playlist=60ItHLz5WEA&controls=0&rel=0&playsinline=1"
+src="https://www.youtube.com/embed/60ItHLz5WEA?enablejsapi=1&loop=1&playlist=60ItHLz5WEA&controls=0&rel=0&playsinline=1"
 
-allow="autoplay; encrypted-media"
+allow="autoplay; encrypted-media">
 
-></iframe>
+</iframe>
 
 
 
 <script>
 
-/* =========================
-   CONTROL DE MUSICA
-   ========================= */
 
 let musicPlaying = false;
 
 
 /* =========================
-   ENVIAR ORDEN A YOUTUBE
+   ORDEN A YOUTUBE
    ========================= */
 
 function youtubeCommand(command) {
 
-  const iframe = document.getElementById("youtubePlayer");
+  const iframe =
+    document.getElementById("youtubePlayer");
 
   if (!iframe || !iframe.contentWindow) return;
 
@@ -589,7 +547,7 @@ function youtubeCommand(command) {
 
 
 /* =========================
-   BOTON DE MUSICA
+   BOTON MUSICA
    ========================= */
 
 function toggleMusic() {
@@ -616,7 +574,7 @@ function toggleMusic() {
 
 
 /* =========================
-   INTENTO DE INICIO
+   INTENTO DE REPRODUCCION
    ========================= */
 
 window.addEventListener("load", function() {
@@ -625,36 +583,10 @@ window.addEventListener("load", function() {
 
     youtubeCommand("playVideo");
 
-    musicPlaying = true;
-
-    document.getElementById("musicButton").innerHTML = "Ⅱ";
-
-  }, 1500);
+  }, 1200);
 
 });
 
-
-/* =========================
-   SI EL USUARIO HACE CLIC
-   EN LA PAGINA, ACTIVAMOS
-   LA MUSICA
-   ========================= */
-
-document.addEventListener("click", function(e) {
-
-  if (e.target.id === "musicButton") return;
-
-  if (!musicPlaying) {
-
-    youtubeCommand("playVideo");
-
-    musicPlaying = true;
-
-    document.getElementById("musicButton").innerHTML = "Ⅱ";
-
-  }
-
-}, { once: true });
 
 </script>
 
@@ -662,6 +594,9 @@ document.addEventListener("click", function(e) {
 </body>
 
 </html>
+
+
+
 
 
 
