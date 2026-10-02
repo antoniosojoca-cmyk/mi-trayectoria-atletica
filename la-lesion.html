@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,67 +16,311 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html,
     body {
       margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
       background: #080808;
-      color: #f2f2f2;
+      color: #ffffff;
       font-family: Georgia, "Times New Roman", serif;
     }
 
-    .contenedor {
-      width: 94%;
-      max-width: 1500px;
-      margin: 0 auto;
-      padding: 35px 0 80px;
+    .carrusel {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background: #080808;
     }
 
     /* =========================
-       BOTÓN DE MÚSICA
-    ========================= */
+       DIAPOSITIVAS
+       ========================= */
 
-    #botonMusica {
-      position: fixed;
-      top: 22px;
-      right: 22px;
-      z-index: 9999;
+    .slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1.2s ease;
+    }
 
-      width: 46px;
-      height: 46px;
+    .slide.activo {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .slide img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.08) 30%,
+          rgba(0,0,0,0.28) 55%,
+          rgba(0,0,0,0.88) 100%
+        );
+
+      pointer-events: none;
+    }
+
+    /* =========================
+       TEXTO
+       ========================= */
+
+    .texto {
+      position: absolute;
+      z-index: 5;
+
+      left: 8%;
+      right: 8%;
+      bottom: 12%;
+
+      text-align: center;
+
+      text-shadow:
+        0 3px 12px rgba(0,0,0,0.95);
+    }
+
+    .texto h1 {
+      margin: 0 0 16px;
+
+      color: #d4af37;
+
+      font-size: clamp(30px, 4vw, 54px);
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+    }
+
+    .texto p {
+      max-width: 900px;
+
+      margin: 0 auto;
+
+      font-size: clamp(17px, 2vw, 24px);
+
+      line-height: 1.6;
+    }
+
+    /* =========================
+       FLECHAS
+       ========================= */
+
+    .flecha {
+      position: absolute;
+
+      z-index: 20;
+
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      width: 56px;
+      height: 56px;
+
+      border: 1px solid rgba(255,255,255,0.5);
 
       border-radius: 50%;
 
-      border: 1px solid #c9a35b;
+      background: rgba(0,0,0,0.35);
 
-      background: rgba(8, 8, 8, 0.94);
+      color: #ffffff;
 
-      color: #c9a35b;
+      font-size: 34px;
 
-      font-size: 22px;
+      line-height: 48px;
+
+      text-align: center;
 
       cursor: pointer;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      transition: all 0.3s ease;
 
-      transition: 0.25s ease;
+      user-select: none;
     }
 
-    #botonMusica:hover {
-      background: #c9a35b;
+    .flecha:hover {
+      background: rgba(0,0,0,0.78);
+
+      border-color: #d4af37;
+
+      color: #d4af37;
+
+      transform:
+        translateY(-50%)
+        scale(1.08);
+    }
+
+    .izquierda {
+      left: 25px;
+    }
+
+    .derecha {
+      right: 25px;
+    }
+
+    /* =========================
+       PUNTOS
+       ========================= */
+
+    .puntos {
+      position: absolute;
+
+      z-index: 20;
+
+      left: 50%;
+
+      bottom: 32px;
+
+      transform: translateX(-50%);
+
+      display: flex;
+
+      gap: 11px;
+    }
+
+    .punto {
+      width: 10px;
+      height: 10px;
+
+      border-radius: 50%;
+
+      background: rgba(255,255,255,0.45);
+
+      cursor: pointer;
+
+      transition: all 0.3s ease;
+    }
+
+    .punto:hover {
+      background: rgba(255,255,255,0.8);
+    }
+
+    .punto.activo {
+      background: #d4af37;
+
+      transform: scale(1.35);
+    }
+
+    /* =========================
+       VOLVER
+       ========================= */
+
+    .volver {
+      position: absolute;
+
+      z-index: 25;
+
+      top: 25px;
+      left: 30px;
+
+      padding: 10px 18px;
+
+      border:
+        1px solid rgba(212,175,55,0.7);
+
+      color: #ffffff;
+
+      background: rgba(0,0,0,0.45);
+
+      text-decoration: none;
+
+      font-size: 15px;
+
+      letter-spacing: 1px;
+
+      transition: all 0.3s ease;
+    }
+
+    .volver:hover {
+      background: #d4af37;
+
+      color: #080808;
+    }
+
+    /* =========================
+       CONTADOR
+       ========================= */
+
+    .contador {
+      position: absolute;
+
+      z-index: 20;
+
+      top: 28px;
+      right: 30px;
+
+      color: rgba(255,255,255,0.85);
+
+      font-size: 14px;
+
+      letter-spacing: 2px;
+    }
+
+    /* =========================
+       BOTÓN MÚSICA
+       ========================= */
+
+    #musicButton {
+      position: absolute;
+
+      z-index: 30;
+
+      right: 25px;
+      bottom: 65px;
+
+      padding: 11px 18px;
+
+      border:
+        1px solid rgba(212,175,55,0.75);
+
+      background: rgba(0,0,0,0.55);
+
+      color: #ffffff;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 14px;
+
+      letter-spacing: 1px;
+
+      cursor: pointer;
+
+      transition: all 0.3s ease;
+    }
+
+    #musicButton:hover {
+      background: #d4af37;
+
       color: #080808;
     }
 
     /* =========================
        YOUTUBE OCULTO
-    ========================= */
+       ========================= */
 
-    #reproductor {
-      position: fixed;
+    #musicFrame {
+      position: absolute;
 
       width: 1px;
       height: 1px;
@@ -89,361 +334,65 @@
     }
 
     /* =========================
-       VOLVER
-    ========================= */
-
-    .volver {
-      display: inline-block;
-      margin-bottom: 30px;
-      padding: 10px 18px;
-
-      border: 1px solid #c9a35b;
-      color: #c9a35b;
-
-      text-decoration: none;
-
-      font-size: 16px;
-      letter-spacing: 0.5px;
-
-      transition: 0.25s ease;
-    }
-
-    .volver:hover {
-      background: #c9a35b;
-      color: #080808;
-    }
-
-    /* =========================
-       CABECERA
-    ========================= */
-
-    .cabecera {
-      text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .cabecera-imagen {
-      width: 100%;
-      max-height: 650px;
-
-      display: block;
-
-      margin: 0 auto 30px;
-
-      object-fit: contain;
-
-      background: #050505;
-
-      border: 1px solid rgba(201, 163, 91, 0.75);
-    }
-
-    h1 {
-      margin: 0;
-
-      color: #c9a35b;
-
-      font-size: clamp(38px, 6vw, 70px);
-
-      letter-spacing: 4px;
-
-      text-transform: uppercase;
-    }
-
-    .subtitulo {
-      margin-top: 12px;
-
-      color: #d6d6d6;
-
-      font-size: 21px;
-
-      letter-spacing: 1px;
-    }
-
-    .linea {
-      width: 120px;
-      height: 1px;
-
-      background: #c9a35b;
-
-      margin: 25px auto 0;
-    }
-
-    /* =========================
-       INTRO
-    ========================= */
-
-    .intro {
-      max-width: 950px;
-
-      margin: 0 auto 70px;
-
-      text-align: center;
-
-      color: #d3d3d3;
-
-      font-size: 19px;
-
-      line-height: 1.9;
-    }
-
-    /* =========================
-       FRASE DESTACADA
-    ========================= */
-
-    .frase {
-      max-width: 950px;
-
-      margin: 0 auto 75px;
-
-      padding: 35px 30px;
-
-      text-align: center;
-
-      border-top: 1px solid rgba(201, 163, 91, 0.55);
-      border-bottom: 1px solid rgba(201, 163, 91, 0.55);
-    }
-
-    .frase p {
-      margin: 0;
-
-      color: #c9a35b;
-
-      font-size: 26px;
-
-      line-height: 1.6;
-
-      font-style: italic;
-    }
-
-    /* =========================
-       BLOQUES DE TEXTO
-    ========================= */
-
-    .bloque {
-      max-width: 1100px;
-
-      margin: 0 auto 65px;
-
-      padding: 35px;
-
-      background: #0d0d0d;
-
-      border: 1px solid rgba(201, 163, 91, 0.55);
-    }
-
-    .numero {
-      color: #c9a35b;
-
-      font-size: 16px;
-
-      letter-spacing: 3px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 10px;
-    }
-
-    .bloque h2 {
-      margin: 0 0 22px;
-
-      color: #c9a35b;
-
-      font-size: 31px;
-
-      font-weight: normal;
-    }
-
-    .bloque p {
-      margin: 0 0 18px;
-
-      color: #d0d0d0;
-
-      font-size: 18px;
-
-      line-height: 1.9;
-    }
-
-    .bloque p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* =========================
-       FOTOGRAFÍA INTERMEDIA
-    ========================= */
-
-    .foto-intermedia {
-      max-width: 1100px;
-
-      margin: 20px auto 75px;
-
-      padding: 12px;
-
-      background: #050505;
-
-      border: 1px solid rgba(201, 163, 91, 0.7);
-    }
-
-    .foto-intermedia img {
-      display: block;
-
-      width: 100%;
-
-      height: auto;
-
-      max-height: 700px;
-
-      object-fit: contain;
-    }
-
-    .foto-pie {
-      padding: 14px 10px 4px;
-
-      text-align: center;
-
-      color: #afafaf;
-
-      font-size: 15px;
-
-      line-height: 1.5;
-    }
-
-    /* =========================
-       CAMBIO DE ETAPA
-    ========================= */
-
-    .cambio {
-      max-width: 1000px;
-
-      margin: 80px auto;
-
-      padding: 40px 35px;
-
-      text-align: center;
-
-      border: 1px solid rgba(201, 163, 91, 0.7);
-
-      background: #0b0b0b;
-    }
-
-    .cambio h2 {
-      margin: 0 0 22px;
-
-      color: #c9a35b;
-
-      font-size: 32px;
-
-      font-weight: normal;
-    }
-
-    .cambio p {
-      margin: 0;
-
-      color: #d2d2d2;
-
-      font-size: 19px;
-
-      line-height: 1.9;
-    }
-
-    /* =========================
-       FRASE FINAL
-    ========================= */
-
-    .frase-final {
-      max-width: 900px;
-
-      margin: 80px auto 0;
-
-      padding-top: 35px;
-
-      text-align: center;
-
-      border-top: 1px solid rgba(201, 163, 91, 0.4);
-    }
-
-    .frase-final p {
-      margin: 0;
-
-      color: #c9a35b;
-
-      font-size: 26px;
-
-      line-height: 1.7;
-
-      font-style: italic;
-    }
-
-    /* =========================
        MÓVIL
-    ========================= */
+       ========================= */
 
-    @media (max-width: 800px) {
+    @media (max-width: 700px) {
 
-      .contenedor {
-        width: 92%;
-
-        padding-top: 25px;
+      .texto {
+        left: 6%;
+        right: 6%;
+        bottom: 14%;
       }
 
-      .cabecera-imagen {
-        max-height: none;
+      .texto h1 {
+        letter-spacing: 2px;
+        font-size: 30px;
       }
 
-      .subtitulo {
-        font-size: 18px;
+      .texto p {
+        font-size: 16px;
+        line-height: 1.45;
       }
 
-      .intro {
-        font-size: 17px;
+      .flecha {
+        width: 45px;
+        height: 45px;
+
+        line-height: 38px;
+
+        font-size: 28px;
       }
 
-      .frase {
-        padding: 25px 20px;
+      .izquierda {
+        left: 10px;
       }
 
-      .frase p {
-        font-size: 22px;
+      .derecha {
+        right: 10px;
       }
 
-      .bloque {
-        padding: 25px 20px;
-      }
-
-      .bloque h2 {
-        font-size: 26px;
-      }
-
-      .bloque p {
-        font-size: 17px;
-      }
-
-      .foto-intermedia {
-        padding: 8px;
-      }
-
-      .foto-pie {
-        font-size: 14px;
-      }
-
-      .cambio {
-        padding: 30px 20px;
-      }
-
-      .cambio h2 {
-        font-size: 27px;
-      }
-
-      .cambio p {
-        font-size: 17px;
-      }
-
-      .frase-final p {
-        font-size: 22px;
-      }
-
-      #botonMusica {
+      .volver {
         top: 15px;
+        left: 15px;
+
+        font-size: 13px;
+
+        padding: 8px 12px;
+      }
+
+      .contador {
+        top: 20px;
         right: 15px;
+      }
+
+      #musicButton {
+        right: 15px;
+        bottom: 58px;
+
+        padding: 9px 13px;
+
+        font-size: 12px;
       }
 
     }
@@ -456,475 +405,445 @@
 <body>
 
 
-  <!-- =========================
-       BOTÓN DE MÚSICA
-  ========================= -->
-
-  <button
-    id="botonMusica"
-    aria-label="Controlar música">
-
-    ♪
-
-  </button>
+  <div class="carrusel">
 
 
-  <!-- =========================
-       REPRODUCTOR YOUTUBE OCULTO
-       Ludovico Einaudi — Experience
-  ========================= -->
+    <!-- ==================================================
+         DIAPOSITIVA 1
+         ================================================== -->
 
-  <div id="reproductor"></div>
-
-
-  <main class="contenedor">
-
-
-    <!-- =========================
-         VOLVER
-    ========================= -->
-
-    <a
-      class="volver"
-      href="index.html">
-
-      ← Volver al inicio
-
-    </a>
-
-
-    <!-- =========================
-         CABECERA
-    ========================= -->
-
-    <header class="cabecera">
-
+    <section class="slide activo">
 
       <img
-        class="cabecera-imagen"
-        src="IMG_20260321_093209.jpg"
-        alt="Mi nueva etapa">
+        src="IMG-20251101-WA0003.jpg"
+        alt="La lesión">
 
+      <div class="texto">
 
-      <h1>
-        La lesión
-      </h1>
+        <h1>Cuando el camino cambia</h1>
 
-
-      <div class="subtitulo">
-
-        Cuando tuve que cambiar la forma de seguir
+        <p>
+          Después de tantos años corriendo,
+          llegó un momento en el que el cuerpo
+          empezó a pedir que escuchara sus señales.
+        </p>
 
       </div>
 
-
-      <div class="linea"></div>
-
-
-    </header>
-
-
-    <!-- =========================
-         INTRODUCCIÓN
-    ========================= -->
-
-    <section class="intro">
-
-      <p>
-
-        Mi lesión no apareció de repente. Fue algo que empezó poco a poco,
-        con una molestia a la que al principio no di la importancia que
-        debía.
-
-      </p>
-
-
-      <p>
-
-        Con el tiempo aquella molestia fue aumentando hasta convertirse
-        en algo que terminó cambiando mi manera de entender el deporte.
-
-      </p>
-
     </section>
 
 
-    <!-- =========================
-         FRASE
-    ========================= -->
+    <!-- ==================================================
+         DIAPOSITIVA 2
+         ================================================== -->
 
-    <section class="frase">
-
-      <p>
-
-        “A veces el camino cambia, pero las ganas de seguir permanecen.”
-
-      </p>
-
-    </section>
-
-
-    <!-- =========================
-         BLOQUE I
-    ========================= -->
-
-    <section class="bloque">
-
-      <div class="numero">
-        El comienzo
-      </div>
-
-
-      <h2>
-        Una molestia a la que no di importancia
-      </h2>
-
-
-      <p>
-
-        Prácticamente todo comenzó hace un año. Al principio era solamente
-        una molestia y no le di la importancia que debía. Viéndolo ahora,
-        sé que aquel fue un error por mi parte.
-
-      </p>
-
-
-      <p>
-
-        Poco a poco la molestia fue a más. Intentaba continuar, pero el
-        problema seguía ahí y cada vez resultaba más difícil hacer como
-        si no pasara nada.
-
-      </p>
-
-    </section>
-
-
-    <!-- =========================
-         BLOQUE II
-    ========================= -->
-
-    <section class="bloque">
-
-      <div class="numero">
-        Las recaídas
-      </div>
-
-
-      <h2>
-        Mejoraba... y volvía a recaer
-      </h2>
-
-
-      <p>
-
-        Finalmente decidí ponerme en manos médicas. En algunos momentos
-        la situación mejoraba y parecía que el problema estaba controlado.
-
-      </p>
-
-
-      <p>
-
-        Pero después de un tiempo volvía a recaer. Así estuve durante
-        una etapa en la que las molestias iban y venían, hasta que llegó
-        un momento en el que ya no podía continuar de la misma manera.
-
-      </p>
-
-
-      <p>
-
-        Los dolores eran cada vez más fuertes y aquello que al principio
-        parecía una simple molestia terminó convirtiéndose en un problema
-        que necesitaba ser estudiado a fondo.
-
-      </p>
-
-    </section>
-
-
-    <!-- =========================
-         BLOQUE III
-    ========================= -->
-
-    <section class="bloque">
-
-      <div class="numero">
-        El diagnóstico
-      </div>
-
-
-      <h2>
-        La noticia que cambió mis planes
-      </h2>
-
-
-      <p>
-
-        Después de realizarme distintas pruebas, me explicaron que había
-        perdido el cartílago de la rodilla y que tenía dañado el menisco
-        medial. También me indicaron que esto estaba produciendo un
-        derrame leve.
-
-      </p>
-
-
-      <p>
-
-        En ese momento tuve que asumir que continuar corriendo como hasta
-        entonces ya no era una opción adecuada para mí.
-
-      </p>
-
-    </section>
-
-
-    <!-- =========================
-         FOTOGRAFÍA INTERMEDIA
-    ========================= -->
-
-    <div class="foto-intermedia">
-
+    <section class="slide">
 
       <img
-        src="IMG-20251101-WA0016.jpg"
-        alt="Una etapa importante de mi trayectoria">
+        src="DSC_9999%20(426)_resultado_resultado.jpg"
+        alt="Una etapa difícil">
 
+      <div class="texto">
 
-      <div class="foto-pie">
+        <h1>Una etapa difícil</h1>
 
-        Un momento más de mi trayectoria como corredor.
+        <p>
+          No siempre es fácil aceptar que aquello
+          que durante tantos años formó parte de tu vida
+          tiene que detenerse.
+        </p>
 
       </div>
 
+    </section>
+
+
+    <!-- ==================================================
+         DIAPOSITIVA 3
+         ================================================== -->
+
+    <section class="slide">
+
+      <img
+        src="IMG_20251229_174230.jpg"
+        alt="El final de una etapa">
+
+      <div class="texto">
+
+        <h1>Decir adiós a correr</h1>
+
+        <p>
+          Dejar las carreras no significa borrar
+          todo lo vivido. Cada kilómetro recorrido,
+          cada carrera y cada esfuerzo siguen formando
+          parte de mi historia.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         DIAPOSITIVA 4
+         ================================================== -->
+
+    <section class="slide">
+
+      <img
+        src="ChatGPT%20Image%203%20feb%202026%2C%2018_04_44.png"
+        alt="Un nuevo camino">
+
+      <div class="texto">
+
+        <h1>Un nuevo camino</h1>
+
+        <p>
+          A veces la vida obliga a cambiar de dirección.
+          La carrera se detiene, pero el camino continúa.
+          Ahora comienza una nueva etapa.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         FLECHA IZQUIERDA
+         ================================================== -->
+
+    <button
+      class="flecha izquierda"
+      onclick="cambiarSlide(-1)"
+      aria-label="Diapositiva anterior">
+
+      &#10094;
+
+    </button>
+
+
+    <!-- ==================================================
+         FLECHA DERECHA
+         ================================================== -->
+
+    <button
+      class="flecha derecha"
+      onclick="cambiarSlide(1)"
+      aria-label="Diapositiva siguiente">
+
+      &#10095;
+
+    </button>
+
+
+    <!-- ==================================================
+         CONTADOR
+         ================================================== -->
+
+    <div
+      class="contador"
+      id="contador">
+
+      1 / 4
 
     </div>
 
 
-    <!-- =========================
-         BLOQUE IV
-    ========================= -->
+    <!-- ==================================================
+         PUNTOS
+         ================================================== -->
 
-    <section class="bloque">
+    <div class="puntos">
 
-      <div class="numero">
-        Un nuevo camino
-      </div>
+      <span
+        class="punto activo"
+        onclick="irSlide(0)">
+      </span>
 
+      <span
+        class="punto"
+        onclick="irSlide(1)">
+      </span>
 
-      <h2>
-        Dejar de correr no significaba dejar el deporte
-      </h2>
+      <span
+        class="punto"
+        onclick="irSlide(2)">
+      </span>
 
+      <span
+        class="punto"
+        onclick="irSlide(3)">
+      </span>
 
-      <p>
-
-        El consejo que recibí fue dejar la carrera por el impacto que
-        produce y buscar actividades que no generaran ese mismo impacto.
-
-      </p>
-
-
-      <p>
-
-        Entre las posibilidades estaban la bicicleta, la elíptica y
-        caminar. Es decir, seguir haciendo deporte, pero de una manera
-        diferente.
-
-      </p>
+    </div>
 
 
-      <p>
+    <!-- ==================================================
+         VOLVER
+         ================================================== -->
 
-        Para mí no era fácil aceptar que tenía que dejar de correr.
-        Habían sido muchos años, muchas carreras y muchos kilómetros.
-        Correr formaba parte de mi vida.
+    <a
+      href="index.html"
+      class="volver">
 
-      </p>
+      ← Volver
 
-    </section>
-
-
-    <!-- =========================
-         CAMBIO DE ETAPA
-    ========================= -->
-
-    <section class="cambio">
+    </a>
 
 
-      <h2>
-        La marcha atlética
-      </h2>
+    <!-- ==================================================
+         BOTÓN MÚSICA
+         ================================================== -->
+
+    <button
+      id="musicButton"
+      onclick="controlarMusica()">
+
+      ♫ Música: OFF
+
+    </button>
 
 
-      <p>
+    <!-- ==================================================
+         MÚSICA TRANQUILA
+         Nature — MaxKoMusic
+         ================================================== -->
 
-        Por eso decidí seguir vinculado al atletismo a través de la
-        marcha atlética. Es una nueva etapa y también una nueva manera
-        de seguir disfrutando de un deporte que ha acompañado gran parte
-        de mi vida.
-
-      </p>
-
-
-    </section>
-
-
-    <!-- =========================
-         FRASE FINAL
-    ========================= -->
-
-    <section class="frase-final">
+    <iframe
+      id="musicFrame"
+      src="https://www.youtube.com/embed/bg2r31KV-cU?enablejsapi=1&loop=1&playlist=bg2r31KV-cU"
+      allow="autoplay">
+    </iframe>
 
 
-      <p>
+  </div>
 
-        “No he dejado de avanzar.<br>
-        Simplemente he aprendido a hacerlo de otra manera.”
-
-      </p>
-
-
-    </section>
-
-
-  </main>
-
-
-  <!-- =========================
-       YOUTUBE IFRAME API
-  ========================= -->
 
   <script>
 
-    let reproductor;
 
-    let reproduciendo = false;
+    /* ==================================================
+       VARIABLES
+       ================================================== */
 
+    let slideActual = 0;
 
-    function onYouTubeIframeAPIReady() {
+    const slides =
+      document.querySelectorAll(".slide");
 
+    const puntos =
+      document.querySelectorAll(".punto");
 
-      reproductor = new YT.Player(
-        'reproductor',
-        {
+    const contador =
+      document.getElementById("contador");
 
-          height: '1',
-          width: '1',
+    const musicButton =
+      document.getElementById("musicButton");
 
-          videoId: 'O9wjmEhMKFw',
+    const musicFrame =
+      document.getElementById("musicFrame");
 
-          playerVars: {
+    let musicaActiva = false;
 
-            autoplay: 1,
-            loop: 1,
-
-            playlist: 'O9wjmEhMKFw',
-
-            controls: 0,
-            modestbranding: 1,
-
-            rel: 0
-
-          },
+    let intervalo;
 
 
-          events: {
+    /* ==================================================
+       MOSTRAR DIAPOSITIVA
+       ================================================== */
 
-            onReady: function(event) {
+    function mostrarSlide(numero) {
 
-              /*
-                Intentamos comenzar automáticamente.
-                Algunos navegadores pueden bloquear el sonido
-                automático; en ese caso se utiliza el botón ♪.
-              */
+      if (numero >= slides.length) {
 
-              event.target.playVideo();
+        slideActual = 0;
 
-            },
+      }
 
+      if (numero < 0) {
 
-            onStateChange: function(event) {
+        slideActual =
+          slides.length - 1;
 
-
-              if (
-                event.data === YT.PlayerState.PLAYING
-              ) {
-
-                reproduciendo = true;
-
-                document
-                  .getElementById('botonMusica')
-                  .textContent = '❚❚';
-
-              }
+      }
 
 
-              if (
-                event.data === YT.PlayerState.PAUSED
-              ) {
+      slides.forEach(
+        (slide, indice) => {
 
-                reproduciendo = false;
-
-                document
-                  .getElementById('botonMusica')
-                  .textContent = '♪';
-
-              }
-
-
-              if (
-                event.data === YT.PlayerState.ENDED
-              ) {
-
-                event.target.playVideo();
-
-              }
-
-            }
-
-          }
+          slide.classList.toggle(
+            "activo",
+            indice === slideActual
+          );
 
         }
       );
+
+
+      puntos.forEach(
+        (punto, indice) => {
+
+          punto.classList.toggle(
+            "activo",
+            indice === slideActual
+          );
+
+        }
+      );
+
+
+      contador.textContent =
+        (slideActual + 1) +
+        " / " +
+        slides.length;
 
     }
 
 
-    document
-      .getElementById('botonMusica')
-      .addEventListener(
-        'click',
-        function() {
+    /* ==================================================
+       CAMBIAR DIAPOSITIVA
+       ================================================== */
+
+    function cambiarSlide(direccion) {
+
+      slideActual += direccion;
+
+      mostrarSlide(slideActual);
+
+      reiniciarAutomatico();
+
+    }
 
 
-          if (!reproductor) {
-            return;
-          }
+    /* ==================================================
+       IR A DIAPOSITIVA
+       ================================================== */
+
+    function irSlide(numero) {
+
+      slideActual = numero;
+
+      mostrarSlide(slideActual);
+
+      reiniciarAutomatico();
+
+    }
 
 
-          if (reproduciendo) {
+    /* ==================================================
+       CAMBIO AUTOMÁTICO
+       ================================================== */
 
-            reproductor.pauseVideo();
+    function iniciarAutomatico() {
+
+      intervalo =
+        setInterval(
+          function() {
+
+            slideActual++;
+
+            mostrarSlide(slideActual);
+
+          },
+          6000
+        );
+
+    }
+
+
+    /* ==================================================
+       REINICIAR AUTOMÁTICO
+       ================================================== */
+
+    function reiniciarAutomatico() {
+
+      clearInterval(intervalo);
+
+      iniciarAutomatico();
+
+    }
+
+
+    /* ==================================================
+       TECLADO
+       ================================================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "ArrowRight") {
+
+          cambiarSlide(1);
+
+        }
+
+        if (event.key === "ArrowLeft") {
+
+          cambiarSlide(-1);
+
+        }
+
+      }
+    );
+
+
+    /* ==================================================
+       DESLIZAMIENTO EN MÓVIL
+       ================================================== */
+
+    let inicioX = 0;
+
+
+    document.addEventListener(
+      "touchstart",
+      function(event) {
+
+        inicioX =
+          event.touches[0].clientX;
+
+      }
+    );
+
+
+    document.addEventListener(
+      "touchend",
+      function(event) {
+
+        const finalX =
+          event.changedTouches[0].clientX;
+
+        const diferencia =
+          inicioX - finalX;
+
+
+        if (Math.abs(diferencia) > 50) {
+
+          if (diferencia > 0) {
+
+            cambiarSlide(1);
 
           } else {
 
-            reproductor.playVideo();
+            cambiarSlide(-1);
 
           }
 
         }
-      );
 
-  </script>
-
-
-  <script
-    src="https://www.youtube.com/iframe_api">
-  </script>
+      }
+    );
 
 
-</body>
+    /* ==================================================
+       CONTROL DE MÚSICA
+       ================================================== */
 
-</html>
+    function controlarMusica() {
+
+      if (!musicaActiva) {
+
+        musicFrame.contentWindow.postMessage(
+          '{"event":"command","func":"playVideo","args":""
+
