@@ -1,3 +1,5 @@
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -34,10 +36,6 @@
       background: #080808;
     }
 
-    /* =========================
-       DIAPOSITIVAS
-       ========================= */
-
     .slide {
       position: absolute;
       inset: 0;
@@ -61,7 +59,6 @@
       object-fit: cover;
     }
 
-    /* Oscurecimiento suave para que el texto se lea */
     .slide::after {
       content: "";
       position: absolute;
@@ -76,10 +73,6 @@
       pointer-events: none;
     }
 
-    /* =========================
-       TEXTO
-       ========================= */
-
     .texto {
       position: absolute;
       z-index: 5;
@@ -92,70 +85,42 @@
 
     .texto h1 {
       margin: 0 0 16px;
-
       color: #d4af37;
-
       font-size: clamp(30px, 4vw, 54px);
-
       letter-spacing: 4px;
-
       text-transform: uppercase;
     }
 
     .texto p {
       max-width: 900px;
-
       margin: 0 auto;
-
       font-size: clamp(17px, 2vw, 24px);
-
       line-height: 1.6;
     }
 
-    /* =========================
-       FLECHAS
-       ========================= */
-
     .flecha {
       position: absolute;
-
       z-index: 20;
-
       top: 50%;
-
       transform: translateY(-50%);
-
       width: 56px;
       height: 56px;
-
       border: 1px solid rgba(255,255,255,0.5);
-
       border-radius: 50%;
-
       background: rgba(0,0,0,0.35);
-
       color: #ffffff;
-
       font-size: 34px;
-
       line-height: 48px;
-
       text-align: center;
-
       cursor: pointer;
-
       transition: all 0.3s ease;
-
       user-select: none;
     }
 
     .flecha:hover {
       background: rgba(0,0,0,0.78);
-
       border-color: #d4af37;
-
       color: #d4af37;
-
       transform: translateY(-50%) scale(1.08);
     }
 
@@ -167,36 +132,22 @@
       right: 25px;
     }
 
-    /* =========================
-       PUNTOS
-       ========================= */
-
     .puntos {
       position: absolute;
-
       z-index: 20;
-
       left: 50%;
-
       bottom: 32px;
-
       transform: translateX(-50%);
-
       display: flex;
-
       gap: 11px;
     }
 
     .punto {
       width: 10px;
       height: 10px;
-
       border-radius: 50%;
-
       background: rgba(255,255,255,0.45);
-
       cursor: pointer;
-
       transition: all 0.3s ease;
     }
 
@@ -206,144 +157,79 @@
 
     .punto.activo {
       background: #d4af37;
-
       transform: scale(1.35);
     }
 
-    /* =========================
-       BOTÓN VOLVER
-       ========================= */
-
     .volver {
       position: absolute;
-
       z-index: 25;
-
       top: 25px;
-
       left: 30px;
-
       padding: 10px 18px;
-
       border: 1px solid rgba(212,175,55,0.7);
-
       color: #ffffff;
-
       background: rgba(0,0,0,0.45);
-
       text-decoration: none;
-
       font-size: 15px;
-
       letter-spacing: 1px;
-
       transition: all 0.3s ease;
     }
 
     .volver:hover {
       background: #d4af37;
-
       color: #080808;
     }
 
-    /* =========================
-       CONTADOR
-       ========================= */
-
     .contador {
       position: absolute;
-
       z-index: 20;
-
       top: 28px;
-
       right: 30px;
-
       color: rgba(255,255,255,0.85);
-
       font-size: 14px;
-
       letter-spacing: 2px;
     }
 
-    /* =========================
-       BOTÓN MÚSICA
-       ========================= */
-
     #musicButton {
       position: absolute;
-
       z-index: 30;
-
       right: 25px;
-
       bottom: 65px;
-
       padding: 11px 18px;
-
       border: 1px solid rgba(212,175,55,0.75);
-
       background: rgba(0,0,0,0.55);
-
       color: #ffffff;
-
       font-family: Georgia, "Times New Roman", serif;
-
       font-size: 14px;
-
       letter-spacing: 1px;
-
       cursor: pointer;
-
       transition: all 0.3s ease;
     }
 
     #musicButton:hover {
       background: #d4af37;
-
       color: #080808;
     }
 
-    /* =========================
-       MÚSICA OCULTA
-       ========================= */
-
     #musicFrame {
       position: absolute;
-
       width: 1px;
       height: 1px;
-
       left: -100px;
       top: -100px;
-
       opacity: 0;
       pointer-events: none;
     }
 
-    /* =========================
-       ATRIBUCIÓN
-       ========================= */
-
     .credito {
       position: absolute;
-
       z-index: 15;
-
       bottom: 8px;
-
       right: 12px;
-
       color: rgba(255,255,255,0.45);
-
       font-size: 9px;
-
       opacity: 0.6;
     }
-
-    /* =========================
-       MÓVIL
-       ========================= */
 
     @media (max-width: 700px) {
 
@@ -366,9 +252,7 @@
       .flecha {
         width: 45px;
         height: 45px;
-
         line-height: 38px;
-
         font-size: 28px;
       }
 
@@ -383,9 +267,7 @@
       .volver {
         top: 15px;
         left: 15px;
-
         font-size: 13px;
-
         padding: 8px 12px;
       }
 
@@ -397,9 +279,7 @@
       #musicButton {
         right: 15px;
         bottom: 58px;
-
         padding: 9px 13px;
-
         font-size: 12px;
       }
 
@@ -409,16 +289,12 @@
 
 </head>
 
-
 <body>
-
 
   <div class="carrusel">
 
 
-    <!-- ==================================================
-         DIAPOSITIVA 1 — TU FOTOGRAFÍA
-         ================================================== -->
+    <!-- DIAPOSITIVA 1 -->
 
     <section class="slide activo">
 
@@ -441,9 +317,7 @@
     </section>
 
 
-    <!-- ==================================================
-         DIAPOSITIVA 2 — IMAGEN AMBIENTAL
-         ================================================== -->
+    <!-- DIAPOSITIVA 2 -->
 
     <section class="slide">
 
@@ -466,9 +340,7 @@
     </section>
 
 
-    <!-- ==================================================
-         DIAPOSITIVA 3 — TU FOTOGRAFÍA
-         ================================================== -->
+    <!-- DIAPOSITIVA 3 -->
 
     <section class="slide">
 
@@ -492,9 +364,7 @@
     </section>
 
 
-    <!-- ==================================================
-         DIAPOSITIVA 4 — PISTA
-         ================================================== -->
+    <!-- DIAPOSITIVA 4 -->
 
     <section class="slide">
 
@@ -518,9 +388,7 @@
     </section>
 
 
-    <!-- ==================================================
-         DIAPOSITIVA 5 — TU FOTOGRAFÍA
-         ================================================== -->
+    <!-- DIAPOSITIVA 5 -->
 
     <section class="slide">
 
@@ -543,9 +411,7 @@
     </section>
 
 
-    <!-- ==================================================
-         DIAPOSITIVA 6 — IMAGEN AMBIENTAL
-         ================================================== -->
+    <!-- DIAPOSITIVA 6 -->
 
     <section class="slide">
 
@@ -569,9 +435,7 @@
     </section>
 
 
-    <!-- ==================================================
-         FLECHA IZQUIERDA
-         ================================================== -->
+    <!-- FLECHA IZQUIERDA -->
 
     <button
       class="flecha izquierda"
@@ -583,9 +447,7 @@
     </button>
 
 
-    <!-- ==================================================
-         FLECHA DERECHA
-         ================================================== -->
+    <!-- FLECHA DERECHA -->
 
     <button
       class="flecha derecha"
@@ -597,9 +459,7 @@
     </button>
 
 
-    <!-- ==================================================
-         CONTADOR
-         ================================================== -->
+    <!-- CONTADOR -->
 
     <div
       class="contador"
@@ -610,48 +470,21 @@
     </div>
 
 
-    <!-- ==================================================
-         PUNTOS
-         ================================================== -->
+    <!-- PUNTOS -->
 
     <div class="puntos">
 
-      <span
-        class="punto activo"
-        onclick="irSlide(0)">
-      </span>
-
-      <span
-        class="punto"
-        onclick="irSlide(1)">
-      </span>
-
-      <span
-        class="punto"
-        onclick="irSlide(2)">
-      </span>
-
-      <span
-        class="punto"
-        onclick="irSlide(3)">
-      </span>
-
-      <span
-        class="punto"
-        onclick="irSlide(4)">
-      </span>
-
-      <span
-        class="punto"
-        onclick="irSlide(5)">
-      </span>
+      <span class="punto activo" onclick="irSlide(0)"></span>
+      <span class="punto" onclick="irSlide(1)"></span>
+      <span class="punto" onclick="irSlide(2)"></span>
+      <span class="punto" onclick="irSlide(3)"></span>
+      <span class="punto" onclick="irSlide(4)"></span>
+      <span class="punto" onclick="irSlide(5)"></span>
 
     </div>
 
 
-    <!-- ==================================================
-         BOTÓN VOLVER
-         ================================================== -->
+    <!-- VOLVER -->
 
     <a
       href="index.html"
@@ -662,9 +495,7 @@
     </a>
 
 
-    <!-- ==================================================
-         BOTÓN MÚSICA
-         ================================================== -->
+    <!-- BOTÓN MÚSICA -->
 
     <button
       id="musicButton"
@@ -675,20 +506,17 @@
     </button>
 
 
-    <!-- ==================================================
-         YOUTUBE
-         ================================================== -->
+    <!-- NUEVA MÚSICA:
+         Nature — MaxKoMusic -->
 
     <iframe
       id="musicFrame"
-      src="https://www.youtube.com/embed/60ItHLz5WEA?enablejsapi=1&loop=1&playlist=60ItHLz5WEA"
+      src="https://www.youtube.com/embed/bg2r31KV-cU?enablejsapi=1&loop=1&playlist=bg2r31KV-cU"
       allow="autoplay">
     </iframe>
 
 
-    <!-- ==================================================
-         CRÉDITO IMÁGENES AMBIENTALES
-         ================================================== -->
+    <!-- CRÉDITO -->
 
     <div class="credito">
       Imágenes ambientales: Wikimedia Commons
@@ -699,10 +527,6 @@
 
 
   <script>
-
-    /* ==================================================
-       VARIABLES
-       ================================================== */
 
     let slideActual = 0;
 
@@ -726,24 +550,15 @@
     let intervalo;
 
 
-    /* ==================================================
-       MOSTRAR DIAPOSITIVA
-       ================================================== */
-
     function mostrarSlide(numero) {
 
       if (numero >= slides.length) {
-
         slideActual = 0;
-
       }
 
       if (numero < 0) {
-
         slideActual = slides.length - 1;
-
       }
-
 
       slides.forEach(
         (slide, indice) => {
@@ -756,7 +571,6 @@
         }
       );
 
-
       puntos.forEach(
         (punto, indice) => {
 
@@ -768,7 +582,6 @@
         }
       );
 
-
       contador.textContent =
         (slideActual + 1) +
         " / " +
@@ -776,10 +589,6 @@
 
     }
 
-
-    /* ==================================================
-       CAMBIAR DIAPOSITIVA
-       ================================================== */
 
     function cambiarSlide(direccion) {
 
@@ -792,10 +601,6 @@
     }
 
 
-    /* ==================================================
-       IR A UNA DIAPOSITIVA
-       ================================================== */
-
     function irSlide(numero) {
 
       slideActual = numero;
@@ -806,10 +611,6 @@
 
     }
 
-
-    /* ==================================================
-       CAMBIO AUTOMÁTICO
-       ================================================== */
 
     function iniciarAutomatico() {
 
@@ -828,10 +629,6 @@
     }
 
 
-    /* ==================================================
-       REINICIAR AUTOMÁTICO
-       ================================================== */
-
     function reiniciarAutomatico() {
 
       clearInterval(intervalo);
@@ -841,33 +638,21 @@
     }
 
 
-    /* ==================================================
-       TECLADO
-       ================================================== */
-
     document.addEventListener(
       "keydown",
       function(event) {
 
         if (event.key === "ArrowRight") {
-
           cambiarSlide(1);
-
         }
 
         if (event.key === "ArrowLeft") {
-
           cambiarSlide(-1);
-
         }
 
       }
     );
 
-
-    /* ==================================================
-       MÓVIL — DESLIZAR
-       ================================================== */
 
     let inicioX = 0;
 
@@ -897,13 +682,9 @@
         if (Math.abs(diferencia) > 50) {
 
           if (diferencia > 0) {
-
             cambiarSlide(1);
-
           } else {
-
             cambiarSlide(-1);
-
           }
 
         }
@@ -912,9 +693,7 @@
     );
 
 
-    /* ==================================================
-       MÚSICA
-       ================================================== */
+    /* MÚSICA */
 
     function controlarMusica() {
 
@@ -947,10 +726,6 @@
     }
 
 
-    /* ==================================================
-       INICIAR CARRUSEL
-       ================================================== */
-
     mostrarSlide(0);
 
     iniciarAutomatico();
@@ -961,6 +736,8 @@
 </body>
 
 </html>
+```
+
 
 
 
