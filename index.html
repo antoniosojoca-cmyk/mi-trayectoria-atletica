@@ -1,574 +1,528 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mi trayectoria atlética</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #030303;
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  overflow-x: hidden;
+}
+
+/* =========================
+   CABECERA
+   ========================= */
+
+header {
+  background: #050505;
+  text-align: center;
+  padding: 8px 20px 14px;
+  border-bottom: 1px solid #8f7130;
+  position: relative;
+  z-index: 10;
+}
+
+h1 {
+  margin: 0;
+  color: #c9a24d;
+  font-size: 46px;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+
+.subtitulo {
+  margin-top: 2px;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.linea {
+  width: 78px;
+  height: 2px;
+  background: #c9a24d;
+  margin: 10px auto 8px;
+}
+
+/* =========================
+   MENU
+   ========================= */
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 27px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #c9a24d;
+}
+
+/* =========================
+   BOTON MUSICA
+   ========================= */
+
+#musicButton {
+  position: absolute;
+  right: 25px;
+  top: 18px;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid #c9a24d;
+  border-radius: 50%;
+
+  background: rgba(5,5,5,0.85);
+  color: #c9a24d;
+
+  font-size: 17px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.3s;
+}
+
+#musicButton:hover {
+  background: #c9a24d;
+  color: #050505;
+}
+
+/* =========================
+   PORTADA
+   ========================= */
+
+.portada {
+  width: 100%;
+  min-height: calc(100vh - 133px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 4px 0 0;
+
+  /* FONDO MUCHO MAS OSCURO */
+  background:
+    radial-gradient(
+      ellipse at center,
+      #171717 0%,
+      #090909 42%,
+      #030303 72%,
+      #000000 100%
+    );
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  position: relative;
+}
 
-  <title>Mi trayectoria atlética</title>
+/* Oscurece todavía más los extremos laterales */
+
+.portada::before,
+.portada::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 18%;
+  pointer-events: none;
+  z-index: 1;
+}
 
-  <style>
+.portada::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #000000 0%,
+    rgba(0,0,0,0.95) 45%,
+    rgba(0,0,0,0) 100%
+  );
+}
 
-    * {
-      box-sizing: border-box;
-    }
+.portada::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #000000 0%,
+    rgba(0,0,0,0.95) 45%,
+    rgba(0,0,0,0) 100%
+  );
+}
 
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      min-height: 100%;
-    }
+/* =========================
+   FOTOGRAFIA
+   ========================= */
 
-    body {
-      background: #080808;
-      color: #ffffff;
-      font-family: Georgia, "Times New Roman", serif;
-      overflow-x: hidden;
-    }
+.marco {
+  position: relative;
+  z-index: 2;
 
-    /* =====================================================
-       CABECERA
-    ===================================================== */
+  width: min(1200px, 92vw);
+  height: calc(100vh - 140px);
 
-    .cabecera {
-      position: relative;
-      z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-      width: 100%;
+  overflow: hidden;
+}
 
-      padding: 22px 35px 18px;
+.marco img {
+  display: block;
 
-      background: rgba(5, 5, 5, 0.92);
+  max-width: 100%;
+  max-height: 100%;
 
-      border-bottom: 1px solid rgba(201, 163, 91, 0.65);
+  width: auto;
+  height: auto;
 
-      text-align: center;
-    }
+  object-fit: contain;
 
-    .titulo {
-      margin: 0;
+  box-shadow:
+    0 0 35px rgba(0,0,0,0.95),
+    0 0 80px rgba(0,0,0,0.75);
 
-      color: #c9a35b;
+  border-left: 1px solid rgba(201,162,77,0.15);
+  border-right: 1px solid rgba(201,162,77,0.15);
+}
+
+/* =========================
+   TEXTO SOBRE LA FOTO
+   ========================= */
+
+.frase {
+  position: absolute;
 
-      font-size: clamp(30px, 4vw, 50px);
-
-      letter-spacing: 4px;
-
-      font-weight: normal;
-    }
-
-    .subtitulo {
-      margin-top: 7px;
-
-      color: #dddddd;
-
-      font-size: clamp(15px, 1.6vw, 19px);
-
-      letter-spacing: 1px;
-    }
-
-    .linea {
-      width: 90px;
-      height: 1px;
-
-      margin: 13px auto 15px;
-
-      background: #c9a35b;
-    }
-
-    /* =====================================================
-       MENÚ
-    ===================================================== */
-
-    .menu {
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      flex-wrap: wrap;
-
-      gap: 8px 24px;
-    }
-
-    .menu a {
-      color: #f1f1f1;
-
-      text-decoration: none;
-
-      font-size: 16px;
-
-      letter-spacing: 0.5px;
-
-      padding: 5px 4px;
-
-      transition: color 0.25s ease;
-    }
-
-    .menu a:hover {
-      color: #c9a35b;
-    }
-
-    /* =====================================================
-       PORTADA
-    ===================================================== */
-
-    .portada {
-      position: relative;
-
-      width: 100%;
-
-      min-height: calc(100vh - 152px);
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      overflow: hidden;
-
-      background: #111111;
-    }
-
-    /* Fondo desenfocado */
-    .fondo-desenfocado {
-      position: absolute;
-
-      inset: -35px;
-
-      background-image: url("https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/IMG_5793.jpg?raw=true");
-
-      background-size: cover;
-
-      background-position: center;
-
-      filter: blur(22px);
-
-      transform: scale(1.08);
-
-      opacity: 0.72;
-    }
-
-    /* Capa suave */
-    .capa {
-      position: absolute;
-
-      inset: 0;
-
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0.18),
-          rgba(0, 0, 0, 0.05)
-        );
-    }
-
-    /* Fotografía principal */
-    .imagen-principal {
-      position: relative;
-
-      z-index: 2;
-
-      display: block;
-
-      width: auto;
-
-      height: auto;
-
-   
-      max-width: 97vw;
-max-height: calc(100vh - 155px);
-
-      object-fit: contain;
-
-      box-shadow:
-        0 12px 45px rgba(0, 0, 0, 0.55);
-
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    /* =====================================================
-       BOTÓN MÚSICA
-    ===================================================== */
-
-    #botonMusica {
-      position: fixed;
-
-      z-index: 100;
-
-      top: 22px;
-
-      right: 22px;
-
-      width: 44px;
-
-      height: 44px;
-
-      border-radius: 50%;
-
-      border: 1px solid #c9a35b;
-
-      background: rgba(8, 8, 8, 0.88);
-
-      color: #c9a35b;
-
-      font-size: 21px;
-
-      cursor: pointer;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      transition: 0.25s ease;
-    }
-
-    #botonMusica:hover {
-      background: #c9a35b;
-
-      color: #080808;
-    }
-
-    /* =====================================================
-       YOUTUBE OCULTO
-    ===================================================== */
-
-    #reproductor {
-      position: fixed;
-
-      width: 1px;
-      height: 1px;
-
-      left: -100px;
-      top: -100px;
-
-      opacity: 0;
-
-      pointer-events: none;
-    }
-
-    /* =====================================================
-       FRASE INFERIOR
-    ===================================================== */
-
-    .frase {
-      position: absolute;
-
-      z-index: 10;
-
-      bottom: 20px;
-
-      left: 50%;
-
-      transform: translateX(-50%);
-
-      width: calc(100% - 40px);
-
-      text-align: center;
-
-      color: rgba(255, 255, 255, 0.92);
-
-      font-size: 17px;
-
-      letter-spacing: 1px;
-
-      text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.8);
-    }
-
-    /* =====================================================
-       MÓVIL
-    ===================================================== */
-
-    @media (max-width: 800px) {
-
-      .cabecera {
-        padding: 18px 18px 15px;
-      }
-
-      .titulo {
-        font-size: 29px;
-        letter-spacing: 2px;
-      }
-
-      .subtitulo {
-        font-size: 15px;
-      }
-
-      .menu {
-        gap: 4px 13px;
-      }
-
-      .menu a {
-        font-size: 14px;
-      }
-
-      .portada {
-        min-height: calc(100vh - 170px);
-      }
-
-      .imagen-principal {
-        max-width: 96vw;
-        max-height: calc(100vh - 210px);
-      }
-
-      .fondo-desenfocado {
-        filter: blur(15px);
-      }
-
-      .frase {
-        bottom: 12px;
-        font-size: 14px;
-      }
-
-      #botonMusica {
-        top: 12px;
-        right: 12px;
-
-        width: 40px;
-        height: 40px;
-      }
-
-    }
-
-  </style>
-
+  bottom: 18px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 4;
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  text-align: center;
+
+  text-shadow:
+    0 2px 5px #000000,
+    0 0 10px #000000;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   YOUTUBE OCULTO
+   ========================= */
+
+#youtubePlayer {
+  position: fixed;
+
+  width: 1px;
+  height: 1px;
+
+  left: -10px;
+  bottom: -10px;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =========================
+   MOVIL
+   ========================= */
+
+@media (max-width: 800px) {
+
+  header {
+    padding: 8px 10px 14px;
+  }
+
+  h1 {
+    font-size: 31px;
+  }
+
+  .subtitulo {
+    font-size: 15px;
+  }
+
+  nav {
+    gap: 14px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  #musicButton {
+    right: 12px;
+    top: 12px;
+
+    width: 36px;
+    height: 36px;
+  }
+
+  .portada {
+    min-height: calc(100vh - 145px);
+  }
+
+  .marco {
+    width: 100%;
+    height: calc(100vh - 150px);
+  }
+
+  .marco img {
+    max-width: 96%;
+    max-height: 96%;
+  }
+
+  .frase {
+    font-size: 13px;
+    bottom: 10px;
+    width: 90%;
+    white-space: normal;
+  }
+
+  .portada::before,
+  .portada::after {
+    width: 10%;
+  }
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-  <!-- =====================================================
-       CABECERA
-  ===================================================== -->
+<!-- =========================
+     CABECERA
+     ========================= -->
 
-  <header class="cabecera">
+<header>
 
-    <h1 class="titulo">
-      Mi trayectoria atlética
-    </h1>
+<h1>Mi trayectoria atlética</h1>
 
-    <div class="subtitulo">
-      Una vida entre kilómetros, carreras y nuevos caminos
-    </div>
+<div class="subtitulo">
+Una vida entre kilómetros, carreras y nuevos caminos
+</div>
 
-    <div class="linea"></div>
+<div class="linea"></div>
 
 
-    <!-- ===================================================
-         MENÚ
-    =================================================== -->
+<nav>
 
-    <nav class="menu">
+<a href="mi-historia.html">Mi historia</a>
 
-      <a href="mi-historia.html">
-        Mi historia
-      </a>
+<a href="carreras.html">Mis carreras</a>
 
-      <a href="mis-carreras.html">
-        Mis carreras
-      </a>
+<a href="entrenamiento.html">Entrenamiento</a>
 
-      <a href="entrenamiento.html">
-        Entrenamiento
-      </a>
+<a href="lesion.html">La lesión</a>
 
-      <a href="la-lesion.html">
-        La lesión
-      </a>
+<a href="marcha.html">Marcha atlética</a>
 
-      <a href="marcha-atletica.html">
-        Marcha atlética
-      </a>
+<a href="galeria.html">Galería</a>
 
-      <a href="galeria.html">
-        Galería
-      </a>
+</nav>
 
-    </nav>
 
-  </header>
+<button id="musicButton" onclick="toggleMusic()" title="Música">
+♫
+</button>
 
+</header>
 
-  <!-- =====================================================
-       PORTADA
-  ===================================================== -->
 
-  <main class="portada">
+<!-- =========================
+     PORTADA
+     ========================= -->
 
+<main class="portada">
 
-    <!-- Fondo -->
-    <div class="fondo-desenfocado"></div>
+<div class="marco">
 
+<img
+src="IMG-20180909-WA0005.jpg"
+alt="Mi trayectoria atlética"
+>
 
-    <!-- Capa -->
-    <div class="capa"></div>
+<div class="frase">
+Una vida entre kilómetros, carreras y nuevos caminos
+</div>
 
+</div>
 
-    <!-- Fotografía protagonista -->
-    <img
-      class="imagen-principal"
-      src="https://github.com/antoniosojoca-cmyk/mi-trayectoria-atletica/blob/main/IMG_5793.jpg?raw=true"
-      alt="Mi trayectoria atlética"
-    >
+</main>
 
 
-    <!-- Frase -->
-    <div class="frase">
-      Una vida entre kilómetros, carreras y nuevos caminos
-    </div>
+<!-- =========================
+     YOUTUBE
+     ========================= -->
 
+<iframe
+id="youtubePlayer"
+src="https://www.youtube.com/embed/60ItHLz5WEA?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=60ItHLz5WEA&controls=0&rel=0"
+allow="autoplay"
+></iframe>
 
-  </main>
 
+<script>
 
-  <!-- =====================================================
-       BOTÓN DE MÚSICA
-  ===================================================== -->
+/* =========================
+   MUSICA
+   ========================= */
 
-  <button
-    id="botonMusica"
-    aria-label="Controlar música">
-    ♪
-  </button>
+let player;
+let musicOn = false;
+let fadeTimer = null;
 
 
-  <!-- =====================================================
-       YOUTUBE
-  ===================================================== -->
+/* Cargar API de YouTube */
 
-  <div id="reproductor"></div>
+let tag = document.createElement("script");
+tag.src = "https://www.youtube.com/iframe_api";
 
+let firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  <script>
 
-    let reproductor = null;
+/* Crear reproductor */
 
-    let reproduciendo = false;
+function onYouTubeIframeAPIReady() {
 
+  player = new YT.Player("youtubePlayer", {
 
-    function onYouTubeIframeAPIReady() {
+    events: {
 
-      reproductor = new YT.Player(
-        "reproductor",
-        {
+      "onReady": function(event) {
 
-          height: "1",
-          width: "1",
+        event.target.setVolume(0);
 
-          videoId: "60ItHLz5WEA",
+        /*
+          Comenzamos con volumen 0 y lo
+          subimos poco a poco.
+        */
 
-          playerVars: {
+        event.target.playVideo();
 
-            autoplay: 1,
-
-            loop: 1,
-
-            playlist: "60ItHLz5WEA",
-
-            controls: 0,
-
-            modestbranding: 1,
-
-            rel: 0
-
-          },
-
-          events: {
-
-            onReady: function(event) {
-
-              event.target.playVideo();
-
-            },
-
-            onStateChange: function(event) {
-
-              if (
-                event.data === YT.PlayerState.PLAYING
-              ) {
-
-                reproduciendo = true;
-
-                document
-                  .getElementById("botonMusica")
-                  .textContent = "❚❚";
-
-              }
-
-              if (
-                event.data === YT.PlayerState.PAUSED
-              ) {
-
-                reproduciendo = false;
-
-                document
-                  .getElementById("botonMusica")
-                  .textContent = "♪";
-
-              }
-
-              if (
-                event.data === YT.PlayerState.ENDED
-              ) {
-
-                event.target.playVideo();
-
-              }
-
-            }
-
-          }
-
-        }
-      );
+        fadeInMusic();
+      }
 
     }
 
+  });
 
-    document
-      .getElementById("botonMusica")
-      .addEventListener(
-        "click",
-        function() {
-
-          if (!reproductor) {
-            return;
-          }
-
-          if (reproduciendo) {
-
-            reproductor.pauseVideo();
-
-          } else {
-
-            reproductor.playVideo();
-
-          }
-
-        }
-      );
-
-  </script>
+}
 
 
-  <script
-    src="https://www.youtube.com/iframe_api">
-  </script>
+/* =========================
+   ENTRADA SUAVE DE LA MUSICA
+   ========================= */
 
+function fadeInMusic() {
+
+  if (!player) return;
+
+  clearInterval(fadeTimer);
+
+  let volume = 0;
+
+  player.setVolume(0);
+
+  fadeTimer = setInterval(function() {
+
+    volume += 5;
+
+    if (volume >= 100) {
+
+      volume = 100;
+
+      clearInterval(fadeTimer);
+
+    }
+
+    player.setVolume(volume);
+
+  }, 180);
+
+  musicOn = true;
+
+  document.getElementById("musicButton").innerHTML = "Ⅱ";
+
+}
+
+
+/* =========================
+   BOTON MUSICA
+   ========================= */
+
+function toggleMusic() {
+
+  if (!player) return;
+
+  if (musicOn) {
+
+    player.pauseVideo();
+
+    musicOn = false;
+
+    document.getElementById("musicButton").innerHTML = "♫";
+
+  } else {
+
+    player.playVideo();
+
+    fadeInMusic();
+
+    document.getElementById("musicButton").innerHTML = "Ⅱ";
+
+  }
+
+}
+
+</script>
 
 </body>
-
 </html>
+
+
 
 
 
