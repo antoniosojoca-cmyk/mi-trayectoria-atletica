@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -159,6 +158,308 @@
       top: 25px;
       left: 30px;
       padding: 10px 18px;
-      border: 1px
+      border: 1px solid rgba(212,175,55,0.7);
+      color: #ffffff;
+      background: rgba(0,0,0,0.45);
+      text-decoration: none;
+      font-size: 15px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .volver:hover {
+      background: #d4af37;
+      color: #080808;
+    }
+
+    .contador {
+      position: absolute;
+      z-index: 10;
+      top: 28px;
+      right: 30px;
+      color: rgba(255,255,255,0.8);
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 700px) {
+
+      .texto {
+        left: 6%;
+        right: 6%;
+        bottom: 12%;
+      }
+
+      .texto h1 {
+        letter-spacing: 2px;
+      }
+
+      .texto p {
+        font-size: 16px;
+        line-height: 1.45;
+      }
+
+      .flecha {
+        width: 45px;
+        height: 45px;
+        line-height: 38px;
+        font-size: 28px;
+      }
+
+      .izquierda {
+        left: 10px;
+      }
+
+      .derecha {
+        right: 10px;
+      }
+
+      .volver {
+        top: 15px;
+        left: 15px;
+        font-size: 13px;
+      }
+
+      .contador {
+        top: 20px;
+        right: 15px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="carrusel">
+
+    <!-- DIAPOSITIVA 1 -->
+    <section class="slide activo">
+
+      <img
+        src="Diseño%20sin%20título%20(4).png"
+        alt="Entrenamiento">
+
+      <div class="texto">
+
+        <h1>El entrenamiento</h1>
+
+        <p>
+          Detrás de cada carrera había muchos kilómetros
+          que no aparecían en ninguna clasificación.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- DIAPOSITIVA 2 -->
+    <section class="slide">
+
+      <img
+        src="ChatGPT%20Image%205%20ene%202026%2C%2013_22_49.png"
+        alt="Constancia y entrenamiento">
+
+      <div class="texto">
+
+        <h1>La constancia</h1>
+
+        <p>
+          Entrenar era repetir una y otra vez.
+          Salir incluso cuando el cuerpo pedía descanso
+          y seguir acumulando kilómetros con un objetivo.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- DIAPOSITIVA 3 -->
+    <section class="slide">
+
+      <img
+        src="Diseño%20sin%20título%20(5).png"
+        alt="El camino del atleta">
+
+      <div class="texto">
+
+        <h1>El camino</h1>
+
+        <p>
+          Las carreras duraban unas horas,
+          pero el camino hasta llegar a ellas
+          se construía durante meses y años.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- FLECHAS -->
+
+    <button
+      class="flecha izquierda"
+      onclick="cambiarSlide(-1)"
+      aria-label="Anterior">
+      &#10094;
+    </button>
+
+    <button
+      class="flecha derecha"
+      onclick="cambiarSlide(1)"
+      aria-label="Siguiente">
+      &#10095;
+    </button>
+
+
+    <!-- CONTADOR -->
+
+    <div class="contador" id="contador">
+      1 / 3
+    </div>
+
+
+    <!-- PUNTOS -->
+
+    <div class="puntos">
+
+      <span
+        class="punto activo"
+        onclick="irSlide(0)">
+      </span>
+
+      <span
+        class="punto"
+        onclick="irSlide(1)">
+      </span>
+
+      <span
+        class="punto"
+        onclick="irSlide(2)">
+      </span>
+
+    </div>
+
+
+    <!-- VOLVER -->
+
+    <a
+      href="index.html"
+      class="volver">
+      ← Volver
+    </a>
+
+  </div>
+
+
+  <script>
+
+    let slideActual = 0;
+
+    const slides = document.querySelectorAll(".slide");
+    const puntos = document.querySelectorAll(".punto");
+    const contador = document.getElementById("contador");
+
+
+    function mostrarSlide(numero) {
+
+      if (numero >= slides.length) {
+        slideActual = 0;
+      }
+
+      if (numero < 0) {
+        slideActual = slides.length - 1;
+      }
+
+      slides.forEach((slide, indice) => {
+        slide.classList.toggle(
+          "activo",
+          indice === slideActual
+        );
+      });
+
+      puntos.forEach((punto, indice) => {
+        punto.classList.toggle(
+          "activo",
+          indice === slideActual
+        );
+      });
+
+      contador.textContent =
+        (slideActual + 1) + " / " + slides.length;
+    }
+
+
+    function cambiarSlide(direccion) {
+
+      slideActual += direccion;
+
+      mostrarSlide(slideActual);
+    }
+
+
+    function irSlide(numero) {
+
+      slideActual = numero;
+
+      mostrarSlide(slideActual);
+    }
+
+
+    /* Teclas del teclado */
+
+    document.addEventListener("keydown", function(event) {
+
+      if (event.key === "ArrowRight") {
+        cambiarSlide(1);
+      }
+
+      if (event.key === "ArrowLeft") {
+        cambiarSlide(-1);
+      }
+
+    });
+
+
+    /* Deslizamiento en móviles */
+
+    let inicioX = 0;
+
+    document.addEventListener("touchstart", function(event) {
+
+      inicioX = event.touches[0].clientX;
+
+    });
+
+
+    document.addEventListener("touchend", function(event) {
+
+      const finalX = event.changedTouches[0].clientX;
+
+      const diferencia = inicioX - finalX;
+
+      if (Math.abs(diferencia) > 50) {
+
+        if (diferencia > 0) {
+          cambiarSlide(1);
+        } else {
+          cambiarSlide(-1);
+        }
+
+      }
+
+    });
+
+  </script>
+
+</body>
+
+</html>
+
+
+
 
 
