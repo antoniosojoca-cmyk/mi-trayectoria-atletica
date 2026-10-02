@@ -1,9 +1,9 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,244 +24,360 @@ body {
 }
 
 body {
-  background: #030303;
-  color: white;
+  background: #000;
+  color: #fff;
   font-family: Georgia, "Times New Roman", serif;
   overflow-x: hidden;
 }
+
 
 /* =========================
    CABECERA
    ========================= */
 
 header {
+
   background: #050505;
+
   text-align: center;
-  padding: 8px 20px 14px;
-  border-bottom: 1px solid #8f7130;
+
+  padding: 5px 20px 14px;
+
+  border-bottom: 1px solid #9d7b32;
+
   position: relative;
+
   z-index: 10;
 }
 
+
 h1 {
+
   margin: 0;
+
   color: #c9a24d;
+
   font-size: 46px;
-  letter-spacing: 1px;
+
   font-weight: normal;
+
+  letter-spacing: 1px;
 }
 
+
 .subtitulo {
+
   margin-top: 2px;
-  color: #ffffff;
+
+  color: #fff;
+
   font-size: 18px;
 }
 
+
 .linea {
+
   width: 78px;
+
   height: 2px;
+
   background: #c9a24d;
-  margin: 10px auto 8px;
+
+  margin: 9px auto 9px;
 }
+
 
 /* =========================
    MENU
    ========================= */
 
 nav {
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   gap: 27px;
+
   flex-wrap: wrap;
 }
 
+
 nav a {
-  color: #ffffff;
+
+  color: #fff;
+
   text-decoration: none;
+
   font-size: 16px;
+
   font-weight: bold;
+
   transition: 0.3s;
 }
 
+
 nav a:hover {
+
   color: #c9a24d;
 }
+
 
 /* =========================
    BOTON MUSICA
    ========================= */
 
 #musicButton {
+
   position: absolute;
+
   right: 25px;
+
   top: 18px;
 
   width: 40px;
+
   height: 40px;
 
-  border: 1px solid #c9a24d;
   border-radius: 50%;
 
-  background: rgba(5,5,5,0.85);
+  border: 1px solid #c9a24d;
+
+  background: rgba(5,5,5,0.95);
+
   color: #c9a24d;
 
   font-size: 17px;
+
   cursor: pointer;
 
   display: flex;
-  justify-content: center;
+
   align-items: center;
 
+  justify-content: center;
+
   transition: 0.3s;
+
+  z-index: 20;
 }
 
+
 #musicButton:hover {
+
   background: #c9a24d;
-  color: #050505;
+
+  color: #000;
 }
+
 
 /* =========================
    PORTADA
    ========================= */
 
 .portada {
+
   width: 100%;
-  min-height: calc(100vh - 133px);
+
+  min-height: calc(100vh - 132px);
 
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 
   padding: 4px 0 0;
 
-  /* FONDO MUCHO MAS OSCURO */
+  position: relative;
+
   background:
+
     radial-gradient(
       ellipse at center,
-      #171717 0%,
-      #090909 42%,
-      #030303 72%,
-      #000000 100%
+      #151515 0%,
+      #080808 45%,
+      #020202 75%,
+      #000 100%
     );
-
-  position: relative;
-}
-
-/* Oscurece todavía más los extremos laterales */
-
-.portada::before,
-.portada::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 18%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.portada::before {
-  left: 0;
-  background: linear-gradient(
-    to right,
-    #000000 0%,
-    rgba(0,0,0,0.95) 45%,
-    rgba(0,0,0,0) 100%
-  );
-}
-
-.portada::after {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    #000000 0%,
-    rgba(0,0,0,0.95) 45%,
-    rgba(0,0,0,0) 100%
-  );
-}
-
-/* =========================
-   FOTOGRAFIA
-   ========================= */
-
-.marco {
-  position: relative;
-  z-index: 2;
-
-  width: min(1200px, 92vw);
-  height: calc(100vh - 140px);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   overflow: hidden;
 }
 
+
+/* OSCURECER LOS LATERALES */
+
+.portada::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  bottom: 0;
+
+  width: 30%;
+
+  background:
+
+    linear-gradient(
+      to right,
+      #000 0%,
+      #000 25%,
+      rgba(0,0,0,0.95) 55%,
+      rgba(0,0,0,0) 100%
+    );
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+.portada::after {
+
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+
+  top: 0;
+
+  bottom: 0;
+
+  width: 30%;
+
+  background:
+
+    linear-gradient(
+      to left,
+      #000 0%,
+      #000 25%,
+      rgba(0,0,0,0.95) 55%,
+      rgba(0,0,0,0) 100%
+    );
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   MARCO DE LA FOTO
+   ========================= */
+
+.marco {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1200px, 92vw);
+
+  height: calc(100vh - 140px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+/* FOTO ORIGINAL */
+
 .marco img {
+
   display: block;
 
   max-width: 100%;
+
   max-height: 100%;
 
   width: auto;
+
   height: auto;
 
   object-fit: contain;
 
   box-shadow:
-    0 0 35px rgba(0,0,0,0.95),
-    0 0 80px rgba(0,0,0,0.75);
 
-  border-left: 1px solid rgba(201,162,77,0.15);
-  border-right: 1px solid rgba(201,162,77,0.15);
+    0 0 35px rgba(0,0,0,0.95),
+
+    0 0 80px rgba(0,0,0,0.85);
+
+  border-left: 1px solid rgba(201,162,77,0.18);
+
+  border-right: 1px solid rgba(201,162,77,0.18);
 }
 
+
 /* =========================
-   TEXTO SOBRE LA FOTO
+   FRASE
    ========================= */
 
 .frase {
+
   position: absolute;
 
-  bottom: 18px;
   left: 50%;
+
+  bottom: 17px;
 
   transform: translateX(-50%);
 
   z-index: 4;
 
-  color: white;
+  color: #fff;
 
   font-size: 16px;
+
   font-weight: bold;
 
   text-align: center;
 
-  text-shadow:
-    0 2px 5px #000000,
-    0 0 10px #000000;
-
   white-space: nowrap;
+
+  text-shadow:
+
+    0 2px 5px #000,
+
+    0 0 10px #000;
 }
+
 
 /* =========================
    YOUTUBE OCULTO
    ========================= */
 
 #youtubePlayer {
+
   position: fixed;
 
   width: 1px;
+
   height: 1px;
 
-  left: -10px;
-  bottom: -10px;
+  left: -20px;
+
+  bottom: -20px;
+
+  border: 0;
 
   opacity: 0;
+
   pointer-events: none;
 }
+
 
 /* =========================
    MOVIL
@@ -269,62 +385,77 @@ nav a:hover {
 
 @media (max-width: 800px) {
 
-  header {
-    padding: 8px 10px 14px;
-  }
-
   h1 {
+
     font-size: 31px;
   }
 
   .subtitulo {
+
     font-size: 15px;
   }
 
   nav {
+
     gap: 14px;
   }
 
   nav a {
+
     font-size: 14px;
   }
 
   #musicButton {
+
     right: 12px;
+
     top: 12px;
 
     width: 36px;
+
     height: 36px;
   }
 
   .portada {
+
     min-height: calc(100vh - 145px);
   }
 
   .marco {
+
     width: 100%;
+
     height: calc(100vh - 150px);
   }
 
   .marco img {
+
     max-width: 96%;
+
     max-height: 96%;
   }
 
   .frase {
-    font-size: 13px;
-    bottom: 10px;
+
     width: 90%;
+
+    font-size: 13px;
+
     white-space: normal;
+
+    bottom: 10px;
   }
 
   .portada::before,
   .portada::after {
-    width: 10%;
+
+    width: 18%;
   }
+
 }
 
 </style>
+
 </head>
 
 
@@ -350,7 +481,7 @@ Una vida entre kilómetros, carreras y nuevos caminos
 
 <a href="mi-historia.html">Mi historia</a>
 
-<a href="carreras.html">Mis carreras</a>
+<a href="mis-carreras.html">Mis carreras</a>
 
 <a href="entrenamiento.html">Entrenamiento</a>
 
@@ -363,11 +494,16 @@ Una vida entre kilómetros, carreras y nuevos caminos
 </nav>
 
 
-<button id="musicButton" onclick="toggleMusic()" title="Música">
+<button
+id="musicButton"
+onclick="toggleMusic()"
+title="Reproducir / detener música"
+>
 ♫
 </button>
 
 </header>
+
 
 
 <!-- =========================
@@ -378,138 +514,99 @@ Una vida entre kilómetros, carreras y nuevos caminos
 
 <div class="marco">
 
+
 <img
-src="IMG-20180909-WA0005.jpg"
+src="IMG-20220905-WA0002.jpg"
 alt="Mi trayectoria atlética"
 >
 
+
 <div class="frase">
+
 Una vida entre kilómetros, carreras y nuevos caminos
+
 </div>
+
 
 </div>
 
 </main>
 
 
+
 <!-- =========================
-     YOUTUBE
+     MUSICA YOUTUBE
      ========================= -->
 
 <iframe
+
 id="youtubePlayer"
-src="https://www.youtube.com/embed/60ItHLz5WEA?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=60ItHLz5WEA&controls=0&rel=0"
-allow="autoplay"
+
+src="https://www.youtube.com/embed/60ItHLz5WEA?enablejsapi=1&autoplay=1&mute=0&loop=1&playlist=60ItHLz5WEA&controls=0&rel=0&playsinline=1"
+
+allow="autoplay; encrypted-media"
+
 ></iframe>
+
 
 
 <script>
 
 /* =========================
-   MUSICA
+   CONTROL DE MUSICA
    ========================= */
 
-let player;
-let musicOn = false;
-let fadeTimer = null;
+let musicPlaying = false;
 
 
-/* Cargar API de YouTube */
+/* =========================
+   ENVIAR ORDEN A YOUTUBE
+   ========================= */
 
-let tag = document.createElement("script");
-tag.src = "https://www.youtube.com/iframe_api";
+function youtubeCommand(command) {
 
-let firstScriptTag = document.getElementsByTagName("script")[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  const iframe = document.getElementById("youtubePlayer");
 
+  if (!iframe || !iframe.contentWindow) return;
 
-/* Crear reproductor */
+  iframe.contentWindow.postMessage(
 
-function onYouTubeIframeAPIReady() {
+    JSON.stringify({
 
-  player = new YT.Player("youtubePlayer", {
+      event: "command",
 
-    events: {
+      func: command,
 
-      "onReady": function(event) {
+      args: []
 
-        event.target.setVolume(0);
+    }),
 
-        /*
-          Comenzamos con volumen 0 y lo
-          subimos poco a poco.
-        */
+    "*"
 
-        event.target.playVideo();
-
-        fadeInMusic();
-      }
-
-    }
-
-  });
+  );
 
 }
 
 
 /* =========================
-   ENTRADA SUAVE DE LA MUSICA
-   ========================= */
-
-function fadeInMusic() {
-
-  if (!player) return;
-
-  clearInterval(fadeTimer);
-
-  let volume = 0;
-
-  player.setVolume(0);
-
-  fadeTimer = setInterval(function() {
-
-    volume += 5;
-
-    if (volume >= 100) {
-
-      volume = 100;
-
-      clearInterval(fadeTimer);
-
-    }
-
-    player.setVolume(volume);
-
-  }, 180);
-
-  musicOn = true;
-
-  document.getElementById("musicButton").innerHTML = "Ⅱ";
-
-}
-
-
-/* =========================
-   BOTON MUSICA
+   BOTON DE MUSICA
    ========================= */
 
 function toggleMusic() {
 
-  if (!player) return;
+  if (musicPlaying) {
 
-  if (musicOn) {
+    youtubeCommand("pauseVideo");
 
-    player.pauseVideo();
-
-    musicOn = false;
+    musicPlaying = false;
 
     document.getElementById("musicButton").innerHTML = "♫";
 
   } else {
 
-    player.playVideo();
+    youtubeCommand("playVideo");
 
-    fadeInMusic();
+    musicPlaying = true;
 
     document.getElementById("musicButton").innerHTML = "Ⅱ";
 
@@ -517,10 +614,57 @@ function toggleMusic() {
 
 }
 
+
+/* =========================
+   INTENTO DE INICIO
+   ========================= */
+
+window.addEventListener("load", function() {
+
+  setTimeout(function() {
+
+    youtubeCommand("playVideo");
+
+    musicPlaying = true;
+
+    document.getElementById("musicButton").innerHTML = "Ⅱ";
+
+  }, 1500);
+
+});
+
+
+/* =========================
+   SI EL USUARIO HACE CLIC
+   EN LA PAGINA, ACTIVAMOS
+   LA MUSICA
+   ========================= */
+
+document.addEventListener("click", function(e) {
+
+  if (e.target.id === "musicButton") return;
+
+  if (!musicPlaying) {
+
+    youtubeCommand("playVideo");
+
+    musicPlaying = true;
+
+    document.getElementById("musicButton").innerHTML = "Ⅱ";
+
+  }
+
+}, { once: true });
+
 </script>
 
+
 </body>
+
 </html>
+
+
+
 
 
 
