@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Galería — Mi trayectoria atlética</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #080808;
+      color: #ffffff;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .galeria {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background: #080808;
+    }
+
+    .foto {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1.2s ease;
+    }
+
+    .foto.activa {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .foto img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #080808;
+    }
+
+    .foto::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.05) 55%,
+          rgba(0,0,0,0.45) 78%,
+          rgba(0,0,0,0.82) 100%
+        );
+      pointer-events: none;
+    }
+
+    /* TÍTULO */
+
+    .titulo {
+      position: absolute;
+      z-index: 10;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #d4af37;
+      font-size: clamp(26px, 4vw, 48px);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.95);
+      white-space: nowrap;
+    }
+
+    /* FLECHAS */
+
+    .flecha {
+      position: absolute;
+      z-index: 20;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 56px;
+      height: 56px;
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 50%;
+      background: rgba(0,0,0,0.4);
+      color: #ffffff;
+      font-size: 34px;
+      line-height: 48px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+
+    .flecha:hover {
+      background: rgba(0,0,0,0.78);
+      border-color: #d4af37;
+      color: #d4af37;
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .izquierda {
+      left: 25px;
+    }
+
+    .derecha {
+      right: 25px;
+    }
+
+    /* CONTADOR */
+
+    .contador {
+      position: absolute;
+      z-index: 20;
+      top: 30px;
+      right: 30px;
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px #000000;
+    }
+
+    /* PUNTOS */
+
+    .puntos {
+      position: absolute;
+      z-index: 20;
+      left: 50%;
+      bottom: 28px;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 9px;
+    }
+
+    .punto {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.45);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .punto:hover {
+      background: rgba(255,255,255,0.8);
+    }
+
+    .punto.activo {
+      background: #d4af37;
+      transform: scale(1.35);
+    }
+
+    /* VOLVER */
+
+    .volver {
+      position: absolute;
+      z-index: 25;
+      top: 25px;
+      left: 30px;
+      padding: 10px 18px;
+      border: 1px solid rgba(212,175,55,0.7);
+      color: #ffffff;
+      background: rgba(0,0,0,0.45);
+      text-decoration: none;
+      font-size: 15px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .volver:hover {
+      background: #d4af37;
+      color: #080808;
+    }
+
+    /* MÚSICA */
+
+    #musicButton {
+      position: absolute;
+      z-index: 30;
+      right: 25px;
+      bottom: 60px;
+      padding: 11px 18px;
+      border: 1px solid rgba(212,175,55,0.75);
+      background: rgba(0,0,0,0.55);
+      color: #ffffff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #musicButton:hover {
+      background: #d4af37;
+      color: #080808;
+    }
+
+    #musicFrame {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      left: -100px;
+      top: -100px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* CRÉDITO */
+
+    .credito {
+      position: absolute;
+      z-index: 15;
+      bottom: 8px;
+      right: 12px;
+      color: rgba(255,255,255,0.4);
+      font-size: 9px;
+    }
+
+    @media (max-width: 700px) {
+
+      .titulo {
+        top: 18px;
+        font-size: 25px;
+        letter-spacing: 3px;
+      }
+
+      .flecha {
+        width: 45px;
+        height: 45px;
+        line-height: 38px;
+        font-size: 28px;
+      }
+
+      .izquierda {
+        left: 10px;
+      }
+
+      .derecha {
+        right: 10px;
+      }
+
+      .volver {
+        top: 15px;
+        left: 15px;
+        font-size: 13px;
+        padding: 8px 12px;
+      }
+
+      .contador {
+        top: 20px;
+        right: 15px;
+      }
+
+      #musicButton {
+        right: 15px;
+        bottom: 55px;
+        padding: 9px 13px;
+        font-size: 12px;
+      }
+
+      .foto img {
+        object-fit: contain;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="galeria">
+
+```
+<!-- TÍTULO -->
+
+<div class="titulo">
+  Galería
+</div>
+
+
+<!-- FOTO 1 -->
+
+<section class="foto activa">
+
+  <img
+    src="20180311_120705.jpg"
+    alt="Mi trayectoria atlética">
+
+</section>
+
+
+<!-- FOTO 2 -->
+
+<section class="foto">
+
+  <img
+    src="FB_IMG_1554657979400%20(1).jpg"
+    alt="Mi trayectoria atlética">
+
+</section>
+
+
+<!-- FOTO 3 -->
+
+<section class="foto">
+
+  <img
+    src="IMG_2564.JPG"
+    alt="Mi trayectoria atlética">
+
+</section>
+
+
+<!-- FOTO 4 -->
+
+<section class="foto">
+
+  <img
+    src="MG-20250601-WA0005.jpg"
+    alt="Mi trayectoria atlética">
+
+</section>
+
+
+<!-- FOTO 5 -->
+
+<section class="foto">
+
+  <img
+    src="20200228_171145.jpg"
+    alt="Mi trayectoria atlética">
+
+</section>
+
+
+<!-- FOTO 6 -->
+
+<section class="foto">
+
+  <img
+    src="FB_IMG_1731161542018.jpg"
+    alt="Mi trayectoria atlética">
+
+</section>
+
+
+<!-- FOTO 7 -->
+
+<section class="foto">
+
+  <img
+    src="IMG_20250329_130134.jpg"
+    alt="Mi trayectoria atlética">
+
+</section>
+
+
+<!-- FOTO 8 -->
+
+<section class="foto">
+
+  <img
+    src="20181209_143854.jpg"
+    alt="Mi trayectoria atlética">
+
+</section>
+
+
+<!-- FOTO 9 -->
+
+<section class="foto">
+
+  <img
+    src="IMG_9999%20(371)_resultado_resultado_resultado.jpg"
+    alt="Mi trayectoria atlética">
+
+</section>
+
+
+<!-- FOTO 10 -->
+
+<section class="foto">
+
+  <img
+    src="IMG-20190211-WA0013.jpg"
+    alt="Mi trayectoria atlética">
+
+</section>
+
+
+<!-- FOTO 11 -->
+
+<section class="foto">
+
+  <img
+    src="IMG-20220203-WA0000.jpg"
+    alt="Mi trayectoria atlética">
+
+</section>
+
+
+<!-- FOTO 12 -->
+
+<section class="foto">
+
+  <img
+    src="20190413_145455.jpg"
+    alt="Mi trayectoria atlética">
+
+</section>
+
+
+<!-- FOTO 13 -->
+
+<section class="foto">
+
+  <img
+    src="20180422_103002.jpg"
+    alt="Mi trayectoria atlética">
+
+</section>
+
+
+<!-- FOTO 14 -->
+
+<section class="foto">
+
+  <img
+    src="IMG_20231230_125031.jpg"
+    alt="Mi trayectoria atlética">
+
+</section>
+
+
+<!-- FLECHA IZQUIERDA -->
+
+<button
+  class="flecha izquierda"
+  onclick="cambiarFoto(-1)"
+  aria-label="Fotografía anterior">
+
+  &#10094;
+
+</button>
+
+
+<!-- FLECHA DERECHA -->
+
+<button
+  class="flecha derecha"
+  onclick="cambiarFoto(1)"
+  aria-label="Fotografía siguiente">
+
+  &#10095;
+
+</button>
+
+
+<!-- CONTADOR -->
+
+<div
+  class="contador"
+  id="contador">
+
+  1 / 14
+
+</div>
+
+
+<!-- PUNTOS -->
+
+<div class="puntos">
+
+  <span class="punto activo" onclick="irFoto(0)"></span>
+  <span class="punto" onclick="irFoto(1)"></span>
+  <span class="punto" onclick="irFoto(2)"></span>
+  <span class="punto" onclick="irFoto(3)"></span>
+  <span class="punto" onclick="irFoto(4)"></span>
+  <span class="punto" onclick="irFoto(5)"></span>
+  <span class="punto" onclick="irFoto(6)"></span>
+  <span class="punto" onclick="irFoto(7)"></span>
+  <span class="punto" onclick="irFoto(8)"></span>
+  <span class="punto" onclick="irFoto(9)"></span>
+  <span class="punto" onclick="irFoto(10)"></span>
+  <span class="punto" onclick="irFoto(11)"></span>
+  <span class="punto" onclick="irFoto(12)"></span>
+  <span class="punto" onclick="irFoto(13)"></span>
+
+</div>
+
+
+<!-- VOLVER -->
+
+<a
+  href="index.html"
+  class="volver">
+
+  ← Volver
+
+</a>
+
+
+<!-- BOTÓN MÚSICA -->
+
+<button
+  id="musicButton"
+  onclick="controlarMusica()">
+
+  ♫ Música: OFF
+
+</button>
+
+
+<!-- MÚSICA -->
+
+<iframe
+  id="musicFrame"
+  src="https://www.youtube.com/embed/bg2r31KV-cU?enablejsapi=1&loop=1&playlist=bg2r31KV-cU"
+  allow="autoplay">
+</iframe>
+
+
+<!-- CRÉDITO -->
+
+<div class="credito">
+  Mi trayectoria atlética
+</div>
+```
+
+  </div>
+
+  <script>
+
+    let fotoActual = 0;
+
+    const fotos =
+      document.querySelectorAll(".foto");
+
+    const puntos =
+      document.querySelectorAll(".punto");
+
+    const contador =
+      document.getElementById("contador");
+
+    const musicButton =
+      document.getElementById("musicButton");
+
+    const musicFrame =
+      document.getElementById("musicFrame");
+
+    let musicaActiva = false;
+
+    let intervalo;
+
+
+    function mostrarFoto(numero) {
+
+      if (numero >= fotos.length) {
+        fotoActual = 0;
+      }
+
+      if (numero < 0) {
+        fotoActual = fotos.length - 1;
+      }
+
+      fotos.forEach(
+        (foto, indice) => {
+
+          foto.classList.toggle(
+            "activa",
+            indice === fotoActual
+          );
+
+        }
+      );
+
+      puntos.forEach(
+        (punto, indice) => {
+
+          punto.classList.toggle(
+            "activo",
+            indice === fotoActual
+          );
+
+        }
+      );
+
+      contador.textContent =
+        (fotoActual + 1) +
+        " / " +
+        fotos.length;
+
+    }
+
+
+    function cambiarFoto(direccion) {
+
+      fotoActual += direccion;
+
+      mostrarFoto(fotoActual);
+
+      reiniciarAutomatico();
+
+    }
+
+
+    function irFoto(numero) {
+
+      fotoActual = numero;
+
+      mostrarFoto(fotoActual);
+
+      reiniciarAutomatico();
+
+    }
+
+
+    function iniciarAutomatico() {
+
+      intervalo =
+        setInterval(
+          function() {
+
+            fotoActual++;
+
+            mostrarFoto(fotoActual);
+
+          },
+          6000
+        );
+
+    }
+
+
+    function reiniciarAutomatico() {
+
+      clearInterval(intervalo);
+
+      iniciarAutomatico();
+
+    }
+
+
+    /* TECLADO */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "ArrowRight") {
+          cambiarFoto(1);
+        }
+
+        if (event.key === "ArrowLeft") {
+          cambiarFoto(-1);
+        }
+
+      }
+    );
+
+
+    /* MÓVIL */
+
+    let inicioX = 0;
+
+
+    document.addEventListener(
+      "touchstart",
+      function(event) {
+
+        inicioX =
+          event.touches[0].clientX;
+
+      }
+    );
+
+
+    document.addEventListener(
+      "touchend",
+      function(event) {
+
+        const finalX =
+          event.changedTouches[0].clientX;
+
+        const diferencia =
+          inicioX - finalX;
+
+
+        if (Math.abs(diferencia) > 50) {
+
+          if (diferencia > 0) {
+            cambiarFoto(1);
+          } else {
+            cambiarFoto(-1);
+          }
+
+        }
+
+      }
+    );
+
+
+    /* MÚSICA */
+
+    function controlarMusica() {
+
+      if (!musicaActiva) {
+
+        musicFrame.contentWindow.postMessage(
+          '{"event":"command","func":"playVideo","args":""}',
+          "*"
+        );
+
+        musicaActiva = true;
+
+        musicButton.textContent =
+          "♫ Música: ON";
+
+      } else {
+
+        musicFrame.contentWindow.postMessage(
+          '{"event":"command","func":"pauseVideo","args":""}',
+          "*"
+        );
+
+        musicaActiva = false;
+
+        musicButton.textContent =
+          "♫ Música: OFF";
+
+      }
+
+    }
+
+
+    mostrarFoto(0);
+
+    iniciarAutomatico();
+
+  </script>
+
+</body>
+
+</html>
