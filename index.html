@@ -1,599 +1,411 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mi trayectoria atlética</title>
+<title>Mi trayectoria atlética | Una vida entre kilómetros</title>
 
 <style>
+:root {
+  --fondo: #090909;
+  --dorado: #c5a66a;
+  --dorado-claro: #e0c995;
+  --texto: #eee9df;
+  --texto-suave: #c4beb2;
+}
 
 * {
   box-sizing: border-box;
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100%;
-}
-
-body {
-  background: #000;
-  color: #fff;
+  min-height: 100vh;
+  background: var(--fondo);
+  color: var(--texto);
   font-family: Georgia, "Times New Roman", serif;
-  overflow-x: hidden;
 }
 
+/* PORTADA */
 
-/* =========================
-   CABECERA
-   ========================= */
-
-header {
-  background: #050505;
-  text-align: center;
-  padding: 5px 20px 14px;
-  border-bottom: 1px solid #9d7b32;
+.portada {
   position: relative;
-  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 24px 75px;
+  isolation: isolate;
+  overflow: hidden;
+  background: #090909;
+}
+
+.portada::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("20180909_094909.jpg");
+  background-position: center 40%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.42;
+  filter: grayscale(35%);
+  transform: scale(1.02);
+}
+
+.portada::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.91) 0%,
+      rgba(0,0,0,0.77) 48%,
+      rgba(0,0,0,0.56) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,0.78),
+      transparent 45%,
+      rgba(0,0,0,0.28)
+    );
+}
+
+.contenido {
+  width: 100%;
+  max-width: 1040px;
+  margin: auto;
+  text-align: center;
+  padding: 44px 35px;
+  border-top: 1px solid rgba(197,166,106,0.65);
+  border-bottom: 1px solid rgba(197,166,106,0.35);
+}
+
+.etiqueta {
+  margin: 0 0 24px;
+  color: var(--dorado-claro);
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
 }
 
 h1 {
   margin: 0;
-  color: #c9a24d;
-  font-size: 46px;
+  color: var(--dorado-claro);
+  font-size: clamp(36px, 6vw, 70px);
   font-weight: normal;
+  line-height: 1.15;
+  letter-spacing: 2px;
+  text-wrap: balance;
+}
+
+.adornado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 25px auto;
+  color: var(--dorado);
+}
+
+.adornado::before,
+.adornado::after {
+  content: "";
+  width: 65px;
+  height: 1px;
+  background: var(--dorado);
+  opacity: 0.8;
+}
+
+.adornado span {
+  font-size: 16px;
+}
+
+h2 {
+  margin: 0 0 25px;
+  color: #f0e7d5;
+  font-size: clamp(20px, 3vw, 29px);
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+.descripcion {
+  max-width: 720px;
+  margin: 0 auto 38px;
+  color: var(--texto-suave);
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.menu-titulo {
+  margin: 0 0 18px;
+  color: var(--dorado);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 11px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.menu a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 47px;
+  padding: 12px 19px;
+  border: 1px solid rgba(197,166,106,0.48);
+  color: var(--texto);
+  background: rgba(0,0,0,0.23);
+  text-decoration: none;
+  font-size: 15px;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  color: #090909;
+  background: var(--dorado-claro);
+  border-color: var(--dorado-claro);
+  outline: none;
+}
+
+.pie {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  right: 15px;
+  text-align: center;
+  color: #a9a092;
+  font-size: 12px;
   letter-spacing: 1px;
 }
 
-.subtitulo {
-  margin-top: 2px;
-  color: #fff;
-  font-size: 18px;
-}
-
-.linea {
-  width: 78px;
-  height: 2px;
-  background: #c9a24d;
-  margin: 9px auto 9px;
-}
-
-
-/* =========================
-   MENU
-   ========================= */
-
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 27px;
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #c9a24d;
-}
-
-
-/* =========================
-   BOTON MUSICA
-   ========================= */
+/* BOTÓN DE MÚSICA */
 
 #musicButton {
-
-  position: absolute;
-
-  right: 25px;
-  top: 18px;
-
-  width: 40px;
-  height: 40px;
-
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--dorado);
   border-radius: 50%;
-
-  border: 1px solid #c9a24d;
-
-  background: rgba(5,5,5,0.95);
-
-  color: #c9a24d;
-
-  font-size: 17px;
-
+  background: rgba(9,9,9,0.9);
+  color: var(--dorado-claro);
+  font-size: 20px;
   cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: 0.3s;
-
-  z-index: 20;
+  transition: background 0.25s ease;
 }
 
 #musicButton:hover {
-  background: #c9a24d;
-  color: #000;
+  background: #292116;
 }
 
-
-/* =========================
-   PORTADA
-   ========================= */
-
-.portada {
-
-  width: 100%;
-
-  min-height: calc(100vh - 132px);
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  padding: 4px 0 0;
-
-  position: relative;
-
-  background:
-
-    radial-gradient(
-      ellipse at center,
-      #151515 0%,
-      #080808 45%,
-      #020202 75%,
-      #000 100%
-    );
-
-  overflow: hidden;
+#musicButton:focus-visible {
+  outline: 2px solid var(--dorado-claro);
+  outline-offset: 3px;
 }
-
-
-/* =========================
-   OSCURECER LATERALES
-   ========================= */
-
-.portada::before {
-
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  top: 0;
-  bottom: 0;
-
-  width: 30%;
-
-  background:
-
-    linear-gradient(
-      to right,
-      #000 0%,
-      #000 25%,
-      rgba(0,0,0,0.96) 55%,
-      rgba(0,0,0,0) 100%
-    );
-
-  z-index: 1;
-
-  pointer-events: none;
-}
-
-
-.portada::after {
-
-  content: "";
-
-  position: absolute;
-
-  right: 0;
-  top: 0;
-  bottom: 0;
-
-  width: 30%;
-
-  background:
-
-    linear-gradient(
-      to left,
-      #000 0%,
-      #000 25%,
-      rgba(0,0,0,0.96) 55%,
-      rgba(0,0,0,0) 100%
-    );
-
-  z-index: 1;
-
-  pointer-events: none;
-}
-
-
-/* =========================
-   MARCO
-   ========================= */
-
-.marco {
-
-  position: relative;
-
-  z-index: 2;
-
-  width: min(1200px, 92vw);
-
-  height: calc(100vh - 140px);
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  overflow: hidden;
-}
-
-
-/* =========================
-   FOTO DE PORTADA
-   ========================= */
-
-.marco img {
-
-  display: block;
-
-  max-width: 100%;
-
-  max-height: 100%;
-
-  width: auto;
-
-  height: auto;
-
-  object-fit: contain;
-
-  box-shadow:
-
-    0 0 35px rgba(0,0,0,0.95),
-
-    0 0 80px rgba(0,0,0,0.85);
-
-  border-left: 1px solid rgba(201,162,77,0.18);
-
-  border-right: 1px solid rgba(201,162,77,0.18);
-}
-
-
-/* =========================
-   FRASE
-   ========================= */
-
-.frase {
-
-  position: absolute;
-
-  left: 50%;
-
-  bottom: 17px;
-
-  transform: translateX(-50%);
-
-  z-index: 4;
-
-  color: #fff;
-
-  font-size: 16px;
-
-  font-weight: bold;
-
-  text-align: center;
-
-  white-space: nowrap;
-
-  text-shadow:
-
-    0 2px 5px #000,
-
-    0 0 10px #000;
-}
-
-
-/* =========================
-   YOUTUBE
-   ========================= */
 
 #youtubePlayer {
-
   position: fixed;
-
   width: 1px;
   height: 1px;
-
   left: -20px;
   bottom: -20px;
-
-  border: 0;
-
-  opacity: 0;
-
-  pointer-events: none;
+  overflow: hidden;
 }
 
+#youtubePlayer iframe {
+  width: 1px;
+  height: 1px;
+  border: 0;
+}
 
-/* =========================
-   MOVIL
-   ========================= */
+/* MÓVILES */
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
+  .portada {
+    min-height: 100svh;
+    padding: 35px 16px 85px;
+  }
+
+  .contenido {
+    padding: 32px 8px;
+  }
+
+  .etiqueta {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
 
   h1 {
-    font-size: 31px;
+    letter-spacing: 1px;
   }
 
-  .subtitulo {
-    font-size: 15px;
+  .descripcion {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
   }
 
-  nav {
-    gap: 14px;
+  .menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
   }
 
-  nav a {
+  .menu a {
+    padding: 12px 8px;
     font-size: 14px;
+    text-align: center;
+  }
+
+  .pie {
+    font-size: 11px;
   }
 
   #musicButton {
-
-    right: 12px;
-    top: 12px;
-
-    width: 36px;
-    height: 36px;
+    right: 14px;
+    bottom: 14px;
   }
-
-  .portada {
-    min-height: calc(100vh - 145px);
-  }
-
-  .marco {
-
-    width: 100%;
-
-    height: calc(100vh - 150px);
-  }
-
-  .marco img {
-
-    max-width: 96%;
-    max-height: 96%;
-  }
-
-  .frase {
-
-    width: 90%;
-
-    font-size: 13px;
-
-    white-space: normal;
-
-    bottom: 10px;
-  }
-
-  .portada::before,
-  .portada::after {
-
-    width: 18%;
-  }
-
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================
-     CABECERA
-     ========================= -->
-
-<header>
-
-<h1>Mi trayectoria atlética</h1>
-
-<div class="subtitulo">
-Una vida entre kilómetros, carreras y nuevos caminos
-</div>
-
-<div class="linea"></div>
-
-
-<nav>
-
-<a href="mi-historia.html">
-Mi historia
-</a>
-
-<a href="mis-carreras.html">
-Mis carreras
-</a>
-
-<a href="entrenamiento.html">
-Entrenamiento
-</a>
-
-<a href="la-lesion.html">
-La lesión
-</a>
-
-<a href="marcha.html">
-Marcha atlética
-</a>
-
-<a href="galeria.html">
-Galería
-</a>
-
-</nav>
-
-
-<button
-id="musicButton"
-onclick="toggleMusic()"
-title="Reproducir / detener música">
-♫
-</button>
-
-</header>
-
-
-
-<!-- =========================
-     PORTADA
-     ========================= -->
-
 <main class="portada">
 
-<div class="marco">
+  <section class="contenido">
 
+    <p class="etiqueta">Memorias de una vida deportiva</p>
 
-<img
-src="IMG_5793.jpg"
-alt="Mi trayectoria atlética"
->
+    <h1>Mi trayectoria atlética</h1>
 
+    <div class="adornado" aria-hidden="true">
+      <span>✦</span>
+    </div>
 
-<div class="frase">
+    <h2>Una vida entre kilómetros, carreras y nuevos caminos</h2>
 
-Una vida entre kilómetros, carreras y nuevos caminos
+    <p class="descripcion">
+      Más de quince años formando parte del atletismo.
+      Una historia de esfuerzo, carreras, aprendizajes,
+      dificultades y experiencias que continúan hoy
+      con una nueva etapa en la marcha atlética.
+    </p>
 
-</div>
+    <p class="menu-titulo">Recorrido por mi historia</p>
 
+    <nav class="menu" aria-label="Menú principal">
 
-</div>
+      <a href="mi-historia.html">Mi historia</a>
+
+      <a href="mis-carreras.html">Mis carreras</a>
+
+      <a href="entrenamiento.html">Entrenamiento</a>
+
+      <a href="la-lesion.html">La lesión</a>
+
+      <a href="marcha.html">Marcha atlética</a>
+
+      <a href="galeria.html">Galería</a>
+
+    </nav>
+
+  </section>
+
+  <footer class="pie">
+    Mi trayectoria atlética · 2026
+  </footer>
 
 </main>
 
+<!-- Música de la portada -->
 
+<button
+  id="musicButton"
+  type="button"
+  aria-label="Activar música"
+  title="Activar o pausar la música">
+  ♪
+</button>
 
-<!-- =========================
-     MUSICA
-     ========================= -->
-
-<iframe
-
-id="youtubePlayer"
-
-src="https://www.youtube.com/embed/60ItHLz5WEA?enablejsapi=1&loop=1&playlist=60ItHLz5WEA&controls=0&rel=0&playsinline=1"
-
-allow="autoplay; encrypted-media">
-
-</iframe>
-
-
+<div id="youtubePlayer" aria-hidden="true">
+  <iframe
+    id="musicFrame"
+    title="Música de la portada"
+    src="https://www.youtube.com/embed/RSpBVK-siHw?enablejsapi=1&loop=1&playlist=RSpBVK-siHw&start=18"
+    allow="autoplay">
+  </iframe>
+</div>
 
 <script>
-
+const musicButton = document.getElementById("musicButton");
+const musicFrame = document.getElementById("musicFrame");
 
 let musicPlaying = false;
 
-
-/* =========================
-   ORDEN A YOUTUBE
-   ========================= */
-
-function youtubeCommand(command) {
-
-  const iframe =
-    document.getElementById("youtubePlayer");
-
-  if (!iframe || !iframe.contentWindow) return;
-
-  iframe.contentWindow.postMessage(
-
+function sendMusicCommand(command) {
+  musicFrame.contentWindow.postMessage(
     JSON.stringify({
-
       event: "command",
-
       func: command,
-
       args: []
-
     }),
-
-    "*"
-
+    "https://www.youtube.com"
   );
-
 }
 
-
-/* =========================
-   BOTON MUSICA
-   ========================= */
-
-function toggleMusic() {
-
-  if (musicPlaying) {
-
-    youtubeCommand("pauseVideo");
-
-    musicPlaying = false;
-
-    document.getElementById("musicButton").innerHTML = "♫";
-
-  } else {
-
-    youtubeCommand("playVideo");
-
+musicButton.addEventListener("click", function () {
+  if (!musicPlaying) {
+    sendMusicCommand("unMute");
+    sendMusicCommand("playVideo");
+    musicButton.textContent = "Ⅱ";
+    musicButton.setAttribute("aria-label", "Pausar música");
     musicPlaying = true;
-
-    document.getElementById("musicButton").innerHTML = "Ⅱ";
-
+  } else {
+    sendMusicCommand("pauseVideo");
+    musicButton.textContent = "♪";
+    musicButton.setAttribute("aria-label", "Activar música");
+    musicPlaying = false;
   }
-
-}
-
-
-/* =========================
-   INTENTO DE REPRODUCCION
-   ========================= */
-
-window.addEventListener("load", function() {
-
-  setTimeout(function() {
-
-    youtubeCommand("playVideo");
-
-  }, 1200);
-
 });
-
-
 </script>
 
-
 </body>
-
 </html>
+
 
 
 
