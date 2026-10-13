@@ -1,967 +1,512 @@
+
+
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mi historia — Mi trayectoria atlética</title>
 
 <style>
+* { box-sizing: border-box; }
 
-*{
-    box-sizing:border-box;
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
-html{
-    scroll-behavior:smooth;
+.carrusel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: #000;
 }
 
-body{
-    margin:0;
-    background:#080808;
-    color:#f2f2f2;
-    font-family:Georgia,"Times New Roman",serif;
-    line-height:1.7;
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease, visibility 1.2s;
+  overflow: hidden;
 }
 
-/* =========================================================
-   PORTADA
-   ========================================================= */
-
-.portada{
-    width:100%;
-    background:#050505;
-    text-align:center;
+.slide.activa {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
 }
 
-.portada img{
-    display:block;
-    width:100%;
-    height:auto;
-    max-width:1600px;
-    margin:0 auto;
+.slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.01);
 }
 
-.titulo-portada{
-    padding:25px 20px 30px;
-    border-bottom:1px solid #c9a35b;
+/* La fotografía se integra en todo el fondo */
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.48) 0%,
+      rgba(0,0,0,.04) 25%,
+      rgba(0,0,0,.10) 45%,
+      rgba(0,0,0,.88) 100%
+    );
 }
 
-.titulo-portada .pequeno{
-    color:#c9a35b;
-    font-size:13px;
-    letter-spacing:5px;
-    text-transform:uppercase;
-    margin-bottom:8px;
+.cabecera {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 22px 75px 18px;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(0,0,0,.78), transparent);
 }
 
-.titulo-portada h1{
-    margin:0;
-    color:#c9a35b;
-    font-size:50px;
-    font-weight:normal;
-    letter-spacing:2px;
+.cabecera h1 {
+  margin: 0;
+  color: #d0aa59;
+  font-size: clamp(27px, 4vw, 43px);
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px #000;
 }
 
-.titulo-portada p{
-    margin:8px 0 15px;
-    color:#ddd;
-    font-size:18px;
+.cabecera p {
+  margin: 5px 0 0;
+  font-size: clamp(12px, 1.6vw, 17px);
+  text-shadow: 0 2px 8px #000;
 }
 
-/* BOTÓN VOLVER */
-
-.volver{
-    display:inline-block;
-    margin-top:8px;
-    padding:8px 18px;
-    border:1px solid #c9a35b;
-    color:#c9a35b;
-    text-decoration:none;
-    font-size:14px;
-    letter-spacing:1px;
-    transition:background .3s ease,color .3s ease;
+.volver {
+  position: absolute;
+  z-index: 10;
+  top: 22px;
+  left: 22px;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(208,170,89,.75);
+  background: rgba(0,0,0,.55);
+  border-radius: 3px;
+  padding: 10px 14px;
+  font-size: 14px;
+  transition: .3s;
 }
 
-.volver:hover{
-    background:#c9a35b;
-    color:#080808;
+.volver:hover {
+  color: #d0aa59;
+  background: rgba(0,0,0,.9);
 }
 
-
-/* =========================================================
-   INTRODUCCIÓN
-   ========================================================= */
-
-.introduccion{
-    width:90%;
-    max-width:1100px;
-    margin:0 auto;
-    padding:65px 0 50px;
+.contador {
+  position: absolute;
+  z-index: 10;
+  top: 25px;
+  right: 25px;
+  color: #d0aa59;
+  background: rgba(0,0,0,.55);
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 14px;
 }
 
-.introduccion .etiqueta{
-    color:#c9a35b;
-    font-size:13px;
-    letter-spacing:4px;
-    text-transform:uppercase;
+.texto {
+  position: absolute;
+  z-index: 4;
+  left: 10%;
+  right: 10%;
+  bottom: 75px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  text-shadow: 0 2px 8px #000, 0 0 18px #000;
 }
 
-.introduccion h2{
-    margin:10px 0 18px;
-    font-size:38px;
-    font-weight:normal;
-    color:#fff;
+.numero {
+  display: block;
+  color: #d0aa59;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
-.introduccion p{
-    max-width:850px;
-    margin:0;
-    color:#ccc;
-    font-size:18px;
+.texto h2 {
+  margin: 0 0 13px;
+  color: #e0bd70;
+  font-size: clamp(26px, 4vw, 43px);
+  font-weight: normal;
+  line-height: 1.15;
 }
 
-
-/* =========================================================
-   CAPÍTULOS
-   ========================================================= */
-
-.historia{
-    width:100%;
+.texto p {
+  margin: 0 auto 10px;
+  max-width: 850px;
+  font-size: clamp(14px, 1.45vw, 18px);
+  line-height: 1.55;
+  color: #fff;
 }
 
-.capitulo{
-    width:92%;
-    max-width:1450px;
-    margin:0 auto;
-    padding:55px 0 75px;
-    border-top:1px solid rgba(201,163,91,.35);
+.flecha {
+  position: absolute;
+  z-index: 8;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 58px;
+  border: 1px solid rgba(208,170,89,.65);
+  border-radius: 4px;
+  background: rgba(0,0,0,.38);
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  transition: .3s;
 }
 
-
-/* =========================================================
-   FOTOGRAFÍA HORIZONTAL
-   ========================================================= */
-
-.foto-horizontal{
-    width:100%;
-    text-align:center;
-    margin-bottom:35px;
+.flecha:hover {
+  color: #d0aa59;
+  background: rgba(0,0,0,.8);
 }
 
-.foto-horizontal img{
-    display:block;
-    width:100%;
-    max-width:1350px;
-    height:auto;
-    margin:0 auto;
+.anterior { left: 18px; }
+.siguiente { right: 18px; }
+
+.puntos {
+  position: absolute;
+  z-index: 10;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
-
-/* =========================================================
-   TEXTO HORIZONTAL
-   ========================================================= */
-
-.texto-horizontal{
-    max-width:1050px;
-    margin:0 auto;
+.punto {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 1px solid #d0aa59;
+  border-radius: 50%;
+  background: rgba(0,0,0,.6);
+  cursor: pointer;
 }
 
-.numero{
-    color:#c9a35b;
-    font-size:13px;
-    letter-spacing:4px;
-    text-transform:uppercase;
+.punto.activo {
+  background: #d0aa59;
+  transform: scale(1.2);
 }
 
-.texto-horizontal h2{
-    margin:8px 0 18px;
-    color:#fff;
-    font-size:36px;
-    font-weight:normal;
+#musicButton {
+  position: absolute;
+  z-index: 12;
+  right: 24px;
+  bottom: 62px;
+  padding: 10px 15px;
+  border: 1px solid #d0aa59;
+  border-radius: 22px;
+  color: #d0aa59;
+  background: rgba(0,0,0,.7);
+  font-family: Georgia, serif;
+  cursor: pointer;
 }
 
-.linea{
-    width:70px;
-    height:1px;
-    background:#c9a35b;
-    margin-bottom:22px;
+#musicButton:hover {
+  color: #000;
+  background: #d0aa59;
 }
 
-.texto-horizontal p{
-    margin:0 0 14px;
-    color:#ccc;
-    font-size:17px;
+#youtubePlayer {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  left: -20px;
+  bottom: -20px;
+  opacity: 0;
+  pointer-events: none;
 }
 
+@media (max-width: 700px) {
+  .cabecera {
+    padding: 75px 15px 15px;
+  }
 
-/* =========================================================
-   CAPÍTULO CON FOTO VERTICAL
-   ========================================================= */
+  .cabecera h1 { letter-spacing: 1px; }
 
-.capitulo-vertical{
-    width:92%;
-    max-width:1250px;
-    margin:0 auto;
-    padding:65px 0 80px;
-    display:grid;
-    grid-template-columns:minmax(420px,.95fr) minmax(350px,.75fr);
-    gap:65px;
-    align-items:center;
-    border-top:1px solid rgba(201,163,91,.35);
+  .volver {
+    top: 14px;
+    left: 12px;
+    padding: 8px 10px;
+  }
+
+  .contador {
+    top: 17px;
+    right: 12px;
+  }
+
+  .texto {
+    left: 9%;
+    right: 9%;
+    bottom: 78px;
+  }
+
+  .texto h2 { margin-bottom: 9px; }
+
+  .texto p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .numero {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .flecha {
+    width: 34px;
+    height: 46px;
+    font-size: 23px;
+  }
+
+  .anterior { left: 5px; }
+  .siguiente { right: 5px; }
+
+  #musicButton {
+    right: 12px;
+    bottom: 52px;
+    padding: 8px 11px;
+    font-size: 12px;
+  }
+
+  .puntos { bottom: 20px; gap: 8px; }
+  .punto { width: 8px; height: 8px; }
 }
-
-.capitulo-vertical.inverso{
-    grid-template-columns:minmax(350px,.75fr) minmax(420px,.95fr);
-}
-
-.foto-vertical{
-    text-align:center;
-}
-
-.foto-vertical img{
-    display:block;
-    width:auto;
-    max-width:100%;
-    max-height:720px;
-    height:auto;
-    margin:0 auto;
-}
-
-.texto-vertical{
-    padding:10px;
-}
-
-.texto-vertical h2{
-    margin:8px 0 18px;
-    color:#fff;
-    font-size:36px;
-    font-weight:normal;
-}
-
-.texto-vertical p{
-    color:#ccc;
-    font-size:17px;
-    margin:0 0 16px;
-}
-
-
-/* =========================================================
-   FRASE
-   ========================================================= */
-
-.frase{
-    width:90%;
-    max-width:1050px;
-    margin:20px auto 30px;
-    padding:55px 25px;
-    text-align:center;
-    border-top:1px solid #c9a35b;
-    border-bottom:1px solid #c9a35b;
-}
-
-.frase p{
-    margin:0;
-    color:#e6e6e6;
-    font-size:25px;
-    font-style:italic;
-}
-
-.frase span{
-    display:block;
-    margin-top:15px;
-    color:#c9a35b;
-    font-size:12px;
-    letter-spacing:4px;
-}
-
-
-/* =========================================================
-   FINAL
-   ========================================================= */
-
-.final{
-    max-width:900px;
-    margin:0 auto;
-    padding:75px 25px 120px;
-    text-align:center;
-}
-
-.final h2{
-    margin:0 0 20px;
-    color:#c9a35b;
-    font-size:42px;
-    font-weight:normal;
-}
-
-.final p{
-    margin:0 0 15px;
-    color:#ccc;
-    font-size:18px;
-}
-
-
-/* =========================================================
-   MÚSICA
-   ========================================================= */
-
-.musica{
-    position:fixed;
-    right:22px;
-    bottom:22px;
-    width:48px;
-    height:48px;
-    border:1px solid #c9a35b;
-    border-radius:50%;
-    background:#090909;
-    color:#c9a35b;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:22px;
-    cursor:pointer;
-    z-index:9999;
-}
-
-.youtube{
-    position:absolute;
-    width:1px;
-    height:1px;
-    opacity:0;
-    pointer-events:none;
-}
-
-
-/* =========================================================
-   MÓVIL
-   ========================================================= */
-
-@media(max-width:850px){
-
-    .titulo-portada h1{
-        font-size:36px;
-    }
-
-    .titulo-portada p{
-        font-size:16px;
-    }
-
-    .introduccion{
-        padding:45px 0;
-    }
-
-    .introduccion h2{
-        font-size:30px;
-    }
-
-    .introduccion p{
-        font-size:16px;
-    }
-
-    .capitulo{
-        width:92%;
-        padding:45px 0 60px;
-    }
-
-    .foto-horizontal{
-        margin-bottom:28px;
-    }
-
-    .texto-horizontal h2{
-        font-size:30px;
-    }
-
-    .texto-horizontal p{
-        font-size:16px;
-    }
-
-    .capitulo-vertical,
-    .capitulo-vertical.inverso{
-        width:92%;
-        display:flex;
-        flex-direction:column;
-        gap:30px;
-        padding:50px 0 65px;
-    }
-
-    .foto-vertical img{
-        max-height:none;
-        max-width:100%;
-    }
-
-    .texto-vertical{
-        padding:0;
-    }
-
-    .texto-vertical h2{
-        font-size:30px;
-    }
-
-    .texto-vertical p{
-        font-size:16px;
-    }
-
-    .frase p{
-        font-size:20px;
-    }
-
-    .final h2{
-        font-size:34px;
-    }
-
-    .volver{
-        font-size:13px;
-        padding:7px 15px;
-    }
-
-}
-
 </style>
-
 </head>
 
 <body>
 
-<!-- =========================================================
-     PORTADA
-     ========================================================= -->
+<main class="carrusel" id="carrusel">
 
-<header class="portada">
+  <a class="volver" href="index.html">← Volver</a>
 
+  <div class="cabecera">
+    <h1>Mi historia</h1>
+    <p>Una vida entre kilómetros, esfuerzo, aprendizaje y nuevos caminos</p>
+  </div>
 
-<img
-    src="IMG-20180909-WA0003.jpg"
-    alt="Mi trayectoria atlética"
->
+  <div class="contador" id="contador">1 / 8</div>
 
-<div class="titulo-portada">
-
-    <div class="pequeno">
-        Mi trayectoria atlética
+  <!-- PIEZA I -->
+  <section class="slide activa">
+    <img src="IMG-20220905-WA0002.jpg" alt="El comienzo de mi trayectoria atlética">
+    <div class="texto">
+      <span class="numero">Pieza I</span>
+      <h2>El comienzo</h2>
+      <p>Mi historia en el atletismo comenzó casi sin darme cuenta. Al principio era una forma de hacer deporte, pero poco a poco descubrí que correr podía convertirse en mucho más.</p>
+      <p>Descubrir el mundo del atletismo despertó una pasión que con los años acabaría formando parte de mi vida.</p>
     </div>
+  </section>
 
-    <h1>
-        Mi historia
-    </h1>
-
-    <p>
-        Una vida entre kilómetros, carreras y nuevos caminos
-    </p>
-
-    <a href="index.html" class="volver">
-        ← Volver al inicio
-    </a>
-
-</div>
-
-
-</header>
-
-<!-- =========================================================
-     INTRODUCCIÓN
-     ========================================================= -->
-
-<section class="introduccion">
-
-
-<div class="etiqueta">
-    El comienzo
-</div>
-
-<h2>
-    Una historia que empezó corriendo
-</h2>
-
-<p>
-    Detrás de cada carrera hay mucho más que kilómetros.
-    Hay ilusión, esfuerzo, personas, momentos difíciles,
-    victorias y también momentos en los que toca volver a empezar.
-</p>
-
-
-</section>
-
-<main class="historia">
-
-<!-- =========================================================
-     CAPÍTULO I
-     ========================================================= -->
-
-<section class="capitulo">
-
-
-<div class="foto-horizontal">
-
-    <img
-        src="IMG_2083.jpg"
-        alt="Los primeros años"
-    >
-
-</div>
-
-<div class="texto-horizontal">
-
-    <div class="numero">
-        Capítulo I
+  <!-- PIEZA II -->
+  <section class="slide">
+    <img src="20160910_192158.jpg" alt="Mis primeras carreras">
+    <div class="texto">
+      <span class="numero">Pieza II</span>
+      <h2>Mis primeras carreras</h2>
+      <p>Llegó el momento de pasar de los entrenamientos a la competición. Las primeras carreras me enseñaron lo que significaba ponerse un dorsal, enfrentarse al recorrido y cruzar la línea de meta.</p>
+      <p>Cada carrera se convirtió en una nueva experiencia y en una oportunidad para seguir aprendiendo.</p>
     </div>
+  </section>
 
-    <h2>
-        Los primeros años
-    </h2>
-
-    <div class="linea"></div>
-
-    <p>
-        Todo comenzó con las ganas de hacer deporte y descubrir
-        hasta dónde podía llegar corriendo.
-    </p>
-
-    <p>
-        Al principio todo era aprendizaje. Había que conocer
-        el cuerpo, acostumbrarse al entrenamiento y entender
-        que mejorar no ocurre de un día para otro.
-    </p>
-
-    <p>
-        Poco a poco correr empezó a convertirse en una parte
-        importante de mi vida.
-    </p>
-
-</div>
-
-
-</section>
-
-<!-- =========================================================
-     CAPÍTULO II
-     ========================================================= -->
-
-<section class="capitulo">
-
-
-<div class="foto-horizontal">
-
-    <img
-        src="20161218_110620.jpg"
-        alt="Atletismo de Nueva Jarilla"
-    >
-
-</div>
-
-<div class="texto-horizontal">
-
-    <div class="numero">
-        Capítulo II
+  <!-- PIEZA III -->
+  <section class="slide">
+    <img src="20161218_110620.jpg" alt="Atletismo de Nueva Jarilla">
+    <div class="texto">
+      <span class="numero">Pieza III</span>
+      <h2>Atletismo de Nueva Jarilla</h2>
+      <p>Uno de los momentos importantes de mi trayectoria fue formar parte del equipo Atletismo de Nueva Jarilla.</p>
+      <p>Entrenar, competir y compartir kilómetros con otros compañeros hizo que este deporte adquiriera todavía más sentido.</p>
     </div>
+  </section>
 
-    <h2>
-        Atletismo de Nueva Jarilla
-    </h2>
-
-    <div class="linea"></div>
-
-    <p>
-        Con el tiempo llegaron nuevas experiencias y nuevas
-        personas que fueron formando parte de este camino.
-    </p>
-
-    <p>
-        Atletismo de Nueva Jarilla significó una etapa importante
-        dentro de mi trayectoria. Entrenar, competir y compartir
-        kilómetros hizo que el atletismo fuera todavía más especial.
-    </p>
-
-    <p>
-        Porque este deporte también se construye junto a los demás.
-    </p>
-
-</div>
-
-
-</section>
-
-<!-- =========================================================
-     CAPÍTULO III
-     ========================================================= -->
-
-<section class="capitulo">
-
-<div class="foto-horizontal">
-
-    <img
-        src="IMG-20250228-WA0016.jpg"
-        alt="La competición"
-    >
-
-</div>
-
-<div class="texto-horizontal">
-
-    <div class="numero">
-        Capítulo III
+  <!-- PIEZA IV -->
+  <section class="slide">
+    <img src="20190407_153139.jpg" alt="El primer pódium">
+    <div class="texto">
+      <span class="numero">Pieza IV</span>
+      <h2>El primer pódium</h2>
+      <p>Hay momentos que permanecen para siempre en la memoria. Uno de ellos fue mi primer pódium, en el cross de Sanlúcar de Barrameda, donde conseguí la primera posición.</p>
+      <p>Detrás de aquella victoria estaban los kilómetros, los entrenamientos y el esfuerzo realizado hasta llegar a ese momento.</p>
     </div>
+  </section>
 
-    <h2>
-        La competición
-    </h2>
-
-    <div class="linea"></div>
-
-    <p>
-        Llegó el momento de ponerse un dorsal y comprobar
-        en las carreras todo aquello que se había trabajado
-        durante los entrenamientos.
-    </p>
-
-    <p>
-        Competir siempre ha tenido algo especial:
-        los nervios, la salida, el esfuerzo y esa sensación
-        de cruzar la meta.
-    </p>
-
-    <p>
-        Cada carrera enseñaba algo diferente y cada experiencia
-        servía para seguir aprendiendo.
-    </p>
-
-</div>
-
-
-</section>
-
-<!-- =========================================================
-     CAPÍTULO IV
-     ========================================================= -->
-
-<section class="capitulo-vertical">
-
-
-<div class="foto-vertical">
-
-    <img
-        src="20190407_153139.jpg"
-        alt="El primer pódium"
-    >
-
-</div>
-
-<div class="texto-vertical">
-
-    <div class="numero">
-        Capítulo IV
+  <!-- PIEZA V -->
+  <section class="slide">
+    <img src="IMG_20251229_174240.jpg" alt="Los años pasan">
+    <div class="texto">
+      <span class="numero">Pieza V</span>
+      <h2>Los años pasan</h2>
+      <p>Con el paso de los años cambia la manera de entender el deporte, de entrenar, de competir y de afrontar cada reto.</p>
+      <p>El objetivo ya no es solamente mejorar una marca. También es disfrutar del camino y seguir encontrando motivos para continuar.</p>
     </div>
+  </section>
 
-    <h2>
-        El primer pódium
-    </h2>
-
-    <div class="linea"></div>
-
-    <p>
-        Hay momentos que permanecen en la memoria para siempre.
-        Uno de ellos fue subir al pódium.
-    </p>
-
-    <p>
-        Después de tantos entrenamientos y tantas horas de esfuerzo,
-        recibir el reconocimiento de una carrera tiene un significado
-        especial.
-    </p>
-
-    <p>
-        No era solamente el resultado. Era la confirmación de que
-        todo aquel trabajo había merecido la pena.
-    </p>
-
-</div>
-
-</section>
-
-<!-- =========================================================
-     FRASE
-     ========================================================= -->
-
-<section class="frase">
-
-<p>
-    “Cada carrera deja algo detrás:
-    una experiencia, una enseñanza y un recuerdo.”
-</p>
-
-<span>
-    EL CAMINO CONTINÚA
-</span>
-
-
-</section>
-
-<!-- =========================================================
-     CAPÍTULO V
-     ========================================================= -->
-
-<section class="capitulo-vertical inverso">
-
-
-<div class="texto-vertical">
-
-    <div class="numero">
-        Capítulo V
+  <!-- PIEZA VI -->
+  <section class="slide">
+    <img src="DSC_0922_resultado_resultado.jpg" alt="Las dificultades también forman parte del camino">
+    <div class="texto">
+      <span class="numero">Pieza VI</span>
+      <h2>Las dificultades también forman parte del camino</h2>
+      <p>Ninguna trayectoria deportiva está formada solamente por buenos momentos. También existen dificultades, lesiones y situaciones que obligan a cambiar los planes.</p>
+      <p>A veces avanzar significa saber parar, recuperarse y volver a empezar.</p>
     </div>
+  </section>
 
-    <h2>
-        25 años corriendo
-    </h2>
-
-    <div class="linea"></div>
-
-    <p>
-        Los años fueron pasando y correr dejó de ser simplemente
-        una actividad deportiva para convertirse en una forma de vida.
-    </p>
-
-    <p>
-        Mirar hacia atrás permite comprobar todo lo que ha cambiado:
-        el cuerpo, los entrenamientos, las carreras y también la forma
-        de entender el deporte.
-    </p>
-
-    <p>
-        Pero hay algo que permanece:
-        las ganas de seguir avanzando.
-    </p>
-
-</div>
-
-<div class="foto-vertical">
-
-    <img
-        src="IMG-20251101-WA0016.jpg"
-        alt="25 años corriendo"
-    >
-
-</div>
-
-
-</section>
-
-<!-- =========================================================
-     CAPÍTULO VI
-     ========================================================= -->
-
-<section class="capitulo-vertical">
-
-<div class="foto-vertical">
-
-    <img
-        src="IMG_20251229_174240.jpg"
-        alt="Las dificultades"
-    >
-
-</div>
-
-<div class="texto-vertical">
-
-    <div class="numero">
-        Capítulo VI
+  <!-- PIEZA VII -->
+  <section class="slide">
+    <img src="IMG_20260321_093209.jpg" alt="Una nueva etapa">
+    <div class="texto">
+      <span class="numero">Pieza VII · El presente</span>
+      <h2>Una nueva etapa</h2>
+      <p>El tiempo pasa, pero las ganas de seguir haciendo deporte permanecen. Hoy comienza una etapa diferente, en la que el objetivo es disfrutar del camino, adaptarme y buscar nuevos retos.</p>
+      <p>Porque cambiar la manera de avanzar no significa dejar de avanzar.</p>
     </div>
+  </section>
 
-    <h2>
-        Las dificultades
-    </h2>
-
-    <div class="linea"></div>
-
-    <p>
-        No todo ha sido fácil. También han llegado las lesiones,
-        los momentos en los que el cuerpo obliga a parar y las dudas
-        sobre cuándo volver.
-    </p>
-
-    <p>
-        Una lesión cambia muchas cosas. Obliga a tener paciencia,
-        escuchar al cuerpo y entender que descansar también forma
-        parte del entrenamiento.
-    </p>
-
-    <p>
-        Pero las dificultades también forman parte de la historia.
-        Y cada vez que se vuelve a empezar, el camino continúa.
-    </p>
-
-</div>
-
-
-</section>
-
-<!-- =========================================================
-     CAPÍTULO VII
-     ========================================================= -->
-
-<section class="capitulo">
-
-
-<div class="foto-horizontal">
-
-    <img
-        src="DSC_0812_resultado_resultado.jpg"
-        alt="Una nueva etapa"
-    >
-
-</div>
-
-<div class="texto-horizontal">
-
-    <div class="numero">
-        Capítulo VII
+  <!-- PIEZA VIII -->
+  <section class="slide">
+    <img src="IMG-20220122-WA0000.jpg" alt="El camino continúa">
+    <div class="texto">
+      <span class="numero">Pieza VIII · El futuro</span>
+      <h2>El camino continúa</h2>
+      <p>Esta historia no termina aquí. Después de tantos años, el atletismo sigue formando parte de mi vida.</p>
+      <p>Quizás cambien las distancias, los objetivos o la manera de entrenar, pero permanecen las ganas de seguir adelante. Mientras haya un camino por delante, habrá una razón para recorrerlo.</p>
     </div>
+  </section>
 
-    <h2>
-        Una nueva etapa
-    </h2>
+  <button class="flecha anterior" id="anterior" aria-label="Fotografía anterior">‹</button>
+  <button class="flecha siguiente" id="siguiente" aria-label="Fotografía siguiente">›</button>
 
-    <div class="linea"></div>
+  <div class="puntos" id="puntos" aria-label="Seleccionar capítulo"></div>
 
-    <p>
-        Después de tantos años corriendo, llega un momento en el que
-        hay que aceptar los cambios y buscar una nueva manera de seguir
-        disfrutando del deporte.
-    </p>
-
-    <p>
-        Ahora comienza una etapa diferente. La marcha atlética aparece
-        como un nuevo camino para continuar ligado al atletismo y seguir
-        disfrutando de la competición.
-    </p>
-
-    <p>
-        Todavía estoy aprendiendo, descubriendo una técnica diferente
-        y acostumbrándome a una nueva forma de moverme.
-    </p>
-
-</div>
-
-
-</section>
-
-<!-- =========================================================
-     CAPÍTULO VIII
-     ========================================================= -->
-
-<section class="capitulo">
-
-<div class="foto-horizontal">
-
-    <img
-        src="IMG_20260321_093209.jpg"
-        alt="Mi nueva etapa: la marcha"
-    >
-
-</div>
-
-<div class="texto-horizontal">
-
-    <div class="numero">
-        Capítulo VIII
-    </div>
-
-    <h2>
-        Mi nueva etapa: la marcha
-    </h2>
-
-    <div class="linea"></div>
-
-    <p>
-        El camino cambia, pero las ganas de seguir haciendo deporte
-        permanecen.
-    </p>
-
-    <p>
-        Comenzar con la marcha atlética significa aprender de nuevo:
-        conocer la técnica, escuchar el cuerpo y avanzar poco a poco.
-    </p>
-
-    <p>
-        No sé todavía hasta dónde me llevará esta nueva etapa,
-        pero sí sé que quiero disfrutarla y seguir sintiéndome
-        parte del atletismo.
-    </p>
-
-    <p>
-        Después de tantos kilómetros corriendo, comienza ahora
-        una nueva forma de seguir caminando hacia delante.
-    </p>
-
-</div>
-
-</section>
+  <button id="musicButton" onclick="toggleMusic()">♫ Música: OFF</button>
 
 </main>
 
-<!-- =========================================================
-     FINAL
-     ========================================================= -->
-
-<section class="final">
-
-```
-<h2>
-    Sigamos adelante
-</h2>
-
-<p>
-    La historia no termina cuando cambia la forma de competir.
-    Simplemente comienza un nuevo capítulo.
-</p>
-
-<p>
-    Después de tantos años corriendo,
-    ahora toca seguir disfrutando del atletismo
-    desde un nuevo camino.
-</p>
-
-
-</section>
-
-<!-- =========================================================
-     MÚSICA
-     ========================================================= -->
-
-<div
-    class="musica"
-    onclick="activarMusica()"
-    title="Música"
->
-    ♪
-</div>
-
 <iframe
-    id="youtube"
-    class="youtube"
-    src="https://www.youtube.com/embed/EuzOJ0wT99U?enablejsapi=1&autoplay=0&loop=1&playlist=EuzOJ0wT99U"
-    allow="autoplay">
+  id="youtubePlayer"
+  title="Música de fondo"
+  src="https://www.youtube.com/embed/EuzOJ0wT99U?start=2&enablejsapi=1&loop=1&playlist=EuzOJ0wT99U&controls=0&rel=0&playsinline=1"
+  allow="autoplay; encrypted-media">
 </iframe>
 
 <script>
+const slides = Array.from(document.querySelectorAll(".slide"));
+const puntos = document.getElementById("puntos");
+const contador = document.getElementById("contador");
+const musicButton = document.getElementById("musicButton");
 
-function activarMusica(){
+let actual = 0;
+let temporizador;
+let musicPlaying = false;
 
-    const iframe = document.getElementById("youtube");
+slides.forEach((slide, i) => {
+  const punto = document.createElement("button");
+  punto.className = "punto" + (i === 0 ? " activo" : "");
+  punto.setAttribute("aria-label", "Ir al capítulo " + (i + 1));
+  punto.addEventListener("click", () => mostrar(i));
+  puntos.appendChild(punto);
+});
 
-    iframe.contentWindow.postMessage(
-        '{"event":"command","func":"playVideo","args":""}',
-        '*'
-    );
+const todosLosPuntos = Array.from(puntos.children);
 
+function mostrar(indice) {
+  slides[actual].classList.remove("activa");
+  todosLosPuntos[actual].classList.remove("activo");
+
+  actual = (indice + slides.length) % slides.length;
+
+  slides[actual].classList.add("activa");
+  todosLosPuntos[actual].classList.add("activo");
+  contador.textContent = (actual + 1) + " / " + slides.length;
+
+  reiniciarTemporizador();
 }
 
+function reiniciarTemporizador() {
+  clearInterval(temporizador);
+  temporizador = setInterval(() => mostrar(actual + 1), 9000);
+}
+
+document.getElementById("anterior").addEventListener("click", () => mostrar(actual - 1));
+document.getElementById("siguiente").addEventListener("click", () => mostrar(actual + 1));
+
+document.addEventListener("keydown", e => {
+  if (e.key === "ArrowLeft") mostrar(actual - 1);
+  if (e.key === "ArrowRight") mostrar(actual + 1);
+});
+
+let touchStartX = 0;
+
+document.getElementById("carrusel").addEventListener("touchstart", e => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+document.getElementById("carrusel").addEventListener("touchend", e => {
+  const diferencia = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diferencia) > 55) {
+    mostrar(actual + (diferencia < 0 ? 1 : -1));
+  }
+}, { passive: true });
+
+reiniciarTemporizador();
+
+function youtubeCommand(command) {
+  const iframe = document.getElementById("youtubePlayer");
+  iframe.contentWindow.postMessage(JSON.stringify({
+    event: "command",
+    func: command,
+    args: []
+  }), "*");
+}
+
+function toggleMusic() {
+  if (musicPlaying) {
+    youtubeCommand("pauseVideo");
+    musicPlaying = false;
+    musicButton.textContent = "♫ Música: OFF";
+  } else {
+    youtubeCommand("playVideo");
+    musicPlaying = true;
+    musicButton.textContent = "Ⅱ Música: ON";
+  }
+}
 </script>
 
 </body>
-
 </html>
+
 
 
 
